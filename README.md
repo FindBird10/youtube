@@ -54,7 +54,7 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 | `YT_REFRESH_TOKEN` | Playground'dan aldığın refresh token |
 
 İsteğe bağlı, daha güvenilir seslendirme için **Azure Speech** (Free F0, ayda 500 bin karakter ücretsiz):
-`AZURE_SPEECH_KEY` (Keys and Endpoint → KEY 1) ve `AZURE_SPEECH_REGION` (ör. `westeurope`).
+`AZURE_SPEECH_KEY` (Keys and Endpoint → KEY 1) ve `AZURE_SPEECH_REGION` (`northeurope`).
 Tanımlı değilse ya da Azure hata verirse otomatik olarak Edge-TTS kullanılır.
 
 İsteğe bağlı **Variables** (aynı sayfada *Variables* sekmesi):

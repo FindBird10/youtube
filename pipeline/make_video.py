@@ -103,7 +103,7 @@ def _azure_tts(text: str, voice: str, rate: str, out: Path) -> list[Word]:
     import azure.cognitiveservices.speech as speechsdk
 
     cfg = speechsdk.SpeechConfig(subscription=os.environ["AZURE_SPEECH_KEY"].strip(),
-                                 region=os.environ.get("AZURE_SPEECH_REGION", "westeurope").strip())
+                                 region=os.environ.get("AZURE_SPEECH_REGION", "northeurope").strip())
     cfg.set_speech_synthesis_output_format(speechsdk.SpeechSynthesisOutputFormat.Audio24Khz96KBitRateMonoMp3)
     synth = speechsdk.SpeechSynthesizer(speech_config=cfg,
                                         audio_config=speechsdk.audio.AudioOutputConfig(filename=str(out)))
