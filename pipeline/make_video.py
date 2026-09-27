@@ -37,6 +37,10 @@ DEFAULT_RATE = "+5%"      # +12% aceleci duruyordu; +5% daha doğal ve akıcı
 FALLBACK_COLORS = ["0x14213d", "0x1b263b", "0x2b2d42", "0x3a0ca3", "0x264653", "0x5f0f40"]
 STOPWORDS = {"a", "an", "the", "of", "in", "on", "and", "with", "at", "to", "for", "from", "by", "video",
               "stock", "footage", "free", "hd", "4k", "is", "are", "its", "it", "up", "view", "shot"}
+# Gerçek çekim videoların arasına çizim/animasyon girmesin: bu etiketlerden biri varsa aday elenir.
+ANIMATION_WORDS = {"animation", "animated", "animate", "cartoon", "anime", "illustration", "drawing", "drawn",
+                   "sketch", "clipart", "vector", "render", "rendering", "cgi", "3d", "2d", "infographic",
+                   "hologram", "fractal"}
 TOKEN_RE = re.compile(r"[\w'’]+", re.UNICODE)
 
 
@@ -194,7 +198,7 @@ def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: 
 
 
 # ------------------------------------------------------------- stok görüntü
-def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
+def fetch_clips(scenes: list[Scene], work: Path, offline: bool, subject: str = "") -> None:
     if offline:
         # İnternetsiz test: tek sahnelere test deseni klibi ver (geçiş/zoom görülsün)
         for i, sc in enumerate(scenes):
@@ -215,7 +219,7 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
 
     def stems(text: str) -> set[str]:
         return {w[:-1] if len(w) > 4 and w.endswith("s") else w
-                for w in re.findall(r"[a-z]+", text.lower()) if w not in STOPWORDS and len(w) > 1}
+                for w in re.findall(r"[a-z0-9]+", text.lower()) if w not in STOPWORDS and len(w) > 1}
 
     def pexels(query: str) -> list[dict]:
         r = requests.get("https://api.pexels.com/videos/search", timeout=30,
@@ -232,13 +236,15 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
             portrait.sort(key=lambda f: (f["width"] < 1080, abs(f["width"] - 1080)))
             f = portrait[0]
             slug = v.get("url", "").rstrip("/").rsplit("/", 1)[-1]
-            out.append({"key": f"pexels:{v['id']}", "words": stems(slug + " " + " ".join(v.get("tags", []))),
+            out.append({"key": f"pexels:{v['id']}", "rank": len(out),
+                        "words": stems(slug + " " + " ".join(v.get("tags", []))),
                         "duration": v.get("duration", 0), "w": f["width"], "h": f["height"], "url": f["link"]})
         return out
 
     def pixabay(query: str) -> list[dict]:
         r = requests.get("https://pixabay.com/api/videos/", timeout=30,
-                         params={"key": pixabay_key, "q": query[:100], "per_page": 20, "safesearch": "true"})
+                         params={"key": pixabay_key, "q": query[:100], "per_page": 20, "safesearch": "true",
+                                 "video_type": "film"})
         r.raise_for_status()
         out = []
         for v in r.json().get("hits", []):
@@ -248,25 +254,31 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
             # Dikeye kırpılınca bulanık olmasın: yeterince yüksek olan en küçük dosya
             files.sort(key=lambda f: (f["height"] < 1900, f["height"] if f["height"] >= 1900 else -f["height"]))
             f = files[0]
-            out.append({"key": f"pixabay:{v['id']}", "words": stems(v.get("tags", "")),
+            out.append({"key": f"pixabay:{v['id']}", "rank": len(out), "words": stems(v.get("tags", "")),
                         "duration": v.get("duration", 0), "w": f["width"], "h": f["height"], "url": f["url"]})
         return out
 
-    def score(c: dict, want: set[str], need: float) -> float:
-        rel = len(want & c["words"]) / max(1, len(want))          # konuya uygunluk (0–1)
-        s = 3.0 * rel
-        s += 1.5 if c["h"] >= c["w"] else 0.0                    # dikey video kırpılmaz
-        s += 1.0 if c["duration"] >= need else 0.0               # döngüye girmez
-        s += 0.5 if min(c["w"], c["h"]) >= 1080 else 0.0         # net görüntü
-        return s + random.uniform(0, 0.4)                          # her seferinde aynı video çıkmasın
+    def score(c: dict, want: set[str], key: set[str], need: float) -> float:
+        # Önce konu: ana özne (ör. "octopus") eşleşmesi her şeyden önemli, sonra diğer kelimeler.
+        s = 6.0 if key & c["words"] else 0.0
+        s += 3.0 * len(want & c["words"]) / max(1, len(want))
+        s += 1.0 * (1 - min(c.get("rank", 19), 19) / 20)          # sitenin kendi uygunluk sırası
+        s += 0.8 if c["h"] >= c["w"] else 0.0                    # dikey video kırpılmaz
+        s += 0.5 if c["duration"] >= need else 0.0               # döngüye girmez
+        s += 0.3 if min(c["w"], c["h"]) >= 1080 else 0.0         # net görüntü
+        return s + random.uniform(0, 0.2)                          # her seferinde aynı video çıkmasın
 
     sources = [("Pexels", pexels)] if pexels_key else []
     sources += [("Pixabay", pixabay)] if pixabay_key else []
 
+    subj = stems(subject)
     for i, sc in enumerate(scenes):
         need = sc.duration + XFADE
         want = stems(sc.search)
-        queries = [sc.search, " ".join(sc.search.split()[:2]), (sc.search.split() or [""])[0]]
+        # Ana özne: bölümün 'subject' alanı aramada geçiyorsa o, yoksa aramanın ilk kelimesi
+        key = (subj & want) or set(list(stems((sc.search.split() or [""])[0]))[:1])
+        words = sc.search.split()
+        queries = [sc.search, " ".join(words[:2]), words[0] if words else "", subject]
         best, best_score = None, -1.0
         for q in dict.fromkeys(q for q in queries if q):
             cands = []
@@ -277,12 +289,13 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
                     # Hata metni URL'yi (Pixabay'de anahtarı) içerebilir; yalnızca durum kodunu yaz
                     code = getattr(getattr(e, "response", None), "status_code", type(e).__name__)
                     log(f"{name} arama hatası '{q}': {code}")
+            cands = [c for c in cands if not (c["words"] & ANIMATION_WORDS)]
             for c in cands:
-                s = score(c, want, need)
-                if s > best_score:
-                    best, best_score = c, s
-            # Konuyla eşleşen bir sonuç bulunduysa daha kısa sorgulara inme
-            if best and want & best["words"]:
+                sc_ = score(c, want, key, need)
+                if sc_ > best_score:
+                    best, best_score = c, sc_
+            # Ana özneyi içeren bir sonuç bulunduysa daha kısa sorgulara inme
+            if best and key & best["words"]:
                 break
         if not best:
             log(f"Sahne {i + 1}: görüntü bulunamadı, düz renk kullanılacak.")
@@ -459,7 +472,7 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         scenes, episode.get("voice", DEFAULT_VOICE), episode.get("rate", DEFAULT_RATE), work, offline)
     if total > 59:
         log(f"UYARI: video {total:.1f} sn; Shorts için 60 saniyenin altı önerilir.")
-    fetch_clips(scenes, work, offline)
+    fetch_clips(scenes, work, offline, episode.get("subject", ""))
 
     # Son sahne dışındaki parçalar geçiş süresi kadar uzun üretilir, böylece
     # xfade sonrası toplam süre sesle birebir aynı kalır.
@@ -470,7 +483,7 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
 
     ass = work / "subs.ass"
     build_ass(words, total, episode.get("font", "DejaVu Sans"), ass, episode.get("caption_style", "word"),
-              hook=hook_text(episode) if episode.get("show_hook", True) else "")
+              hook=hook_text(episode) if episode.get("show_hook", False) else "")
 
     # Görüntü zinciri: seg0 x seg1 x ... -> altyazı
     vchain, last = [], "0:v"
