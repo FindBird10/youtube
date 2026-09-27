@@ -1,0 +1,18 @@
+{
+  "title": "Ahtapotun 3 kalbi var ve biri yüzerken duruyor 🐙",
+  "description": "Ahtapotlar üç kalbe ve mavi kana sahip. Peki neden yüzmek yerine sürünmeyi tercih ediyorlar?\n\nKaynak: Smithsonian Ocean",
+  "tags": ["ahtapot", "hayvanlar", "bilgi", "ilginç bilgiler", "deniz canlıları"],
+  "language": "tr",
+  "voice": "tr-TR-AhmetNeural",
+  "rate": "+8%",
+  "privacy": "private",
+  "scenes": [
+    { "text": "Ahtapotun tam üç kalbi var. Ve biri, yüzerken duruyor.", "search": "octopus underwater" },
+    { "text": "Kalplerden ikisi, kanı sadece solungaçlara pompalar.", "search": "octopus close up" },
+    { "text": "Üçüncüsü ise kanı bütün vücuda gönderir.", "search": "octopus swimming" },
+    { "text": "Ama ahtapot yüzmeye başladığında, bu kalp atmayı bırakır.", "search": "octopus swimming ocean" },
+    { "text": "Bu yüzden yüzmek onu çok yorar. Çoğu zaman deniz tabanında sürünmeyi seçer.", "search": "octopus crawling seabed" },
+    { "text": "Bir de kanı mavidir. Çünkü oksijeni demir değil, bakır taşır.", "search": "blue ocean deep" },
+    { "text": "Sence doğadaki en tuhaf hayvan hangisi? Yorumlara yaz.", "search": "coral reef fish" }
+  ]
+}
