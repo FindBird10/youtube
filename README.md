@@ -37,7 +37,7 @@ Claude (zamanlanmış görev)          GitHub Actions
 2. Sağ üstteki ⚙️ → **Use your own OAuth credentials** → Client ID ve secret'ı yapıştır.
 3. Soldaki kutuya şunu yaz ve **Authorize APIs**'e bas:
    `https://www.googleapis.com/auth/youtube.upload`
-4. BirdsVault kanalının bağlı olduğu Google hesabını (birdsvault1@gmail.com) seç, izin ver.
+4. BirdsVault kanalının bağlı olduğu Google hesabını seç, izin ver.
 5. **Exchange authorization code for tokens** → çıkan **Refresh token**'ı kopyala.
 
 > Python kullanmayı tercih edersen: Desktop app türünde istemci oluşturup

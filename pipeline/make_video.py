@@ -274,7 +274,9 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
                 try:
                     cands += [c for c in fn(q) if c["key"] not in used]
                 except Exception as e:
-                    log(f"{name} arama hatası '{q}': {e}")
+                    # Hata metni URL'yi (Pixabay'de anahtarı) içerebilir; yalnızca durum kodunu yaz
+                    code = getattr(getattr(e, "response", None), "status_code", type(e).__name__)
+                    log(f"{name} arama hatası '{q}': {code}")
             for c in cands:
                 s = score(c, want, need)
                 if s > best_score:
@@ -294,7 +296,7 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
                     for part in r.iter_content(1 << 20):
                         f.write(part)
         except Exception as e:
-            log(f"Sahne {i + 1}: indirme hatası ({e}), düz renk kullanılacak.")
+            log(f"Sahne {i + 1}: indirme hatası ({type(e).__name__}), düz renk kullanılacak.")
             continue
         sc.clip = dst
         log(f"Sahne {i + 1}: {best['key']} {best['w']}x{best['h']} puan {best_score:.1f} ({sc.search})")
