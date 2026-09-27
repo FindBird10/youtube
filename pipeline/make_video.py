@@ -269,6 +269,12 @@ def ts(t: float) -> str:
 CAPTION_MARGIN_V = 560
 # Vurgu rengi (ASS biçimi &HBBGGRR): yumuşak açık turkuaz; göz yormayan, beyazla uyumlu.
 HIGHLIGHT = "&HE8D9A8&"
+# Açılış kancası: ilk bu kadar saniye, üst kenardan bu kadar aşağıda (Shorts'un üst simgelerinin altı).
+HOOK_SECONDS = 2.6
+HOOK_MARGIN_V = 300
+# İlerleme çubuğu (üst kenar)
+BAR_HEIGHT = 12
+BAR_COLOR = "white@0.85"
 
 ASS_HEADER = """[Script Info]
 ScriptType: v4.00+
@@ -281,6 +287,7 @@ ScaledBorderAndShadow: yes
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Word,{font},112,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,1,0,1,6,3,2,60,60,{mv},1
 Style: Cap,{font},88,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,2,80,80,{mv},1
+Style: Hook,{font},92,&H00FFFFFF,&H00FFFFFF,&H50000000,&H00000000,-1,0,0,0,100,100,0,0,3,22,0,8,110,110,{hook_mv},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -336,9 +343,33 @@ def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars
     return lines
 
 
-def build_ass(words: list[Word], total: float, font: str, path: Path, style: str = "word") -> None:
+EMOJI_RE = re.compile("[\U0001F000-\U0001FFFF☀-➿️‍]+")
+
+
+def hook_text(episode: dict) -> str:
+    """Açılışta gösterilecek kısa kanca yazısı: 'hook' alanı ya da kısa başlık."""
+    text = (episode.get("hook") or "").strip()
+    if not text:
+        title = EMOJI_RE.sub("", episode.get("title", "")).strip()
+        text = title if len(title) <= 48 else ""
+    return EMOJI_RE.sub("", text).strip()
+
+
+def _hook_events(text: str, until: float) -> list[str]:
+    """İlk ~2,5 sn üst bölümde yarı saydam kutu içinde büyük başlık."""
+    if not text:
+        return []
+    t = ass_escape(tr_upper(text))
+    anim = "{\\q0\\fad(120,300)\\fscx92\\fscy92\\t(0,160,\\fscx100\\fscy100)}"
+    return [f"Dialogue: 1,{ts(0)},{ts(until)},Hook,,0,0,0,,{anim}{t}"]
+
+
+def build_ass(words: list[Word], total: float, font: str, path: Path, style: str = "word",
+              hook: str = "") -> None:
     events = _group_events(words, total) if style == "group" else _word_events(words, total)
-    path.write_text(ASS_HEADER.format(W=W, H=H, font=font, mv=CAPTION_MARGIN_V) + "\n".join(events) + "\n", encoding="utf-8")
+    events = _hook_events(hook, min(HOOK_SECONDS, total)) + events
+    header = ASS_HEADER.format(W=W, H=H, font=font, mv=CAPTION_MARGIN_V, hook_mv=HOOK_MARGIN_V)
+    path.write_text(header + "\n".join(events) + "\n", encoding="utf-8")
 
 
 # -------------------------------------------------------------------- montaj
@@ -388,7 +419,8 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         segs.append(render_scene_video(sc, i, length, work))
 
     ass = work / "subs.ass"
-    build_ass(words, total, episode.get("font", "DejaVu Sans"), ass, episode.get("caption_style", "word"))
+    build_ass(words, total, episode.get("font", "DejaVu Sans"), ass, episode.get("caption_style", "word"),
+              hook=hook_text(episode) if episode.get("show_hook", True) else "")
 
     # Görüntü zinciri: seg0 x seg1 x ... -> altyazı
     vchain, last = [], "0:v"
@@ -398,7 +430,13 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         last = label
     fonts_dir = ROOT / "assets" / "fonts"
     sub = f"subtitles={ass.as_posix()}" + (f":fontsdir={fonts_dir.as_posix()}" if fonts_dir.exists() else "")
-    vchain.append(f"[{last}]{sub}[v]")
+    if episode.get("progress_bar", True):
+        # Üst kenarda soldan sağa dolan ince ilerleme çubuğu
+        vchain.append(f"color=c={BAR_COLOR}:s={W}x{BAR_HEIGHT}:r={FPS}:d={total:.3f},format=rgba[bar]")
+        vchain.append(f"[{last}]{sub}[vs]")
+        vchain.append(f"[vs][bar]overlay=x='-w+W*t/{total:.3f}':y=0:eval=frame:shortest=1,format=yuv420p[v]")
+    else:
+        vchain.append(f"[{last}]{sub}[v]")
 
     # Ses: anlatım (+ varsa kısık müzik)
     n = len(segs)

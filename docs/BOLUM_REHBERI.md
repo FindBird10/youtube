@@ -29,6 +29,7 @@ Son 10 yayında sık geçen kategorileri o gün kullanma.
 | Alan | Zorunlu | Açıklama |
 |---|---|---|
 | `title` | ✔ | En fazla ~70 karakter. Merak uyandıran, abartısız, doğru. 1 emoji olabilir. |
+| `hook` | ✔ | Açılışta ilk 2,6 sn ekranın üstünde görünen **2–5 kelimelik** kanca yazısı (ör. "Venüs'te 1 gün > 1 yıl"). Emoji yok. Başlığın kısaltılmış, vurucu hali olsun. |
 | `description` | | 1–3 cümle + `Kaynak: ...`. `#Shorts` otomatik eklenir. |
 | `tags` | | 5–10 etiket. |
 | `scenes` | ✔ | 6–9 sahne. Her sahne: `text` (seslendirilecek metin) ve `search` (Pexels için **İngilizce** 2–3 kelime). |
@@ -39,6 +40,7 @@ Son 10 yayında sık geçen kategorileri o gün kullanma.
 | `privacy` | | `private` / `unlisted` / `public`. Boşsa depo ayarı (varsayılan `private`). |
 | `synthetic_media` | | Gerçekçi görünen yapay/değiştirilmiş görüntü varsa `true`. |
 | `music` | | `false` ise arka plan müziği eklenmez. |
+| `progress_bar` / `show_hook` | | `false` ise üstteki ilerleme çubuğu / açılış kancası kapatılır (varsayılan açık). |
 
 Seslendirme tüm sahneleri **tek parça** okur; sahneler yalnızca görüntünün değiştiği
 yerleri belirler. Bu yüzden sahne metinleri birbirinin devamı gibi akmalı.
