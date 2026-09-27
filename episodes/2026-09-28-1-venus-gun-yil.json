@@ -1,0 +1,49 @@
+{
+  "title": "Venüs'te bir gün, bir yıldan daha uzun sürüyor 🪐",
+  "description": "Venüs kendi etrafında o kadar yavaş ve ters yönde dönüyor ki bir günü, Güneş etrafındaki turundan uzun sürüyor.\n\nKaynak: NASA Science (Venus Facts), NASA Space Place",
+  "tags": [
+    "venüs",
+    "uzay",
+    "gezegenler",
+    "ilginç bilgiler",
+    "astronomi",
+    "güneş sistemi"
+  ],
+  "language": "tr",
+  "voice": "tr-TR-AhmetNeural",
+  "publish_at": "2026-09-28T07:00:00Z",
+  "scenes": [
+    {
+      "text": "Öyle bir gezegen var ki orada bir gün, bir yıldan daha uzun sürüyor.",
+      "search": "planet venus space"
+    },
+    {
+      "text": "Bu gezegen Venüs. Kendi etrafında bir kez dönmesi tam 243 Dünya günü alıyor.",
+      "search": "planet rotating space"
+    },
+    {
+      "text": "Güneş'in etrafındaki turunu ise sadece 225 günde tamamlıyor.",
+      "search": "sun solar system orbit"
+    },
+    {
+      "text": "Yani orada bir yıl dolup doğum günün gelse bile, aynı gün hâlâ bitmemiş olurdu.",
+      "search": "birthday cake candles"
+    },
+    {
+      "text": "Üstelik Venüs ters yönde dönüyor. Orada Güneş batıdan doğup doğudan batar.",
+      "search": "sunrise horizon clouds"
+    },
+    {
+      "text": "Güneş'e en yakın gezegen Merkür ama en sıcağı Venüs. Yüzeyi yaklaşık 467 derece, kurşunu eritecek kadar sıcak.",
+      "search": "molten lava glowing"
+    },
+    {
+      "text": "Kalın karbondioksit atmosferi ısıyı hapsediyor, bulutları ise sülfürik asitten.",
+      "search": "thick yellow clouds"
+    },
+    {
+      "text": "Sence Güneş'in batıdan doğduğu bir yerde yaşamak nasıl olurdu? Yorumlara yaz.",
+      "search": "night sky stars"
+    }
+  ]
+}

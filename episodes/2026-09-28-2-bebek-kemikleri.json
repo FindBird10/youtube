@@ -1,0 +1,53 @@
+{
+  "title": "Bebekler senden daha fazla kemikle doğuyor 👶",
+  "description": "Yenidoğanlarda 275 ile 300 arasında kemik bulunur, yetişkinlerde ise çoğunlukla 206. Aradaki fark nereye gidiyor?\n\nKaynak: Cleveland Clinic (Health Essentials)",
+  "tags": [
+    "insan vücudu",
+    "kemikler",
+    "bebek",
+    "ilginç bilgiler",
+    "anatomi",
+    "bilim"
+  ],
+  "language": "tr",
+  "voice": "tr-TR-AhmetNeural",
+  "publish_at": "2026-09-28T12:00:00Z",
+  "scenes": [
+    {
+      "text": "Bir bebeğin vücudunda, senin vücudundakinden daha fazla kemik var.",
+      "search": "newborn baby sleeping"
+    },
+    {
+      "text": "Yenidoğanlarda 275 ile 300 arasında kemik bulunur. Çoğu yetişkinde ise 206.",
+      "search": "human skeleton model"
+    },
+    {
+      "text": "Peki aradaki kemikler nereye gidiyor? Merak etme, hiçbiri kaybolmuyor, sadece birleşiyor.",
+      "search": "baby hands closeup"
+    },
+    {
+      "text": "Bebeklerin kemiklerinin çoğu, kıkırdak denen sert ama esnek bir dokudan oluşur.",
+      "search": "x ray bones"
+    },
+    {
+      "text": "Bu esneklik, doğum sırasında ve büyürken işe yarar.",
+      "search": "mother holding baby"
+    },
+    {
+      "text": "Zamanla kıkırdak sertleşip kemiğe dönüşür. Küçük kemikler de birleşip büyük kemikleri oluşturur.",
+      "search": "toddler walking first steps"
+    },
+    {
+      "text": "Kafatasındaki bıngıldak denen boşluklar bile, genellikle ilk 1 ya da 2 yılda kapanır.",
+      "search": "baby head closeup"
+    },
+    {
+      "text": "Bu birleşme herkeste farklı hızda ilerler ve çoğu zaman ergenlik dönemine kadar sürer.",
+      "search": "teenager running outdoors"
+    },
+    {
+      "text": "Sence insan vücudunun en şaşırtıcı özelliği hangisi? Yorumlara yaz.",
+      "search": "family walking park"
+    }
+  ]
+}
