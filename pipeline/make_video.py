@@ -1,7 +1,8 @@
 """Bir bölüm JSON dosyasından dikey (1080x1920) YouTube Shorts videosu üretir.
 
 Adımlar:
-  1. Tüm metni tek parça halinde Edge-TTS ile seslendirir (kelime zamanlarıyla).
+  1. Tüm metni tek parça halinde seslendirir (kelime zamanlarıyla): AZURE_SPEECH_KEY
+     tanımlıysa Azure Speech, değilse Edge-TTS.
   2. Kelime zamanlarından sahne sınırlarını bulur.
   3. Her sahne için Pexels'ten dikey stok video indirir (yoksa düz renk arka plan).
   4. Sahneleri hafif yakınlaşma ve yumuşak geçişlerle birleştirir,
@@ -95,6 +96,36 @@ async def _tts(text: str, voice: str, rate: str, out: Path) -> list[Word]:
     return words
 
 
+def _azure_tts(text: str, voice: str, rate: str, out: Path) -> list[Word]:
+    """Azure Speech (resmi servis). AZURE_SPEECH_KEY ve AZURE_SPEECH_REGION gerekir."""
+    from xml.sax.saxutils import escape
+
+    import azure.cognitiveservices.speech as speechsdk
+
+    cfg = speechsdk.SpeechConfig(subscription=os.environ["AZURE_SPEECH_KEY"].strip(),
+                                 region=os.environ.get("AZURE_SPEECH_REGION", "westeurope").strip())
+    cfg.set_speech_synthesis_output_format(speechsdk.SpeechSynthesisOutputFormat.Audio24Khz96KBitRateMonoMp3)
+    synth = speechsdk.SpeechSynthesizer(speech_config=cfg,
+                                        audio_config=speechsdk.audio.AudioOutputConfig(filename=str(out)))
+    words: list[Word] = []
+
+    def on_boundary(evt) -> None:
+        if evt.boundary_type == speechsdk.SpeechSynthesisBoundaryType.Word:
+            start = evt.audio_offset / 1e7
+            words.append(Word(start, start + evt.duration.total_seconds(), evt.text))
+
+    synth.synthesis_word_boundary.connect(on_boundary)
+    lang = "-".join(voice.split("-")[:2])
+    ssml = (f'<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="{lang}">'
+            f'<voice name="{voice}"><prosody rate="{rate}">{escape(text)}</prosody></voice></speak>')
+    res = synth.speak_ssml_async(ssml).get()
+    del synth  # dosyanın diske yazılmasını garanti et
+    if res.reason != speechsdk.ResultReason.SynthesizingAudioCompleted:
+        detail = getattr(res, "cancellation_details", None)
+        raise RuntimeError(f"Azure TTS başarısız: {res.reason} {getattr(detail, 'error_details', '')}")
+    return words
+
+
 def assign_scenes(scenes: list[Scene], words: list[Word], audio_dur: float) -> float:
     """TTS kelimelerini sahnelere dağıtır, sahne başlangıç/sürelerini ayarlar. Toplam süreyi döner."""
     counts = [max(1, len(TOKEN_RE.findall(s.text))) for s in scenes]
@@ -132,14 +163,23 @@ def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: 
         words = [Word(k * 0.36, k * 0.36 + 0.3, t) for k, t in enumerate(tokens)]
     else:
         words = []
-        for attempt in range(3):
+        if os.environ.get("AZURE_SPEECH_KEY", "").strip():
             try:
-                words = asyncio.run(_tts(full_text, voice, rate, mp3))
-                break
-            except Exception as e:  # ağ hatalarında tekrar dene
-                log(f"TTS hatası (deneme {attempt + 1}): {e}")
-                if attempt == 2:
-                    raise
+                words = _azure_tts(full_text, voice, rate, mp3)
+                log(f"Seslendirme: Azure Speech ({voice}, {rate})")
+            except Exception as e:
+                log(f"Azure TTS hatası, Edge-TTS'e geçiliyor: {e}")
+                words = []
+        if not words:
+            for attempt in range(3):
+                try:
+                    words = asyncio.run(_tts(full_text, voice, rate, mp3))
+                    log(f"Seslendirme: Edge-TTS ({voice}, {rate})")
+                    break
+                except Exception as e:  # ağ hatalarında tekrar dene
+                    log(f"TTS hatası (deneme {attempt + 1}): {e}")
+                    if attempt == 2:
+                        raise
     audio_dur = probe_duration(mp3)
     total = assign_scenes(scenes, words, audio_dur)
     for i, sc in enumerate(scenes):

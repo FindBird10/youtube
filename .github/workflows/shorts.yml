@@ -37,7 +37,8 @@ jobs:
       - name: FFmpeg ve yazı tipleri
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core libssl3 ca-certificates
+          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2
 
       - name: Python paketleri
         run: pip install -r requirements.txt
@@ -45,6 +46,8 @@ jobs:
       - name: Videoları üret ve yükle
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION || 'westeurope' }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
