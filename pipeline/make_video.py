@@ -32,6 +32,7 @@ TAIL = 0.5           # son kelimeden sonra bırakılan süre (sn)
 ZOOM = 0.06          # sahne boyunca yakınlaşma miktarı
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_VOICE = "tr-TR-AhmetNeural"
+SENTENCE_PAUSE_MS = 300  # Azure: cümleler arası sessizlik (ms)
 DEFAULT_RATE = "+5%"      # +12% aceleci duruyordu; +5% daha doğal ve akıcı
 FALLBACK_COLORS = ["0x14213d", "0x1b263b", "0x2b2d42", "0x3a0ca3", "0x264653", "0x5f0f40"]
 TOKEN_RE = re.compile(r"[\w'’]+", re.UNICODE)
@@ -116,8 +117,11 @@ def _azure_tts(text: str, voice: str, rate: str, out: Path) -> list[Word]:
 
     synth.synthesis_word_boundary.connect(on_boundary)
     lang = "-".join(voice.split("-")[:2])
-    ssml = (f'<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="{lang}">'
-            f'<voice name="{voice}"><prosody rate="{rate}">{escape(text)}</prosody></voice></speak>')
+    # Cümle arası duraksama kısaltılır; kesik kesik değil akıcı okunur.
+    ssml = (f'<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" '
+            f'xmlns:mstts="http://www.w3.org/2001/mstts" xml:lang="{lang}">'
+            f'<voice name="{voice}"><mstts:silence type="Sentenceboundary-exact" value="{SENTENCE_PAUSE_MS}ms"/>'
+            f'<prosody rate="{rate}">{escape(text)}</prosody></voice></speak>')
     res = synth.speak_ssml_async(ssml).get()
     del synth  # dosyanın diske yazılmasını garanti et
     if res.reason != speechsdk.ResultReason.SynthesizingAudioCompleted:
