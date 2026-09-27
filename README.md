@@ -1,6 +1,10 @@
-# YouTube Shorts otomasyonu
+# YouTube Shorts otomasyonu — BirdsVault
 
-Bölüm dosyası (`episodes/*.json`) → seslendirme → stok görüntü → kelime kelime altyazı → dikey video → YouTube.
+Bölüm dosyası (`episodes/*.json`) → tek parça seslendirme → stok görüntü (yumuşak geçiş + hafif yakınlaşma)
+→ tek kelime büyük altyazı → dikey video → YouTube.
+
+Her sabah 07:50'de (TR) Claude o günün 3 bölümünü yazar; videolar 10:00, 15:00 ve 20:00'de
+yayınlanmak üzere zamanlanır.
 
 ```
 Claude (zamanlanmış görev)          GitHub Actions
@@ -33,7 +37,7 @@ Claude (zamanlanmış görev)          GitHub Actions
 2. Sağ üstteki ⚙️ → **Use your own OAuth credentials** → Client ID ve secret'ı yapıştır.
 3. Soldaki kutuya şunu yaz ve **Authorize APIs**'e bas:
    `https://www.googleapis.com/auth/youtube.upload`
-4. Kanalın bağlı olduğu Google hesabını seç (kanal bir marka hesabıysa onu seç), izin ver.
+4. BirdsVault kanalının bağlı olduğu Google hesabını (birdsvault1@gmail.com) seç, izin ver.
 5. **Exchange authorization code for tokens** → çıkan **Refresh token**'ı kopyala.
 
 > Python kullanmayı tercih edersen: Desktop app türünde istemci oluşturup
@@ -58,8 +62,9 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 
 ## Önemli: API denetimi
 Google'ın denetiminden geçmemiş projelerden yüklenen videolar YouTube tarafından
-**gizli** tutulur. Denetim onaylanana kadar videoları Studio'dan elle "Herkese açık"
-yaparsın (bu aynı zamanda iyi bir kalite kontrolüdür). Herkese açık otomatik yayın için:
+**gizli** tutulur ve zamanlanan saatte de açılmaz. Denetim onaylanana kadar videoları
+Studio'dan elle "Herkese açık" yaparsın (bu aynı zamanda iyi bir kalite kontrolüdür).
+Onaydan sonra `publish_at` saatleri otomatik çalışır. Denetim başvurusu:
 <https://support.google.com/youtube/contact/yt_api_form> (YouTube API Services – Audit and Quota Extension).
 
 ## Arka plan müziği

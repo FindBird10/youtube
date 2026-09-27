@@ -1,14 +1,15 @@
 """Bir bölüm JSON dosyasından dikey (1080x1920) YouTube Shorts videosu üretir.
 
 Adımlar:
-  1. Her sahnenin metnini Edge-TTS ile seslendirir (kelime zamanlarıyla birlikte).
-  2. Her sahne için Pexels'ten dikey stok video indirir (yoksa düz renk arka plan).
-  3. Sahneleri FFmpeg ile birleştirir, kelime kelime vurgulanan altyazıyı yakar.
-  4. İsteğe bağlı olarak assets/music içindeki bir müziği kısık sesle ekler.
+  1. Tüm metni tek parça halinde Edge-TTS ile seslendirir (kelime zamanlarıyla).
+  2. Kelime zamanlarından sahne sınırlarını bulur.
+  3. Her sahne için Pexels'ten dikey stok video indirir (yoksa düz renk arka plan).
+  4. Sahneleri hafif yakınlaşma ve yumuşak geçişlerle birleştirir,
+     kelime kelime altyazıyı yakar, isteğe bağlı arka plan müziği ekler.
 
 Kullanım:
-  python pipeline/make_video.py episodes/2026-09-29.json --out build/
-  python pipeline/make_video.py episodes/ornek.json --offline   # internetsiz test
+  python pipeline/make_video.py episodes/2026-09-29-konu.json --out build/
+  python pipeline/make_video.py episodes/_ornek.json --offline   # internetsiz test
 """
 from __future__ import annotations
 
@@ -25,9 +26,14 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 W, H, FPS = 1080, 1920, 30
+XFADE = 0.4          # sahne geçişi (sn)
+TAIL = 0.5           # son kelimeden sonra bırakılan süre (sn)
+ZOOM = 0.06          # sahne boyunca yakınlaşma miktarı
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_VOICE = "tr-TR-AhmetNeural"
+DEFAULT_RATE = "+12%"
 FALLBACK_COLORS = ["0x14213d", "0x1b263b", "0x2b2d42", "0x3a0ca3", "0x264653", "0x5f0f40"]
+TOKEN_RE = re.compile(r"[\w'’]+", re.UNICODE)
 
 
 @dataclass
@@ -41,10 +47,10 @@ class Word:
 class Scene:
     text: str
     search: str
-    audio: Path | None = None
+    start: float = 0.0
     duration: float = 0.0
-    words: list[Word] = field(default_factory=list)
     clip: Path | None = None
+    words: list[Word] = field(default_factory=list)
 
 
 # ----------------------------------------------------------------- yardımcılar
@@ -74,54 +80,87 @@ def log(msg: str) -> None:
 
 
 # --------------------------------------------------------------- seslendirme
-async def _tts(text: str, voice: str, rate: str, out: Path) -> list[tuple[float, float, str]]:
+async def _tts(text: str, voice: str, rate: str, out: Path) -> list[Word]:
     import edge_tts
 
     comm = edge_tts.Communicate(text, voice, rate=rate, boundary="WordBoundary")
-    words: list[tuple[float, float, str]] = []
+    words: list[Word] = []
     with open(out, "wb") as f:
         async for chunk in comm.stream():
             if chunk["type"] == "audio":
                 f.write(chunk["data"])
             elif chunk["type"] == "WordBoundary":
                 start = chunk["offset"] / 1e7
-                words.append((start, start + chunk["duration"] / 1e7, chunk["text"]))
+                words.append(Word(start, start + chunk["duration"] / 1e7, chunk["text"]))
     return words
 
 
-def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: bool) -> None:
+def assign_scenes(scenes: list[Scene], words: list[Word], audio_dur: float) -> float:
+    """TTS kelimelerini sahnelere dağıtır, sahne başlangıç/sürelerini ayarlar. Toplam süreyi döner."""
+    counts = [max(1, len(TOKEN_RE.findall(s.text))) for s in scenes]
+    if sum(counts) != len(words):
+        # Sayılar tutmuyorsa (ör. TTS bir kelimeyi bölmüşse) karakter oranına göre dağıt
+        chars = [max(1, len(s.text)) for s in scenes]
+        total_c, acc, bounds = sum(chars), 0, [0]
+        for c in chars:
+            acc += c
+            bounds.append(round(acc / total_c * len(words)))
+        counts = [b - a for a, b in zip(bounds, bounds[1:])]
+        log(f"Uyarı: kelime sayısı eşleşmedi, orana göre dağıtıldı {counts}")
+
+    idx = 0
+    for sc, n in zip(scenes, counts):
+        sc.words = words[idx: idx + n]
+        idx += n
+    total = audio_dur + TAIL
     for i, sc in enumerate(scenes):
-        mp3 = work / f"voice_{i:02d}.mp3"
-        if offline:
-            # İnternetsiz test: kelime başına ~0.4 sn sessizlik + sahte zamanlar
-            tokens = sc.text.split()
-            dur = max(1.5, 0.4 * len(tokens))
-            run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono",
-                 "-t", f"{dur:.2f}", "-q:a", "9", str(mp3)])
-            step = dur / len(tokens)
-            raw = [(k * step, (k + 1) * step, t) for k, t in enumerate(tokens)]
-        else:
-            raw = []
-            for attempt in range(3):
-                try:
-                    raw = asyncio.run(_tts(sc.text, voice, rate, mp3))
-                    break
-                except Exception as e:  # ağ hatalarında tekrar dene
-                    log(f"TTS hatası (deneme {attempt + 1}): {e}")
-                    if attempt == 2:
-                        raise
-        sc.audio = mp3
-        sc.duration = probe_duration(mp3) + 0.25  # sahneler arası kısa nefes
-        sc.words = [Word(a, b, t) for a, b, t in raw]
-        log(f"Sahne {i + 1}: {sc.duration:.1f} sn, {len(sc.words)} kelime")
+        sc.start = 0.0 if i == 0 else (sc.words[0].start if sc.words else scenes[i - 1].start + 1.0)
+    for i, sc in enumerate(scenes):
+        nxt = scenes[i + 1].start if i + 1 < len(scenes) else total
+        sc.duration = max(0.8, nxt - sc.start)
+    return total
+
+
+def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: bool) -> tuple[Path, list[Word], float]:
+    mp3 = work / "narration.mp3"
+    full_text = " ".join(s.text for s in scenes)
+    if offline:
+        tokens = TOKEN_RE.findall(full_text)
+        dur = 0.36 * len(tokens)
+        run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono",
+             "-t", f"{dur:.2f}", "-q:a", "9", str(mp3)])
+        words = [Word(k * 0.36, k * 0.36 + 0.3, t) for k, t in enumerate(tokens)]
+    else:
+        words = []
+        for attempt in range(3):
+            try:
+                words = asyncio.run(_tts(full_text, voice, rate, mp3))
+                break
+            except Exception as e:  # ağ hatalarında tekrar dene
+                log(f"TTS hatası (deneme {attempt + 1}): {e}")
+                if attempt == 2:
+                    raise
+    audio_dur = probe_duration(mp3)
+    total = assign_scenes(scenes, words, audio_dur)
+    for i, sc in enumerate(scenes):
+        log(f"Sahne {i + 1}: {sc.start:.1f}–{sc.start + sc.duration:.1f} sn, {len(sc.words)} kelime")
+    return mp3, words, total
 
 
 # ------------------------------------------------------------- stok görüntü
 def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
+    if offline:
+        # İnternetsiz test: tek sahnelere test deseni klibi ver (geçiş/zoom görülsün)
+        for i, sc in enumerate(scenes):
+            if i % 2 == 0:
+                p = work / f"clip_{i:02d}.mp4"
+                run(["ffmpeg", "-y", "-f", "lavfi", "-i", "testsrc2=s=1280x720:r=25",
+                     "-t", "3", "-pix_fmt", "yuv420p", str(p)])
+                sc.clip = p
+        return
     key = os.environ.get("PEXELS_API_KEY", "").strip()
-    if offline or not key:
-        if not offline:
-            log("PEXELS_API_KEY yok; düz renk arka plan kullanılacak.")
+    if not key:
+        log("PEXELS_API_KEY yok; düz renk arka plan kullanılacak.")
         return
     import requests
 
@@ -136,7 +175,8 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
         return r.json().get("videos", [])
 
     for i, sc in enumerate(scenes):
-        queries = [sc.search, " ".join(sc.search.split()[:2]), sc.search.split()[0]]
+        need = sc.duration + XFADE
+        queries = [sc.search, " ".join(sc.search.split()[:2]), (sc.search.split() or [""])[0]]
         chosen = None
         for q in dict.fromkeys(q for q in queries if q):
             try:
@@ -144,8 +184,8 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
             except Exception as e:
                 log(f"Pexels arama hatası '{q}': {e}")
                 continue
-            # Sahneden uzun olanları tercih et, ilk birkaç sonuç arasından rastgele seç
-            long_enough = [v for v in vids if v.get("duration", 0) >= sc.duration]
+            # Sahneden uzun olanları tercih et (döngüye girmesin), ilk birkaçı arasından rastgele seç
+            long_enough = [v for v in vids if v.get("duration", 0) >= need]
             pool = (long_enough or vids)[:5]
             if pool:
                 chosen = random.choice(pool)
@@ -158,9 +198,8 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
         portrait = [f for f in files if f["height"] >= f["width"]] or files
         # 1080 genişliğe en yakın, ondan küçük olmayanı seç
         portrait.sort(key=lambda f: (f["width"] < 1080, abs(f["width"] - 1080)))
-        url = portrait[0]["link"]
         dst = work / f"clip_{i:02d}.mp4"
-        with sess.get(url, stream=True, timeout=120) as r:
+        with sess.get(portrait[0]["link"], stream=True, timeout=120) as r:
             r.raise_for_status()
             with open(dst, "wb") as f:
                 for part in r.iter_content(1 << 20):
@@ -181,23 +220,43 @@ def ts(t: float) -> str:
     return f"{int(h)}:{int(m):02d}:{s:05.2f}"
 
 
-def build_ass(words: list[Word], total: float, font: str, path: Path,
-              max_words: int = 3, max_chars: int = 18) -> None:
-    header = f"""[Script Info]
+ASS_HEADER = """[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
 PlayResY: {H}
-WrapStyle: 0
+WrapStyle: 2
 ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Word,{font},130,&H0000E5FF,&H0000E5FF,&H00000000,&H96000000,-1,0,0,0,100,100,1,0,1,9,4,5,40,40,0,1
 Style: Cap,{font},92,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,7,3,5,80,80,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
-    # Kelimeleri kısa gruplara böl
+
+
+def _word_events(words: list[Word], total: float) -> list[str]:
+    """Tek kelime, büyük, sarı; her kelimede küçük 'pop'."""
+    lines = []
+    for i, w in enumerate(words):
+        text = ass_escape(tr_upper(w.text.strip()))
+        if not text:
+            continue
+        nxt = words[i + 1].start if i + 1 < len(words) else total
+        end = min(nxt, w.end + 0.5, total)
+        if end - w.start < 0.05:
+            continue
+        # Uzun kelimeler ekrandan taşmasın
+        fs = min(130, int(960 / (0.72 * max(1, len(text)))))
+        pop = "{\\fs%d\\fscx125\\fscy125\\t(0,90,\\fscx100\\fscy100)}" % fs
+        lines.append(f"Dialogue: 0,{ts(w.start)},{ts(end)},Word,,0,0,0,,{pop}{text}")
+    return lines
+
+
+def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars: int = 18) -> list[str]:
+    """Eski stil: 2–3 kelimelik beyaz grup, konuşulan kelime sarı."""
     groups: list[list[Word]] = []
     cur: list[Word] = []
     for w in words:
@@ -209,46 +268,47 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             groups.append(cur)
             cur = []
         cur.append(w)
-        if re.search(r"[.!?…,;:]$", clean):
-            groups.append(cur)
-            cur = []
     if cur:
         groups.append(cur)
-
     lines = []
     for gi, g in enumerate(groups):
-        g_end = groups[gi + 1][0].start if gi + 1 < len(groups) else min(total, g[-1].end + 0.4)
-        # Çok uzun sessizliklerde altyazı ekranda asılı kalmasın
+        g_end = groups[gi + 1][0].start if gi + 1 < len(groups) else total
         g_end = min(g_end, g[-1].end + 0.6)
         for wi, w in enumerate(g):
-            start = w.start
             end = g[wi + 1].start if wi + 1 < len(g) else g_end
-            if end <= start:
+            if end <= w.start:
                 continue
             parts = []
             for k, x in enumerate(g):
                 t = ass_escape(tr_upper(x.text))
                 parts.append("{\\c&H00E5FF&}" + t + "{\\c&HFFFFFF&}" if k == wi else t)
-            pop = "{\\fscx108\\fscy108\\t(0,90,\\fscx100\\fscy100)}" if wi == 0 else ""
-            lines.append(f"Dialogue: 0,{ts(start)},{ts(end)},Cap,,0,0,0,,{pop}{' '.join(parts)}")
-    path.write_text(header + "\n".join(lines) + "\n", encoding="utf-8")
+            lines.append(f"Dialogue: 0,{ts(w.start)},{ts(end)},Cap,,0,0,0,,{' '.join(parts)}")
+    return lines
+
+
+def build_ass(words: list[Word], total: float, font: str, path: Path, style: str = "word") -> None:
+    events = _group_events(words, total) if style == "group" else _word_events(words, total)
+    path.write_text(ASS_HEADER.format(W=W, H=H, font=font) + "\n".join(events) + "\n", encoding="utf-8")
 
 
 # -------------------------------------------------------------------- montaj
-def render_scene_video(sc: Scene, idx: int, work: Path) -> Path:
+def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
+    """Sahne parçasını üretir: ortadan kırpma + yavaş yakınlaşma."""
     out = work / f"seg_{idx:02d}.mp4"
-    vf = (f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-          f"fps={FPS},setsar=1,format=yuv420p")
+    frames = max(1, round(length * FPS))
+    bw, bh = int(W * 1.1) // 2 * 2, int(H * 1.1) // 2 * 2
+    zoom = (f"zoompan=z='1+{ZOOM}*on/{frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+            f":d=1:s={W}x{H}:fps={FPS}")
     if sc.clip:
         src = ["-stream_loop", "-1", "-i", str(sc.clip)]
-        # %8 yakınlaştırıp ortadan kırp: kenarlardaki filigran/siyah bantlar gitsin
-        vf = (f"scale={int(W * 1.08)}:{int(H * 1.08)}:force_original_aspect_ratio=increase,"
-              f"crop={W}:{H}:(iw-{W})/2:(ih-{H})/2,fps={FPS},setsar=1,format=yuv420p")
+        vf = (f"fps={FPS},scale={bw}:{bh}:force_original_aspect_ratio=increase,"
+              f"crop={bw}:{bh},{zoom},setsar=1,format=yuv420p")
     else:
         color = FALLBACK_COLORS[idx % len(FALLBACK_COLORS)]
-        src = ["-f", "lavfi", "-i", f"color=c={color}:s={W}x{H}:r={FPS}"]
-    run(["ffmpeg", "-y", *src, "-t", f"{sc.duration:.3f}", "-vf", vf, "-an",
-         "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", str(out)])
+        src = ["-f", "lavfi", "-i", f"color=c={color}:s={bw}x{bh}:r={FPS}"]
+        vf = f"{zoom},setsar=1,format=yuv420p"
+    run(["ffmpeg", "-y", *src, "-vf", vf, "-frames:v", str(frames), "-an",
+         "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", str(out)])
     return out
 
 
@@ -264,62 +324,53 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     if not scenes:
         raise ValueError("Bölümde hiç sahne yok.")
 
-    synthesize(scenes, episode.get("voice", DEFAULT_VOICE), episode.get("rate", "+8%"), work, offline)
-    total = sum(s.duration for s in scenes)
+    narration, words, total = synthesize(
+        scenes, episode.get("voice", DEFAULT_VOICE), episode.get("rate", DEFAULT_RATE), work, offline)
     if total > 59:
         log(f"UYARI: video {total:.1f} sn; Shorts için 60 saniyenin altı önerilir.")
     fetch_clips(scenes, work, offline)
 
-    # Kelime zamanlarını videonun geneline taşı
-    all_words: list[Word] = []
-    t0 = 0.0
-    for sc in scenes:
-        all_words += [Word(w.start + t0, w.end + t0, w.text) for w in sc.words]
-        t0 += sc.duration
-
-    # Ses: sahne seslerini tam sahne süresine uzatıp birleştir
-    wavs = []
+    # Son sahne dışındaki parçalar geçiş süresi kadar uzun üretilir, böylece
+    # xfade sonrası toplam süre sesle birebir aynı kalır.
+    segs = []
     for i, sc in enumerate(scenes):
-        wav = work / f"voice_{i:02d}.wav"
-        run(["ffmpeg", "-y", "-i", str(sc.audio), "-af", "apad", "-t", f"{sc.duration:.3f}",
-             "-ar", "44100", "-ac", "2", str(wav)])
-        wavs.append(wav)
-    (work / "audio.txt").write_text("".join(f"file '{p.name}'\n" for p in wavs))
-    narration = work / "narration.wav"
-    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(work / "audio.txt"),
-         "-c", "copy", str(narration)])
-
-    # Görüntü: sahne parçalarını üret ve birleştir
-    segs = [render_scene_video(sc, i, work) for i, sc in enumerate(scenes)]
-    (work / "video.txt").write_text("".join(f"file '{p.name}'\n" for p in segs))
-    video = work / "video.mp4"
-    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(work / "video.txt"),
-         "-c", "copy", str(video)])
+        length = sc.duration + (XFADE if i < len(scenes) - 1 else 0.0)
+        segs.append(render_scene_video(sc, i, length, work))
 
     ass = work / "subs.ass"
-    build_ass(all_words, total, episode.get("font", "DejaVu Sans"), ass)
+    build_ass(words, total, episode.get("font", "DejaVu Sans"), ass, episode.get("caption_style", "word"))
 
-    # Arka plan müziği (varsa)
+    # Görüntü zinciri: seg0 x seg1 x ... -> altyazı
+    vchain, last = [], "0:v"
+    for k in range(1, len(segs)):
+        label = f"x{k}"
+        vchain.append(f"[{last}][{k}:v]xfade=transition=fade:duration={XFADE}:offset={scenes[k].start:.3f}[{label}]")
+        last = label
+    fonts_dir = ROOT / "assets" / "fonts"
+    sub = f"subtitles={ass.as_posix()}" + (f":fontsdir={fonts_dir.as_posix()}" if fonts_dir.exists() else "")
+    vchain.append(f"[{last}]{sub}[v]")
+
+    # Ses: anlatım (+ varsa kısık müzik)
+    n = len(segs)
     music_dir = ROOT / "assets" / "music"
     tracks = sorted(p for p in music_dir.glob("*") if p.suffix.lower() in {".mp3", ".wav", ".m4a", ".ogg"}) \
         if music_dir.exists() and episode.get("music", True) else []
+    inputs = []
+    for p in segs:
+        inputs += ["-i", str(p)]
+    inputs += ["-i", str(narration)]
+    if tracks:
+        inputs += ["-stream_loop", "-1", "-i", str(random.choice(tracks))]
+        achain = (f"[{n}:a]apad[nar];[{n + 1}:a]volume=0.12,afade=t=out:st={max(0.0, total - 1.2):.2f}:d=1.2[m];"
+                  f"[nar][m]amix=inputs=2:duration=first:dropout_transition=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]")
+    else:
+        achain = f"[{n}:a]apad,loudnorm=I=-14:TP=-1.5:LRA=11[a]"
 
     final = out_dir / f"{slug}.mp4"
-    cmd = ["ffmpeg", "-y", "-i", str(video), "-i", str(narration)]
-    if tracks:
-        cmd += ["-stream_loop", "-1", "-i", str(random.choice(tracks))]
-        afilter = ("[2:a]volume=0.12,afade=t=out:st={st:.2f}:d=1.2[m];"
-                   "[1:a][m]amix=inputs=2:duration=first:dropout_transition=0,"
-                   "loudnorm=I=-14:TP=-1.5:LRA=11[a]").format(st=max(0.0, total - 1.2))
-    else:
-        afilter = "[1:a]loudnorm=I=-14:TP=-1.5:LRA=11[a]"
-    fonts_dir = ROOT / "assets" / "fonts"
-    sub_opts = f"subtitles={ass.as_posix()}" + (f":fontsdir={fonts_dir.as_posix()}" if fonts_dir.exists() else "")
-    cmd += ["-filter_complex", f"[0:v]{sub_opts}[v];{afilter}",
-            "-map", "[v]", "-map", "[a]", "-t", f"{total:.3f}",
-            "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
-            "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(final)]
-    run(cmd)
+    run(["ffmpeg", "-y", *inputs, "-filter_complex", ";".join(vchain + [achain]),
+         "-map", "[v]", "-map", "[a]", "-t", f"{total:.3f}",
+         "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", "-r", str(FPS),
+         "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-movflags", "+faststart", str(final)])
     log(f"Hazır: {final} ({total:.1f} sn)")
     return final
 
@@ -337,7 +388,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("episode", type=Path)
     ap.add_argument("--out", type=Path, default=ROOT / "build")
-    ap.add_argument("--offline", action="store_true", help="İnternetsiz test (sessiz ses, düz renk)")
+    ap.add_argument("--offline", action="store_true", help="İnternetsiz test (sessiz ses, test deseni)")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     render(load_episode(a.episode), a.out, offline=a.offline)

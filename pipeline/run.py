@@ -74,14 +74,16 @@ def main() -> int:
             ep = load_episode(p)
             video = render(ep, out)
             if can_upload:
-                vid = upload(video, ep)
+                vid, channel = upload(video, ep)
                 state.append({
                     "slug": ep["_slug"], "title": ep["title"], "video_id": vid,
-                    "url": f"https://youtube.com/shorts/{vid}",
+                    "url": f"https://youtube.com/shorts/{vid}", "channel": channel,
+                    "publish_at": ep.get("publish_at"),
                     "uploaded_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                 })
                 save_state(state)
-                summary(f"- ✅ **{ep['title']}** → https://youtube.com/shorts/{vid}")
+                when = f", yayın: {ep['publish_at']}" if ep.get("publish_at") else ""
+                summary(f"- ✅ **{ep['title']}** → https://youtube.com/shorts/{vid} (kanal: **{channel}**{when})")
             else:
                 summary(f"- 🎬 **{ep['title']}** üretildi: `build/{video.name}`")
         except Exception as e:

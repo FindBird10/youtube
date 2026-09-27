@@ -1,39 +1,59 @@
-# Bölüm yazma rehberi
+# Bölüm yazma rehberi — BirdsVault
+
+Kanal: **BirdsVault** · Konu: **genel ilginç bilgiler** · Dil: Türkçe · Günde **3** video.
 
 Her Short, `episodes/` klasöründe tek bir JSON dosyasıdır. Dosya `main` dalına
 gönderildiğinde GitHub Actions videoyu üretir ve YouTube'a yükler.
 
+## Günlük akış
+
+Her gün 3 bölüm yazılır ve `publish_at` ile zamanlanır (Türkiye saati = UTC+3):
+
+| Sıra | Türkiye saati | `publish_at` (UTC) |
+|---|---|---|
+| 1 | 10:00 | `YYYY-AA-GGT07:00:00Z` |
+| 2 | 15:00 | `YYYY-AA-GGT12:00:00Z` |
+| 3 | 20:00 | `YYYY-AA-GGT17:00:00Z` |
+
+Üç bölüm **farklı kategorilerden** olmalı. Kategoriler: hayvanlar, uzay, insan vücudu,
+tarih, bilim, coğrafya/doğa olayları, teknoloji/icatlar, yemek/gündelik hayat.
+Son 10 yayında sık geçen kategorileri o gün kullanma.
+
 ## Dosya adı
 
-`episodes/YYYY-AA-GG-kisa-konu.json` — ör. `episodes/2026-09-29-ahtapot-kalp.json`.
-Adı `_` ile başlayan dosyalar işlenmez (taslak/örnek için).
+`episodes/YYYY-AA-GG-N-kisa-konu.json` — ör. `episodes/2026-09-29-1-ahtapot-kalp.json`
+(N = gün içindeki sıra). Adı `_` ile başlayan dosyalar işlenmez (taslak/örnek için).
 
 ## Alanlar
 
 | Alan | Zorunlu | Açıklama |
 |---|---|---|
-| `title` | ✔ | En fazla ~70 karakter. Merak uyandıran, abartısız, doğru. |
-| `description` | | 1–3 cümle + kaynak. `#Shorts` otomatik eklenir. |
+| `title` | ✔ | En fazla ~70 karakter. Merak uyandıran, abartısız, doğru. 1 emoji olabilir. |
+| `description` | | 1–3 cümle + `Kaynak: ...`. `#Shorts` otomatik eklenir. |
 | `tags` | | 5–10 etiket. |
-| `scenes` | ✔ | 6–10 sahne. Her sahne: `text` (seslendirilecek metin) ve `search` (Pexels için **İngilizce** 2–3 kelime). |
-| `voice` | | Varsayılan `tr-TR-AhmetNeural`. Kadın sesi: `tr-TR-EmelNeural`. |
-| `rate` | | Konuşma hızı, varsayılan `+8%`. |
+| `scenes` | ✔ | 6–9 sahne. Her sahne: `text` (seslendirilecek metin) ve `search` (Pexels için **İngilizce** 2–3 kelime). |
+| `publish_at` | | ISO UTC saat, yukarıdaki tabloya göre. |
+| `voice` | | Varsayılan `tr-TR-AhmetNeural`. |
+| `rate` | | Konuşma hızı, varsayılan `+12%`. |
+| `caption_style` | | `word` (varsayılan: tek kelime, büyük, sarı) veya `group`. |
 | `privacy` | | `private` / `unlisted` / `public`. Boşsa depo ayarı (varsayılan `private`). |
-| `publish_at` | | ISO saat (ör. `2026-09-29T15:00:00Z`) — zamanlanmış yayın. |
 | `synthetic_media` | | Gerçekçi görünen yapay/değiştirilmiş görüntü varsa `true`. |
 | `music` | | `false` ise arka plan müziği eklenmez. |
 
+Seslendirme tüm sahneleri **tek parça** okur; sahneler yalnızca görüntünün değiştiği
+yerleri belirler. Bu yüzden sahne metinleri birbirinin devamı gibi akmalı.
+
 ## İçerik kuralları
 
-1. **Süre:** Toplam 90–130 kelime (≈35–55 sn). 60 saniyeyi geçme.
+1. **Süre:** Toplam 90–130 kelime (≈35–50 sn). 60 saniyeyi geçme.
 2. **Kanca:** İlk sahne tek başına merak uyandırmalı; selamlama, "bugün size..." yok.
-3. **Doğruluk:** Her iddia güvenilir bir kaynakla doğrulanmış olmalı; kaynağı açıklamaya yaz.
-   Emin olmadığın bilgiyi kullanma.
+3. **Doğruluk:** Her iddiayı güvenilir bir kaynakla (ansiklopedi, üniversite, NASA, NatGeo,
+   Smithsonian vb.) web aramasıyla doğrula; kaynağı açıklamaya yaz. Emin olmadığın bilgiyi kullanma.
 4. **Tekrar yok:** `state/published.json` ve mevcut `episodes/` dosyalarındaki konuları tekrarlama.
-   Anlatım kalıbını da çeşitlendir (soru, liste, karşılaştırma, mini hikâye...).
-5. **Sahne metni:** Kısa, konuşma diliyle cümleler. Rakamları yazıyla değil rakamla yaz ("3 kalp").
+   Anlatım kalıbını da çeşitlendir (soru, liste, karşılaştırma, mini hikâye, "yanlış bilinen"...).
+5. **Sahne metni:** Kısa, konuşma diliyle cümleler. Sayıları rakamla yaz ("3 kalp").
 6. **Görsel arama:** `search` somut ve görüntülenebilir olmalı ("octopus crawling seabed"),
-   soyut olmamalı ("biology fact").
+   soyut olmamalı ("biology fact"). Her sahnede farklı bir görüntü iste.
 7. **Kapanış:** Son sahne yoruma veya takibe davet eden doğal bir soru.
 8. Telif içeren isim, marka, gerçek kişiler hakkında iddia, tıbbi/finansal tavsiye yok.
 

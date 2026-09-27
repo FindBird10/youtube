@@ -8,6 +8,7 @@ videolar YouTube tarafından zorunlu olarak "gizli" (private) tutulur.
 """
 from __future__ import annotations
 
+import datetime as dt
 import os
 import time
 from pathlib import Path
@@ -34,7 +35,7 @@ def _service():
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
-def upload(video: Path, episode: dict) -> str:
+def upload(video: Path, episode: dict) -> tuple[str, str]:
     from googleapiclient.errors import HttpError
     from googleapiclient.http import MediaFileUpload
 
@@ -47,10 +48,17 @@ def upload(video: Path, episode: dict) -> str:
         "selfDeclaredMadeForKids": bool(episode.get("made_for_kids", False)),
         "containsSyntheticMedia": bool(episode.get("synthetic_media", False)),
     }
-    if episode.get("publish_at"):
-        # Zamanlanmış yayın yalnızca "private" durumla çalışır
-        status["privacyStatus"] = "private"
-        status["publishAt"] = episode["publish_at"]
+    pub = episode.get("publish_at")
+    if pub:
+        when = dt.datetime.fromisoformat(pub.replace("Z", "+00:00"))
+        if when.tzinfo is None:
+            when = when.replace(tzinfo=dt.timezone.utc)
+        if when > dt.datetime.now(dt.timezone.utc) + dt.timedelta(minutes=10):
+            # Zamanlanmış yayın yalnızca "private" durumla çalışır
+            status["privacyStatus"] = "private"
+            status["publishAt"] = when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        else:
+            print(f"[upload] publish_at geçmişte ({pub}); zamanlama atlandı.", flush=True)
 
     lang = episode.get("language", "tr")
     body = {
@@ -80,5 +88,7 @@ def upload(video: Path, episode: dict) -> str:
                 continue
             raise
     vid = response["id"]
-    print(f"[upload] Yüklendi: https://youtube.com/shorts/{vid} (durum: {status['privacyStatus']})", flush=True)
-    return vid
+    channel = response.get("snippet", {}).get("channelTitle") or response.get("snippet", {}).get("channelId", "?")
+    print(f"[upload] Yüklendi: https://youtube.com/shorts/{vid} kanal: {channel} "
+          f"(durum: {status['privacyStatus']})", flush=True)
+    return vid, channel
