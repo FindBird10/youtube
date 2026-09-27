@@ -31,7 +31,7 @@ TAIL = 0.5           # son kelimeden sonra bırakılan süre (sn)
 ZOOM = 0.06          # sahne boyunca yakınlaşma miktarı
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_VOICE = "tr-TR-AhmetNeural"
-DEFAULT_RATE = "+12%"
+DEFAULT_RATE = "+5%"      # +12% aceleci duruyordu; +5% daha doğal ve akıcı
 FALLBACK_COLORS = ["0x14213d", "0x1b263b", "0x2b2d42", "0x3a0ca3", "0x264653", "0x5f0f40"]
 TOKEN_RE = re.compile(r"[\w'’]+", re.UNICODE)
 
@@ -220,6 +220,12 @@ def ts(t: float) -> str:
     return f"{int(h)}:{int(m):02d}:{s:05.2f}"
 
 
+# Altyazı alt kenardan bu kadar yukarıda durur (1920 px'lik dikey video).
+# Shorts arayüzü (başlık, butonlar) en alttaki ~%25'i kapladığı için 560 px güvenli bölge.
+CAPTION_MARGIN_V = 560
+# Vurgu rengi (ASS biçimi &HBBGGRR): yumuşak açık turkuaz; göz yormayan, beyazla uyumlu.
+HIGHLIGHT = "&HE8D9A8&"
+
 ASS_HEADER = """[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -229,8 +235,8 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Word,{font},130,&H0000E5FF,&H0000E5FF,&H00000000,&H96000000,-1,0,0,0,100,100,1,0,1,9,4,5,40,40,0,1
-Style: Cap,{font},92,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,7,3,5,80,80,0,1
+Style: Word,{font},112,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,1,0,1,6,3,2,60,60,{mv},1
+Style: Cap,{font},88,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,2,80,80,{mv},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -238,7 +244,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 def _word_events(words: list[Word], total: float) -> list[str]:
-    """Tek kelime, büyük, sarı; her kelimede küçük 'pop'."""
+    """Tek kelime, beyaz, ekranın alt-ortasında; hafif 'pop'."""
     lines = []
     for i, w in enumerate(words):
         text = ass_escape(tr_upper(w.text.strip()))
@@ -249,14 +255,14 @@ def _word_events(words: list[Word], total: float) -> list[str]:
         if end - w.start < 0.05:
             continue
         # Uzun kelimeler ekrandan taşmasın
-        fs = min(130, int(960 / (0.72 * max(1, len(text)))))
-        pop = "{\\fs%d\\fscx125\\fscy125\\t(0,90,\\fscx100\\fscy100)}" % fs
+        fs = min(112, int(960 / (0.72 * max(1, len(text)))))
+        pop = "{\\fs%d\\fscx108\\fscy108\\t(0,80,\\fscx100\\fscy100)}" % fs
         lines.append(f"Dialogue: 0,{ts(w.start)},{ts(end)},Word,,0,0,0,,{pop}{text}")
     return lines
 
 
 def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars: int = 18) -> list[str]:
-    """Eski stil: 2–3 kelimelik beyaz grup, konuşulan kelime sarı."""
+    """2–3 kelimelik beyaz grup, konuşulan kelime yumuşak vurgu renginde."""
     groups: list[list[Word]] = []
     cur: list[Word] = []
     for w in words:
@@ -281,14 +287,14 @@ def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars
             parts = []
             for k, x in enumerate(g):
                 t = ass_escape(tr_upper(x.text))
-                parts.append("{\\c&H00E5FF&}" + t + "{\\c&HFFFFFF&}" if k == wi else t)
+                parts.append("{\\c" + HIGHLIGHT + "}" + t + "{\\c&HFFFFFF&}" if k == wi else t)
             lines.append(f"Dialogue: 0,{ts(w.start)},{ts(end)},Cap,,0,0,0,,{' '.join(parts)}")
     return lines
 
 
 def build_ass(words: list[Word], total: float, font: str, path: Path, style: str = "word") -> None:
     events = _group_events(words, total) if style == "group" else _word_events(words, total)
-    path.write_text(ASS_HEADER.format(W=W, H=H, font=font) + "\n".join(events) + "\n", encoding="utf-8")
+    path.write_text(ASS_HEADER.format(W=W, H=H, font=font, mv=CAPTION_MARGIN_V) + "\n".join(events) + "\n", encoding="utf-8")
 
 
 # -------------------------------------------------------------------- montaj

@@ -34,8 +34,8 @@ Son 10 yayında sık geçen kategorileri o gün kullanma.
 | `scenes` | ✔ | 6–9 sahne. Her sahne: `text` (seslendirilecek metin) ve `search` (Pexels için **İngilizce** 2–3 kelime). |
 | `publish_at` | | ISO UTC saat, yukarıdaki tabloya göre. |
 | `voice` | | Varsayılan `tr-TR-AhmetNeural`. |
-| `rate` | | Konuşma hızı, varsayılan `+12%`. |
-| `caption_style` | | `word` (varsayılan: tek kelime, büyük, sarı) veya `group`. |
+| `rate` | | Konuşma hızı, varsayılan `+5%` (doğal ve akıcı). Gerekmedikçe değiştirme. |
+| `caption_style` | | `word` (varsayılan: tek kelime, beyaz, ekranın alt-ortasında) veya `group`. |
 | `privacy` | | `private` / `unlisted` / `public`. Boşsa depo ayarı (varsayılan `private`). |
 | `synthetic_media` | | Gerçekçi görünen yapay/değiştirilmiş görüntü varsa `true`. |
 | `music` | | `false` ise arka plan müziği eklenmez. |
@@ -51,7 +51,9 @@ yerleri belirler. Bu yüzden sahne metinleri birbirinin devamı gibi akmalı.
    Smithsonian vb.) web aramasıyla doğrula; kaynağı açıklamaya yaz. Emin olmadığın bilgiyi kullanma.
 4. **Tekrar yok:** `state/published.json` ve mevcut `episodes/` dosyalarındaki konuları tekrarlama.
    Anlatım kalıbını da çeşitlendir (soru, liste, karşılaştırma, mini hikâye, "yanlış bilinen"...).
-5. **Sahne metni:** Kısa, konuşma diliyle cümleler. Sayıları rakamla yaz ("3 kalp").
+5. **Sahne metni:** Konuşma diliyle, akıcı cümleler. Sayıları rakamla yaz ("3 kalp").
+   Arka arkaya çok kısa cümle dizme; her nokta seste duraksama yaratır. Birbirine bağlı
+   fikirleri virgülle ya da "ve, ama, çünkü" ile tek cümlede birleştir.
 6. **Görsel arama:** `search` somut ve görüntülenebilir olmalı ("octopus crawling seabed"),
    soyut olmamalı ("biology fact"). Her sahnede farklı bir görüntü iste.
 7. **Kapanış:** Son sahne yoruma veya takibe davet eden doğal bir soru.
