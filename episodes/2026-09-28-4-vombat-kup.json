@@ -1,0 +1,49 @@
+{
+  "title": "Bu hayvan küp şeklinde dışkı yapıyor: Vombat 🟫",
+  "description": "Avustralya'da yaşayan vombatlar, günde 100'e kadar küp şeklinde dışkı bırakabiliyor. Sırrı bağırsaklarının yapısında.\n\nKaynak: Smithsonian Magazine, Georgia Tech",
+  "tags": [
+    "vombat",
+    "hayvanlar",
+    "avustralya",
+    "ilginç bilgiler",
+    "doğa",
+    "bilim"
+  ],
+  "language": "tr",
+  "voice": "tr-TR-AhmetNeural",
+  "privacy": "public",
+  "scenes": [
+    {
+      "text": "Doğada küp şeklinde dışkı yapan bir hayvan var ve bilim insanları bunun sırrını yıllarca çözemedi.",
+      "search": "wombat walking grass"
+    },
+    {
+      "text": "Bu hayvan, Avustralya'da yaşayan tombul ve sevimli vombat.",
+      "search": "wombat australia"
+    },
+    {
+      "text": "Bir vombat, günde 100'e kadar küp bırakabiliyor ve her biri yaklaşık 2 santimetre.",
+      "search": "wooden dice cubes"
+    },
+    {
+      "text": "Sırrı bağırsaklarında, çünkü bağırsak duvarının bazı bölgeleri sert, bazıları ise esnek.",
+      "search": "scientist microscope laboratory"
+    },
+    {
+      "text": "Bu farklı bölgeler farklı hızlarda kasılıyor ve dışkıya yavaş yavaş keskin köşeler veriyor.",
+      "search": "clay shaping hands"
+    },
+    {
+      "text": "Sindirimi de çok yavaş olduğu için dışkı kuruyor ve bu şeklini koruyabiliyor.",
+      "search": "dry forest floor"
+    },
+    {
+      "text": "Peki neden küp? Bilim insanlarına göre vombatlar bölgelerini kayaların ve kütüklerin üstüne bırakarak işaretliyor, küp şekli de yuvarlanıp düşmesini engelliyor.",
+      "search": "rocks logs forest"
+    },
+    {
+      "text": "Sence hayvanlar âleminin en tuhaf özelliği hangisi? Yorumlara yaz.",
+      "search": "australian bush landscape"
+    }
+  ]
+}

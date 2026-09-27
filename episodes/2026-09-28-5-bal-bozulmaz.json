@@ -1,0 +1,49 @@
+{
+  "title": "Mutfağındaki bu yiyecek binlerce yıl bozulmadan kalabilir 🍯",
+  "description": "Arkeologlar Mısır mezarlarında binlerce yıllık ama hâlâ bozulmamış bal buldu. Balı bu kadar dayanıklı yapan 3 sır var.\n\nKaynak: Smithsonian Magazine (The Science Behind Honey's Eternal Shelf Life)",
+  "tags": [
+    "bal",
+    "yemek",
+    "gündelik hayat",
+    "ilginç bilgiler",
+    "bilim",
+    "antik mısır"
+  ],
+  "language": "tr",
+  "voice": "tr-TR-AhmetNeural",
+  "privacy": "public",
+  "scenes": [
+    {
+      "text": "Mutfağında, doğru saklarsan neredeyse hiç bozulmayan bir yiyecek var.",
+      "search": "honey jar kitchen"
+    },
+    {
+      "text": "Arkeologlar Mısır mezarlarında binlerce yıllık bal kavanozları buldu ve bal hâlâ bozulmamıştı.",
+      "search": "ancient egypt tomb"
+    },
+    {
+      "text": "Balı bu kadar dayanıklı yapan 3 sır var ve üçü de tamamen doğal.",
+      "search": "honey dripping spoon"
+    },
+    {
+      "text": "Birincisi, içinde çok az su var ve bakteriler böyle bir ortamda yaşayamıyor.",
+      "search": "honeycomb close up"
+    },
+    {
+      "text": "İkincisi, bal oldukça asidik, bu da mikropların içinde çoğalmasını çok zorlaştırıyor.",
+      "search": "bees on honeycomb"
+    },
+    {
+      "text": "Üçüncüsü ise arıların midesindeki bir enzim, çünkü bu enzim nektarı işlerken hidrojen peroksit oluşturuyor.",
+      "search": "bee flower nectar"
+    },
+    {
+      "text": "Tek şart var: kapağı sıkıca kapalı tutmak ve içine su karıştırmamak, yoksa bal da bozulabilir.",
+      "search": "closing jar lid"
+    },
+    {
+      "text": "Sence mutfaktaki en şaşırtıcı yiyecek hangisi? Yorumlara yaz.",
+      "search": "breakfast table food"
+    }
+  ]
+}
