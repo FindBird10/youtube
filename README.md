@@ -53,6 +53,8 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 | `YT_CLIENT_SECRET` | Google Client secret |
 | `YT_REFRESH_TOKEN` | Playground'dan aldığın refresh token |
 
+İsteğe bağlı `PIXABAY_API_KEY` (<https://pixabay.com/api/docs/>): ikinci görüntü kaynağı; sonuçlar konuya uygunluğa göre Pexels ile birlikte puanlanır.
+
 İsteğe bağlı, daha güvenilir seslendirme için **Azure Speech** (Free F0, ayda 500 bin karakter ücretsiz):
 `AZURE_SPEECH_KEY` (Keys and Endpoint → KEY 1) ve `AZURE_SPEECH_REGION` (`northeurope`).
 Tanımlı değilse ya da Azure hata verirse otomatik olarak Edge-TTS kullanılır.

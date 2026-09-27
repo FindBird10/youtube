@@ -35,6 +35,8 @@ DEFAULT_VOICE = "tr-TR-AhmetNeural"
 SENTENCE_PAUSE_MS = 300  # Azure: cümleler arası sessizlik (ms)
 DEFAULT_RATE = "+5%"      # +12% aceleci duruyordu; +5% daha doğal ve akıcı
 FALLBACK_COLORS = ["0x14213d", "0x1b263b", "0x2b2d42", "0x3a0ca3", "0x264653", "0x5f0f40"]
+STOPWORDS = {"a", "an", "the", "of", "in", "on", "and", "with", "at", "to", "for", "from", "by", "video",
+              "stock", "footage", "free", "hd", "4k", "is", "are", "its", "it", "up", "view", "shot"}
 TOKEN_RE = re.compile(r"[\w'’]+", re.UNICODE)
 
 
@@ -202,54 +204,100 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool) -> None:
                      "-t", "3", "-pix_fmt", "yuv420p", str(p)])
                 sc.clip = p
         return
-    key = os.environ.get("PEXELS_API_KEY", "").strip()
-    if not key:
-        log("PEXELS_API_KEY yok; düz renk arka plan kullanılacak.")
+    pexels_key = os.environ.get("PEXELS_API_KEY", "").strip()
+    pixabay_key = os.environ.get("PIXABAY_API_KEY", "").strip()
+    if not pexels_key and not pixabay_key:
+        log("PEXELS_API_KEY / PIXABAY_API_KEY yok; düz renk arka plan kullanılacak.")
         return
     import requests
 
-    used: set[int] = set()
-    sess = requests.Session()
-    sess.headers["Authorization"] = key
+    used: set[str] = set()
 
-    def search(query: str) -> list[dict]:
-        r = sess.get("https://api.pexels.com/videos/search", timeout=30, params={
-            "query": query, "orientation": "portrait", "size": "medium", "per_page": 20})
+    def stems(text: str) -> set[str]:
+        return {w[:-1] if len(w) > 4 and w.endswith("s") else w
+                for w in re.findall(r"[a-z]+", text.lower()) if w not in STOPWORDS and len(w) > 1}
+
+    def pexels(query: str) -> list[dict]:
+        r = requests.get("https://api.pexels.com/videos/search", timeout=30,
+                         headers={"Authorization": pexels_key},
+                         params={"query": query, "orientation": "portrait", "size": "medium", "per_page": 20})
         r.raise_for_status()
-        return r.json().get("videos", [])
+        out = []
+        for v in r.json().get("videos", []):
+            files = [f for f in v.get("video_files", []) if f.get("height") and f.get("width") and f.get("link")]
+            if not files:
+                continue
+            portrait = [f for f in files if f["height"] >= f["width"]] or files
+            # 1080 genişliğe en yakın, ondan küçük olmayanı seç
+            portrait.sort(key=lambda f: (f["width"] < 1080, abs(f["width"] - 1080)))
+            f = portrait[0]
+            slug = v.get("url", "").rstrip("/").rsplit("/", 1)[-1]
+            out.append({"key": f"pexels:{v['id']}", "words": stems(slug + " " + " ".join(v.get("tags", []))),
+                        "duration": v.get("duration", 0), "w": f["width"], "h": f["height"], "url": f["link"]})
+        return out
+
+    def pixabay(query: str) -> list[dict]:
+        r = requests.get("https://pixabay.com/api/videos/", timeout=30,
+                         params={"key": pixabay_key, "q": query[:100], "per_page": 20, "safesearch": "true"})
+        r.raise_for_status()
+        out = []
+        for v in r.json().get("hits", []):
+            files = [f for f in (v.get("videos") or {}).values() if f.get("url") and f.get("height")]
+            if not files:
+                continue
+            # Dikeye kırpılınca bulanık olmasın: yeterince yüksek olan en küçük dosya
+            files.sort(key=lambda f: (f["height"] < 1900, f["height"] if f["height"] >= 1900 else -f["height"]))
+            f = files[0]
+            out.append({"key": f"pixabay:{v['id']}", "words": stems(v.get("tags", "")),
+                        "duration": v.get("duration", 0), "w": f["width"], "h": f["height"], "url": f["url"]})
+        return out
+
+    def score(c: dict, want: set[str], need: float) -> float:
+        rel = len(want & c["words"]) / max(1, len(want))          # konuya uygunluk (0–1)
+        s = 3.0 * rel
+        s += 1.5 if c["h"] >= c["w"] else 0.0                    # dikey video kırpılmaz
+        s += 1.0 if c["duration"] >= need else 0.0               # döngüye girmez
+        s += 0.5 if min(c["w"], c["h"]) >= 1080 else 0.0         # net görüntü
+        return s + random.uniform(0, 0.4)                          # her seferinde aynı video çıkmasın
+
+    sources = [("Pexels", pexels)] if pexels_key else []
+    sources += [("Pixabay", pixabay)] if pixabay_key else []
 
     for i, sc in enumerate(scenes):
         need = sc.duration + XFADE
+        want = stems(sc.search)
         queries = [sc.search, " ".join(sc.search.split()[:2]), (sc.search.split() or [""])[0]]
-        chosen = None
+        best, best_score = None, -1.0
         for q in dict.fromkeys(q for q in queries if q):
-            try:
-                vids = [v for v in search(q) if v["id"] not in used]
-            except Exception as e:
-                log(f"Pexels arama hatası '{q}': {e}")
-                continue
-            # Sahneden uzun olanları tercih et (döngüye girmesin), ilk birkaçı arasından rastgele seç
-            long_enough = [v for v in vids if v.get("duration", 0) >= need]
-            pool = (long_enough or vids)[:5]
-            if pool:
-                chosen = random.choice(pool)
+            cands = []
+            for name, fn in sources:
+                try:
+                    cands += [c for c in fn(q) if c["key"] not in used]
+                except Exception as e:
+                    log(f"{name} arama hatası '{q}': {e}")
+            for c in cands:
+                s = score(c, want, need)
+                if s > best_score:
+                    best, best_score = c, s
+            # Konuyla eşleşen bir sonuç bulunduysa daha kısa sorgulara inme
+            if best and want & best["words"]:
                 break
-        if not chosen:
+        if not best:
             log(f"Sahne {i + 1}: görüntü bulunamadı, düz renk kullanılacak.")
             continue
-        used.add(chosen["id"])
-        files = [f for f in chosen["video_files"] if f.get("height") and f.get("width")]
-        portrait = [f for f in files if f["height"] >= f["width"]] or files
-        # 1080 genişliğe en yakın, ondan küçük olmayanı seç
-        portrait.sort(key=lambda f: (f["width"] < 1080, abs(f["width"] - 1080)))
+        used.add(best["key"])
         dst = work / f"clip_{i:02d}.mp4"
-        with sess.get(portrait[0]["link"], stream=True, timeout=120) as r:
-            r.raise_for_status()
-            with open(dst, "wb") as f:
-                for part in r.iter_content(1 << 20):
-                    f.write(part)
+        try:
+            with requests.get(best["url"], stream=True, timeout=180) as r:
+                r.raise_for_status()
+                with open(dst, "wb") as f:
+                    for part in r.iter_content(1 << 20):
+                        f.write(part)
+        except Exception as e:
+            log(f"Sahne {i + 1}: indirme hatası ({e}), düz renk kullanılacak.")
+            continue
         sc.clip = dst
-        log(f"Sahne {i + 1}: Pexels #{chosen['id']} ({sc.search})")
+        log(f"Sahne {i + 1}: {best['key']} {best['w']}x{best['h']} puan {best_score:.1f} ({sc.search})")
 
 
 # ------------------------------------------------------------------ altyazı
