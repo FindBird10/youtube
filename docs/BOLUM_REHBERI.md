@@ -11,13 +11,15 @@ gönderildiğinde GitHub Actions videoyu üretir ve YouTube'a yükler.
 
 ## Günlük akış
 
-Her gün 3 bölüm yazılır ve `publish_at` ile zamanlanır (Türkiye saati = UTC+3):
+Her gün 3 bölüm yazılır ve `publish_at` ile zamanlanır (Türkiye saati = UTC+3).
+Saatler Shorts izlenme verilerine göre seçildi: öğle arası ve akşam 18:00–23:00 en güçlü,
+12:00–17:00 arası en zayıf pencere; hafta sonu sabah geç saatler de güçlü.
 
-| Sıra | Türkiye saati | `publish_at` (UTC) | Format (`format` alanı) |
+| Sıra | Format (`format` alanı) | Hafta içi (Pzt–Cum) TR → `publish_at` | Hafta sonu (Cmt–Paz) TR → `publish_at` |
 |---|---|---|---|
-| 1 | 10:00 | `YYYY-AA-GGT07:00:00Z` | "Neden?" sorusu (`neden`) |
-| 2 | 15:00 | `YYYY-AA-GGT12:00:00Z` | "Ne olurdu?" senaryosu (`ne-olurdu`) |
-| 3 | 20:00 | `YYYY-AA-GGT17:00:00Z` | Gizemli gerçek hikâye (`gizem`) |
+| 1 | "Neden?" sorusu (`neden`) | 12:30 → `YYYY-AA-GGT09:30:00Z` | 11:30 → `YYYY-AA-GGT08:30:00Z` |
+| 2 | "Ne olurdu?" senaryosu (`ne-olurdu`) | 18:30 → `YYYY-AA-GGT15:30:00Z` | 18:30 → `YYYY-AA-GGT15:30:00Z` |
+| 3 | Gizemli gerçek hikâye (`gizem`) | 21:30 → `YYYY-AA-GGT18:30:00Z` | 21:30 → `YYYY-AA-GGT18:30:00Z` |
 
 ## Formatlar
 
@@ -78,7 +80,7 @@ Seçtiğin konunun neden ilgi çekeceğini commit mesajında bir cümleyle yaz.
 | `publish_at` | | ISO UTC saat, yukarıdaki tabloya göre. |
 | `voice` | | Varsayılan `tr-TR-AhmetNeural`. |
 | `rate` | | Konuşma hızı, varsayılan `+5%` (doğal ve akıcı). Gerekmedikçe değiştirme. |
-| `caption_style` | | `word` (varsayılan: tek kelime, beyaz, ekranın alt-ortasında) veya `group`. |
+| `caption_style` | | `group` (varsayılan: 2–3 kelimelik beyaz satır, o an söylenen kelime sarı yanar; ekranın alt-ortasında) veya `word` (tek kelime). |
 | `privacy` | | `private` / `unlisted` / `public`. Boşsa depo ayarı (varsayılan `private`). |
 | `synthetic_media` | | Gerçekçi görünen yapay/değiştirilmiş görüntü varsa `true`. |
 | `music` | | `false` ise arka plan müziği eklenmez. |

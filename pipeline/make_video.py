@@ -331,7 +331,7 @@ def ts(t: float) -> str:
 # Shorts arayüzü (başlık, butonlar) en alttaki ~%25'i kapladığı için 560 px güvenli bölge.
 CAPTION_MARGIN_V = 560
 # Vurgu rengi (ASS biçimi &HBBGGRR): yumuşak açık turkuaz; göz yormayan, beyazla uyumlu.
-HIGHLIGHT = "&HE8D9A8&"
+HIGHLIGHT = "&H00E5FF&"  # parlak sarı: o an söylenen kelime
 # Açılış kancası: ilk bu kadar saniye, üst kenardan bu kadar aşağıda (Shorts'un üst simgelerinin altı).
 HOOK_SECONDS = 2.6
 HOOK_MARGIN_V = 300
@@ -351,7 +351,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Word,{font},112,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,1,0,1,6,3,2,60,60,{mv},1
-Style: Cap,{font},88,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,2,80,80,{mv},1
+Style: Cap,{font},82,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,2,80,80,{mv},1
 Style: Hook,{font},92,&H00FFFFFF,&H00FFFFFF,&H50000000,&H00000000,-1,0,0,0,100,100,0,0,3,22,0,8,110,110,{hook_mv},1
 
 [Events]
@@ -377,8 +377,8 @@ def _word_events(words: list[Word], total: float) -> list[str]:
     return lines
 
 
-def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars: int = 18) -> list[str]:
-    """2–3 kelimelik beyaz grup, konuşulan kelime yumuşak vurgu renginde."""
+def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars: int = 16) -> list[str]:
+    """2–3 kelimelik beyaz grup; o an söylenen kelime sarı yanar (karaoke)."""
     groups: list[list[Word]] = []
     cur: list[Word] = []
     for w in words:
@@ -404,7 +404,10 @@ def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars
             for k, x in enumerate(g):
                 t = ass_escape(tr_upper(x.text))
                 parts.append("{\\c" + HIGHLIGHT + "}" + t + "{\\c&HFFFFFF&}" if k == wi else t)
-            lines.append(f"Dialogue: 0,{ts(w.start)},{ts(end)},Cap,,0,0,0,,{' '.join(parts)}")
+            # Satır ekrana sığsın: uzun gruplarda yazı boyutu küçülür
+            n_chars = sum(len(x.text) for x in g) + len(g) - 1
+            fs = min(82, int(920 / (0.72 * max(1, n_chars))))
+            lines.append(f"Dialogue: 0,{ts(w.start)},{ts(end)},Cap,,0,0,0,,{{\\fs{fs}}}{' '.join(parts)}")
     return lines
 
 
@@ -429,7 +432,7 @@ def _hook_events(text: str, until: float) -> list[str]:
     return [f"Dialogue: 1,{ts(0)},{ts(until)},Hook,,0,0,0,,{anim}{t}"]
 
 
-def build_ass(words: list[Word], total: float, font: str, path: Path, style: str = "word",
+def build_ass(words: list[Word], total: float, font: str, path: Path, style: str = "group",
               hook: str = "") -> None:
     events = _group_events(words, total) if style == "group" else _word_events(words, total)
     events = _hook_events(hook, min(HOOK_SECONDS, total)) + events
@@ -484,7 +487,7 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         segs.append(render_scene_video(sc, i, length, work))
 
     ass = work / "subs.ass"
-    build_ass(words, total, episode.get("font", "DejaVu Sans"), ass, episode.get("caption_style", "word"),
+    build_ass(words, total, episode.get("font", "DejaVu Sans"), ass, episode.get("caption_style", "group"),
               hook=hook_text(episode) if episode.get("show_hook", False) else "")
 
     # Görüntü zinciri: seg0 x seg1 x ... -> altyazı
