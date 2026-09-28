@@ -78,9 +78,11 @@ jobs:
         run: |
           ls build/*.mp4 >/dev/null 2>&1 || exit 0
           rm -rf /tmp/pv && mkdir /tmp/pv && cp build/*.mp4 /tmp/pv/
+          for d in build/*_work; do [ -f "$d/subs.ass" ] && cp "$d/subs.ass" "/tmp/pv/$(basename "$d" _work).ass"; done
+          git -C "$GITHUB_WORKSPACE" log -1 --format=%h > /tmp/pv/COMMIT.txt
           cd /tmp/pv
           git init -q -b preview
-          git add ./*.mp4
+          git add .
           git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "Önizleme [skip ci]"
           git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" preview
 

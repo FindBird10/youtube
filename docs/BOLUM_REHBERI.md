@@ -78,8 +78,8 @@ Seçtiğin konunun neden ilgi çekeceğini commit mesajında bir cümleyle yaz.
 | `tags` | | 5–10 etiket. |
 | `scenes` | ✔ | 6–9 sahne. Her sahne: `text` (seslendirilecek metin) ve `search` (Pexels için **İngilizce** 2–3 kelime). |
 | `publish_at` | | ISO UTC saat, yukarıdaki tabloya göre. |
-| `voice` | | Varsayılan `tr-TR-AhmetNeural`. |
-| `rate` | | Konuşma hızı, varsayılan `+5%` (doğal ve akıcı). Gerekmedikçe değiştirme. |
+| `voice` | | **Yazma.** Ses formata göre otomatik seçilir: `neden`/`ne-olurdu` → Brian, `gizem` → Andrew (Azure çok dilli sesler, Türkçe okur). |
+| `rate` | | **Yazma.** Konuşma hızı sese göre otomatik (+8%). |
 | `caption_style` | | `group` (varsayılan: 2–3 kelimelik beyaz satır, o an söylenen kelime sarı yanar; ekranın alt-ortasında) veya `word` (tek kelime). |
 | `privacy` | | `private` / `unlisted` / `public`. Boşsa depo ayarı (varsayılan `private`). |
 | `synthetic_media` | | Gerçekçi görünen yapay/değiştirilmiş görüntü varsa `true`. |

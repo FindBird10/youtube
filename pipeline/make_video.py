@@ -34,6 +34,15 @@ ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_VOICE = "tr-TR-AhmetNeural"
 SENTENCE_PAUSE_MS = 300  # Azure: cümleler arası sessizlik (ms)
 DEFAULT_RATE = "+5%"      # +12% aceleci duruyordu; +5% daha doğal ve akıcı
+# Azure çok dilli sesler (Türkçe okutulur). Formata göre ses: enerjik Brian soru/senaryo,
+# daha doğal/duygulu Andrew gizem hikâyeleri. Bölümde "voice" yazılırsa o kullanılır.
+VOICE_BY_FORMAT = {
+    "neden": ("en-US-BrianMultilingualNeural", "+8%"),
+    "ne-olurdu": ("en-US-BrianMultilingualNeural", "+8%"),
+    "gizem": ("en-US-AndrewMultilingualNeural", "+8%"),
+}
+DEFAULT_AZURE_VOICE = ("en-US-AndrewMultilingualNeural", "+8%")
+EDGE_FALLBACK_VOICE = "tr-TR-AhmetNeural"  # Azure çalışmazsa Türkçe yerel sesle devam
 FALLBACK_COLORS = ["0x14213d", "0x1b263b", "0x2b2d42", "0x3a0ca3", "0x264653", "0x5f0f40"]
 STOPWORDS = {"a", "an", "the", "of", "in", "on", "and", "with", "at", "to", "for", "from", "by", "video",
               "stock", "footage", "free", "hd", "4k", "is", "are", "its", "it", "up", "view", "shot"}
@@ -191,8 +200,9 @@ def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: 
         if not words:
             for attempt in range(3):
                 try:
-                    words = asyncio.run(_tts(full_text, voice, rate, mp3))
-                    log(f"Seslendirme: Edge-TTS ({voice}, {rate})")
+                    edge_voice = voice if voice.lower().startswith("tr-") else EDGE_FALLBACK_VOICE
+                    words = asyncio.run(_tts(full_text, edge_voice, rate, mp3))
+                    log(f"Seslendirme: Edge-TTS ({edge_voice}, {rate})")
                     break
                 except Exception as e:  # ağ hatalarında tekrar dene
                     log(f"TTS hatası (deneme {attempt + 1}): {e}")
@@ -469,6 +479,16 @@ def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
     return out
 
 
+def pick_voice(episode: dict) -> tuple[str, str]:
+    """Bölümün sesi ve hızı: açıkça yazılmışsa o; değilse Azure varsa formata göre çok dilli ses."""
+    if episode.get("voice"):
+        return episode["voice"], episode.get("rate", DEFAULT_RATE)
+    if os.environ.get("AZURE_SPEECH_KEY", "").strip():
+        voice, rate = VOICE_BY_FORMAT.get(episode.get("format", ""), DEFAULT_AZURE_VOICE)
+        return voice, episode.get("rate", rate)
+    return DEFAULT_VOICE, episode.get("rate", DEFAULT_RATE)
+
+
 def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     slug = episode["_slug"]
     work = out_dir / f"{slug}_work"
@@ -482,7 +502,7 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         raise ValueError("Bölümde hiç sahne yok.")
 
     narration, words, total = synthesize(
-        scenes, episode.get("voice", DEFAULT_VOICE), episode.get("rate", DEFAULT_RATE), work, offline,
+        scenes, *pick_voice(episode), work, offline,
         pitch=episode.get("pitch", "+0%"))
     if total > 59:
         log(f"UYARI: video {total:.1f} sn; Shorts için 60 saniyenin altı önerilir.")
