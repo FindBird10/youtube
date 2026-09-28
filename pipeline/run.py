@@ -77,7 +77,7 @@ def main() -> int:
                 vid, channel = upload(video, ep)
                 state.append({
                     "slug": ep["_slug"], "title": ep["title"], "video_id": vid,
-                    "url": f"https://youtube.com/shorts/{vid}", "channel": channel,
+                    "url": f"https://youtube.com/shorts/{vid}", "channel": channel, "format": ep.get("format"),
                     "publish_at": ep.get("publish_at"),
                     "uploaded_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                 })
