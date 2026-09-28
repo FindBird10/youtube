@@ -338,6 +338,8 @@ HOOK_MARGIN_V = 300
 # İlerleme çubuğu (üst kenar)
 BAR_HEIGHT = 12
 BAR_COLOR = "white@0.85"
+# Arka plan müziği seviyesi (assets/music/*); konuşma sırasında ayrıca kısılır
+MUSIC_VOLUME = 0.28
 
 ASS_HEADER = """[Script Info]
 ScriptType: v4.00+
@@ -511,9 +513,20 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         inputs += ["-i", str(p)]
     inputs += ["-i", str(narration)]
     if tracks:
-        inputs += ["-stream_loop", "-1", "-i", str(random.choice(tracks))]
-        achain = (f"[{n}:a]apad[nar];[{n + 1}:a]volume=0.12,afade=t=out:st={max(0.0, total - 1.2):.2f}:d=1.2[m];"
-                  f"[nar][m]amix=inputs=2:duration=first:dropout_transition=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]")
+        track = random.choice(tracks)
+        # Parçanın hep aynı yerinden başlamasın
+        start = random.uniform(0, max(0.0, probe_duration(track) - total - 1))
+        inputs += ["-ss", f"{start:.2f}", "-stream_loop", "-1", "-i", str(track)]
+        log(f"Müzik: {track.name} ({start:.0f}. sn'den)")
+        # Müzik kısık çalar; konuşma sırasında ayrıca otomatik kısılır (sidechain ducking)
+        # Önce anlatım normalize edilir, müzik ona göre sabit seviyede eklenir (sonradan
+        # loudnorm uygulansaydı sessiz anlarda müziği yükseltirdi).
+        achain = (f"[{n}:a]apad,aresample=44100,loudnorm=I=-14:TP=-2:LRA=11,aresample=44100,asplit=2[nar][key];"
+                  f"[{n + 1}:a]aresample=44100,volume={MUSIC_VOLUME},afade=t=in:d=0.6,"
+                  f"afade=t=out:st={max(0.0, total - 1.5):.2f}:d=1.5[mraw];"
+                  f"[mraw][key]sidechaincompress=threshold=0.02:ratio=8:attack=30:release=500:mix=0.65[m];"
+                  f"[nar][m]amix=inputs=2:duration=first:dropout_transition=0:normalize=0,"
+                  f"alimiter=limit=0.9[a]")
     else:
         achain = f"[{n}:a]apad,loudnorm=I=-14:TP=-1.5:LRA=11[a]"
 
