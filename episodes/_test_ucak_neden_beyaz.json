@@ -1,0 +1,19 @@
+{
+  "title": "Uçaklar neden hep beyaz? ✈️",
+  "format": "neden",
+  "subject": "airplane",
+  "hook": "Uçaklar neden hep beyaz?",
+  "description": "Havayolu şirketleri uçaklarını neden neredeyse hep beyaza boyuyor? Cevap estetik değil, tamamen hesap.\n\nKaynak: Simple Flying, Boeing bakım kılavuzları",
+  "tags": ["uçak", "havacılık", "neden", "bilgi", "ilginç bilgiler"],
+  "language": "tr",
+  "scenes": [
+    { "text": "Hiç dikkat ettin mi, havalimanındaki uçakların neredeyse hepsi beyaz, peki neden?", "search": "airplane white airport" },
+    { "text": "Çoğu kişi bunun sadece şık göründüğü için olduğunu sanıyor ama asıl sebep tamamen hesap.", "search": "airplane parked tarmac" },
+    { "text": "Beyaz boya güneş ışığını geri yansıtır, bu yüzden uçak saatlerce pistte beklerken kabin daha az ısınır.", "search": "airplane sun heat runway" },
+    { "text": "İkinci sebep güvenlik, çünkü beyaz gövdede küçük bir çatlak, pas ya da yağ sızıntısı çok daha kolay fark edilir.", "search": "airplane maintenance inspection hangar" },
+    { "text": "Ama asıl şaşırtıcı sebep para, çünkü uçakların çoğu kiralık ve sık sık el değiştiriyor.", "search": "airplane fleet parked" },
+    { "text": "Beyaz bir uçağı yeni şirketin renklerine boyamak, koyu renkli bir uçağı boyamaktan çok daha kolay ve ucuz.", "search": "airplane painting hangar" },
+    { "text": "Üstelik koyu renkler güneşte daha çabuk solar, beyaz ise yıllarca aynı kalır.", "search": "airplane flying blue sky" },
+    { "text": "Sence uçakların hepsi siyah olsaydı ne olurdu? Yorumlara yaz.", "search": "airplane night sky" }
+  ]
+}
