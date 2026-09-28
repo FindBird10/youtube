@@ -103,8 +103,13 @@ async def _tts(text: str, voice: str, rate: str, out: Path) -> list[Word]:
     return words
 
 
-def _azure_tts(text: str, voice: str, rate: str, out: Path) -> list[Word]:
-    """Azure Speech (resmi servis). AZURE_SPEECH_KEY ve AZURE_SPEECH_REGION gerekir."""
+def _azure_tts(text: str, voice: str, rate: str, out: Path, pitch: str = "+0%",
+               speak_lang: str = "tr-TR") -> list[Word]:
+    """Azure Speech (resmi servis). AZURE_SPEECH_KEY ve AZURE_SPEECH_REGION gerekir.
+
+    Çok dilli sesler (ör. en-US-AndrewMultilingualNeural) de kullanılabilir; ses kendi
+    dilinden farklıysa metin <lang xml:lang="tr-TR"> ile Türkçe okutulur.
+    """
     from xml.sax.saxutils import escape
 
     import azure.cognitiveservices.speech as speechsdk
@@ -123,11 +128,14 @@ def _azure_tts(text: str, voice: str, rate: str, out: Path) -> list[Word]:
 
     synth.synthesis_word_boundary.connect(on_boundary)
     lang = "-".join(voice.split("-")[:2])
+    body = f'<prosody rate="{rate}" pitch="{pitch}">{escape(text)}</prosody>'
+    if lang.lower() != speak_lang.lower():
+        body = f'<lang xml:lang="{speak_lang}">{body}</lang>'
     # Cümle arası duraksama kısaltılır; kesik kesik değil akıcı okunur.
     ssml = (f'<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" '
             f'xmlns:mstts="http://www.w3.org/2001/mstts" xml:lang="{lang}">'
             f'<voice name="{voice}"><mstts:silence type="Sentenceboundary-exact" value="{SENTENCE_PAUSE_MS}ms"/>'
-            f'<prosody rate="{rate}">{escape(text)}</prosody></voice></speak>')
+            f'{body}</voice></speak>')
     res = synth.speak_ssml_async(ssml).get()
     del synth  # dosyanın diske yazılmasını garanti et
     if res.reason != speechsdk.ResultReason.SynthesizingAudioCompleted:
@@ -162,7 +170,7 @@ def assign_scenes(scenes: list[Scene], words: list[Word], audio_dur: float) -> f
     return total
 
 
-def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: bool) -> tuple[Path, list[Word], float]:
+def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: bool, pitch: str = "+0%") -> tuple[Path, list[Word], float]:
     mp3 = work / "narration.mp3"
     full_text = " ".join(s.text for s in scenes)
     if offline:
@@ -175,7 +183,7 @@ def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: 
         words = []
         if os.environ.get("AZURE_SPEECH_KEY", "").strip():
             try:
-                words = _azure_tts(full_text, voice, rate, mp3)
+                words = _azure_tts(full_text, voice, rate, mp3, pitch=pitch)
                 log(f"Seslendirme: Azure Speech ({voice}, {rate})")
             except Exception as e:
                 log(f"Azure TTS hatası, Edge-TTS'e geçiliyor: {e}")
@@ -474,7 +482,8 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         raise ValueError("Bölümde hiç sahne yok.")
 
     narration, words, total = synthesize(
-        scenes, episode.get("voice", DEFAULT_VOICE), episode.get("rate", DEFAULT_RATE), work, offline)
+        scenes, episode.get("voice", DEFAULT_VOICE), episode.get("rate", DEFAULT_RATE), work, offline,
+        pitch=episode.get("pitch", "+0%"))
     if total > 59:
         log(f"UYARI: video {total:.1f} sn; Shorts için 60 saniyenin altı önerilir.")
     fetch_clips(scenes, work, offline, episode.get("subject", ""))

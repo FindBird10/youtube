@@ -1,0 +1,48 @@
+name: Ses örnekleri
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Metni alınacak bölüm dosyası"
+        required: false
+        default: "episodes/_test_ucak_neden_beyaz.json"
+
+permissions:
+  contents: write
+
+jobs:
+  samples:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Kütüphaneler
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg libssl3 ca-certificates
+          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2
+          pip install -r requirements.txt
+
+      - name: Örnekleri üret
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION || 'northeurope' }}
+          IN_EPISODE: ${{ github.event.inputs.episode }}
+        run: python tools/voice_samples.py "$IN_EPISODE" /tmp/samples
+
+      - name: voice-samples dalına koy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd /tmp/samples
+          git init -q -b voice-samples
+          git add .
+          git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "Ses örnekleri [skip ci]"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" voice-samples
