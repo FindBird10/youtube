@@ -71,6 +71,19 @@ jobs:
           retention-days: 14
           if-no-files-found: ignore
 
+      - name: Önizlemeyi preview dalına koy (yalnızca yüklemesiz çalıştırma)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.upload == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ls build/*.mp4 >/dev/null 2>&1 || exit 0
+          rm -rf /tmp/pv && mkdir /tmp/pv && cp build/*.mp4 /tmp/pv/
+          cd /tmp/pv
+          git init -q -b preview
+          git add ./*.mp4
+          git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "Önizleme [skip ci]"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" preview
+
       - name: Yayın kaydını güncelle
         if: always()
         run: |
