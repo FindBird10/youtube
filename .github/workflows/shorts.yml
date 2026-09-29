@@ -60,7 +60,9 @@ jobs:
           ARGS=()
           if [ -n "$IN_EPISODE" ]; then ARGS+=(--episode "$IN_EPISODE"); fi
           if [ "$IN_UPLOAD" = "false" ]; then ARGS+=(--no-upload); fi
-          python pipeline/run.py "${ARGS[@]}"
+          mkdir -p build
+          set -o pipefail
+          python pipeline/run.py "${ARGS[@]}" 2>&1 | tee build/run.log
 
       - name: Videoları önizleme için sakla
         if: always()
@@ -72,12 +74,13 @@ jobs:
           if-no-files-found: ignore
 
       - name: Önizlemeyi preview dalına koy (yalnızca yüklemesiz çalıştırma)
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.upload == 'false'
+        if: always() && github.event_name == 'workflow_dispatch' && github.event.inputs.upload == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          ls build/*.mp4 >/dev/null 2>&1 || exit 0
-          rm -rf /tmp/pv && mkdir /tmp/pv && cp build/*.mp4 /tmp/pv/
+          rm -rf /tmp/pv && mkdir /tmp/pv
+          cp build/*.mp4 /tmp/pv/ 2>/dev/null || true
+          cp build/run.log /tmp/pv/ 2>/dev/null || true
           for d in build/*_work; do [ -f "$d/subs.ass" ] && cp "$d/subs.ass" "/tmp/pv/$(basename "$d" _work).ass"; done
           git -C "$GITHUB_WORKSPACE" log -1 --format=%h > /tmp/pv/COMMIT.txt
           cd /tmp/pv
