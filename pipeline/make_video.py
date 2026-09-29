@@ -531,6 +531,24 @@ def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
     return out
 
 
+AUDIO_EXT = {".mp3", ".wav", ".m4a", ".ogg"}
+# Video türüne göre müzik klasörü: assets/music/<ruh hali>/ (boşsa assets/music/ kökü)
+MOOD_BY_FORMAT = {"lore": "lore", "gizem": "gizem", "neden": "genel", "ne-olurdu": "genel"}
+
+
+def pick_music_tracks(episode: dict) -> list[Path]:
+    if not episode.get("music", True):
+        return []
+    music_dir = ROOT / "assets" / "music"
+    mood = episode.get("music_mood") or MOOD_BY_FORMAT.get(episode.get("format", ""), "genel")
+    for folder in (music_dir / mood, music_dir):
+        if folder.exists():
+            tracks = sorted(p for p in folder.iterdir() if p.is_file() and p.suffix.lower() in AUDIO_EXT)
+            if tracks:
+                return tracks
+    return []
+
+
 def pick_voice(episode: dict) -> tuple[str, str]:
     """Bölümün sesi ve hızı: açıkça yazılmışsa o; değilse Azure varsa formata göre çok dilli ses."""
     if episode.get("voice"):
@@ -608,9 +626,7 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
 
     # Ses: anlatım (+ varsa kısık müzik)
     n = len(segs)
-    music_dir = ROOT / "assets" / "music"
-    tracks = sorted(p for p in music_dir.glob("*") if p.suffix.lower() in {".mp3", ".wav", ".m4a", ".ogg"}) \
-        if music_dir.exists() and episode.get("music", True) else []
+    tracks = pick_music_tracks(episode)
     inputs = []
     for p in segs:
         inputs += ["-i", str(p)]
