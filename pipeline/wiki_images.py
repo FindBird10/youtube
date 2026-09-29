@@ -73,8 +73,21 @@ def assign(scenes: list, pools: dict[str, list[dict]], main_page: str, subject: 
             _log(f"Sahne {i + 1}: görsel yok, stok görüntüye düşülecek")
             sc.image_query = None
             continue
-        best = max(cands, key=lambda im: score(im, want))
+        ranked = sorted(cands, key=lambda im: score(im, want), reverse=True)
+        best = ranked[0]
         used.add(best["url"])
+        # Hızlı kesme: sahneye ek görseller
+        for j, im in enumerate([im for im in ranked[1:] if im["url"] not in used][: max(0, getattr(sc, "n_shots", 1) - 1)]):
+            ext2 = Path(im["url"].split("?")[0]).suffix.lower()
+            dst2 = work / f"img_{i:02d}_{j + 1}{ext2 if ext2 in IMG_EXT else '.jpg'}"
+            try:
+                with requests.get(im["url"], headers={"User-Agent": UA}, timeout=60) as r:
+                    r.raise_for_status()
+                    dst2.write_bytes(r.content)
+                used.add(im["url"])
+                sc.extra_images.append(dst2)
+            except Exception as e:
+                _log(f"Sahne {i + 1}: ek görsel indirilemedi ({type(e).__name__})")
         ext = Path(best["url"].split("?")[0]).suffix.lower() or ".jpg"
         dst = work / f"img_{i:02d}{ext if ext in IMG_EXT else '.jpg'}"
         try:

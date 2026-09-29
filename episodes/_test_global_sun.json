@@ -1,0 +1,21 @@
+{
+  "title": "What if the Sun vanished right now? ☀️",
+  "hook": "What if the Sun vanished?",
+  "format": "ne-olurdu",
+  "style": "global",
+  "subject": "sun",
+  "language": "en",
+  "emphasis": ["black", "freeze", "die", "liquid"],
+  "description": "What would actually happen to Earth if the Sun disappeared? The answer starts with an 8-minute delay.\n\nSources: NASA, Live Science",
+  "tags": ["what if", "sun", "space", "science", "earth", "shorts"],
+  "scenes": [
+    { "text": "If the Sun vanished right now, you wouldn't notice for 8 minutes and 20 seconds.", "search": "sun solar surface space" },
+    { "text": "That's how long sunlight takes to reach us, and even gravity travels at that same speed.", "search": "sunrise earth from space" },
+    { "text": "So Earth would keep circling an empty point in space, then fly off in a straight line into the dark.", "search": "earth rotating space" },
+    { "text": "The sky goes black, and the Moon disappears too, because it only shines with reflected sunlight.", "search": "moon night sky" },
+    { "text": "Within a week, the average temperature would drop below 0 degrees Fahrenheit. Within a year, minus 100.", "search": "frozen lake ice winter" },
+    { "text": "Plants would stop growing almost instantly, and most would die within weeks.", "search": "forest trees dark" },
+    { "text": "The oceans would freeze from the top down, but deep below the ice, warmed by Earth's core, the water could stay liquid for thousands of years.", "search": "deep ocean underwater" },
+    { "text": "Life might survive down there, in total darkness. Would you want to be one of them?", "search": "deep sea creature dark" }
+  ]
+}

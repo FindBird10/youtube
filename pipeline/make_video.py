@@ -72,6 +72,9 @@ class Scene:
     image_query: str | None = None   # wiki görseli istenen sahne (anahtar kelimeler)
     image: Path | None = None
     image_page: str | None = None    # görselin aranacağı wiki sayfası (boşsa bölümün sayfası)
+    n_shots: int = 1                 # sahnedeki çekim sayısı (hızlı kesme stilinde >1)
+    extra_clips: list[Path] = field(default_factory=list)
+    extra_images: list[Path] = field(default_factory=list)
 
 
 # ----------------------------------------------------------------- yardımcılar
@@ -332,6 +335,7 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool, subject: str = "
         words = sc.search.split()
         queries = [sc.search, " ".join(words[:2]), words[0] if words else "", subject]
         best, best_score = None, -1.0
+        ranked: dict[str, tuple[float, dict]] = {}
         for q in dict.fromkeys(q for q in queries if q):
             cands = []
             for name, fn in sources:
@@ -344,6 +348,7 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool, subject: str = "
             cands = [c for c in cands if not (c["words"] & ANIMATION_WORDS)]
             for c in cands:
                 sc_ = score(c, want, key, need)
+                ranked[c["key"]] = (sc_, c)
                 if sc_ > best_score:
                     best, best_score = c, sc_
             # Ana özneyi içeren bir sonuç bulunduysa daha kısa sorgulara inme
@@ -365,6 +370,23 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool, subject: str = "
             continue
         sc.clip = dst
         log(f"Sahne {i + 1}: {best['key']} {best['w']}x{best['h']} puan {best_score:.1f} ({sc.search})")
+        # Hızlı kesme: aynı sahne için ek, farklı klipler (öncelik ana özneyi içerenlerde)
+        extras = sorted((v for k, v in ranked.items() if k != best["key"] and k not in used),
+                        key=lambda v: (bool(key & v[1]["words"]), v[0]), reverse=True)
+        for j, (_, c) in enumerate(extras[: max(0, sc.n_shots - 1)]):
+            dst2 = work / f"clip_{i:02d}_{j + 1}.mp4"
+            try:
+                with requests.get(c["url"], stream=True, timeout=180) as r:
+                    r.raise_for_status()
+                    with open(dst2, "wb") as f:
+                        for part in r.iter_content(1 << 20):
+                            f.write(part)
+                used.add(c["key"])
+                sc.extra_clips.append(dst2)
+            except Exception as e:
+                log(f"Sahne {i + 1}: ek klip indirilemedi ({type(e).__name__})")
+        if sc.extra_clips:
+            log(f"Sahne {i + 1}: +{len(sc.extra_clips)} ek klip (hızlı kesme)")
 
 
 # ------------------------------------------------------------------ altyazı
@@ -405,6 +427,9 @@ Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour,
 Style: Word,{font},112,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,1,0,1,6,3,2,60,60,{mv},1
 Style: Cap,{font},82,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,2,80,80,{mv},1
 Style: Hook,{font},92,&H00FFFFFF,&H00FFFFFF,&H50000000,&H00000000,-1,0,0,0,100,100,0,0,3,22,0,8,110,110,{hook_mv},1
+Style: Box,Poppins ExtraBold,94,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,6,3,2,60,60,{mv},1
+Style: Title,Anton,150,&H00FFFFFF,&H00FFFFFF,&H00000000,&H90000000,0,0,0,0,100,100,2,0,1,8,5,5,80,80,0,1
+Style: Dim,Poppins ExtraBold,10,&H60000000,&H60000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -429,7 +454,11 @@ def _word_events(words: list[Word], total: float) -> list[str]:
     return lines
 
 
-def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars: int = 16) -> list[str]:
+BOX_COLOR = "&HF65C8B&"  # mor vurgu kutusu (global stil)
+
+
+def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars: int = 16,
+                  box: bool = False) -> list[str]:
     """2–3 kelimelik beyaz grup; o an söylenen kelime sarı yanar (karaoke)."""
     groups: list[list[Word]] = []
     cur: list[Word] = []
@@ -458,11 +487,18 @@ def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars
             parts = []
             for k, x in enumerate(g):
                 t = ass_escape(tr_upper(x.text))
-                parts.append("{\\c" + HIGHLIGHT + "}" + t + "{\\c&HFFFFFF&}" if k == wi else t)
+                if k != wi:
+                    parts.append(t)
+                elif box:  # o anki kelimenin arkasında renkli kutu (kalın renkli kontur)
+                    parts.append("{\\3c" + BOX_COLOR + "\\bord16\\shad0}" + t + "{\\3c&H000000&\\bord6\\shad3}")
+                else:
+                    parts.append("{\\c" + HIGHLIGHT + "}" + t + "{\\c&HFFFFFF&}")
             # Satır ekrana sığsın: uzun gruplarda yazı boyutu küçülür
             n_chars = sum(len(x.text) for x in g) + len(g) - 1
-            fs = min(82, int(920 / (0.72 * max(1, n_chars))))
-            lines.append(f"Dialogue: 0,{ts(w.start)},{ts(end)},Cap,,0,0,0,,{{\\fs{fs}}}{' '.join(parts)}")
+            top = 94 if box else 82
+            fs = min(top, int(920 / (0.72 * max(1, n_chars))))
+            st = "Box" if box else "Cap"
+            lines.append(f"Dialogue: 0,{ts(w.start)},{ts(end)},{st},,0,0,0,,{{\\fs{fs}}}{' '.join(parts)}")
     return lines
 
 
@@ -487,9 +523,24 @@ def _hook_events(text: str, until: float) -> list[str]:
     return [f"Dialogue: 1,{ts(0)},{ts(until)},Hook,,0,0,0,,{anim}{t}"]
 
 
+def _title_events(text: str, until: float) -> list[str]:
+    """Açılış başlık kartı: kararan arka plan + ortada büyük, 'vurarak' gelen başlık."""
+    if not text:
+        return []
+    t = ass_escape(tr_upper(text))
+    dim = f"{{\\p1\\fad(0,150)}}m 0 0 l {W} 0 {W} {H} 0 {H}{{\\p0}}"
+    anim = "{\\q0\\fad(0,180)\\fscx135\\fscy135\\t(0,140,\\fscx100\\fscy100)}"
+    return [f"Dialogue: 3,{ts(0)},{ts(until)},Dim,,0,0,0,,{dim}",
+            f"Dialogue: 4,{ts(0)},{ts(until)},Title,,0,0,0,,{anim}{t}"]
+
+
 def build_ass(words: list[Word], total: float, font: str, path: Path, style: str = "group",
-              hook: str = "") -> None:
-    events = _group_events(words, total) if style == "group" else _word_events(words, total)
+              hook: str = "", title: str = "", title_until: float = 0.0) -> None:
+    if style in ("group", "box"):
+        events = _group_events(words, total, box=(style == "box"))
+    else:
+        events = _word_events(words, total)
+    events = _title_events(title, title_until) + events
     events = _hook_events(hook, min(HOOK_SECONDS, total)) + events
     header = ASS_HEADER.format(W=W, H=H, font=font, mv=CAPTION_MARGIN_V, hook_mv=HOOK_MARGIN_V)
     path.write_text(header + "\n".join(events) + "\n", encoding="utf-8")
@@ -549,6 +600,37 @@ def pick_music_tracks(episode: dict) -> list[Path]:
     return []
 
 
+# Kanal/görünüm profilleri. Bölümde "style" alanıyla seçilir (varsayılan: birdsvault).
+STYLES = {
+    "birdsvault": {"captions": "group", "title_card": False, "cut_every": 0.0, "punch": False, "sfx": False},
+    "global": {"captions": "box", "title_card": True, "cut_every": 2.2, "punch": True, "sfx": True},
+}
+TITLE_CARD_S = 1.3      # açılış kartı süresi (anlatım bu kadar gecikmeli başlar)
+PUNCH = 0.10            # vurguda ani yakınlaşma miktarı
+SFX_VOLUME = 0.6
+
+
+def punch_times(words: list[Word], episode: dict, min_gap: float = 2.0) -> list[float]:
+    """Ani yakınlaşma anları: rakam içeren kelimeler + bölümün 'emphasis' listesi."""
+    emph = {e.lower() for e in episode.get("emphasis", [])}
+    out: list[float] = []
+    for w in words:
+        t = w.text.strip().lower().strip(".,!?\"'")
+        if (any(ch.isdigit() for ch in t) or t in emph) and (not out or w.start - out[-1] >= min_gap):
+            out.append(w.start)
+    return out[:12]
+
+
+def punch_filter(times: list[float]) -> str:
+    """Belirtilen anlarda 80 ms'de yakınlaşıp 420 ms'de geri dönen ölçek ifadesi."""
+    if not times:
+        return ""
+    terms = "+".join(f"between(t,{t:.2f},{t + 0.08:.2f})*(t-{t:.2f})/0.08"
+                     f"+between(t,{t + 0.08:.2f},{t + 0.5:.2f})*(1-(t-{t + 0.08:.2f})/0.42)" for t in times)
+    z = f"(1+{PUNCH}*({terms}))"
+    return f"scale=w='2*trunc({W // 2}*{z})':h='2*trunc({H // 2}*{z})':eval=frame,crop={W}:{H}"
+
+
 def pick_voice(episode: dict) -> tuple[str, str]:
     """Bölümün sesi ve hızı: açıkça yazılmışsa o; değilse Azure varsa formata göre çok dilli ses."""
     if episode.get("voice"):
@@ -576,9 +658,23 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     if not scenes:
         raise ValueError("Bölümde hiç sahne yok.")
 
+    style = STYLES.get(episode.get("style", "birdsvault"), STYLES["birdsvault"])
     narration, words, total = synthesize(
         scenes, *pick_voice(episode), work, offline,
         pitch=episode.get("pitch", "+0%"), language=language)
+    # Açılış başlık kartı: her şey kart süresi kadar ileri kayar, anlatım kartın ardından başlar
+    title_s = TITLE_CARD_S if style["title_card"] else 0.0
+    if title_s:
+        for w in words:
+            w.start += title_s
+            w.end += title_s
+        scenes[0].duration += title_s
+        for sc in scenes[1:]:
+            sc.start += title_s
+        total += title_s
+    if style["cut_every"]:
+        for sc in scenes:
+            sc.n_shots = max(1, round(sc.duration / style["cut_every"]))
     if total > 59:
         log(f"UYARI: video {total:.1f} sn; Shorts için 60 saniyenin altı önerilir.")
     wiki = episode.get("wiki") or {}
@@ -597,19 +693,48 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
             sc.image_query = None
     fetch_clips([sc for sc in scenes if sc.image is None], work, offline, episode.get("subject", ""))
 
-    # Son sahne dışındaki parçalar geçiş süresi kadar uzun üretilir, böylece
-    # xfade sonrası toplam süre sesle birebir aynı kalır.
     segs = []
-    for i, sc in enumerate(scenes):
-        length = sc.duration + (XFADE if i < len(scenes) - 1 else 0.0)
-        segs.append(render_scene_video(sc, i, length, work))
+    cuts: list[float] = []  # kesme anları (ses efekti için)
+    if style["cut_every"]:
+        # Hızlı kesme: her sahne ~2 sn'lik çekimlere bölünür, çekimler keskin kesmeyle birleşir
+        shot_paths = []
+        for i, sc in enumerate(scenes):
+            sources = ([("image", p) for p in ([sc.image] if sc.image else []) + sc.extra_images]
+                       or [("clip", p) for p in ([sc.clip] if sc.clip else []) + sc.extra_clips])
+            f0, f1 = round(sc.start * FPS), round((sc.start + sc.duration) * FPS)
+            bounds = [f0 + round((f1 - f0) * j / sc.n_shots) for j in range(sc.n_shots + 1)]
+            for j in range(sc.n_shots):
+                kind, path = sources[j % len(sources)] if sources else ("color", None)
+                shot = Scene(text="", search="", image=path if kind == "image" else None,
+                             clip=path if kind == "clip" else None)
+                shot_paths.append(render_scene_video(shot, i * 10 + j, (bounds[j + 1] - bounds[j]) / FPS, work))
+                if bounds[j] > 0:
+                    cuts.append(bounds[j] / FPS)
+        (work / "shots.txt").write_text("".join(f"file '{p.name}'\n" for p in shot_paths))
+        cat = work / "video_cat.mp4"
+        run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(work / "shots.txt"), "-c", "copy", str(cat)])
+        segs = [cat]
+    else:
+        # Son sahne dışındaki parçalar geçiş süresi kadar uzun üretilir, böylece
+        # xfade sonrası toplam süre sesle birebir aynı kalır.
+        for i, sc in enumerate(scenes):
+            length = sc.duration + (XFADE if i < len(scenes) - 1 else 0.0)
+            segs.append(render_scene_video(sc, i, length, work))
 
     ass = work / "subs.ass"
-    build_ass(words, total, episode.get("font", "DejaVu Sans"), ass, episode.get("caption_style", "group"),
-              hook=hook_text(episode) if episode.get("show_hook", False) else "")
+    build_ass(words, total, episode.get("font", "DejaVu Sans"), ass,
+              episode.get("caption_style", style["captions"]),
+              hook=hook_text(episode) if episode.get("show_hook", False) else "",
+              title=(hook_text(episode) or EMOJI_RE.sub("", episode.get("title", "")).strip()) if title_s else "",
+              title_until=title_s)
 
-    # Görüntü zinciri: seg0 x seg1 x ... -> altyazı
+    # Görüntü zinciri: seg0 x seg1 x ... -> (vurgu yakınlaşması) -> altyazı
     vchain, last = [], "0:v"
+    punches = punch_times(words, episode) if style["punch"] else []
+    if punches and len(segs) == 1:
+        vchain.append(f"[0:v]{punch_filter(punches)}[pz]")
+        last = "pz"
+        log(f"Vurgu yakınlaşması: {len(punches)} an")
     for k in range(1, len(segs)):
         label = f"x{k}"
         vchain.append(f"[{last}][{k}:v]xfade=transition=fade:duration={XFADE}:offset={scenes[k].start:.3f}[{label}]")
@@ -631,6 +756,17 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     for p in segs:
         inputs += ["-i", str(p)]
     inputs += ["-i", str(narration)]
+    delay = f"adelay={int(title_s * 1000)}:all=1," if title_s else ""
+    sfx_label, sfx_path = "", None
+    if style["sfx"]:
+        from sfx import build_sfx_track
+        events = ([(0.0, "impact")] if title_s else []) + [(t, "whoosh") for t in cuts] \
+            + [(t, "pop") for t in punches]
+        sfx_path = work / "sfx.wav"
+        build_sfx_track(events, total, sfx_path)
+        sfx_idx = n + 1 + (1 if tracks else 0)
+        sfx_label = f"[{sfx_idx}:a]aresample=44100,volume={SFX_VOLUME}[fx];"
+        log(f"Ses efektleri: {len(events)} olay")
     if tracks:
         track = random.choice(tracks)
         # Parçanın hep aynı yerinden başlamasın
@@ -640,14 +776,21 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         # Müzik kısık çalar; konuşma sırasında ayrıca otomatik kısılır (sidechain ducking)
         # Önce anlatım normalize edilir, müzik ona göre sabit seviyede eklenir (sonradan
         # loudnorm uygulansaydı sessiz anlarda müziği yükseltirdi).
-        achain = (f"[{n}:a]apad,aresample=44100,loudnorm=I=-14:TP=-2:LRA=11,aresample=44100,asplit=2[nar][key];"
+        achain = (f"[{n}:a]aresample=44100,loudnorm=I=-14:TP=-2:LRA=11,aresample=44100,{delay}apad,asplit=2[nar][key];"
                   f"[{n + 1}:a]aresample=44100,volume={MUSIC_VOLUME},afade=t=in:d=0.6,"
                   f"afade=t=out:st={max(0.0, total - 1.5):.2f}:d=1.5[mraw];"
                   f"[mraw][key]sidechaincompress=threshold=0.02:ratio=8:attack=30:release=500:mix=0.65[m];"
-                  f"[nar][m]amix=inputs=2:duration=first:dropout_transition=0:normalize=0,"
-                  f"alimiter=limit=0.9[a]")
+                  + sfx_label +
+                  f"[nar][m]{'[fx]' if sfx_label else ''}amix=inputs={3 if sfx_label else 2}:duration=first:"
+                  f"dropout_transition=0:normalize=0,alimiter=limit=0.9[a]")
+    elif sfx_label:
+        achain = (f"[{n}:a]aresample=44100,loudnorm=I=-14:TP=-2:LRA=11,aresample=44100,{delay}apad[nar];"
+                  + sfx_label + "[nar][fx]amix=inputs=2:duration=first:dropout_transition=0:normalize=0,"
+                  "alimiter=limit=0.9[a]")
     else:
-        achain = f"[{n}:a]apad,loudnorm=I=-14:TP=-1.5:LRA=11[a]"
+        achain = f"[{n}:a]{delay}apad,loudnorm=I=-14:TP=-1.5:LRA=11[a]"
+    if sfx_path:
+        inputs += ["-i", str(sfx_path)]
 
     final = out_dir / f"{slug}.mp4"
     run(["ffmpeg", "-y", *inputs, "-filter_complex", ";".join(vchain + [achain]),
