@@ -1,0 +1,55 @@
+{
+  "title": "Gökyüzü neden mavi? Cevap deniz değil 🌤️",
+  "format": "neden",
+  "subject": "sky",
+  "description": "Gökyüzü denizi yansıttığı için mavi değil. Asıl sebep, ışığın havadaki moleküllere çarpıp saçılması. Peki gökyüzü neden mor değil?\n\nKaynak: Royal Museums Greenwich (Why is the sky blue?), NASA Science (Sunrises and Sunsets on Mars)",
+  "tags": [
+    "gökyüzü",
+    "neden",
+    "bilim",
+    "fizik",
+    "ilginç bilgiler",
+    "gün batımı",
+    "mars"
+  ],
+  "language": "tr",
+  "publish_at": "2026-09-29T09:30:00Z",
+  "scenes": [
+    {
+      "text": "Gökyüzü neden mavi? Çoğu kişi denizi yansıttığını sanıyor, ama asıl sebep bambaşka.",
+      "search": "sky blue clouds"
+    },
+    {
+      "text": "Güneş'ten gelen ışık aslında beyazdır ve içinde gökkuşağının bütün renkleri vardır.",
+      "search": "sky sunlight rays"
+    },
+    {
+      "text": "Bu ışık atmosfere girince havadaki minicik gaz moleküllerine çarpıp her yöne saçılır.",
+      "search": "sky sun clouds"
+    },
+    {
+      "text": "Mavi ışığın dalga boyu kısa olduğu için kırmızıdan çok daha fazla saçılır ve her yönden gözümüze gelir.",
+      "search": "sky blue sun"
+    },
+    {
+      "text": "Ama asıl tuhaf olan kısım şu: mor ışık maviden bile fazla saçılıyor, peki gökyüzü neden mor değil?",
+      "search": "sky clouds timelapse"
+    },
+    {
+      "text": "Çünkü Güneş'ten atmosfere maviden daha az mor ışık ulaşır ve gözlerimiz maviye çok daha duyarlıdır.",
+      "search": "human eye closeup"
+    },
+    {
+      "text": "Gün batımında ise ışık havada çok daha uzun yol alır, mavi yolda saçılıp kaybolur ve geriye kırmızıyla turuncu kalır.",
+      "search": "sky sunset orange"
+    },
+    {
+      "text": "Mars'ta ise tam tersi oluyor, oradaki toz yüzünden gündüz gökyüzü sarı turuncu, gün batımı ise mavi.",
+      "search": "red rocky desert"
+    },
+    {
+      "text": "Sen de gökyüzünün denizi yansıttığını mı sanıyordun? Yorumlara yaz.",
+      "search": "sky sea horizon"
+    }
+  ]
+}
