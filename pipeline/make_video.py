@@ -446,6 +446,7 @@ Style: Hook,{font},92,&H00FFFFFF,&H00FFFFFF,&H50000000,&H00000000,-1,0,0,0,100,1
 Style: Box,Poppins ExtraBold,94,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,6,3,2,60,60,{mv},1
 Style: Title,Anton,150,&H00FFFFFF,&H00FFFFFF,&H00000000,&H90000000,0,0,0,0,100,100,2,0,1,8,5,5,80,80,0,1
 Style: Dim,Poppins ExtraBold,10,&H60000000,&H60000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: Reveal,Poppins Medium,56,&H20FFFFFF,&H20FFFFFF,&H90000000,&H90000000,0,0,0,0,100,100,7,0,1,1.5,3,2,90,90,{cine_mv},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -539,6 +540,45 @@ def _hook_events(text: str, until: float) -> list[str]:
     return [f"Dialogue: 1,{ts(0)},{ts(until)},Hook,,0,0,0,,{anim}{t}"]
 
 
+CINE_MARGIN_V = 600   # sinematik altyazı: alt bandın ve Shorts arayüzünün üstünde
+
+
+def _reveal_events(words: list[Word], total: float, max_words: int = 5, max_chars: int = 28) -> list[str]:
+    """Sinematik altyazı: ince, harf aralığı açık; harfler konuşmayla birlikte tek tek belirir."""
+    groups: list[list[Word]] = []
+    cur: list[Word] = []
+    for w in words:
+        if not w.text.strip():
+            continue
+        chars = sum(len(x.text) + 1 for x in cur) + len(w.text)
+        if cur and (len(cur) >= max_words or chars > max_chars):
+            groups.append(cur)
+            cur = []
+        cur.append(w)
+        if w.brk:
+            groups.append(cur)
+            cur = []
+    if cur:
+        groups.append(cur)
+    lines = []
+    for gi, g in enumerate(groups):
+        g0 = g[0].start
+        g_end = groups[gi + 1][0].start if gi + 1 < len(groups) else total
+        g_end = min(g_end, g[-1].end + 0.8)
+        out = []
+        for w in g:
+            t = ass_escape(tr_upper(w.text.strip()))
+            dur_ms = max(60.0, (w.end - w.start) * 1000)
+            base = (w.start - g0) * 1000
+            letters = []
+            for k, ch in enumerate(t):
+                a = int(base + dur_ms * k / max(1, len(t)))
+                letters.append(f"{{\\alpha&HFF&\\t({a},{a + 140},\\alpha&H20&)}}{ch}")
+            out.append("".join(letters))
+        lines.append(f"Dialogue: 0,{ts(g0)},{ts(g_end)},Reveal,,0,0,0,,{{\\fad(0,220)}}{' '.join(out)}")
+    return lines
+
+
 def _title_events(text: str, until: float) -> list[str]:
     """Açılış başlık kartı: kararan arka plan + ortada büyük, 'vurarak' gelen başlık."""
     if not text:
@@ -554,11 +594,14 @@ def build_ass(words: list[Word], total: float, font: str, path: Path, style: str
               hook: str = "", title: str = "", title_until: float = 0.0) -> None:
     if style in ("group", "box"):
         events = _group_events(words, total, box=(style == "box"))
+    elif style == "reveal":
+        events = _reveal_events(words, total)
     else:
         events = _word_events(words, total)
     events = _title_events(title, title_until) + events
     events = _hook_events(hook, min(HOOK_SECONDS, total)) + events
-    header = ASS_HEADER.format(W=W, H=H, font=font, mv=CAPTION_MARGIN_V, hook_mv=HOOK_MARGIN_V)
+    header = ASS_HEADER.format(W=W, H=H, font=font, mv=CAPTION_MARGIN_V, hook_mv=HOOK_MARGIN_V,
+                               cine_mv=CINE_MARGIN_V)
     path.write_text(header + "\n".join(events) + "\n", encoding="utf-8")
 
 
@@ -620,8 +663,12 @@ def pick_music_tracks(episode: dict) -> list[Path]:
 STYLES = {
     "birdsvault": {"captions": "group", "title_card": False, "cut_every": 0.0, "punch": False, "sfx": False},
     "global": {"captions": "box", "title_card": True, "cut_every": 2.2, "punch": True, "sfx": True},
+    # Oyun karakteri 'edit' havası: sıcak renk, sinema bantları, harf harf altyazı, sakin tempo
+    "cinematic": {"captions": "reveal", "title_card": False, "cut_every": 0.0, "punch": False, "sfx": False,
+                  "grade": True, "bars": True},
 }
 TITLE_CARD_S = 1.3      # açılış kartı süresi (anlatım bu kadar gecikmeli başlar)
+CINE_BAR = 170          # sinematik stilde üst/alt siyah bant yüksekliği (px)
 PUNCH = 0.10            # vurguda ani yakınlaşma miktarı
 SFX_VOLUME = 0.6
 
@@ -755,6 +802,18 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         label = f"x{k}"
         vchain.append(f"[{last}][{k}:v]xfade=transition=fade:duration={XFADE}:offset={scenes[k].start:.3f}[{label}]")
         last = label
+    if style.get("grade") or style.get("bars"):
+        fx = []
+        if style.get("grade"):
+            # Sıcak turuncu-kahve ton, hafif soluk renk, koyu gölgeler, kenar karartması
+            fx.append("eq=contrast=1.10:saturation=0.82:brightness=-0.03,"
+                      "lutrgb=r='clip(val*1.07+3\\,0\\,255)':b='clip(val*0.88\\,0\\,255)',"
+                      "vignette=angle=PI/4.5")
+        if style.get("bars"):
+            fx.append(f"drawbox=x=0:y=0:w=iw:h={CINE_BAR}:color=black:t=fill,"
+                      f"drawbox=x=0:y=ih-{CINE_BAR}:w=iw:h={CINE_BAR}:color=black:t=fill")
+        vchain.append(f"[{last}]{','.join(fx)}[gr]")
+        last = "gr"
     fonts_dir = ROOT / "assets" / "fonts"
     sub = f"subtitles={ass.as_posix()}" + (f":fontsdir={fonts_dir.as_posix()}" if fonts_dir.exists() else "")
     if episode.get("progress_bar", True):
