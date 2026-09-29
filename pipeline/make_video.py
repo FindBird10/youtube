@@ -776,7 +776,14 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     sfx_label, sfx_path = "", None
     if style["sfx"]:
         from sfx import build_sfx_track
-        events = ([(0.0, "impact")] if title_s else []) + [(t, "whoosh") for t in cuts] \
+        # Whoosh yalnızca sahne değişimlerinde (ara kesmelerde değil) ve en az 4 sn arayla
+        whooshes: list[float] = []
+        for sc in scenes[1:]:
+            if not whooshes or sc.start - whooshes[-1] >= 4.0:
+                whooshes.append(sc.start)
+        if title_s:
+            whooshes = [title_s] + [t for t in whooshes if t - title_s >= 4.0]
+        events = ([(0.0, "impact")] if title_s else []) + [(t, "whoosh") for t in whooshes] \
             + [(t, "pop") for t in punches]
         sfx_path = work / "sfx.wav"
         build_sfx_track(events, total, sfx_path)

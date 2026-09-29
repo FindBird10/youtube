@@ -21,13 +21,13 @@ def _env(n: int, peak: float = 0.6) -> np.ndarray:
     return np.sin(np.pi / 2 * np.minimum(rise, fall)) ** 2
 
 
-def whoosh(dur: float = 0.42) -> np.ndarray:
+def whoosh(dur: float = 0.32) -> np.ndarray:
     n = int(dur * SR)
     x = _rng.standard_normal(n)
     c = np.concatenate([[0.0], np.cumsum(x)])
     # Değişken pencereli ortalama = zamanla açılıp kapanan alçak geçiren filtre (süpürme etkisi)
     t = np.linspace(0, 1, n)
-    win = (60 - 52 * np.sin(np.pi * t)).astype(int)
+    win = (90 - 60 * np.sin(np.pi * t)).astype(int)   # daha yumuşak (daha az tiz) süpürme
     idx = np.arange(1, n + 1)
     lo = np.maximum(0, idx - win)
     y = (c[idx] - c[lo]) / np.maximum(1, idx - lo)
@@ -57,7 +57,7 @@ def impact(dur: float = 0.8) -> np.ndarray:
     return y / (np.max(np.abs(y)) + 1e-9) * 0.95
 
 
-GEN = {"whoosh": (whoosh, 0.55, -0.20), "pop": (pop, 0.35, 0.0), "impact": (impact, 0.7, 0.0)}
+GEN = {"whoosh": (whoosh, 0.16, -0.15), "pop": (pop, 0.22, 0.0), "impact": (impact, 0.55, 0.0)}
 # tür: (üretici, seviye, olay zamanına göre kaydırma — whoosh kesmeden biraz önce başlar)
 
 
