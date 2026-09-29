@@ -46,8 +46,11 @@ def list_images(site: str, page: str, min_w: int = 600, min_h: int = 400) -> lis
     return out
 
 
-def assign(scenes: list, images: list[dict], subject: str, work: Path) -> None:
-    """image_query'si olan sahnelere görsel indirir (dosya adı eşleşmesine göre, tekrar etmeden)."""
+def assign(scenes: list, pools: dict[str, list[dict]], main_page: str, subject: str, work: Path) -> None:
+    """image_query'si olan sahnelere görsel indirir (dosya adı eşleşmesine göre, tekrar etmeden).
+
+    Sahnenin image_page'i varsa önce o sayfanın görsellerine, yoksa bölümün ana sayfasına bakılır.
+    """
     import requests
 
     used: set[str] = set()
@@ -64,6 +67,7 @@ def assign(scenes: list, images: list[dict], subject: str, work: Path) -> None:
         if sc.image_query is None:
             continue
         want = {w for w in re.findall(r"[a-z0-9]+", sc.image_query.lower()) if len(w) > 1}
+        images = pools.get(sc.image_page or main_page) or pools.get(main_page, [])
         cands = [im for im in images if im["url"] not in used] or images
         if not cands:
             _log(f"Sahne {i + 1}: görsel yok, stok görüntüye düşülecek")

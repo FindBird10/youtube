@@ -58,6 +58,7 @@ class Word:
     start: float  # saniye (videonun başından itibaren)
     end: float
     text: str
+    brk: bool = False  # metinde bu kelimeden sonra noktalama var (altyazı satırı burada biter)
 
 
 @dataclass
@@ -70,6 +71,7 @@ class Scene:
     words: list[Word] = field(default_factory=list)
     image_query: str | None = None   # wiki görseli istenen sahne (anahtar kelimeler)
     image: Path | None = None
+    image_page: str | None = None    # görselin aranacağı wiki sayfası (boşsa bölümün sayfası)
 
 
 # ----------------------------------------------------------------- yardımcılar
@@ -186,6 +188,23 @@ def assign_scenes(scenes: list[Scene], words: list[Word], audio_dur: float) -> f
     return total
 
 
+def mark_breaks(words: list[Word], text: str) -> None:
+    """TTS kelimelerini metinde sırayla bulur; ardından noktalama gelenleri işaretler."""
+    low, pos = text.lower(), 0
+    for w in words:
+        t = w.text.strip().lower()
+        if not t:
+            continue
+        i = low.find(t, pos)
+        if i < 0 or i - pos > 40:  # bulunamadı / çok uzakta: atla
+            continue
+        pos = i + len(t)
+        j = pos
+        while j < len(low) and low[j] in "\"'’”»)":
+            j += 1
+        w.brk = j < len(low) and low[j] in ".!?,;:…"
+
+
 SPEAK_LANG = {"tr": "tr-TR", "en": "en-US"}
 EDGE_FALLBACK = {"tr": "tr-TR-AhmetNeural", "en": "en-US-AndrewMultilingualNeural"}
 
@@ -223,6 +242,7 @@ def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: 
                     if attempt == 2:
                         raise
     audio_dur = probe_duration(mp3)
+    mark_breaks(words, full_text)
     total = assign_scenes(scenes, words, audio_dur)
     for i, sc in enumerate(scenes):
         log(f"Sahne {i + 1}: {sc.start:.1f}–{sc.start + sc.duration:.1f} sn, {len(sc.words)} kelime")
@@ -422,6 +442,9 @@ def _group_events(words: list[Word], total: float, max_words: int = 3, max_chars
             groups.append(cur)
             cur = []
         cur.append(w)
+        if w.brk:  # cümle/virgül sonunda satırı bitir; iki cümle aynı satıra karışmasın
+            groups.append(cur)
+            cur = []
     if cur:
         groups.append(cur)
     lines = []
@@ -529,7 +552,8 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     language = episode.get("language", "tr")
     CAPTION_LANG = language
     scenes = [Scene(text=s["text"].strip(), search=s.get("search", "").strip(),
-                    image_query=(s.get("image") if isinstance(s.get("image"), str) else None))
+                    image_query=(s.get("image") if isinstance(s.get("image"), str) else None),
+                    image_page=s.get("image_page"))
               for s in episode["scenes"] if s.get("text", "").strip()]
     if not scenes:
         raise ValueError("Bölümde hiç sahne yok.")
@@ -542,12 +566,14 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     wiki = episode.get("wiki") or {}
     if wiki.get("site") and wiki.get("page") and any(sc.image_query is not None for sc in scenes) and not offline:
         from wiki_images import assign, list_images
-        try:
-            images = list_images(wiki["site"], wiki["page"])
-        except Exception as e:
-            log(f"Wiki görselleri alınamadı ({type(e).__name__}); stok görüntü kullanılacak.")
-            images = []
-        assign(scenes, images, episode.get("subject", wiki["page"]), work)
+        pools: dict[str, list[dict]] = {}
+        for page in dict.fromkeys([wiki["page"]] + [sc.image_page for sc in scenes if sc.image_page]):
+            try:
+                pools[page] = list_images(wiki["site"], page)
+            except Exception as e:
+                log(f"Wiki görselleri alınamadı: {page} ({type(e).__name__})")
+                pools[page] = []
+        assign(scenes, pools, wiki["page"], episode.get("subject", wiki["page"]), work)
     for sc in scenes:  # görseli bulunamayan sahneler stoka düşer
         if sc.image is None:
             sc.image_query = None
