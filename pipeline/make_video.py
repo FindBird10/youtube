@@ -68,6 +68,8 @@ class Scene:
     duration: float = 0.0
     clip: Path | None = None
     words: list[Word] = field(default_factory=list)
+    image_query: str | None = None   # wiki görseli istenen sahne (anahtar kelimeler)
+    image: Path | None = None
 
 
 # ----------------------------------------------------------------- yardımcılar
@@ -87,9 +89,14 @@ def probe_duration(path: Path) -> float:
     return float(out)
 
 
+CAPTION_LANG = "tr"  # render() bölümün diline göre ayarlar
+
+
 def tr_upper(s: str) -> str:
-    """Türkçe'ye uygun büyük harf (i -> İ, ı -> I)."""
-    return s.replace("i", "İ").replace("ı", "I").upper()
+    """Büyük harf; Türkçe'de i -> İ, ı -> I (İngilizce vb. dillerde normal)."""
+    if CAPTION_LANG == "tr":
+        return s.replace("i", "İ").replace("ı", "I").upper()
+    return s.upper()
 
 
 def log(msg: str) -> None:
@@ -179,7 +186,12 @@ def assign_scenes(scenes: list[Scene], words: list[Word], audio_dur: float) -> f
     return total
 
 
-def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: bool, pitch: str = "+0%") -> tuple[Path, list[Word], float]:
+SPEAK_LANG = {"tr": "tr-TR", "en": "en-US"}
+EDGE_FALLBACK = {"tr": "tr-TR-AhmetNeural", "en": "en-US-AndrewMultilingualNeural"}
+
+
+def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: bool, pitch: str = "+0%",
+               language: str = "tr") -> tuple[Path, list[Word], float]:
     mp3 = work / "narration.mp3"
     full_text = " ".join(s.text for s in scenes)
     if offline:
@@ -192,7 +204,8 @@ def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: 
         words = []
         if os.environ.get("AZURE_SPEECH_KEY", "").strip():
             try:
-                words = _azure_tts(full_text, voice, rate, mp3, pitch=pitch)
+                words = _azure_tts(full_text, voice, rate, mp3, pitch=pitch,
+                                   speak_lang=SPEAK_LANG.get(language, "tr-TR"))
                 log(f"Seslendirme: Azure Speech ({voice}, {rate})")
             except Exception as e:
                 log(f"Azure TTS hatası, Edge-TTS'e geçiliyor: {e}")
@@ -200,7 +213,8 @@ def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: 
         if not words:
             for attempt in range(3):
                 try:
-                    edge_voice = voice if voice.lower().startswith("tr-") else EDGE_FALLBACK_VOICE
+                    native = voice.lower().startswith(SPEAK_LANG.get(language, "tr-TR").lower()[:2] + "-")
+                    edge_voice = voice if native else EDGE_FALLBACK.get(language, EDGE_FALLBACK_VOICE)
                     words = asyncio.run(_tts(full_text, edge_voice, rate, mp3))
                     log(f"Seslendirme: Edge-TTS ({edge_voice}, {rate})")
                     break
@@ -466,7 +480,22 @@ def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
     bw, bh = int(W * 1.1) // 2 * 2, int(H * 1.1) // 2 * 2
     zoom = (f"zoompan=z='1+{ZOOM}*on/{frames}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
             f":d=1:s={W}x{H}:fps={FPS}")
-    if sc.clip:
+    if sc.image:
+        # Wiki görseli: yataysa soldan sağa yavaş kaydırma (Ken Burns), dikeyse yakınlaşma
+        iw, ih = (int(x) for x in subprocess.run(
+            ["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
+             "-of", "csv=p=0", str(sc.image)], capture_output=True, text=True, check=True).stdout.strip().split(",")[:2])
+        src = ["-loop", "1", "-framerate", str(FPS), "-i", str(sc.image)]
+        if iw / ih >= 0.8:
+            scaled_w = iw * bh / ih
+            amp = max(0.0, min((scaled_w - bw) / 2, 260.0))
+            direction = 1 if idx % 2 == 0 else -1
+            vf = (f"scale=-2:{bh},crop={bw}:{bh}:x='(iw-ow)/2+{direction * amp:.1f}*(2*t/{length:.3f}-1)':y=0,"
+                  f"scale={W}:{H},setsar=1,format=yuv420p")
+        else:
+            vf = (f"scale={bw}:{bh}:force_original_aspect_ratio=increase,crop={bw}:{bh},"
+                  f"{zoom},setsar=1,format=yuv420p")
+    elif sc.clip:
         src = ["-stream_loop", "-1", "-i", str(sc.clip)]
         vf = (f"fps={FPS},scale={bw}:{bh}:force_original_aspect_ratio=increase,"
               f"crop={bw}:{bh},{zoom},setsar=1,format=yuv420p")
@@ -496,17 +525,33 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         shutil.rmtree(work)
     work.mkdir(parents=True)
 
-    scenes = [Scene(text=s["text"].strip(), search=s.get("search", "").strip())
+    global CAPTION_LANG
+    language = episode.get("language", "tr")
+    CAPTION_LANG = language
+    scenes = [Scene(text=s["text"].strip(), search=s.get("search", "").strip(),
+                    image_query=(s.get("image") if isinstance(s.get("image"), str) else None))
               for s in episode["scenes"] if s.get("text", "").strip()]
     if not scenes:
         raise ValueError("Bölümde hiç sahne yok.")
 
     narration, words, total = synthesize(
         scenes, *pick_voice(episode), work, offline,
-        pitch=episode.get("pitch", "+0%"))
+        pitch=episode.get("pitch", "+0%"), language=language)
     if total > 59:
         log(f"UYARI: video {total:.1f} sn; Shorts için 60 saniyenin altı önerilir.")
-    fetch_clips(scenes, work, offline, episode.get("subject", ""))
+    wiki = episode.get("wiki") or {}
+    if wiki.get("site") and wiki.get("page") and any(sc.image_query is not None for sc in scenes) and not offline:
+        from wiki_images import assign, list_images
+        try:
+            images = list_images(wiki["site"], wiki["page"])
+        except Exception as e:
+            log(f"Wiki görselleri alınamadı ({type(e).__name__}); stok görüntü kullanılacak.")
+            images = []
+        assign(scenes, images, episode.get("subject", wiki["page"]), work)
+    for sc in scenes:  # görseli bulunamayan sahneler stoka düşer
+        if sc.image is None:
+            sc.image_query = None
+    fetch_clips([sc for sc in scenes if sc.image is None], work, offline, episode.get("subject", ""))
 
     # Son sahne dışındaki parçalar geçiş süresi kadar uzun üretilir, böylece
     # xfade sonrası toplam süre sesle birebir aynı kalır.

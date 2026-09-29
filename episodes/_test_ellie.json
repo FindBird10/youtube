@@ -1,0 +1,20 @@
+{
+  "title": "Ellie: the girl who could have saved the world",
+  "format": "lore",
+  "subject": "ellie",
+  "language": "en",
+  "wiki": { "site": "thelastofus.fandom.com", "page": "Ellie" },
+  "description": "The story of Ellie Williams from The Last of Us, and the lie that changed everything. Spoilers for The Last of Us Part I.\n\nFan-made content. Not affiliated with or endorsed by Naughty Dog or Sony Interactive Entertainment. Game images © their respective owners.",
+  "tags": ["the last of us", "ellie", "joel", "game lore", "video game story", "tlou"],
+  "scenes": [
+    { "text": "Ellie was fourteen when one bite made her the most important person on Earth.", "image": "Ellie" },
+    { "text": "She grew up in a world that had already ended, locked inside the Boston quarantine zone, never knowing her mother.", "search": "abandoned city ruins overgrown" },
+    { "text": "One night she snuck into an abandoned mall with her best friend Riley. They were both bitten. Riley turned. Ellie didn't.", "image": "Riley" },
+    { "text": "She was immune, and the Fireflies believed her body held the cure. So a hardened smuggler named Joel was hired to carry her across a ruined America.", "image": "Joel" },
+    { "text": "Through a year of hunger, winter and loss, the job became something else. Joel became the father she never had.", "search": "snowy forest winter" },
+    { "text": "Then, in Salt Lake City, the Fireflies revealed the price. Making the cure meant operating on her brain, and she would not survive.", "image": "hospital firefly" },
+    { "text": "Joel killed his way into the operating room and carried her out. And then, he lied to her face.", "image": "Joel Ellie" },
+    { "text": "She asked him to swear it was all true. He swore. And everything that happens to Ellie next begins with that lie.", "image": "Ellie" },
+    { "text": "Would you have forgiven Joel? Tell me in the comments.", "search": "dark forest night" }
+  ]
+}
