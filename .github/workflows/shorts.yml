@@ -81,7 +81,7 @@ jobs:
           rm -rf /tmp/pv && mkdir /tmp/pv
           cp build/*.mp4 /tmp/pv/ 2>/dev/null || true
           cp build/run.log /tmp/pv/ 2>/dev/null || true
-          for d in build/*_work; do [ -f "$d/subs.ass" ] && cp "$d/subs.ass" "/tmp/pv/$(basename "$d" _work).ass"; done
+          for d in build/*_work; do [ -f "$d/subs.ass" ] && cp "$d/subs.ass" "/tmp/pv/$(basename "$d" _work).ass" || true; done
           git -C "$GITHUB_WORKSPACE" log -1 --format=%h > /tmp/pv/COMMIT.txt
           cd /tmp/pv
           git init -q -b preview

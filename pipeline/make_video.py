@@ -59,6 +59,7 @@ class Word:
     end: float
     text: str
     brk: bool = False  # metinde bu kelimeden sonra noktalama var (altyazı satırı burada biter)
+    pos: int = -1      # kelimenin tam metindeki karakter konumu (bulunamadıysa -1)
 
 
 @dataclass
@@ -168,6 +169,20 @@ def _azure_tts(text: str, voice: str, rate: str, out: Path, pitch: str = "+0%",
 def assign_scenes(scenes: list[Scene], words: list[Word], audio_dur: float) -> float:
     """TTS kelimelerini sahnelere dağıtır, sahne başlangıç/sürelerini ayarlar. Toplam süreyi döner."""
     counts = [max(1, len(TOKEN_RE.findall(s.text))) for s in scenes]
+    found = sum(1 for w in words if w.pos >= 0)
+    if words and sum(counts) != len(words) and found >= 0.8 * len(words):
+        # Kelimeleri metindeki konumlarına göre sahnelere yerleştir (sayılar vb. TTS'te
+        # farklı bölündüğünde bile doğru sahneye düşer)
+        spans, c = [], 0
+        for sc_ in scenes:
+            spans.append((c, c + len(sc_.text)))
+            c += len(sc_.text) + 1
+        owner, cur = [], 0
+        for w in words:
+            if w.pos >= 0:
+                cur = next((k for k, (a, b) in enumerate(spans) if a <= w.pos <= b), cur)
+            owner.append(cur)
+        counts = [owner.count(k) for k in range(len(scenes))]
     if sum(counts) != len(words):
         # Sayılar tutmuyorsa (ör. TTS bir kelimeyi bölmüşse) karakter oranına göre dağıt
         chars = [max(1, len(s.text)) for s in scenes]
@@ -201,6 +216,7 @@ def mark_breaks(words: list[Word], text: str) -> None:
         i = low.find(t, pos)
         if i < 0 or i - pos > 40:  # bulunamadı / çok uzakta: atla
             continue
+        w.pos = i
         pos = i + len(t)
         j = pos
         while j < len(low) and low[j] in "\"'’”»)":
