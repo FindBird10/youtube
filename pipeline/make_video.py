@@ -664,7 +664,9 @@ STYLES = {
     "birdsvault": {"captions": "group", "title_card": False, "cut_every": 0.0, "punch": False, "sfx": False},
     "global": {"captions": "box", "title_card": True, "cut_every": 2.2, "punch": True, "sfx": True},
     # Oyun karakteri 'edit' havası: sıcak renk, sinema bantları, harf harf altyazı, sakin tempo
-    "cinematic": {"captions": "reveal", "title_card": False, "cut_every": 0.0, "punch": False, "sfx": False,
+    # Altyazı: klasik (beyaz satır, o an söylenen kelime sarı). Harf harf açılan "reveal"
+    # animasyonu beğenilmedi; istenirse bölümde caption_style: "reveal" ile hâlâ seçilebilir.
+    "cinematic": {"captions": "group", "title_card": False, "cut_every": 0.0, "punch": False, "sfx": False,
                   "grade": True, "bars": True},
 }
 TITLE_CARD_S = 1.3      # açılış kartı süresi (anlatım bu kadar gecikmeli başlar)
@@ -750,7 +752,8 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
             except Exception as e:
                 log(f"Wiki görselleri alınamadı: {page} ({type(e).__name__})")
                 pools[page] = []
-        assign(scenes, pools, wiki["page"], episode.get("subject", wiki["page"]), work)
+        assign(scenes, pools, wiki["page"], episode.get("subject", wiki["page"]), work,
+               avoid=wiki.get("avoid"))
     for sc in scenes:  # görseli bulunamayan sahneler stoka düşer
         if sc.image is None:
             sc.image_query = None

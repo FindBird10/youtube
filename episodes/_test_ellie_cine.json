@@ -5,7 +5,15 @@
   "language": "en",
   "wiki": {
     "site": "thelastofus.fandom.com",
-    "page": "Ellie"
+    "page": "Ellie",
+    "avoid": [
+      "abby",
+      "dina",
+      "part ii",
+      "tlou2",
+      "seattle",
+      "jackson"
+    ]
   },
   "description": "The story of Ellie Williams from The Last of Us, and the lie that changed everything. Spoilers for The Last of Us Part I.\n\nFan-made content. Not affiliated with or endorsed by Naughty Dog or Sony Interactive Entertainment. Game images © their respective owners.",
   "tags": [

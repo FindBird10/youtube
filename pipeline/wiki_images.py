@@ -46,7 +46,12 @@ def list_images(site: str, page: str, min_w: int = 600, min_h: int = 400) -> lis
     return out
 
 
-def assign(scenes: list, pools: dict[str, list[dict]], main_page: str, subject: str, work: Path) -> None:
+NON_GAME_RE = re.compile(r"drawing|sketch|concept|comic|american dreams|artwork|illustration|poster|"
+                         r"cover|fan ?art|render|model|cosplay|merch|figure|statue|funko|book", re.I)
+
+
+def assign(scenes: list, pools: dict[str, list[dict]], main_page: str, subject: str, work: Path,
+           avoid: list[str] | None = None) -> None:
     """image_query'si olan sahnelere görsel indirir (dosya adı eşleşmesine göre, tekrar etmeden).
 
     Sahnenin image_page'i varsa önce o sayfanın görsellerine, yoksa bölümün ana sayfasına bakılır.
@@ -55,12 +60,17 @@ def assign(scenes: list, pools: dict[str, list[dict]], main_page: str, subject: 
 
     used: set[str] = set()
     subj = {w for w in re.findall(r"[a-z]+", subject.lower()) if len(w) > 2}
+    avoid = [a.lower() for a in (avoid or [])]
 
     def score(img: dict, want: set[str]) -> float:
         name = img["name"].lower()
         s = 3.0 * sum(1 for w in want if w in name)
         s += 1.0 * sum(1 for w in subj if w in name)          # karakterin adı geçen görseller öne
         s += 0.5 if img["w"] >= 1200 else 0.0                    # net görsel
+        if NON_GAME_RE.search(name):                              # çizim/konsept/çizgi roman geri planda
+            s -= 4.0
+        if avoid and any(a in name for a in avoid):               # ör. başka oyunun görselleri
+            s -= 6.0
         return s
 
     for i, sc in enumerate(scenes):
