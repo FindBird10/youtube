@@ -1,0 +1,35 @@
+name: Kanal kontrolü (herkese açık videolar)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Kanalların RSS listesini al ve logs-kanal dalına koy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/k && cd /tmp/k
+          for c in gaming:UC-Ady9DQ8uTMpZfV_GeDKIA global:UCp2rjdN1M1z0GMJ2Gshzdfw; do
+            n=${c%%:*}; id=${c#*:}
+            curl -fsSL "https://www.youtube.com/feeds/videos.xml?channel_id=$id" -o "$n.xml" || echo "alınamadı" > "$n.xml"
+            python3 - "$n.xml" > "$n.txt" <<'PY'
+          import sys, xml.etree.ElementTree as ET
+          ns = {"a": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
+          try:
+              root = ET.parse(sys.argv[1]).getroot()
+              for e in root.findall("a:entry", ns):
+                  print(e.findtext("yt:videoId", "", ns), e.findtext("a:published", "", ns), e.findtext("a:title", "", ns))
+          except Exception as ex:
+              print("hata:", ex)
+          PY
+          done
+          git init -q -b logs-kanal && git add . \
+            && git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "Kanal kontrolü [skip ci]" \
+            && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" logs-kanal
