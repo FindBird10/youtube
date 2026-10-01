@@ -35,10 +35,17 @@ jobs:
           cache: pip
 
       - name: FFmpeg ve yazı tipleri
+        timeout-minutes: 15
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core libssl3 ca-certificates
-          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2
+          # Ubuntu aynası bazen takılıyor: her denemeye süre sınırı, 3 deneme
+          for i in 1 2 3; do
+            sudo timeout 240 apt-get update -qq -o Acquire::Retries=3 -o Acquire::http::Timeout=30 \
+            && sudo timeout 300 apt-get install -y -qq -o Acquire::Retries=3 ffmpeg fonts-dejavu-core libssl3 ca-certificates \
+            && break
+            echo "apt denemesi $i başarısız, tekrar deneniyor"; sleep 10
+          done
+          command -v ffmpeg
+          sudo timeout 120 apt-get install -y -qq libasound2t64 || sudo timeout 120 apt-get install -y -qq libasound2 || true
 
       - name: Python paketleri
         run: pip install -r requirements.txt
