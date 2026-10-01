@@ -28,14 +28,14 @@ Herkesin bir kez aklına gelmiş ama cevabını bilmediği gündelik sorular:
 "Uçaklar neden beyaz?", "Neden esneriz ve esneme neden bulaşıcı?", "Deniz suyu neden tuzlu?".
 - **Başlık = soru.** Kanca: soruyu sor + çoğu kişinin yanlış bildiği cevabı söyle
   ("Çoğu kişi … sanıyor ama asıl sebep bambaşka.").
-- Akış: soru → yaygın yanlış cevap → gerçek sebep (adım adım) → şaşırtıcı bir ek bilgi → yorum sorusu.
+- Akış: soru → yaygın yanlış cevap → gerçek sebep (kısaca) → şaşırtıcı bir ek bilgi → döngü cümlesi.
 - Cevabı ilk 5 saniyede verme; ortaya doğru ver.
 
 ### 2. "Ne olurdu?" senaryoları (`ne-olurdu`)
 Gerçek bilime dayanan düşünce deneyleri: "Dünya 1 saniyeliğine dönmeyi bıraksa?",
 "Ay yok olsa?", "Bir yıl hiç uyumasan?", "Okyanuslar buharlaşsa?".
 - **Başlık = senaryo sorusu.** Kanca: en çarpıcı sonucu ilk cümlede ima et.
-- Akış **zaman çizelgesiyle tırmanır**: "İlk saniyede… 1 saat sonra… 1 hafta sonra… 1 yıl sonra…".
+- Akış **zaman çizelgesiyle tırmanır**: "İlk saniyede… 1 hafta sonra… 1 yıl sonra…" (en fazla 3–4 adım).
   Her adım bir öncekinden daha çarpıcı olmalı.
 - Sonuçlar bilimsel kaynaklara dayanmalı (NASA, üniversiteler, ciddi bilim yayınları);
   kesin olmayanı "bilim insanlarına göre muhtemelen" diye söyle, uydurma.
@@ -44,10 +44,10 @@ Gerçek bilime dayanan düşünce deneyleri: "Dünya 1 saniyeliğine dönmeyi b�
 Belgelenmiş, gerçekten yaşanmış tuhaf olaylar: çözülememiş vakalar, açıklanamayan sinyaller,
 kayıp gemiler, tarihin garip kazaları (ör. Dyatlov Geçidi, Wow! sinyali, 1518 dans salgını,
 Mary Celeste, Tunguska patlaması).
-- **Soğuk açılış:** hikâyenin en tuhaf anıyla başla ("1518'de Strazburg'da bir kadın sokakta
-  dans etmeye başladı ve 6 gün durmadı.").
-- Akış: olay → neden tuhaf → ortaya atılan açıklamalar → hâlâ cevapsız kalan kısım → yorum sorusu
-  ("Sence ne oldu?").
+- **Soğuk açılış:** hikâyenin en tuhaf anıyla başla, tarih/yer sonra gelsin
+  ("Bir kadın sokakta dans etmeye başladı ve günlerce duramadı." — "14 Temmuz 1518'de
+  Strazburg'da…" diye başlama).
+- Akış: olay → neden tuhaf → en güçlü 1–2 açıklama → hâlâ cevapsız kalan kısım → döngü cümlesi.
 - Belgelenmiş gerçeklerle teorileri açıkça ayır. Kan, vahşet ve ayrıntılı ölüm tarifleri yok;
   kurbanlara saygılı dil kullan. Yaşayan kişiler hakkında suçlama yok.
 
@@ -72,11 +72,11 @@ Seçtiğin konunun neden ilgi çekeceğini commit mesajında bir cümleyle yaz.
 
 | Alan | Zorunlu | Açıklama |
 |---|---|---|
-| `title` | ✔ | En fazla ~70 karakter. Merak uyandıran, abartısız, doğru. 1 emoji olabilir. |
+| `title` | ✔ | **En fazla ~50 karakter** (Shorts akışında uzun başlık kesilir). Merak uyandıran, abartısız, doğru; cevabı vermez ve ilk cümlenin aynısı olmaz. 1 emoji olabilir. |
 | `format` | ✔ | `neden`, `ne-olurdu` veya `gizem` (günlük akış tablosuna göre). |
-| `description` | | 1–3 cümle + `Kaynak: ...`. `#Shorts` otomatik eklenir. |
+| `description` | | İlk satır yorum sorusu ("Sence ne oldu? 👇"), sonra 1–2 cümle + `Kaynak: ...`. `#Shorts` otomatik eklenir. |
 | `tags` | | 5–10 etiket. |
-| `scenes` | ✔ | 6–9 sahne. Her sahne: `text` (seslendirilecek metin) ve `search` (Pexels için **İngilizce** 2–3 kelime). |
+| `scenes` | ✔ | 4–6 sahne. Her sahne: `text` (seslendirilecek metin) ve `search` (Pexels için **İngilizce** 2–3 kelime). |
 | `publish_at` | | ISO UTC saat, yukarıdaki tabloya göre. |
 | `voice` | | **Yazma.** Ses formata göre otomatik seçilir: `neden`/`ne-olurdu` → Brian, `gizem` → Andrew (Azure çok dilli sesler, Türkçe okur). |
 | `rate` | | **Yazma.** Konuşma hızı sese göre otomatik (+8%). |
@@ -93,9 +93,12 @@ yerleri belirler. Bu yüzden sahne metinleri birbirinin devamı gibi akmalı.
 
 ## İçerik kuralları
 
-1. **Süre:** Toplam 90–130 kelime (≈35–50 sn). 60 saniyeyi geçme.
-2. **Kanca ve tutma:** İlk cümle tek başına merak uyandırmalı; selamlama, "bugün size..." yok.
-   İlk 3 saniyede bir soru/boşluk aç, cevabını sona doğru ver. Ortada bir kez yeniden kanca at
+1. **Süre:** Toplam **55–85 kelime** (≈22–33 sn), asla 90'ı geçme. Shorts akışında yeni bir
+   kanal için en önemli ölçü izlenme yüzdesi; kısa ve tamamı izlenen video, uzun ve yarıda
+   bırakılan videodan çok daha fazla gösterilir. Bir videoya tek fikir: yan bilgileri at.
+2. **Kanca ve tutma:** İlk cümle **en fazla 10 kelime** ve tek başına kaydırmayı durdurmalı:
+   en şaşırtıcı iddia/an doğrudan söylenir. Selamlama, "bugün size…", "biliyor muydunuz",
+   tarih/yer girişi yok. Cevabı sona doğru ver; ortada bir kez yeniden kanca at
    ("Ama asıl tuhaf olan kısım…"). Dolgu cümle yok; her cümle bir sonrakini merak ettirmeli.
 3. **Doğruluk:** Her iddiayı güvenilir bir kaynakla (ansiklopedi, üniversite, NASA, NatGeo,
    Smithsonian vb.) web aramasıyla doğrula; kaynağı açıklamaya yaz. Emin olmadığın bilgiyi kullanma.
@@ -110,7 +113,10 @@ yerleri belirler. Bu yüzden sahne metinleri birbirinin devamı gibi akmalı.
    görmeli. Özneden ancak metin gerçekten başka bir şeyi anlatıyorsa uzaklaş ve o zaman da
    gerçek çekim olarak kolay bulunacak somut bir şey iste. Çizim/animasyon isteyen kelimeler
    ("cartoon", "3d", "illustration") kullanma.
-7. **Kapanış:** Son sahne yoruma davet eden doğal bir soru ("Sence ne oldu?", "Sen olsan…?").
+7. **Kapanış = döngü:** Son cümle bitmemiş gibi kalır ve ilk cümleye bağlanır; video başa
+   sardığında anlatım kesintisiz devam eder ve izleyici farkında olmadan ikinci kez izler
+   (ör. son: "…ve bütün bunların sebebi şu:" → ilk: "Ahtapotun tam 3 kalbi var…").
+   "Yorumlara yaz", "abone ol" gibi kapanışlar yok; yorum sorusu açıklamanın ilk satırına.
 8. Telif içeren isim/marka, yaşayan kişiler hakkında doğrulanmamış iddia, tıbbi/finansal tavsiye yok.
 
 Örnek için `episodes/_ornek.json` dosyasına bak.

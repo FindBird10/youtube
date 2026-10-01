@@ -66,7 +66,7 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
             "title": episode["title"][:100],
             "description": desc[:4900],
             "tags": episode.get("tags", [])[:30],
-            "categoryId": str(episode.get("category_id", os.environ.get("YT_CATEGORY_ID", "22"))),
+            "categoryId": str(episode.get("category_id", os.environ.get("YT_CATEGORY_ID", "27"))),
             "defaultLanguage": lang,
             "defaultAudioLanguage": lang,
         },

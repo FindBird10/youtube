@@ -1,7 +1,7 @@
 {
-  "title": "Ahtapotun 3 kalbi var ve biri yüzerken duruyor 🐙",
+  "title": "Ahtapotun bir kalbi yüzerken duruyor 🐙",
   "subject": "octopus",
-  "description": "Ahtapotlar üç kalbe ve mavi kana sahip. Peki neden yüzmek yerine sürünmeyi tercih ediyorlar?\n\nKaynak: Smithsonian Ocean",
+  "description": "Sence doğadaki en tuhaf hayvan hangisi? 👇\n\nAhtapotlar üç kalbe ve mavi kana sahip.\n\nKaynak: Smithsonian Ocean",
   "tags": [
     "ahtapot",
     "hayvanlar",
@@ -13,32 +13,24 @@
   "privacy": "private",
   "scenes": [
     {
-      "text": "Ahtapotun tam üç kalbi var. Ve biri, yüzerken duruyor.",
+      "text": "Ahtapotun tam 3 kalbi var, ve biri yüzerken duruyor.",
       "search": "octopus underwater"
     },
     {
-      "text": "Kalplerden ikisi, kanı sadece solungaçlara pompalar.",
+      "text": "İki kalp kanı sadece solungaçlara pompalar, üçüncüsü ise bütün vücuda.",
       "search": "octopus close up"
     },
     {
-      "text": "Üçüncüsü ise kanı bütün vücuda gönderir.",
-      "search": "octopus swimming"
-    },
-    {
-      "text": "Ama ahtapot yüzmeye başladığında, bu kalp atmayı bırakır.",
+      "text": "Ama ahtapot yüzmeye başladığında bu üçüncü kalp atmayı bırakır, bu yüzden yüzmek onu çok yorar.",
       "search": "octopus swimming ocean"
     },
     {
-      "text": "Bu yüzden yüzmek onu çok yorar. Çoğu zaman deniz tabanında sürünmeyi seçer.",
+      "text": "O da çoğu zaman yüzmek yerine deniz tabanında sürünmeyi seçer.",
       "search": "octopus crawling seabed"
     },
     {
-      "text": "Bir de kanı mavidir. Çünkü oksijeni demir değil, bakır taşır.",
+      "text": "Kanı da mavidir, çünkü oksijeni demir değil bakır taşır, ve bütün bunların sebebi şu:",
       "search": "octopus tentacles"
-    },
-    {
-      "text": "Sence doğadaki en tuhaf hayvan hangisi? Yorumlara yaz.",
-      "search": "octopus hiding reef"
     }
   ]
 }
