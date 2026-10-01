@@ -14,7 +14,15 @@ import os
 import time
 from pathlib import Path
 
-from channels import CHANNELS, DEFAULT_CHANNEL
+from channels import CHANNELS, DEFAULT_CHANNEL, check_channel
+
+
+class WrongChannel(RuntimeError):
+    """Token beklenen kanala ait değil. video_id doluysa video yanlış kanala yüklenmiştir."""
+
+    def __init__(self, msg: str, video_id: str | None = None):
+        super().__init__(msg)
+        self.video_id = video_id
 
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 
@@ -92,6 +100,14 @@ def _token_env(channel: str) -> str:
     return CHANNELS.get(channel, CHANNELS[DEFAULT_CHANNEL])["token_env"]
 
 
+def token_fingerprint(channel: str) -> str:
+    """Token'ın kısa özeti (token'ın kendisi kaydedilmez)."""
+    import hashlib
+
+    tok = os.environ.get(_token_env(channel), "").strip()
+    return hashlib.sha256(tok.encode()).hexdigest()[:16] if tok else ""
+
+
 def have_credentials(channel: str = DEFAULT_CHANNEL) -> bool:
     return all(os.environ.get(k, "").strip() for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", _token_env(channel)))
 
@@ -156,7 +172,19 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
         "status": status,
     }
 
-    yt = _service(episode.get("_channel", DEFAULT_CHANNEL))
+    ch = episode.get("_channel", DEFAULT_CHANNEL)
+    yt = _service(ch)
+    # Ön kontrol: token youtube.readonly iznine sahipse yüklemeden önce kanal adını doğrula
+    try:
+        items = yt.channels().list(part="snippet", mine=True).execute().get("items", [])
+        if items:
+            problem = check_channel(ch, items[0]["snippet"]["title"])
+            if problem:
+                raise WrongChannel(f"{ch} token'ı yanlış kanala ait: {problem}")
+    except HttpError as e:
+        if e.resp.status not in (401, 403):
+            raise
+        # Yalnızca upload izni var: kontrol yükleme yanıtıyla yapılacak
     media = MediaFileUpload(str(video), mimetype="video/mp4", chunksize=8 * 1024 * 1024, resumable=True)
     req = yt.videos().insert(part="snippet,status", body=body, media_body=media)
 
@@ -174,4 +202,8 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
     channel = response.get("snippet", {}).get("channelTitle") or response.get("snippet", {}).get("channelId", "?")
     print(f"[upload] Yüklendi: https://youtube.com/shorts/{vid} kanal: {channel} "
           f"(durum: {status['privacyStatus']})", flush=True)
+    problem = check_channel(ch, response.get("snippet", {}).get("channelTitle", ""))
+    if problem:
+        raise WrongChannel(f"{ch} videosu yanlış kanala yüklendi ({problem}). "
+                           f"Studio'dan sil: https://youtube.com/shorts/{vid}", video_id=vid)
     return vid, channel
