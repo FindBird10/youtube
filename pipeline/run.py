@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from make_video import ROOT, load_episode, render  # noqa: E402
 from channels import CHANNELS, channel_of, episode_key  # noqa: E402
-from upload import WrongChannel, have_credentials, token_fingerprint, upload  # noqa: E402
+from upload import WrongChannel, find_existing, have_credentials, token_fingerprint, upload  # noqa: E402
 
 STATE = ROOT / "state" / "published.json"
 # Yanlış kanala ait çıkan token'lar (parmak izi). Secret değişince engel kendiliğinden kalkar.
@@ -77,6 +77,11 @@ def main() -> int:
             ch = channel_of(p, ep_dir)
             if p.name.startswith("_") or episode_key(ch, p.stem) in done:
                 continue
+            until = CHANNELS[ch].get("paused_until")
+            if not a.no_upload and until and dt.datetime.now(dt.timezone.utc) < dt.datetime.fromisoformat(
+                    until.replace("Z", "+00:00")):
+                summary(f"- ⏸️ `{ch}/{p.name}`: {ch} yüklemeleri {until} sonrasına kadar bekletiliyor.")
+                continue
             if not a.no_upload and not CHANNELS[ch].get("enabled", True):
                 summary(f"- ⏸️ `{ch}/{p.name}`: {ch} kanalına yükleme geçici olarak kapalı (channels.py).")
                 continue
@@ -103,6 +108,18 @@ def main() -> int:
     for p in pending:
         try:
             ep = load_episode(p)
+            if not a.no_upload and have_credentials(ep["_channel"]):
+                dup = find_existing(ep["_channel"], ep["title"])
+                if dup:
+                    state.append({
+                        "slug": ep["_key"], "title": ep["title"], "video_id": dup,
+                        "url": f"https://youtube.com/shorts/{dup}", "channel": CHANNELS[ep["_channel"]]["expect_title"],
+                        "account": ep["_channel"], "format": ep.get("format"), "publish_at": ep.get("publish_at"),
+                        "uploaded_at": None, "note": "kanalda zaten vardı (RSS), yeniden yüklenmedi",
+                    })
+                    save_state(state)
+                    summary(f"- ♻️ **{ep['title']}** kanalda zaten var → https://youtube.com/shorts/{dup}")
+                    continue
             video = render(ep, out)
             if not a.no_upload and have_credentials(ep["_channel"]):
                 if is_blocked(ep["_channel"], blocked):

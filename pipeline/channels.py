@@ -14,6 +14,7 @@ CHANNELS: dict[str, dict] = {
     "birdsvault": {
         "token_env": "YT_REFRESH_TOKEN",
         "expect_title": "BirdsVault",        # yükleme bu adlı kanala gitmezse durdurulur
+        "channel_id": None,
         "category": "27",                     # Eğitim
         "defaults": {"language": "tr"},
         "hashtags": [],
@@ -22,6 +23,7 @@ CHANNELS: dict[str, dict] = {
     "gaming": {
         "token_env": "YT_REFRESH_TOKEN_GAMING",
         "expect_title": "BirdsVaultGaming",
+        "channel_id": "UC-Ady9DQ8uTMpZfV_GeDKIA",  # aynı başlıklı video var mı kontrolü (RSS)
         "category": "20",                     # Oyun
         "defaults": {"language": "en", "style": "cinematic", "format": "lore"},
         "hashtags": ["#gaming", "#lore", "#videogames"],
@@ -29,9 +31,11 @@ CHANNELS: dict[str, dict] = {
     },
     "global": {
         "token_env": "YT_REFRESH_TOKEN_GLOBAL",
-        # 1 Eki: başarısız çalıştırmanın ne yüklediği doğrulanana kadar kapalı (çift yükleme olmasın)
-        "enabled": False,
-        "expect_title": None,                # ad bilinmiyor: en azından diğer kanalların adı olmamalı
+        "expect_title": "BirdsVaultGlobal",
+        # 1 Eki: kaydı kaybolan çalıştırmanın zamanlanmış videoları (varsa) 02:00 TR'de herkese açılır;
+        # o zamana kadar RSS kontrolü onları göremez, çift yükleme olmasın diye bekle
+        "paused_until": "2026-10-01T23:05:00Z",
+        "channel_id": "UCp2rjdN1M1z0GMJ2Gshzdfw",
         "category": "27",
         "defaults": {"language": "en", "style": "global"},
         "hashtags": [],

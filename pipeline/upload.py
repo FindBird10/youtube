@@ -100,6 +100,33 @@ def _token_env(channel: str) -> str:
     return CHANNELS.get(channel, CHANNELS[DEFAULT_CHANNEL])["token_env"]
 
 
+def find_existing(channel: str, title: str) -> str | None:
+    """Kanalın herkese açık son videolarında (RSS) aynı başlık varsa video kimliğini döndürür.
+
+    Kayıt kaybolursa (ör. yarıda kalan çalıştırma) aynı videonun ikinci kez yüklenmesini önler.
+    Zamanlanmış/gizli videolar RSS'te görünmez.
+    """
+    import re
+    import xml.etree.ElementTree as ET
+
+    import requests
+
+    cid = CHANNELS.get(channel, {}).get("channel_id")
+    if not cid:
+        return None
+    try:
+        r = requests.get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}", timeout=20)
+        r.raise_for_status()
+        ns = {"a": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
+        norm = lambda t: re.sub(r"\s+", " ", t or "").strip().lower()  # noqa: E731
+        for e in ET.fromstring(r.content).findall("a:entry", ns):
+            if norm(e.findtext("a:title", "", ns)) == norm(title[:100]):
+                return e.findtext("yt:videoId", "", ns) or None
+    except Exception as e:
+        print(f"[upload] RSS kontrolü yapılamadı ({type(e).__name__}); devam ediliyor", flush=True)
+    return None
+
+
 def token_fingerprint(channel: str) -> str:
     """Token'ın kısa özeti (token'ın kendisi kaydedilmez)."""
     import hashlib
