@@ -74,8 +74,9 @@ Seçtiğin konunun neden ilgi çekeceğini commit mesajında bir cümleyle yaz.
 |---|---|---|
 | `title` | ✔ | **En fazla ~50 karakter** (Shorts akışında uzun başlık kesilir). Merak uyandıran, abartısız, doğru; cevabı vermez ve ilk cümlenin aynısı olmaz. 1 emoji olabilir. |
 | `format` | ✔ | `neden`, `ne-olurdu` veya `gizem` (günlük akış tablosuna göre). |
-| `description` | | İlk satır yorum sorusu ("Sence ne oldu? 👇"), sonra 1–2 cümle + `Kaynak: ...`. `#Shorts` otomatik eklenir. |
-| `tags` | | 5–10 etiket. |
+| `description` | ✔ | İlk satır yorum sorusu ("Sence ne oldu? 👇"), sonra konunun ana anahtar kelimelerini doğal biçimde geçiren 1–2 cümle (aranacak kelimeler: konu adı, yer, olay adı) + `Kaynak: ...`. Hashtag satırı otomatik eklenir. |
+| `tags` | ✔ | **10–15 etiket**, insanların YouTube'da gerçekten yazacağı aramalar: konunun adı, soru biçimi ("soğan neden ağlatır"), eş anlamlılar, yer/kişi adları, yaygın yazım hataları. Kanal ve format etiketleri (ilginç bilgiler, gizem, bilim…) **otomatik eklenir**, tekrar yazma. |
+| `hashtags` | ✔ | **2–4 konuya özel** hashtag, Türkçe, boşluksuz (ör. `["#soğan", "#mutfak"]`). `#Shorts` ve format hashtag'leri (#bilgi, #gizem, #neolurdu…) otomatik eklenir; toplam en fazla 8. |
 | `scenes` | ✔ | 4–6 sahne. Her sahne: `text` (seslendirilecek metin) ve `search` (Pexels için **İngilizce** 2–3 kelime). |
 | `publish_at` | | ISO UTC saat, yukarıdaki tabloya göre. |
 | `voice` | | **Yazma.** Ses formata göre otomatik seçilir: `neden`/`ne-olurdu` → Brian, `gizem` → Andrew (Azure çok dilli sesler, Türkçe okur). |

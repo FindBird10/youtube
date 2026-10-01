@@ -16,6 +16,65 @@ from pathlib import Path
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 
 
+# Formata göre her videoya otomatik eklenen hashtag ve etiketler (bölümdekilerle birleştirilir)
+BASE_HASHTAGS = {
+    "tr": {"neden": ["#bilgi", "#ilginçbilgiler", "#neden", "#bilim"],
+           "ne-olurdu": ["#neolurdu", "#bilim", "#ilginçbilgiler", "#uzay"],
+           "gizem": ["#gizem", "#tarih", "#gizemliolaylar", "#ilginçbilgiler"],
+           "": ["#bilgi", "#ilginçbilgiler"]},
+    "en": {"lore": ["#gaming", "#lore", "#videogames"],
+           "": ["#facts", "#didyouknow"]},
+}
+BASE_TAGS = {
+    "tr": ["ilginç bilgiler", "bilgi", "bilmediğiniz bilgiler", "shorts", "kısa bilgi", "BirdsVault"],
+    "en": ["shorts", "facts", "did you know"],
+}
+FORMAT_TAGS = {
+    "neden": ["neden", "bilim", "merak edilenler", "günlük bilgiler", "yanlış bilinen doğrular"],
+    "ne-olurdu": ["ne olurdu", "bilim", "senaryo", "uzay", "düşünce deneyi"],
+    "gizem": ["gizem", "tarih", "çözülemeyen gizemler", "gizemli olaylar", "gerçek hikayeler"],
+    "lore": ["game lore", "video games", "character story"],
+}
+MAX_HASHTAGS = 8          # çok fazla hashtag spam sayılır (60'ı aşınca YouTube hepsini yok sayar)
+TAGS_CHAR_LIMIT = 480     # YouTube sınırı 500 karakter (boşluklu etiketler tırnakla sayılır)
+
+
+def _norm_hashtag(h: str) -> str:
+    h = "".join(ch for ch in h.strip().lstrip("#") if ch.isalnum() or ch == "_")
+    return f"#{h}" if h else ""
+
+
+def build_hashtags(episode: dict) -> list[str]:
+    lang = episode.get("language", "tr")
+    base = BASE_HASHTAGS.get(lang, BASE_HASHTAGS["tr"])
+    fmt = episode.get("format", "")
+    out, seen = [], set()
+    for h in ["#Shorts"] + list(episode.get("hashtags", [])) + base.get(fmt, base[""]):
+        h = _norm_hashtag(h)
+        if h and h.lower() not in seen:
+            seen.add(h.lower())
+            out.append(h)
+    return out[:MAX_HASHTAGS]
+
+
+def build_tags(episode: dict) -> list[str]:
+    lang = episode.get("language", "tr")
+    cand = list(episode.get("tags", [])) + FORMAT_TAGS.get(episode.get("format", ""), []) \
+        + BASE_TAGS.get(lang, BASE_TAGS["tr"])
+    out, seen, used = [], set(), 0
+    for t in cand:
+        t = t.strip().lstrip("#").replace("<", "").replace(">", "")
+        if not t or t.lower() in seen:
+            continue
+        cost = len(t) + (2 if " " in t else 0) + (1 if out else 0)
+        if used + cost > TAGS_CHAR_LIMIT:
+            continue
+        seen.add(t.lower())
+        out.append(t)
+        used += cost
+    return out
+
+
 def have_credentials() -> bool:
     return all(os.environ.get(k, "").strip() for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN"))
 
@@ -40,8 +99,10 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
     from googleapiclient.http import MediaFileUpload
 
     desc = episode.get("description", "").strip()
-    if "#shorts" not in desc.lower():
-        desc = (desc + "\n\n#Shorts").strip()
+    present = {w.lower() for w in desc.split() if w.startswith("#")}
+    tags_line = " ".join(h for h in build_hashtags(episode) if h.lower() not in present)
+    if tags_line:
+        desc = (desc + "\n\n" + tags_line).strip()
     privacy = episode.get("privacy") or os.environ.get("YT_DEFAULT_PRIVACY", "private")
     status = {
         "privacyStatus": privacy,
@@ -65,7 +126,7 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
         "snippet": {
             "title": episode["title"][:100],
             "description": desc[:4900],
-            "tags": episode.get("tags", [])[:30],
+            "tags": build_tags(episode),
             "categoryId": str(episode.get("category_id", os.environ.get("YT_CATEGORY_ID", "27"))),
             "defaultLanguage": lang,
             "defaultAudioLanguage": lang,
