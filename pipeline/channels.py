@@ -29,6 +29,8 @@ CHANNELS: dict[str, dict] = {
     },
     "global": {
         "token_env": "YT_REFRESH_TOKEN_GLOBAL",
+        # 1 Eki: başarısız çalıştırmanın ne yüklediği doğrulanana kadar kapalı (çift yükleme olmasın)
+        "enabled": False,
         "expect_title": None,                # ad bilinmiyor: en azından diğer kanalların adı olmamalı
         "category": "27",
         "defaults": {"language": "en", "style": "global"},
