@@ -3,11 +3,11 @@ name: Shorts üret ve yükle
 on:
   push:
     branches: [main]
-    paths: ["episodes/*.json"]
+    paths: ["episodes/*.json", "episodes/*/*.json"]
   workflow_dispatch:
     inputs:
       episode:
-        description: "Tek bir bölüm (ör. _ornek). Boş bırakılırsa bekleyen tüm bölümler."
+        description: "Tek bir bölüm (ör. _ornek, gaming/_ornek). Boş bırakılırsa bekleyen tüm bölümler."
         required: false
         default: ""
       upload:
@@ -25,7 +25,7 @@ concurrency:
 jobs:
   shorts:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -52,8 +52,10 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_REFRESH_TOKEN_GAMING: ${{ secrets.YT_REFRESH_TOKEN_GAMING }}
+          YT_REFRESH_TOKEN_GLOBAL: ${{ secrets.YT_REFRESH_TOKEN_GLOBAL }}
           YT_DEFAULT_PRIVACY: ${{ vars.YT_DEFAULT_PRIVACY || 'private' }}
-          MAX_PER_RUN: ${{ vars.MAX_PER_RUN || '3' }}
+          MAX_PER_RUN: ${{ vars.MAX_PER_RUN || '9' }}
           IN_EPISODE: ${{ github.event.inputs.episode }}
           IN_UPLOAD: ${{ github.event.inputs.upload }}
         run: |

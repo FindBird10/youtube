@@ -1,6 +1,7 @@
 """Yüklenmemiş bölümleri bulur, videolarını üretir ve YouTube'a yükler.
 
-- episodes/*.json içindeki, state/published.json'da kaydı olmayan her bölüm işlenir.
+- episodes/*.json (BirdsVault) ve episodes/<kanal>/*.json içindeki, state/published.json'da
+  kaydı olmayan her bölüm işlenir. Token'ı tanımlı olmayan kanalın bölümleri bekletilir.
 - Adı "_" ile başlayan dosyalar (ör. _ornek.json) atlanır.
 - YouTube anahtarları tanımlı değilse yalnızca video üretilir (önizleme için).
 """
@@ -16,6 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from make_video import ROOT, load_episode, render  # noqa: E402
+from channels import CHANNELS, channel_of, episode_key  # noqa: E402
 from upload import have_credentials, upload  # noqa: E402
 
 STATE = ROOT / "state" / "published.json"
@@ -48,23 +50,34 @@ def main() -> int:
     state = load_state()
     done = {x["slug"] for x in state}
 
+    ep_dir = ROOT / "episodes"
     if a.episode:
         p = Path(a.episode)
         if not p.exists():
-            p = ROOT / "episodes" / (a.episode if a.episode.endswith(".json") else a.episode + ".json")
+            p = ep_dir / (a.episode if a.episode.endswith(".json") else a.episode + ".json")
         pending = [p]
     else:
-        pending = [p for p in sorted((ROOT / "episodes").glob("*.json"))
-                   if not p.name.startswith("_") and p.stem not in done][: a.max]
+        files = sorted(ep_dir.glob("*.json"))
+        for ch in CHANNELS:
+            if (ep_dir / ch).is_dir():
+                files += sorted((ep_dir / ch).glob("*.json"))
+        pending = []
+        for p in files:
+            ch = channel_of(p, ep_dir)
+            if p.name.startswith("_") or episode_key(ch, p.stem) in done:
+                continue
+            if not a.no_upload and not have_credentials(ch):
+                summary(f"- ⏸️ `{ch}/{p.name}`: {CHANNELS[ch]['token_env']} tanımlı değil, bölüm bekletiliyor.")
+                continue
+            pending.append(p)
+        pending = pending[: a.max]
 
     if not pending:
         summary("Bekleyen bölüm yok.")
         return 0
 
-    can_upload = have_credentials() and not a.no_upload
-    if not can_upload:
-        summary("> YouTube anahtarları tanımlı değil ya da yükleme kapalı: videolar yalnızca üretilecek "
-                "(Actions > bu çalıştırma > Artifacts altından indirebilirsin).")
+    if a.no_upload:
+        summary("> Yükleme kapalı: videolar yalnızca üretilecek.")
 
     out = ROOT / "build"
     out.mkdir(exist_ok=True)
@@ -73,11 +86,11 @@ def main() -> int:
         try:
             ep = load_episode(p)
             video = render(ep, out)
-            if can_upload:
+            if not a.no_upload and have_credentials(ep["_channel"]):
                 vid, channel = upload(video, ep)
                 state.append({
-                    "slug": ep["_slug"], "title": ep["title"], "video_id": vid,
-                    "url": f"https://youtube.com/shorts/{vid}", "channel": channel, "format": ep.get("format"),
+                    "slug": ep["_key"], "title": ep["title"], "video_id": vid,
+                    "url": f"https://youtube.com/shorts/{vid}", "channel": channel, "account": ep["_channel"], "format": ep.get("format"),
                     "publish_at": ep.get("publish_at"),
                     "uploaded_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                 })

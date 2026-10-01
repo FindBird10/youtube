@@ -40,6 +40,12 @@ VOICE_BY_FORMAT = {
     "neden": ("en-US-BrianMultilingualNeural", "+8%"),
     "ne-olurdu": ("en-US-BrianMultilingualNeural", "+8%"),
     "gizem": ("en-US-AndrewMultilingualNeural", "+8%"),
+    # İngilizce kanallar
+    "lore": ("en-US-AndrewMultilingualNeural", "+0%"),
+    "what-if": ("en-US-BrianMultilingualNeural", "+5%"),
+    "dark-history": ("en-US-AndrewMultilingualNeural", "+3%"),
+    "psychology": ("en-US-BrianMultilingualNeural", "+5%"),
+    "business": ("en-US-AndrewMultilingualNeural", "+5%"),
 }
 DEFAULT_AZURE_VOICE = ("en-US-AndrewMultilingualNeural", "+8%")
 EDGE_FALLBACK_VOICE = "tr-TR-AhmetNeural"  # Azure çalışmazsa Türkçe yerel sesle devam
@@ -643,7 +649,8 @@ def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
 
 AUDIO_EXT = {".mp3", ".wav", ".m4a", ".ogg"}
 # Video türüne göre müzik klasörü: assets/music/<ruh hali>/ (boşsa assets/music/ kökü)
-MOOD_BY_FORMAT = {"lore": "lore", "gizem": "gizem", "neden": "genel", "ne-olurdu": "genel"}
+MOOD_BY_FORMAT = {"lore": "lore", "gizem": "gizem", "neden": "genel", "ne-olurdu": "genel",
+                  "what-if": "genel", "dark-history": "gizem", "psychology": "genel", "business": "genel"}
 
 
 def pick_music_tracks(episode: dict) -> list[Path]:
@@ -887,8 +894,15 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
 
 
 def load_episode(path: Path) -> dict:
+    from channels import CHANNELS, DEFAULT_CHANNEL, channel_of, episode_key
+
     ep = json.loads(path.read_text(encoding="utf-8"))
-    ep["_slug"] = path.stem
+    ch = channel_of(path, ROOT / "episodes")
+    ep["_channel"] = ch
+    for k, v in CHANNELS[ch]["defaults"].items():   # kanalın varsayılan dil/stil/formatı
+        ep.setdefault(k, v)
+    ep["_key"] = episode_key(ch, path.stem)
+    ep["_slug"] = path.stem if ch == DEFAULT_CHANNEL else f"{ch}__{path.stem}"
     for k in ("title", "scenes"):
         if k not in ep:
             raise ValueError(f"{path}: '{k}' alanı eksik")

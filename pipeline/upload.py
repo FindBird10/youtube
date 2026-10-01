@@ -1,7 +1,8 @@
 """Hazır videoyu YouTube Data API v3 ile yükler.
 
 Gerekli ortam değişkenleri (GitHub Secrets):
-  YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN
+  YT_CLIENT_ID, YT_CLIENT_SECRET ve kanalın refresh token'ı
+  (BirdsVault: YT_REFRESH_TOKEN, gaming: YT_REFRESH_TOKEN_GAMING, global: YT_REFRESH_TOKEN_GLOBAL)
 
 Not: Google'ın denetiminden (audit) geçmemiş API projelerinden yüklenen
 videolar YouTube tarafından zorunlu olarak "gizli" (private) tutulur.
@@ -13,6 +14,8 @@ import os
 import time
 from pathlib import Path
 
+from channels import CHANNELS, DEFAULT_CHANNEL
+
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 
 
@@ -22,18 +25,26 @@ BASE_HASHTAGS = {
            "ne-olurdu": ["#neolurdu", "#bilim", "#ilginçbilgiler", "#uzay"],
            "gizem": ["#gizem", "#tarih", "#gizemliolaylar", "#ilginçbilgiler"],
            "": ["#bilgi", "#ilginçbilgiler"]},
-    "en": {"lore": ["#gaming", "#lore", "#videogames"],
+    "en": {"lore": [],
+           "what-if": ["#whatif", "#science", "#facts"],
+           "dark-history": ["#history", "#mystery", "#darkhistory"],
+           "psychology": ["#psychology", "#brain", "#facts"],
+           "business": ["#business", "#entrepreneur", "#history"],
            "": ["#facts", "#didyouknow"]},
 }
 BASE_TAGS = {
-    "tr": ["ilginç bilgiler", "bilgi", "bilmediğiniz bilgiler", "shorts", "kısa bilgi", "BirdsVault"],
-    "en": ["shorts", "facts", "did you know"],
+    "tr": ["ilginç bilgiler", "bilgi", "bilmediğiniz bilgiler", "shorts", "kısa bilgi"],
+    "en": ["shorts"],
 }
 FORMAT_TAGS = {
     "neden": ["neden", "bilim", "merak edilenler", "günlük bilgiler", "yanlış bilinen doğrular"],
     "ne-olurdu": ["ne olurdu", "bilim", "senaryo", "uzay", "düşünce deneyi"],
     "gizem": ["gizem", "tarih", "çözülemeyen gizemler", "gizemli olaylar", "gerçek hikayeler"],
-    "lore": ["game lore", "video games", "character story"],
+    "lore": [],
+    "what-if": ["what if", "science", "hypothetical", "space", "facts", "did you know"],
+    "dark-history": ["dark history", "history", "unsolved mysteries", "true story", "creepy history"],
+    "psychology": ["psychology", "psychology facts", "brain", "human behavior", "mind tricks"],
+    "business": ["business", "business story", "entrepreneur", "company history", "success story"],
 }
 MAX_HASHTAGS = 8          # çok fazla hashtag spam sayılır (60'ı aşınca YouTube hepsini yok sayar)
 TAGS_CHAR_LIMIT = 480     # YouTube sınırı 500 karakter (boşluklu etiketler tırnakla sayılır)
@@ -49,7 +60,8 @@ def build_hashtags(episode: dict) -> list[str]:
     base = BASE_HASHTAGS.get(lang, BASE_HASHTAGS["tr"])
     fmt = episode.get("format", "")
     out, seen = [], set()
-    for h in ["#Shorts"] + list(episode.get("hashtags", [])) + base.get(fmt, base[""]):
+    chan = CHANNELS.get(episode.get("_channel", DEFAULT_CHANNEL), CHANNELS[DEFAULT_CHANNEL])
+    for h in ["#Shorts"] + list(episode.get("hashtags", [])) + base.get(fmt, base[""]) + chan["hashtags"]:
         h = _norm_hashtag(h)
         if h and h.lower() not in seen:
             seen.add(h.lower())
@@ -59,8 +71,9 @@ def build_hashtags(episode: dict) -> list[str]:
 
 def build_tags(episode: dict) -> list[str]:
     lang = episode.get("language", "tr")
+    chan = CHANNELS.get(episode.get("_channel", DEFAULT_CHANNEL), CHANNELS[DEFAULT_CHANNEL])
     cand = list(episode.get("tags", [])) + FORMAT_TAGS.get(episode.get("format", ""), []) \
-        + BASE_TAGS.get(lang, BASE_TAGS["tr"])
+        + chan["tags"] + BASE_TAGS.get(lang, BASE_TAGS["tr"])
     out, seen, used = [], set(), 0
     for t in cand:
         t = t.strip().lstrip("#").replace("<", "").replace(">", "")
@@ -75,17 +88,21 @@ def build_tags(episode: dict) -> list[str]:
     return out
 
 
-def have_credentials() -> bool:
-    return all(os.environ.get(k, "").strip() for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN"))
+def _token_env(channel: str) -> str:
+    return CHANNELS.get(channel, CHANNELS[DEFAULT_CHANNEL])["token_env"]
 
 
-def _service():
+def have_credentials(channel: str = DEFAULT_CHANNEL) -> bool:
+    return all(os.environ.get(k, "").strip() for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", _token_env(channel)))
+
+
+def _service(channel: str = DEFAULT_CHANNEL):
     from google.oauth2.credentials import Credentials
     from googleapiclient.discovery import build
 
     creds = Credentials(
         None,
-        refresh_token=os.environ["YT_REFRESH_TOKEN"].strip(),
+        refresh_token=os.environ[_token_env(channel)].strip(),
         token_uri="https://oauth2.googleapis.com/token",
         client_id=os.environ["YT_CLIENT_ID"].strip(),
         client_secret=os.environ["YT_CLIENT_SECRET"].strip(),
@@ -127,14 +144,15 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
             "title": episode["title"][:100],
             "description": desc[:4900],
             "tags": build_tags(episode),
-            "categoryId": str(episode.get("category_id", os.environ.get("YT_CATEGORY_ID", "27"))),
+            "categoryId": str(episode.get("category_id") or CHANNELS.get(episode.get("_channel", DEFAULT_CHANNEL),
+                                                                        CHANNELS[DEFAULT_CHANNEL])["category"]),
             "defaultLanguage": lang,
             "defaultAudioLanguage": lang,
         },
         "status": status,
     }
 
-    yt = _service()
+    yt = _service(episode.get("_channel", DEFAULT_CHANNEL))
     media = MediaFileUpload(str(video), mimetype="video/mp4", chunksize=8 * 1024 * 1024, resumable=True)
     req = yt.videos().insert(part="snippet,status", body=body, media_body=media)
 
