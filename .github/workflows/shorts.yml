@@ -111,11 +111,32 @@ jobs:
       - name: Yayın kaydını güncelle
         if: always()
         run: |
-          if [ -n "$(git status --porcelain state/)" ]; then
-            git config user.name "shorts-bot"
-            git config user.email "shorts-bot@users.noreply.github.com"
+          if [ -z "$(git status --porcelain state/)" ]; then echo "kayıt değişmedi"; exit 0; fi
+          cp state/published.json /tmp/ours_published.json
+          BL=-; [ -f state/blocked_tokens.json ] && cp state/blocked_tokens.json /tmp/ours_blocked.json && BL=/tmp/ours_blocked.json
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          # Aynı anda başka bir çalıştırma da kayıt yazmış olabilir: uzak kaydın üstüne birleştir
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python tools/merge_state.py /tmp/ours_published.json "$BL"
             git add state/
-            git commit -m "Yayın kaydı güncellendi [skip ci]"
-            git pull --rebase origin main
-            git push
-          fi
+            git diff --cached --quiet && { echo "eklenecek yeni kayıt yok"; exit 0; }
+            git commit -qm "Yayın kaydı güncellendi [skip ci]"
+            git push -q origin HEAD:main && exit 0
+            echo "push denemesi $i başarısız, tekrar"; sleep $((i * 3))
+          done
+          exit 1
+
+      - name: Çalıştırma günlüğünü logs dalına koy
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/lg && mkdir /tmp/lg
+          cp build/run.log /tmp/lg/run.log 2>/dev/null || echo "run.log yok" > /tmp/lg/run.log
+          cp /tmp/ours_published.json /tmp/lg/published_this_run.json 2>/dev/null || true
+          echo "${{ github.run_id }} ${{ github.event_name }} $(git -C "$GITHUB_WORKSPACE" log -1 --format=%h)" > /tmp/lg/RUN.txt
+          cd /tmp/lg && git init -q -b logs && git add . \
+            && git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "Günlük [skip ci]" \
+            && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" logs
