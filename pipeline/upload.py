@@ -17,6 +17,10 @@ from pathlib import Path
 from channels import CHANNELS, DEFAULT_CHANNEL, check_channel
 
 
+class UploadLimit(RuntimeError):
+    """Kanalın (hesabın) günlük video yükleme sınırı doldu (uploadLimitExceeded)."""
+
+
 class WrongChannel(RuntimeError):
     """Token beklenen kanala ait değil. video_id doluysa video yanlış kanala yüklenmiştir."""
 
@@ -224,6 +228,8 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
                 retries += 1
                 time.sleep(2 ** retries)
                 continue
+            if "uploadLimitExceeded" in str(e):
+                raise UploadLimit(str(e)) from e
             raise
     vid = response["id"]
     channel = response.get("snippet", {}).get("channelTitle") or response.get("snippet", {}).get("channelId", "?")

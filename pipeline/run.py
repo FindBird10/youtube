@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from make_video import ROOT, load_episode, render  # noqa: E402
 from channels import CHANNELS, channel_of, episode_key  # noqa: E402
-from upload import WrongChannel, find_existing, have_credentials, token_fingerprint, upload  # noqa: E402
+from upload import UploadLimit, WrongChannel, find_existing, have_credentials, token_fingerprint, upload  # noqa: E402
 
 STATE = ROOT / "state" / "published.json"
 # Yanlış kanala ait çıkan token'lar (parmak izi). Secret değişince engel kendiliğinden kalkar.
@@ -60,6 +60,7 @@ def main() -> int:
     state = load_state()
     done = {x["slug"] for x in state}
     blocked = load_blocked()
+    limited: set[str] = set()   # bu çalıştırmada günlük yükleme sınırına takılan kanallar
 
     ep_dir = ROOT / "episodes"
     if a.episode:
@@ -108,6 +109,9 @@ def main() -> int:
     for p in pending:
         try:
             ep = load_episode(p)
+            if not a.no_upload and ep["_channel"] in limited:
+                summary(f"- ⏳ `{p.name}`: {ep['_channel']} günlük yükleme sınırında, atlandı.")
+                continue
             if not a.no_upload and have_credentials(ep["_channel"]):
                 dup = find_existing(ep["_channel"], ep["title"])
                 if dup:
@@ -125,8 +129,16 @@ def main() -> int:
                 if is_blocked(ep["_channel"], blocked):
                     summary(f"- ⛔ `{p.name}`: token yanlış kanala ait, yüklenmedi.")
                     continue
+                if ep["_channel"] in limited:
+                    summary(f"- ⏳ `{p.name}`: {ep['_channel']} kanalının günlük yükleme sınırı doldu, sonraki çalıştırmaya kaldı.")
+                    continue
                 try:
                     vid, channel = upload(video, ep)
+                except UploadLimit:
+                    limited.add(ep["_channel"])
+                    summary(f"- ⏳ `{p.name}`: YouTube günlük yükleme sınırı doldu ({ep['_channel']}); "
+                            f"bölüm bekletiliyor, sonraki çalıştırmada denenecek.")
+                    continue
                 except WrongChannel as e:
                     blocked[ep["_channel"]] = token_fingerprint(ep["_channel"])
                     BLOCKED.write_text(json.dumps(blocked, indent=2) + "\n", encoding="utf-8")
