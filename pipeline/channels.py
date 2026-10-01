@@ -32,9 +32,9 @@ CHANNELS: dict[str, dict] = {
     "global": {
         "token_env": "YT_REFRESH_TOKEN_GLOBAL",
         "expect_title": "BirdsVaultGlobal",
-        # 1 Eki: kaydı kaybolan çalıştırmanın zamanlanmış videoları (varsa) 02:00 TR'de herkese açılır;
-        # o zamana kadar RSS kontrolü onları göremez, çift yükleme olmasın diye bekle
-        "paused_until": "2026-10-01T23:05:00Z",
+        # 2 Eki: YT_REFRESH_TOKEN_GLOBAL hâlâ BirdsVaultGaming hesabına ait (uzay videosu gaming'e gitti).
+        # Doğru token (youtube.readonly izniyle) girilene kadar kapalı.
+        "enabled": False,
         "channel_id": "UCp2rjdN1M1z0GMJ2Gshzdfw",
         "category": "27",
         "defaults": {"language": "en", "style": "global"},
