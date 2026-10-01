@@ -625,7 +625,23 @@ def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
             ["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
              "-of", "csv=p=0", str(sc.image)], capture_output=True, text=True, check=True).stdout.strip().split(",")[:2])
         src = ["-loop", "1", "-framerate", str(FPS), "-i", str(sc.image)]
-        if iw / ih >= 0.8:
+        from faces import focus
+        face = focus(sc.image)
+        if face and face[2] < 0.05:      # çok küçük (muhtemelen yanlış) yüz: dikkate alma
+            face = None
+        if iw / ih >= 0.8 and face:
+            # Yüzü kadrajın ortasına al; yüz küçükse biraz yakınlaş (en fazla 1,5 kat), hafif kaydır
+            fx, fy, fh = face
+            s = min(1.5, max(1.0, 0.20 / max(fh, 1e-3)))
+            sh = int(bh * s) // 2 * 2
+            scaled_w = iw * sh / ih
+            amp = max(0.0, min((scaled_w - bw) / 2, 70.0))
+            direction = 1 if idx % 2 == 0 else -1
+            vf = (f"scale=-2:{sh},crop={bw}:{bh}:"
+                  f"x='clip({fx:.4f}*iw-ow/2+{direction * amp:.1f}*(2*t/{length:.3f}-1),0,iw-ow)':"
+                  f"y='clip({fy:.4f}*ih-oh*0.42,0,ih-oh)',"
+                  f"scale={W}:{H},setsar=1,format=yuv420p")
+        elif iw / ih >= 0.8:
             scaled_w = iw * bh / ih
             amp = max(0.0, min((scaled_w - bw) / 2, 260.0))
             direction = 1 if idx % 2 == 0 else -1

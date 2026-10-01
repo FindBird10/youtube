@@ -9,6 +9,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+import faces
+
 UA = "BirdsVaultShorts/1.0 (+https://github.com/FindBird10/youtube)"
 IMG_EXT = (".jpg", ".jpeg", ".png", ".webp")
 # Simge, logo, harita vb. küçük/alakasız dosyaları ele
@@ -73,39 +75,65 @@ def assign(scenes: list, pools: dict[str, list[dict]], main_page: str, subject: 
             s -= 6.0
         return s
 
+    def fetch(im: dict, dst: Path) -> bool:
+        try:
+            with requests.get(im["url"], headers={"User-Agent": UA}, timeout=60) as r:
+                r.raise_for_status()
+                dst.write_bytes(r.content)
+            return True
+        except Exception as e:
+            _log(f"indirme hatası: {im['name']} ({type(e).__name__})")
+            return False
+
+    def ext_of(im: dict) -> str:
+        ext = Path(im["url"].split("?")[0]).suffix.lower()
+        return ext if ext in IMG_EXT else ".jpg"
+
     for i, sc in enumerate(scenes):
         if sc.image_query is None:
             continue
         want = {w for w in re.findall(r"[a-z0-9]+", sc.image_query.lower()) if len(w) > 1}
-        images = pools.get(sc.image_page or main_page) or pools.get(main_page, [])
+        page = sc.image_page or main_page
+        page_words = {w for w in re.findall(r"[a-z]+", page.lower()) if len(w) > 2}
+        images = pools.get(page) or pools.get(main_page, [])
         cands = [im for im in images if im["url"] not in used] or images
         if not cands:
             _log(f"Sahne {i + 1}: görsel yok, stok görüntüye düşülecek")
             sc.image_query = None
             continue
         ranked = sorted(cands, key=lambda im: score(im, want), reverse=True)
-        best = ranked[0]
+        # Karakter sahnelerinde (ilk sahne ya da karakter adı geçen sorgu) yüzü görünen görsel seç:
+        # dikey kırpmada karakter kadraj dışında kalırsa izleyici kimin anlatıldığını anlamaz.
+        wants_face = i == 0 or bool(want & (subj | page_words))
+        tries = (6 if i == 0 else 4) if wants_face else 1
+        chosen, first_ok = None, None
+        for k, im in enumerate(ranked[:tries]):
+            dst = work / f"img_{i:02d}_c{k}{ext_of(im)}"
+            if not fetch(im, dst):
+                continue
+            if first_ok is None:
+                first_ok = (im, dst)
+            if not wants_face:
+                chosen = (im, dst)
+                break
+            f = faces.focus(dst)
+            if f and f[2] >= 0.08:                       # yeterince büyük bir yüz
+                chosen = (im, dst)
+                break
+        chosen = chosen or first_ok
+        if not chosen:
+            _log(f"Sahne {i + 1}: indirilemedi, stok görüntüye düşülecek")
+            sc.image_query = None
+            continue
+        best, sc.image = chosen
         used.add(best["url"])
+        f = faces.focus(sc.image)
+        _log(f"Sahne {i + 1}: {best['name']} ({best['w']}x{best['h']})"
+             + (f", yüz x={f[0]:.2f} y={f[1]:.2f}" if f else ", yüz yok (ortadan kırpılacak)"))
         # Hızlı kesme: sahneye ek görseller
-        for j, im in enumerate([im for im in ranked[1:] if im["url"] not in used][: max(0, getattr(sc, "n_shots", 1) - 1)]):
-            ext2 = Path(im["url"].split("?")[0]).suffix.lower()
-            dst2 = work / f"img_{i:02d}_{j + 1}{ext2 if ext2 in IMG_EXT else '.jpg'}"
-            try:
-                with requests.get(im["url"], headers={"User-Agent": UA}, timeout=60) as r:
-                    r.raise_for_status()
-                    dst2.write_bytes(r.content)
+        extra = [im for im in ranked if im["url"] not in used][: max(0, getattr(sc, "n_shots", 1) - 1)]
+        for j, im in enumerate(extra):
+            dst2 = work / f"img_{i:02d}_{j + 1}{ext_of(im)}"
+            if fetch(im, dst2):
                 used.add(im["url"])
                 sc.extra_images.append(dst2)
-            except Exception as e:
-                _log(f"Sahne {i + 1}: ek görsel indirilemedi ({type(e).__name__})")
-        ext = Path(best["url"].split("?")[0]).suffix.lower() or ".jpg"
-        dst = work / f"img_{i:02d}{ext if ext in IMG_EXT else '.jpg'}"
-        try:
-            with requests.get(best["url"], headers={"User-Agent": UA}, timeout=60) as r:
-                r.raise_for_status()
-                dst.write_bytes(r.content)
-            sc.image = dst
-            _log(f"Sahne {i + 1}: {best['name']} ({best['w']}x{best['h']})")
-        except Exception as e:
-            _log(f"Sahne {i + 1}: indirme hatası ({type(e).__name__}), stok görüntüye düşülecek")
-            sc.image_query = None

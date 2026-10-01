@@ -136,7 +136,11 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
             status["privacyStatus"] = "private"
             status["publishAt"] = when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         else:
-            print(f"[upload] publish_at geçmişte ({pub}); zamanlama atlandı.", flush=True)
+            # Yayın saati geçmiş (ör. bölüm geç yazıldı): bekletmeden hemen herkese açık yayınla
+            if not episode.get("privacy"):
+                status["privacyStatus"] = "public"
+            print(f"[upload] publish_at geçmişte ({pub}); hemen yayınlanıyor "
+                  f"({status['privacyStatus']}).", flush=True)
 
     lang = episode.get("language", "tr")
     body = {
