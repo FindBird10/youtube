@@ -42,6 +42,41 @@ def save_state(items: list[dict]) -> None:
     STATE.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def push_state(note: str) -> None:
+    """Kaydı her yüklemeden hemen sonra main'e gönderir (yalnızca GitHub Actions'ta).
+
+    Çalıştırma yarıda kesilse bile yüklenen video kayıtta kalır ve bir sonraki çalıştırma
+    aynı videoyu tekrar yüklemez. Ayrı bir worktree'de uzak kayıtla birleştirilir.
+    """
+    import subprocess
+
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    wt = Path("/tmp/state_wt")
+    sh = lambda *c, **k: subprocess.run(list(c), cwd=k.get("cwd", ROOT), capture_output=True, text=True)  # noqa: E731
+    for attempt in range(5):
+        sh("git", "worktree", "remove", "--force", str(wt))
+        sh("git", "fetch", "-q", "origin", "main")
+        r = sh("git", "worktree", "add", "-q", "--detach", str(wt), "origin/main")
+        if r.returncode != 0:
+            print(f"[state] worktree açılamadı: {r.stderr.strip()}", flush=True)
+            return
+        sh("python", str(ROOT / "tools" / "merge_state.py"), str(STATE),
+           str(BLOCKED) if BLOCKED.exists() else "-", cwd=wt)
+        sh("git", "add", "state/", cwd=wt)
+        if sh("git", "diff", "--cached", "--quiet", cwd=wt).returncode == 0:
+            return
+        sh("git", "-c", "user.name=shorts-bot", "-c", "user.email=shorts-bot@users.noreply.github.com",
+           "commit", "-qm", f"Yayın kaydı: {note} [skip ci]", cwd=wt)
+        if sh("git", "push", "-q", "origin", "HEAD:main", cwd=wt).returncode == 0:
+            print(f"[state] kayıt gönderildi ({note})", flush=True)
+            sh("git", "worktree", "remove", "--force", str(wt))
+            return
+        import time
+        time.sleep(3 * (attempt + 1))
+    print("[state] kayıt gönderilemedi; çalıştırma sonundaki adım tekrar deneyecek", flush=True)
+
+
 def summary(line: str) -> None:
     print(line, flush=True)
     path = os.environ.get("GITHUB_STEP_SUMMARY")
@@ -142,6 +177,7 @@ def main() -> int:
                 except WrongChannel as e:
                     blocked[ep["_channel"]] = token_fingerprint(ep["_channel"])
                     BLOCKED.write_text(json.dumps(blocked, indent=2) + "\n", encoding="utf-8")
+                    push_state(f"{ep['_channel']} token engellendi")
                     raise
                 state.append({
                     "slug": ep["_key"], "title": ep["title"], "video_id": vid,
@@ -150,6 +186,7 @@ def main() -> int:
                     "uploaded_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                 })
                 save_state(state)
+                push_state(ep["_key"])
                 when = f", yayın: {ep['publish_at']}" if ep.get("publish_at") else ""
                 summary(f"- ✅ **{ep['title']}** → https://youtube.com/shorts/{vid} (kanal: **{channel}**{when})")
             else:
