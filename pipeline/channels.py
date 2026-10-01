@@ -29,8 +29,6 @@ CHANNELS: dict[str, dict] = {
     },
     "global": {
         "token_env": "YT_REFRESH_TOKEN_GLOBAL",
-        # Mevcut token BirdsVaultGaming'e ait çıktı (1 Eki 2026); doğru token girilince True yap
-        "enabled": False,
         "expect_title": None,                # ad bilinmiyor: en azından diğer kanalların adı olmamalı
         "category": "27",
         "defaults": {"language": "en", "style": "global"},
