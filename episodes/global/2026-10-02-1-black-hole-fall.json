@@ -1,0 +1,54 @@
+{
+  "title": "What if you fell into a black hole? 🕳️",
+  "hook": "WHAT IF YOU FELL IN?",
+  "format": "what-if",
+  "subject": "blackhole",
+  "emphasis": [
+    "not notice",
+    "forever",
+    "spaghetti"
+  ],
+  "description": "Would you still jump in? 👇\n\nWhat happens if you fall into a black hole? NASA's supercomputer simulation shows the fall into a giant one, and why the size of the black hole decides how you die.\n\nSources: NASA Goddard (2024 black hole visualization, Jeremy Schnittman), NASA APOD Black Hole FAQ (Ted Bunn, UC Berkeley)",
+  "tags": [
+    "what if you fell into a black hole",
+    "falling into a black hole",
+    "black hole",
+    "what happens inside a black hole",
+    "event horizon",
+    "spaghettification",
+    "supermassive black hole",
+    "sagittarius a",
+    "nasa black hole simulation",
+    "what if",
+    "space facts",
+    "time dilation"
+  ],
+  "hashtags": [
+    "#blackhole",
+    "#space",
+    "#nasa"
+  ],
+  "publish_at": "2026-10-02T15:00:00Z",
+  "scenes": [
+    {
+      "text": "You could fall into a black hole and not notice.",
+      "search": "black hole space animation"
+    },
+    {
+      "text": "NASA simulated falling into one 4.3 million times the Sun's mass.",
+      "search": "galaxy center stars space"
+    },
+    {
+      "text": "At the edge, the event horizon, there's no wall. You just drift through.",
+      "search": "astronaut floating space dark"
+    },
+    {
+      "text": "But here's the strange part. A friend watching from far away never sees you cross. You slow down, turn red and fade.",
+      "search": "red light fading darkness"
+    },
+    {
+      "text": "Inside, gravity stretches you like spaghetti in 12.8 seconds. A small black hole does that before the edge. So pick a big one, because",
+      "search": "black hole swirling vortex"
+    }
+  ]
+}
