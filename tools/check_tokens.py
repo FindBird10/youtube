@@ -28,7 +28,9 @@ for ch, cfg in CHANNELS.items():
         print(f"{ch}: '{title}' ({cid}) iz {fp} → " + ("YANLIŞ: " + problem if problem else "DOĞRU"))
     except HttpError as e:
         if e.resp.status in (401, 403):
-            print(f"{ch}: token yalnızca yükleme izinli, kanal adı okunamadı (iz {fp}) [{e.resp.status}]")
+            import re
+            reason = ",".join(sorted(set(re.findall(r"'reason': '([^']+)'", str(e))))) or str(e)[:160]
+            print(f"{ch}: kanal adı okunamadı (iz {fp}) [{e.resp.status} {reason}]")
         else:
             print(f"{ch}: hata {e.resp.status}: {str(e)[:200]}")
     except Exception as e:
