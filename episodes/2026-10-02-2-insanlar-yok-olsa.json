@@ -1,0 +1,52 @@
+{
+  "title": "İnsanlar bir gün yok olsa ne olurdu? 🏙️",
+  "format": "ne-olurdu",
+  "subject": "city",
+  "description": "Sence insanlardan geriye en son ne kalırdı? 👇\n\nİnsanlar yok olsa dünyaya ne olurdu? Şehirlerin ışıkları, New York metrosu, asfalt yollar ve plastikler: Alan Weisman'ın \"Bizsiz Dünya\" (The World Without Us) araştırmasına dayanan bir düşünce deneyi.\n\nKaynak: Scientific American (\"An Earth Without People\"), NPR (Alan Weisman, The World Without Us)",
+  "tags": [
+    "insanlar yok olsa ne olurdu",
+    "insanlar yok olsaydı",
+    "insansız dünya",
+    "bizsiz dünya",
+    "the world without us",
+    "insanlık yok olursa",
+    "dünyada insan kalmasa",
+    "terk edilmiş şehir",
+    "ne olurdu",
+    "plastik kaç yılda yok olur",
+    "alan weisman"
+  ],
+  "hashtags": [
+    "#insanlıksızdünya",
+    "#terkedilmişşehir",
+    "#plastik"
+  ],
+  "language": "tr",
+  "publish_at": "2026-10-02T15:30:00Z",
+  "scenes": [
+    {
+      "text": "İnsanlar yok olsa, plastiklerimiz yüz binlerce yıl daha yaşardı.",
+      "search": "city empty street"
+    },
+    {
+      "text": "İlk saatlerde elektrik kesilir ve dünyadaki şehirlerin ışıkları tek tek söner.",
+      "search": "city skyline lights night"
+    },
+    {
+      "text": "Uzmanlara göre sadece 2 gün sonra, pompaları duran New York metrosunu yeraltı suları basar.",
+      "search": "city subway tunnel"
+    },
+    {
+      "text": "Birkaç on yıl içinde donup çözülen su asfaltı çatlatır, sokaklar çöker ve yerini bitkiler almaya başlar.",
+      "search": "city abandoned street plants"
+    },
+    {
+      "text": "Ama asıl tuhaf olan kısım şu: binalarımız toprağa karıştıktan çok sonra bile paslanmaz çelik tencereler binlerce, bazı plastikler ise yüz binlerce yıl dayanabilir.",
+      "search": "plastic bottles beach"
+    },
+    {
+      "text": "Ve bütün bunlar tek bir varsayımla başlıyor:",
+      "search": "city ruins overgrown"
+    }
+  ]
+}
