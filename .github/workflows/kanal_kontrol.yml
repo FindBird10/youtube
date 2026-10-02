@@ -11,6 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Token'ların kanallarını kontrol et
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_REFRESH_TOKEN_GAMING: ${{ secrets.YT_REFRESH_TOKEN_GAMING }}
+          YT_REFRESH_TOKEN_GLOBAL: ${{ secrets.YT_REFRESH_TOKEN_GLOBAL }}
+        run: |
+          pip install -q google-api-python-client google-auth requests
+          mkdir -p /tmp/k
+          python tools/check_tokens.py | tee /tmp/k/tokens.txt
       - name: Kanalların RSS listesini al ve logs-kanal dalına koy
         env:
           GH_TOKEN: ${{ github.token }}
