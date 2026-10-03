@@ -2,7 +2,7 @@
 
 Kanal: dünya geneline **İngilizce** merak videoları · Günde **3** video · Bölümler
 `episodes/global/` klasörüne yazılır; dil (`en`) ve stil (`global`: açılış başlık kartı, mor kutulu
-altyazı, hızlı kesmeler, vurgu yakınlaşması) klasörden otomatik gelir.
+altyazı, hızlı kesmeler) klasörden otomatik gelir.
 
 ## Formatlar ve günlük akış
 
@@ -52,7 +52,6 @@ r/business; o haftanın gündemi (uzay görevi, yıldönümü, haber). Daha önc
 | `hook` | ✔ | Açılış başlık kartında görünen **2–5 kelime**, büyük harfle okunur ("WHAT IF THE SUN VANISHED?"). |
 | `format` | ✔ | Tablodaki format. |
 | `subject` | ✔ | Ana özne, İngilizce tek kelime (görüntü seçimi için). |
-| `emphasis` | | Vurgu yakınlaşması yapılacak 2–5 kelime (rakamlar otomatik). |
 | `description` | ✔ | İlk satır yorum sorusu, sonra anahtar kelimeli 1–2 cümle + `Sources: ...`. |
 | `tags` | ✔ | 10–15 arama ifadesi (konu adı, soru biçimi, eş anlamlılar). Format etiketleri otomatik. |
 | `hashtags` | ✔ | 2–4 konuya özel hashtag. `#Shorts` ve format hashtag'leri otomatik. |

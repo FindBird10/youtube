@@ -693,7 +693,8 @@ def pick_music_tracks(episode: dict) -> list[Path]:
 # Kanal/görünüm profilleri. Bölümde "style" alanıyla seçilir (varsayılan: birdsvault).
 STYLES = {
     "birdsvault": {"captions": "group", "title_card": False, "cut_every": 0.0, "punch": False, "sfx": False},
-    "global": {"captions": "box", "title_card": True, "cut_every": 2.2, "punch": True, "sfx": True},
+    # Vurgu yakınlaşması ve onunla gelen "pop" sesi kullanıcı isteğiyle kapatıldı (4 Eki)
+    "global": {"captions": "box", "title_card": True, "cut_every": 2.2, "punch": False, "sfx": True},
     # Oyun karakteri 'edit' havası: sıcak renk, sinema bantları, harf harf altyazı, sakin tempo
     # Altyazı: klasik (beyaz satır, o an söylenen kelime sarı). Harf harf açılan "reveal"
     # animasyonu beğenilmedi; istenirse bölümde caption_style: "reveal" ile hâlâ seçilebilir.
