@@ -124,7 +124,7 @@ def _frame_ok(clip: Path, work: Path, length: float) -> tuple[bool, Path | None,
             g = cv2.imread(str(frame), cv2.IMREAD_GRAYSCALE)
             # Yalnızca orta kare için: neredeyse siyah ya da tek renk (geçiş/kart) olmasın.
             # Sinematik fragmanlar zaten karanlık; eşik düşük tutuldu.
-            if k == 0 and g is not None and (float(np.mean(g)) < 16 or float(np.std(g)) < 10):
+            if k == 0 and g is not None and (float(np.mean(g)) < 26 or float(np.std(g)) < 14):
                 return False, mid, "siyah/düz"
         except Exception:
             pass
@@ -166,12 +166,16 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
     from faces import focus
 
     placed = 0
+    used: list[tuple[str, float, float]] = []   # aynı fragman parçası iki sahnede tekrar etmesin
     for i, sc in enumerate(want):
         length = min(12.0, max(2.5, sc.duration + 0.8))
-        for _ in range(10):
+        for _ in range(16):
             if not pool:
                 break
             src, start, name = pool.pop()
+            if any(u_src == src and start < u_end + 1.0 and start + length > u_start - 1.0
+                   for u_src, u_start, u_end in used):
+                continue
             out = work / f"trailer_{i:02d}_{int(start)}.mp4"
             r = _cut(src, start, length, out)
             if r.returncode != 0 or not out.exists() or out.stat().st_size < 50_000:
@@ -182,6 +186,7 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
                 _log(f"Sahne klibi elendi ({why}): {name} @{start:.0f}s")
                 continue
             sc.clip = out
+            used.append((src, start, start + length))
             if frame is not None:
                 CLIP_FOCUS[str(out)] = focus(frame)
             placed += 1
