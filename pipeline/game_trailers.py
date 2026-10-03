@@ -70,12 +70,29 @@ def _best_variant(url: str) -> str:
 
 
 def _duration(url: str) -> float:
-    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", url],
+    hls = ["-allowed_extensions", "ALL"] if ".m3u8" in url else []
+    r = subprocess.run(["ffprobe", "-v", "error", *hls, "-show_entries", "format=duration", "-of", "csv=p=0", url],
                        capture_output=True, text=True, timeout=90)
+    if r.returncode != 0:
+        _log(f"ffprobe: {(r.stderr or '').strip()[-200:]}")
     try:
         return float(r.stdout.strip())
     except ValueError:
         return 0.0
+
+
+def _cut(src: str, start: float, length: float, out: Path) -> subprocess.CompletedProcess:
+    """HLS/MP4 akışından sessiz klip keser; ilk yol olmazsa çıktı-tarafı arama ile tekrar dener."""
+    common = ["-an", "-sn", "-dn", "-map", "0:v:0", "-vf", "scale=-2:1080,fps=30", "-c:v", "libx264",
+              "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", str(out)]
+    hls = ["-allowed_extensions", "ALL", "-protocol_whitelist", "file,http,https,tcp,tls,crypto,data"] \
+        if ".m3u8" in src else []
+    r = subprocess.run(["ffmpeg", "-v", "error", "-y", *hls, "-ss", f"{start:.2f}", "-i", src,
+                        "-t", f"{length:.2f}", *common], capture_output=True, text=True, timeout=240)
+    if r.returncode == 0 and out.exists() and out.stat().st_size >= 50_000:
+        return r
+    return subprocess.run(["ffmpeg", "-v", "error", "-y", *hls, "-i", src, "-ss", f"{start:.2f}",
+                           "-t", f"{length:.2f}", *common], capture_output=True, text=True, timeout=300)
 
 
 def _frame_ok(clip: Path, work: Path) -> tuple[bool, Path | None]:
@@ -118,6 +135,7 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
         except Exception as e:
             _log(f"{t['name']}: okunamadı ({type(e).__name__})")
             continue
+        _log(f"{t['name']}: {dur:.0f} sn, akış {src.split('?')[0][-60:]}")
         if dur < HEAD_SKIP + TAIL_SKIP + 6:
             continue
         span = dur - HEAD_SKIP - TAIL_SKIP
@@ -138,11 +156,9 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
                 break
             src, start, name = pool.pop()
             out = work / f"trailer_{i:02d}_{int(start)}.mp4"
-            r = subprocess.run(
-                ["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.2f}", "-i", src, "-t", f"{length:.2f}", "-an",
-                 "-vf", "scale=-2:1080,fps=30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-                 "-pix_fmt", "yuv420p", str(out)], capture_output=True, text=True, timeout=240)
+            r = _cut(src, start, length, out)
             if r.returncode != 0 or not out.exists() or out.stat().st_size < 50_000:
+                _log(f"Kesilemedi: {name} @{start:.0f}s → {(r.stderr or '').strip()[-300:]}")
                 continue
             ok, frame = _frame_ok(out, work)
             if not ok:
