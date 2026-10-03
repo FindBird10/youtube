@@ -26,7 +26,8 @@ def _load():
     return _model
 
 
-def text_ratio(path: Path) -> float:
+def text_ratio(path: Path, center_x: float | None = None) -> float:
+    """center_x verilirse yalnızca dikey (9:16) videoda görünecek şerit incelenir."""
     try:
         import cv2
         import numpy as np
@@ -35,6 +36,10 @@ def text_ratio(path: Path) -> float:
         if img is None:
             return 0.0
         h, w = img.shape[:2]
+        if center_x is not None:
+            cw = min(w, int(h * 9 / 16))
+            x0 = int(min(max(center_x * w - cw / 2, 0), w - cw))
+            img = img[:, x0:x0 + cw]
         boxes, _ = _load().detect(cv2.resize(img, (736, 736)))
         area = sum(cv2.contourArea(np.array(b, dtype=np.float32)) for b in boxes)
         return float(area / (736 * 736))
