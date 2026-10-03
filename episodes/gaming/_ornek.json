@@ -41,8 +41,7 @@
     },
     {
       "text": "She and her best friend Riley were bitten in an abandoned mall. Riley turned, but Ellie didn't.",
-      "image": "Riley Ellie mall",
-      "image_page": "Riley Abel"
+      "trailer": true
     },
     {
       "text": "The Fireflies believed her body held the cure, so a smuggler named Joel was hired to carry her across a ruined America.",
@@ -51,12 +50,14 @@
     },
     {
       "text": "Then the price was revealed: making the cure meant surgery on her brain, and she wouldn't survive.",
-      "image": "operating room hospital",
-      "image_page": "St. Mary's Hospital"
+      "trailer": true
     },
     {
       "text": "Joel carried her out and lied to her face, and it all happened because",
-      "image": "Joel Ellie"
+      "trailer": true
     }
-  ]
+  ],
+  "trailer": {
+    "steam_appid": 1888930
+  }
 }
