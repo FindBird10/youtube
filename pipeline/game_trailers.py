@@ -95,26 +95,36 @@ def _cut(src: str, start: float, length: float, out: Path) -> subprocess.Complet
                            "-t", f"{length:.2f}", *common], capture_output=True, text=True, timeout=300)
 
 
-def _frame_ok(clip: Path, work: Path) -> tuple[bool, Path | None]:
-    """Klibin ortasındaki kare yeterince aydınlık ve dolu mu (siyah/yazı kartı değil)?"""
+def _frame_ok(clip: Path, work: Path, length: float) -> tuple[bool, Path | None, str]:
+    """Klipten 3 kare (yüzde 20/50/80) alır: hepsi yeterince aydınlık/dolu ve yazısız mı?
+
+    Döner: (uygun mu, orta kare, neden). Yazı: fragman başlık/tarih kartları ve menü (UI) görüntüleri.
+    """
     import numpy as np
 
-    frame = work / f"{clip.stem}_mid.jpg"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-sseof", "-50%", "-i", str(clip), "-frames:v", "1",
-                    "-vf", "scale=320:-2", str(frame)], capture_output=True, timeout=60)
-    if not frame.exists():
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "1", "-i", str(clip), "-frames:v", "1",
-                        "-vf", "scale=320:-2", str(frame)], capture_output=True, timeout=60)
-    try:
-        import cv2
+    from text_detect import text_ratio
 
-        g = cv2.imread(str(frame), cv2.IMREAD_GRAYSCALE)
-        if g is None:
-            return True, None
-        mean, std = float(np.mean(g)), float(np.std(g))
-        return (mean >= 28 and std >= 22), frame
-    except Exception:
-        return True, frame if frame.exists() else None
+    mid = None
+    for k, frac in enumerate((0.5, 0.2, 0.8)):
+        frame = work / f"{clip.stem}_f{k}.jpg"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{length * frac:.2f}", "-i", str(clip),
+                        "-frames:v", "1", "-vf", "scale=640:-2", str(frame)], capture_output=True, timeout=60)
+        if not frame.exists():
+            continue
+        if k == 0:
+            mid = frame
+        try:
+            import cv2
+
+            g = cv2.imread(str(frame), cv2.IMREAD_GRAYSCALE)
+            if g is not None and (float(np.mean(g)) < 28 or float(np.std(g)) < 22):
+                return False, mid, "karanlık/düz"
+        except Exception:
+            pass
+        tr = text_ratio(frame)
+        if tr > 0.03:
+            return False, mid, f"yazı %{tr * 100:.0f}"
+    return True, mid, ""
 
 
 def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
@@ -151,7 +161,7 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
     placed = 0
     for i, sc in enumerate(want):
         length = min(12.0, max(2.5, sc.duration + 0.8))
-        for _ in range(4):
+        for _ in range(6):
             if not pool:
                 break
             src, start, name = pool.pop()
@@ -160,9 +170,9 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
             if r.returncode != 0 or not out.exists() or out.stat().st_size < 50_000:
                 _log(f"Kesilemedi: {name} @{start:.0f}s → {(r.stderr or '').strip()[-300:]}")
                 continue
-            ok, frame = _frame_ok(out, work)
+            ok, frame, why = _frame_ok(out, work, length)
             if not ok:
-                _log(f"Sahne klibi elendi (karanlık/yazı kartı): {name} @{start:.0f}s")
+                _log(f"Sahne klibi elendi ({why}): {name} @{start:.0f}s")
                 continue
             sc.clip = out
             if frame is not None:
