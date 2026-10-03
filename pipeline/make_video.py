@@ -792,10 +792,17 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         from game_trailers import assign as assign_trailers
         n = assign_trailers(scenes, int(trailer["steam_appid"]), work, seed=slug)
         log(f"Fragman klibi: {n}/{sum(sc.trailer for sc in scenes)} sahne")
-    # Fragmandan temiz klip çıkmayan sahne stoka değil, karakterin wiki görseline düşsün
-    for sc in scenes:
-        if sc.trailer and sc.clip is None and sc.image_query is None and wiki.get("page"):
-            sc.image_query = episode.get("subject") or wiki["page"]
+    # Fragmandan temiz klip çıkmayan sahne stoka değil, karakterin wiki görseline düşsün;
+    # wiki yoksa fragmandan zaten seçilmiş en yakın klibi kullansın (alakasız stoktan iyidir)
+    placed = [k for k, sc in enumerate(scenes) if sc.trailer and sc.clip is not None]
+    for i, sc in enumerate(scenes):
+        if sc.trailer and sc.clip is None and sc.image_query is None:
+            if wiki.get("page"):
+                sc.image_query = episode.get("subject") or wiki["page"]
+            elif placed:
+                donor = min(placed, key=lambda k: (abs(k - i), k))
+                sc.clip = scenes[donor].clip
+                log(f"Sahne {i + 1}: fragman klibi yok, sahne {donor + 1}'in klibi kullanılıyor")
     if wiki.get("site") and wiki.get("page") and any(sc.image_query is not None for sc in scenes) and not offline:
         from wiki_images import assign, list_images
         pools: dict[str, list[dict]] = {}
