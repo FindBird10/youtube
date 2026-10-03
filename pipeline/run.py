@@ -179,6 +179,14 @@ def main() -> int:
                     BLOCKED.write_text(json.dumps(blocked, indent=2) + "\n", encoding="utf-8")
                     push_state(f"{ep['_channel']} token engellendi")
                     raise
+                except Exception as e:  # geçersiz/iptal edilmiş token: kanal bekletilir, çalıştırma bozulmaz
+                    if "invalid_grant" not in str(e) and "unauthorized_client" not in str(e):
+                        raise
+                    limited.add(ep["_channel"])
+                    summary(f"- 🔑 `{p.name}`: {CHANNELS[ep['_channel']]['token_env']} geçersiz "
+                            f"({'invalid_grant' if 'invalid_grant' in str(e) else 'unauthorized_client'}); "
+                            f"token yenilenene kadar {ep['_channel']} bekletiliyor.")
+                    continue
                 state.append({
                     "slug": ep["_key"], "title": ep["title"], "video_id": vid,
                     "url": f"https://youtube.com/shorts/{vid}", "channel": channel, "account": ep["_channel"], "format": ep.get("format"),
