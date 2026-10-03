@@ -46,8 +46,26 @@ Görüntüler karakterin Fandom wiki sayfasındaki oyun içi görsellerden gelir
 - `avoid`: istenmeyen görsellerin dosya adında geçebilecek kelimeler (başka oyun, spoiler vb.).
 - Sahnede `"image": "anahtar kelimeler"` → o sahne için dosya adında bu kelimeleri arar
   (ör. `"Ellie Riley mall"`). Başka bir karakterin sayfasından görsel için `"image_page": "Joel"`.
-- Sahnelerin **çoğunda `image`** olsun; en fazla 1–2 sahnede atmosfer için `search`
+- Sahnelerin her biri `image` ya da `trailer: true` olsun (Steam fragmanı yoksa çoğunda `image`); en fazla 1 sahnede atmosfer için `search`
   (stok video, İngilizce: "rainy dark forest").
+
+## Fragman klipleri (Steam)
+
+Hareketli görüntü için oyunun **resmî Steam mağaza fragmanlarından** kısa, sessiz klipler kesilir
+(YouTube'dan indirme yapılmaz; ses alınmaz).
+
+```json
+"trailer": {"steam_appid": 1888930}
+```
+- `steam_appid`: oyunun Steam numarası. Bul: WebFetch ile
+  `https://store.steampowered.com/api/storesearch/?term=<oyun adı>&l=english&cc=US` → `items[].id`.
+  Doğru oyun olduğundan emin ol (DLC, soundtrack, demo değil; karakterin geçtiği oyun).
+  Seri birden fazla oyunsa karakterin hikâyesinin geçtiği oyunu seç.
+- Oyun Steam'de yoksa (ör. yalnızca PlayStation/Xbox) `trailer` alanını yazma; tüm sahneler wiki görseli olur.
+- Sahnede `"trailer": true` → o sahnenin arka planı fragmandan bir klip olur (o sahneye `image` yazma).
+- Dağılım: **1. sahne her zaman karakterin wiki görseli** (`image`: karakterin adı; izleyici kimin
+  anlatıldığını hemen görsün). Ortadaki sahnelerin **2–4 tanesi `trailer: true`**, kalanlar wiki görseli.
+  Karakterin yüzünün önemli olduğu sahnelerde (ör. son sahne) wiki görselini tercih et.
 
 ## Alanlar
 
@@ -57,11 +75,12 @@ Görüntüler karakterin Fandom wiki sayfasındaki oyun içi görsellerden gelir
 | `angle` | ✔ | `origin`, `secret` veya `fate`. |
 | `subject` | ✔ | Karakterin adı, küçük harf tek kelime (`ellie`, `kratos`). |
 | `wiki` | ✔ | Yukarıya bak. |
+| `trailer` | (Steam'de varsa ✔) | `{"steam_appid": N}`, yukarıya bak. |
 | `description` | ✔ | İlk satır yorum sorusu ("Would you have forgiven Joel? 👇"). Sonra 1 cümle özet + spoiler uyarısı ("Spoilers for …"). En sonda **her zaman**: `Fan-made content. Not affiliated with or endorsed by <stüdyo/yayıncı>. Game images © their respective owners.` |
 | `tags` | ✔ | 10–15 arama ifadesi: karakter adı, oyun adı, kısaltma (tlou, rdr2), "<karakter> story", "<karakter> explained", "<oyun> lore". Kanal etiketleri otomatik eklenir. |
 | `hashtags` | ✔ | 2–4 hashtag: oyun ve karakter (`#thelastofus`, `#ellie`). `#Shorts #gaming #lore #videogames` otomatik. |
 | `publish_at` | ✔ | Tablodaki ET saatinin UTC karşılığı. |
-| `scenes` | ✔ | 5–7 sahne: `text` + `image` (+ isteğe bağlı `image_page`) ya da `search`. |
+| `scenes` | ✔ | 5–7 sahne: `text` + `image` (+ isteğe bağlı `image_page`) ya da `trailer: true` (ya da nadiren `search`). |
 
 `style`, `language`, `format`, `voice`, `rate`, `privacy` **yazma**.
 
