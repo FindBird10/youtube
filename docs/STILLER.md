@@ -16,6 +16,7 @@ Bölüm dosyasında `"style"` alanıyla seçilir. Kod: `pipeline/make_video.py` 
 - `cinematic` stilinde harf harf beliren "reveal" yazı animasyonu **beğenilmedi**; renk tonu, bantlar ve tempo beğenildi.
 - Klasik altyazıyla yeniden denenen `cinematic` onaylandı: gaming kanalının varsayılan stili.
 - Oyun kanalı İngilizce; Nintendo oyunları kullanılmaz.
-- YouTube'dan video/ara sahne indirilmez (kullanım şartları ve telif). Hareketli oyun görüntüsü ancak kullanıcının
-  kendi kayıtlarıyla eklenebilir.
+- YouTube'dan video/ara sahne indirilmez (kullanım şartları ve telif). Hareketli oyun görüntüsü: oyunun resmî
+  **Steam mağaza fragmanlarından** sessiz kısa klipler (`trailer.steam_appid`, sahnede `trailer: true`); yazı kartı ve
+  menü görüntüleri otomatik elenir. Ara sahne (cutscene) ancak kullanıcının kendi kayıtlarıyla eklenebilir.
 - Wiki görsellerinde oyun içi görüntüler tercih edilir; çizim/konsept/çizgi roman dosyaları geri plana atılır.
