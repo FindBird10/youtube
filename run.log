@@ -1,0 +1,40 @@
+> Yükleme kapalı: videolar yalnızca üretilecek.
+[make_video] Seslendirme: Azure Speech (en-US-AndrewMultilingualNeural, +0%)
+[make_video] Sahne 1: 0.0–4.1 sn, 11 kelime
+[make_video] Sahne 2: 4.1–14.4 sn, 22 kelime
+[make_video] Sahne 3: 14.4–22.4 sn, 17 kelime
+[make_video] Sahne 4: 22.4–31.4 sn, 23 kelime
+[make_video] Sahne 5: 31.4–36.5 sn, 11 kelime
+[trailers] Steam 2288340: 1 uygun fragman (ACE COMBAT 8: WINGS OF THEVE)
+[trailers] ACE COMBAT 8: WINGS OF THEVE: 98 sn, akış d4ae6efa7e06c713900a4a8953cd/1765512369/hls_264_0_video.m3u8
+[ WARN:0@0.018] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (yazı %5): ACE COMBAT 8: WINGS OF THEVE @19s
+[ WARN:0@8.216] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (yazı %17): ACE COMBAT 8: WINGS OF THEVE @43s
+[ WARN:0@12.776] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne → ACE COMBAT 8: WINGS OF THEVE @10s (4.9 sn) yüz odaklı
+[ WARN:0@27.275] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne → ACE COMBAT 8: WINGS OF THEVE @68s (11.0 sn) yüz odaklı
+[ WARN:0@37.278] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (yazı %9): ACE COMBAT 8: WINGS OF THEVE @22s
+[ WARN:0@46.581] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne → ACE COMBAT 8: WINGS OF THEVE @31s (8.8 sn)
+[ WARN:0@55.131] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (yazı %5): ACE COMBAT 8: WINGS OF THEVE @16s
+[ WARN:0@66.827] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (yazı %15): ACE COMBAT 8: WINGS OF THEVE @83s
+[ WARN:0@78.453] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (yazı %15): ACE COMBAT 8: WINGS OF THEVE @80s
+[ WARN:0@88.724] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (siyah/düz): ACE COMBAT 8: WINGS OF THEVE @53s
+[ WARN:0@97.424] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (yazı %13): ACE COMBAT 8: WINGS OF THEVE @50s
+[ WARN:0@106.085] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (siyah/düz): ACE COMBAT 8: WINGS OF THEVE @56s
+[ WARN:0@114.616] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne → ACE COMBAT 8: WINGS OF THEVE @47s (5.9 sn)
+[make_video] Fragman klibi: 4/5 sahne
+[make_video] Sahne 4: fragman klibi yok, sahne 3'in klibi kullanılıyor
+[make_video] Müzik: birdsvault_merak.mp3 (20. sn'den)
+[make_video] Hazır: /home/runner/work/youtube/youtube/build/news___test_ace_combat_8.mp4 (36.5 sn)
+- 🎬 **Ace Combat 8 lands the series' best reviews ✈️** üretildi: `build/news___test_ace_combat_8.mp4`

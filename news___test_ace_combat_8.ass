@@ -1,0 +1,103 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Word,DejaVu Sans,112,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,1,0,1,6,3,2,60,60,560,1
+Style: Cap,DejaVu Sans,82,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,2,80,80,560,1
+Style: Hook,DejaVu Sans,92,&H00FFFFFF,&H00FFFFFF,&H50000000,&H00000000,-1,0,0,0,100,100,0,0,3,22,0,8,110,110,300,1
+Style: Box,Poppins ExtraBold,94,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,6,3,2,60,60,560,1
+Style: Title,Anton,150,&H00FFFFFF,&H00FFFFFF,&H00000000,&H90000000,0,0,0,0,100,100,2,0,1,8,5,5,80,80,0,1
+Style: Dim,Poppins ExtraBold,10,&H60000000,&H60000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: Reveal,Poppins Medium,56,&H20FFFFFF,&H20FFFFFF,&H90000000,&H90000000,0,0,0,0,100,100,7,0,1,1.5,3,2,90,90,600,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:00.26,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}ACE{\c&HFFFFFF&} COMBAT 8
+Dialogue: 0,0:00:00.26,0:00:00.90,Cap,,0,0,0,,{\fs82}ACE {\c&H00E5FF&}COMBAT{\c&HFFFFFF&} 8
+Dialogue: 0,0:00:00.90,0:00:01.29,Cap,,0,0,0,,{\fs82}ACE COMBAT {\c&H00E5FF&}8{\c&HFFFFFF&}
+Dialogue: 0,0:00:01.29,0:00:01.56,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}JUST{\c&HFFFFFF&} LANDED THE
+Dialogue: 0,0:00:01.56,0:00:01.84,Cap,,0,0,0,,{\fs82}JUST {\c&H00E5FF&}LANDED{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:01.84,0:00:01.90,Cap,,0,0,0,,{\fs82}JUST LANDED {\c&H00E5FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:01.90,0:00:02.54,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}SERIES'{\c&HFFFFFF&} BEST
+Dialogue: 0,0:00:02.54,0:00:02.84,Cap,,0,0,0,,{\fs82}SERIES' {\c&H00E5FF&}BEST{\c&HFFFFFF&}
+Dialogue: 0,0:00:02.84,0:00:03.25,Cap,,0,0,0,,{\fs79}{\c&H00E5FF&}REVIEWS{\c&HFFFFFF&} IN YEARS
+Dialogue: 0,0:00:03.25,0:00:03.33,Cap,,0,0,0,,{\fs79}REVIEWS {\c&H00E5FF&}IN{\c&HFFFFFF&} YEARS
+Dialogue: 0,0:00:03.33,0:00:04.12,Cap,,0,0,0,,{\fs79}REVIEWS IN {\c&H00E5FF&}YEARS{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.12,0:00:04.44,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}WINGS{\c&HFFFFFF&} OF THEVE
+Dialogue: 0,0:00:04.44,0:00:04.55,Cap,,0,0,0,,{\fs82}WINGS {\c&H00E5FF&}OF{\c&HFFFFFF&} THEVE
+Dialogue: 0,0:00:04.55,0:00:04.92,Cap,,0,0,0,,{\fs82}WINGS OF {\c&H00E5FF&}THEVE{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.92,0:00:05.35,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}LAUNCHED{\c&HFFFFFF&}
+Dialogue: 0,0:00:05.35,0:00:06.31,Cap,,0,0,0,,{\fs79}{\c&H00E5FF&}OCTOBER 1{\c&HFFFFFF&} ON PS5
+Dialogue: 0,0:00:06.31,0:00:06.46,Cap,,0,0,0,,{\fs79}OCTOBER 1 {\c&H00E5FF&}ON{\c&HFFFFFF&} PS5
+Dialogue: 0,0:00:06.46,0:00:07.82,Cap,,0,0,0,,{\fs79}OCTOBER 1 ON {\c&H00E5FF&}PS5{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.82,0:00:08.45,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}XBOX{\c&HFFFFFF&} AND PC
+Dialogue: 0,0:00:08.45,0:00:08.62,Cap,,0,0,0,,{\fs82}XBOX {\c&H00E5FF&}AND{\c&HFFFFFF&} PC
+Dialogue: 0,0:00:08.62,0:00:09.81,Cap,,0,0,0,,{\fs82}XBOX AND {\c&H00E5FF&}PC{\c&HFFFFFF&}
+Dialogue: 0,0:00:09.81,0:00:09.94,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}WITH{\c&HFFFFFF&} METACRITIC
+Dialogue: 0,0:00:09.94,0:00:10.37,Cap,,0,0,0,,{\fs82}WITH {\c&H00E5FF&}METACRITIC{\c&HFFFFFF&}
+Dialogue: 0,0:00:10.37,0:00:10.74,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}SCORES{\c&HFFFFFF&} FROM 86
+Dialogue: 0,0:00:10.74,0:00:11.04,Cap,,0,0,0,,{\fs82}SCORES {\c&H00E5FF&}FROM{\c&HFFFFFF&} 86
+Dialogue: 0,0:00:11.04,0:00:11.55,Cap,,0,0,0,,{\fs82}SCORES FROM {\c&H00E5FF&}86{\c&HFFFFFF&}
+Dialogue: 0,0:00:11.55,0:00:11.66,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}ON{\c&HFFFFFF&} PC UP
+Dialogue: 0,0:00:11.66,0:00:12.21,Cap,,0,0,0,,{\fs82}ON {\c&H00E5FF&}PC{\c&HFFFFFF&} UP
+Dialogue: 0,0:00:12.21,0:00:12.67,Cap,,0,0,0,,{\fs82}ON PC {\c&H00E5FF&}UP{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.67,0:00:12.76,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}TO{\c&HFFFFFF&} 90 ON
+Dialogue: 0,0:00:12.76,0:00:13.22,Cap,,0,0,0,,{\fs82}TO {\c&H00E5FF&}90{\c&HFFFFFF&} ON
+Dialogue: 0,0:00:13.22,0:00:13.36,Cap,,0,0,0,,{\fs82}TO 90 {\c&H00E5FF&}ON{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.36,0:00:14.36,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}XBOX{\c&HFFFFFF&}
+Dialogue: 0,0:00:14.36,0:00:14.46,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}IT'S{\c&HFFFFFF&} ALSO THE
+Dialogue: 0,0:00:14.46,0:00:14.77,Cap,,0,0,0,,{\fs82}IT'S {\c&H00E5FF&}ALSO{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:14.77,0:00:14.87,Cap,,0,0,0,,{\fs82}IT'S ALSO {\c&H00E5FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:14.87,0:00:15.32,Cap,,0,0,0,,{\fs79}{\c&H00E5FF&}FIRST{\c&HFFFFFF&} ACE COMBAT
+Dialogue: 0,0:00:15.32,0:00:15.54,Cap,,0,0,0,,{\fs79}FIRST {\c&H00E5FF&}ACE{\c&HFFFFFF&} COMBAT
+Dialogue: 0,0:00:15.54,0:00:16.06,Cap,,0,0,0,,{\fs79}FIRST ACE {\c&H00E5FF&}COMBAT{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.06,0:00:16.20,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}WITH{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.20,0:00:17.06,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}CROSS-PLATFORM{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.06,0:00:18.22,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}MULTIPLAYER{\c&HFFFFFF&}
+Dialogue: 0,0:00:18.22,0:00:18.56,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}FROM{\c&HFFFFFF&} 8-PLAYER
+Dialogue: 0,0:00:18.56,0:00:19.09,Cap,,0,0,0,,{\fs82}FROM {\c&H00E5FF&}8-PLAYER{\c&HFFFFFF&}
+Dialogue: 0,0:00:19.09,0:00:19.49,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}CO-OP{\c&HFFFFFF&} MISSIONS
+Dialogue: 0,0:00:19.49,0:00:20.24,Cap,,0,0,0,,{\fs82}CO-OP {\c&H00E5FF&}MISSIONS{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.24,0:00:20.34,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}TO{\c&HFFFFFF&} 4V4 TEAM
+Dialogue: 0,0:00:20.34,0:00:21.16,Cap,,0,0,0,,{\fs82}TO {\c&H00E5FF&}4V4{\c&HFFFFFF&} TEAM
+Dialogue: 0,0:00:21.16,0:00:21.39,Cap,,0,0,0,,{\fs82}TO 4V4 {\c&H00E5FF&}TEAM{\c&HFFFFFF&}
+Dialogue: 0,0:00:21.39,0:00:22.41,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}DOGFIGHTS{\c&HFFFFFF&}
+Dialogue: 0,0:00:22.41,0:00:22.64,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}BUT{\c&HFFFFFF&} PC PLAYERS
+Dialogue: 0,0:00:22.64,0:00:23.07,Cap,,0,0,0,,{\fs82}BUT {\c&H00E5FF&}PC{\c&HFFFFFF&} PLAYERS
+Dialogue: 0,0:00:23.07,0:00:23.45,Cap,,0,0,0,,{\fs82}BUT PC {\c&H00E5FF&}PLAYERS{\c&HFFFFFF&}
+Dialogue: 0,0:00:23.45,0:00:23.67,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}WEREN'T{\c&HFFFFFF&} ALL
+Dialogue: 0,0:00:23.67,0:00:23.90,Cap,,0,0,0,,{\fs82}WEREN'T {\c&H00E5FF&}ALL{\c&HFFFFFF&}
+Dialogue: 0,0:00:23.90,0:00:24.32,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}HAPPY{\c&HFFFFFF&} AT FIRST
+Dialogue: 0,0:00:24.32,0:00:24.39,Cap,,0,0,0,,{\fs82}HAPPY {\c&H00E5FF&}AT{\c&HFFFFFF&} FIRST
+Dialogue: 0,0:00:24.39,0:00:25.42,Cap,,0,0,0,,{\fs82}HAPPY AT {\c&H00E5FF&}FIRST{\c&HFFFFFF&}
+Dialogue: 0,0:00:25.42,0:00:25.71,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}EARLY{\c&HFFFFFF&} STEAM
+Dialogue: 0,0:00:25.71,0:00:25.99,Cap,,0,0,0,,{\fs82}EARLY {\c&H00E5FF&}STEAM{\c&HFFFFFF&}
+Dialogue: 0,0:00:25.99,0:00:26.40,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}REVIEWS{\c&HFFFFFF&} WERE
+Dialogue: 0,0:00:26.40,0:00:26.52,Cap,,0,0,0,,{\fs82}REVIEWS {\c&H00E5FF&}WERE{\c&HFFFFFF&}
+Dialogue: 0,0:00:26.52,0:00:27.44,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}MIXED{\c&HFFFFFF&}
+Dialogue: 0,0:00:27.44,0:00:27.56,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}WITH{\c&HFFFFFF&} COMPLAINTS
+Dialogue: 0,0:00:27.56,0:00:28.00,Cap,,0,0,0,,{\fs82}WITH {\c&H00E5FF&}COMPLAINTS{\c&HFFFFFF&}
+Dialogue: 0,0:00:28.00,0:00:28.22,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}ABOUT{\c&HFFFFFF&} FRAME
+Dialogue: 0,0:00:28.22,0:00:28.61,Cap,,0,0,0,,{\fs82}ABOUT {\c&H00E5FF&}FRAME{\c&HFFFFFF&}
+Dialogue: 0,0:00:28.61,0:00:29.35,Cap,,0,0,0,,{\fs79}{\c&H00E5FF&}DROPS{\c&HFFFFFF&} AND LOCKED
+Dialogue: 0,0:00:29.35,0:00:29.56,Cap,,0,0,0,,{\fs79}DROPS {\c&H00E5FF&}AND{\c&HFFFFFF&} LOCKED
+Dialogue: 0,0:00:29.56,0:00:29.97,Cap,,0,0,0,,{\fs79}DROPS AND {\c&H00E5FF&}LOCKED{\c&HFFFFFF&}
+Dialogue: 0,0:00:29.97,0:00:30.15,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}RAY{\c&HFFFFFF&} TRACING
+Dialogue: 0,0:00:30.15,0:00:30.60,Cap,,0,0,0,,{\fs82}RAY {\c&H00E5FF&}TRACING{\c&HFFFFFF&}
+Dialogue: 0,0:00:30.60,0:00:31.41,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}SETTINGS{\c&HFFFFFF&}
+Dialogue: 0,0:00:31.41,0:00:31.64,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}SINCE{\c&HFFFFFF&} LAUNCH
+Dialogue: 0,0:00:31.64,0:00:32.41,Cap,,0,0,0,,{\fs82}SINCE {\c&H00E5FF&}LAUNCH{\c&HFFFFFF&}
+Dialogue: 0,0:00:32.41,0:00:32.71,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}STEAM{\c&HFFFFFF&} REVIEWS
+Dialogue: 0,0:00:32.71,0:00:33.06,Cap,,0,0,0,,{\fs82}STEAM {\c&H00E5FF&}REVIEWS{\c&HFFFFFF&}
+Dialogue: 0,0:00:33.06,0:00:33.19,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}HAVE{\c&HFFFFFF&} CLIMBED TO
+Dialogue: 0,0:00:33.19,0:00:33.55,Cap,,0,0,0,,{\fs82}HAVE {\c&H00E5FF&}CLIMBED{\c&HFFFFFF&} TO
+Dialogue: 0,0:00:33.55,0:00:33.65,Cap,,0,0,0,,{\fs82}HAVE CLIMBED {\c&H00E5FF&}TO{\c&HFFFFFF&}
+Dialogue: 0,0:00:33.65,0:00:34.14,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}MOSTLY{\c&HFFFFFF&} POSITIVE
+Dialogue: 0,0:00:34.14,0:00:34.90,Cap,,0,0,0,,{\fs82}MOSTLY {\c&H00E5FF&}POSITIVE{\c&HFFFFFF&}
+Dialogue: 0,0:00:34.90,0:00:35.07,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}WHICH{\c&HFFFFFF&} MEANS
+Dialogue: 0,0:00:35.07,0:00:36.27,Cap,,0,0,0,,{\fs82}WHICH {\c&H00E5FF&}MEANS{\c&HFFFFFF&}
