@@ -7,6 +7,10 @@ on:
         description: "Metni alınacak bölüm dosyası"
         required: false
         default: "episodes/_test_ucak_neden_beyaz.json"
+      voice_set:
+        description: "Ses seti (boş = Türkçe karşılaştırma, news = oyun haberleri)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -25,9 +29,9 @@ jobs:
 
       - name: Kütüphaneler
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg libssl3 ca-certificates
-          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2
+          sudo timeout 240 apt-get update -qq || true
+          sudo timeout 240 apt-get install -y -qq libssl3 ca-certificates || true
+          sudo timeout 120 apt-get install -y -qq libasound2t64 || sudo timeout 120 apt-get install -y -qq libasound2 || true
           pip install -r requirements.txt
 
       - name: Örnekleri üret
@@ -35,6 +39,7 @@ jobs:
           AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
           AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION || 'northeurope' }}
           IN_EPISODE: ${{ github.event.inputs.episode }}
+          VOICE_SET: ${{ github.event.inputs.voice_set }}
         run: python tools/voice_samples.py "$IN_EPISODE" /tmp/samples
 
       - name: voice-samples dalına koy

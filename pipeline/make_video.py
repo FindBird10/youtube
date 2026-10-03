@@ -133,7 +133,7 @@ async def _tts(text: str, voice: str, rate: str, out: Path) -> list[Word]:
 
 
 def _azure_tts(text: str, voice: str, rate: str, out: Path, pitch: str = "+0%",
-               speak_lang: str = "tr-TR") -> list[Word]:
+               speak_lang: str = "tr-TR", style: str = "", style_degree: float = 1.0) -> list[Word]:
     """Azure Speech (resmi servis). AZURE_SPEECH_KEY ve AZURE_SPEECH_REGION gerekir.
 
     Çok dilli sesler (ör. en-US-AndrewMultilingualNeural) de kullanılabilir; ses kendi
@@ -160,6 +160,8 @@ def _azure_tts(text: str, voice: str, rate: str, out: Path, pitch: str = "+0%",
     body = f'<prosody rate="{rate}" pitch="{pitch}">{escape(text)}</prosody>'
     if lang.lower() != speak_lang.lower():
         body = f'<lang xml:lang="{speak_lang}">{body}</lang>'
+    if style:  # ör. "excited" — yalnızca stil destekleyen seslerde (Davis, Tony, Jason...)
+        body = f'<mstts:express-as style="{style}" styledegree="{style_degree}">{body}</mstts:express-as>'
     # Cümle arası duraksama kısaltılır; kesik kesik değil akıcı okunur.
     ssml = (f'<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" '
             f'xmlns:mstts="http://www.w3.org/2001/mstts" xml:lang="{lang}">'
