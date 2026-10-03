@@ -102,9 +102,10 @@ def _frame_ok(clip: Path, work: Path, length: float) -> tuple[bool, Path | None,
     """
     import numpy as np
 
+    from faces import focus
     from text_detect import text_ratio
 
-    mid = None
+    mid, cx = None, 0.5
     # Fragmanlarda yazı kartları 1–2 sn sürer: ~1 sn aralıklı 6 kare bakılır (önce orta kare)
     for k, frac in enumerate((0.5, 0.08, 0.25, 0.42, 0.75, 0.92)):
         frame = work / f"{clip.stem}_f{k}.jpg"
@@ -114,6 +115,9 @@ def _frame_ok(clip: Path, work: Path, length: float) -> tuple[bool, Path | None,
             continue
         if k == 0:
             mid = frame
+            f = focus(frame)
+            if f and f[2] >= 0.05:
+                cx = f[0]          # kırpma yüze ortalanacak; yazıyı o şeritte ara
         try:
             import cv2
 
@@ -124,7 +128,7 @@ def _frame_ok(clip: Path, work: Path, length: float) -> tuple[bool, Path | None,
                 return False, mid, "siyah/düz"
         except Exception:
             pass
-        tr = text_ratio(frame)
+        tr = text_ratio(frame, center_x=cx)
         if tr > 0.03:
             return False, mid, f"yazı %{tr * 100:.0f}"
     return True, mid, ""

@@ -774,6 +774,15 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     if total > 59:
         log(f"UYARI: video {total:.1f} sn; Shorts için 60 saniyenin altı önerilir.")
     wiki = episode.get("wiki") or {}
+    trailer = episode.get("trailer") or {}
+    if trailer.get("steam_appid") and any(sc.trailer for sc in scenes) and not offline:
+        from game_trailers import assign as assign_trailers
+        n = assign_trailers(scenes, int(trailer["steam_appid"]), work, seed=slug)
+        log(f"Fragman klibi: {n}/{sum(sc.trailer for sc in scenes)} sahne")
+    # Fragmandan temiz klip çıkmayan sahne stoka değil, karakterin wiki görseline düşsün
+    for sc in scenes:
+        if sc.trailer and sc.clip is None and sc.image_query is None and wiki.get("page"):
+            sc.image_query = episode.get("subject") or wiki["page"]
     if wiki.get("site") and wiki.get("page") and any(sc.image_query is not None for sc in scenes) and not offline:
         from wiki_images import assign, list_images
         pools: dict[str, list[dict]] = {}
@@ -788,11 +797,6 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     for sc in scenes:  # görseli bulunamayan sahneler stoka düşer
         if sc.image is None:
             sc.image_query = None
-    trailer = episode.get("trailer") or {}
-    if trailer.get("steam_appid") and any(sc.trailer for sc in scenes) and not offline:
-        from game_trailers import assign as assign_trailers
-        n = assign_trailers(scenes, int(trailer["steam_appid"]), work, seed=slug)
-        log(f"Fragman klibi: {n}/{sum(sc.trailer for sc in scenes)} sahne")
     fetch_clips([sc for sc in scenes if sc.image is None and sc.clip is None], work, offline,
                 episode.get("subject", ""))
 
