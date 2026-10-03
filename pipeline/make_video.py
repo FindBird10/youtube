@@ -82,6 +82,7 @@ class Scene:
     n_shots: int = 1                 # sahnedeki çekim sayısı (hızlı kesme stilinde >1)
     extra_clips: list[Path] = field(default_factory=list)
     extra_images: list[Path] = field(default_factory=list)
+    trailer: bool = False            # arka plan oyunun Steam fragmanından kesilsin (gaming)
 
 
 # ----------------------------------------------------------------- yardımcılar
@@ -652,8 +653,15 @@ def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
                   f"{zoom},setsar=1,format=yuv420p")
     elif sc.clip:
         src = ["-stream_loop", "-1", "-i", str(sc.clip)]
-        vf = (f"fps={FPS},scale={bw}:{bh}:force_original_aspect_ratio=increase,"
-              f"crop={bw}:{bh},{zoom},setsar=1,format=yuv420p")
+        from game_trailers import CLIP_FOCUS
+        face = CLIP_FOCUS.get(str(sc.clip))
+        if face and face[2] >= 0.05:
+            # Fragman klibi: dikey kırpmayı karakterin yüzüne ortala
+            vf = (f"fps={FPS},scale=-2:{bh},crop={bw}:{bh}:x='clip({face[0]:.4f}*iw-ow/2,0,iw-ow)':y=0,"
+                  f"{zoom},setsar=1,format=yuv420p")
+        else:
+            vf = (f"fps={FPS},scale={bw}:{bh}:force_original_aspect_ratio=increase,"
+                  f"crop={bw}:{bh},{zoom},setsar=1,format=yuv420p")
     else:
         color = FALLBACK_COLORS[idx % len(FALLBACK_COLORS)]
         src = ["-f", "lavfi", "-i", f"color=c={color}:s={bw}x{bh}:r={FPS}"]
@@ -741,7 +749,7 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     CAPTION_LANG = language
     scenes = [Scene(text=s["text"].strip(), search=s.get("search", "").strip(),
                     image_query=(s.get("image") if isinstance(s.get("image"), str) else None),
-                    image_page=s.get("image_page"))
+                    image_page=s.get("image_page"), trailer=bool(s.get("trailer")))
               for s in episode["scenes"] if s.get("text", "").strip()]
     if not scenes:
         raise ValueError("Bölümde hiç sahne yok.")
@@ -780,7 +788,13 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     for sc in scenes:  # görseli bulunamayan sahneler stoka düşer
         if sc.image is None:
             sc.image_query = None
-    fetch_clips([sc for sc in scenes if sc.image is None], work, offline, episode.get("subject", ""))
+    trailer = episode.get("trailer") or {}
+    if trailer.get("steam_appid") and any(sc.trailer for sc in scenes) and not offline:
+        from game_trailers import assign as assign_trailers
+        n = assign_trailers(scenes, int(trailer["steam_appid"]), work, seed=slug)
+        log(f"Fragman klibi: {n}/{sum(sc.trailer for sc in scenes)} sahne")
+    fetch_clips([sc for sc in scenes if sc.image is None and sc.clip is None], work, offline,
+                episode.get("subject", ""))
 
     segs = []
     cuts: list[float] = []  # kesme anları (ses efekti için)
