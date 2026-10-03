@@ -46,13 +46,11 @@ VOICE_BY_FORMAT = {
     "dark-history": ("en-US-AndrewMultilingualNeural", "+3%"),
     "psychology": ("en-US-BrianMultilingualNeural", "+5%"),
     "business": ("en-US-AndrewMultilingualNeural", "+5%"),
-    # Oyun haberleri: enerjik (ses örneklerinden kullanıcı seçene kadar Brian, hızlı)
-    "news": ("en-US-BrianMultilingualNeural", "+14%"),
+    # Oyun haberleri: gaming kanalıyla aynı ses (kullanıcı isteği, 4 Eki)
+    "news": ("en-US-AndrewMultilingualNeural", "+0%"),
 }
 # Formata göre ek ses ayarları: perde ve Azure konuşma stili (yalnızca stil destekleyen seslerde)
-VOICE_EXTRA = {
-    "news": {"pitch": "+3%", "style": "", "style_degree": 1.0},
-}
+VOICE_EXTRA: dict[str, dict] = {}
 DEFAULT_AZURE_VOICE = ("en-US-AndrewMultilingualNeural", "+8%")
 EDGE_FALLBACK_VOICE = "tr-TR-AhmetNeural"  # Azure çalışmazsa Türkçe yerel sesle devam
 FALLBACK_COLORS = ["0x14213d", "0x1b263b", "0x2b2d42", "0x3a0ca3", "0x264653", "0x5f0f40"]
@@ -685,7 +683,7 @@ AUDIO_EXT = {".mp3", ".wav", ".m4a", ".ogg"}
 # Video türüne göre müzik klasörü: assets/music/<ruh hali>/ (boşsa assets/music/ kökü)
 MOOD_BY_FORMAT = {"lore": "lore", "gizem": "gizem", "neden": "genel", "ne-olurdu": "genel",
                   "what-if": "genel", "dark-history": "gizem", "psychology": "genel", "business": "genel",
-                  "news": "news"}
+                  "news": "lore"}
 
 
 def pick_music_tracks(episode: dict) -> list[Path]:

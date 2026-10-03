@@ -44,7 +44,7 @@ CHANNELS: dict[str, dict] = {
         "expect_title": None,                # kanal adı belli olunca yaz
         "channel_id": None,
         "category": "20",                     # Oyun
-        "defaults": {"language": "en", "style": "global", "format": "news"},
+        "defaults": {"language": "en", "style": "cinematic", "format": "news"},   # gaming ile aynı görünüm
         "hashtags": ["#gamingnews", "#gaming"],
         "tags": ["gaming news", "video game news", "gaming", "new games", "game news today"],
     },

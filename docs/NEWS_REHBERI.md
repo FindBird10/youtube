@@ -1,8 +1,9 @@
 # Bölüm yazma rehberi — Oyun haberleri kanalı (İngilizce)
 
 Kanal: oyun dünyasındaki **bir önceki günün** gelişmelerini anlatan **İngilizce** Shorts · Günde **3** video.
-Bölümler `episodes/news/` klasörüne yazılır; dil (`en`), stil (`global`: açılış başlık kartı, mor kutulu
-altyazı, hızlı kesmeler), format (`news`) ve enerjik ses klasörden otomatik gelir.
+Bölümler `episodes/news/` klasörüne yazılır; dil (`en`), stil (`cinematic`: gaming kanalıyla aynı görünüm —
+sıcak renk tonu, sinema bantları, klasik altyazı, sakin tempo), format (`news`) ve ses (gaming ile aynı:
+Andrew) klasörden otomatik gelir.
 
 ## Günlük akış
 
@@ -41,7 +42,7 @@ Her sabah (ABD Doğu saati) **dünün** (son 24–36 saatin) oyun haberleri tara
 | Alan | Zorunlu | Açıklama |
 |---|---|---|
 | `title` | ✔ | En fazla ~55 karakter; oyunun adı başta geçsin ("GTA 6 has hurricanes and 170+ animals 🌀"). |
-| `hook` | ✔ | Açılış kartı: 2–5 kelime, büyük harf ("HURRICANES IN GTA 6"). |
+| `hook` | | Kullanılmıyor (sinematik stilde açılış kartı yok); yazmak zorunlu değil. |
 | `subject` | ✔ | Ana özne, küçük harf tek kelime (`gta6`, `hollowknight`). |
 | `description` | ✔ | İlk satır yorum sorusu ("Are you pre-ordering? 👇"), sonra 1–2 anahtar kelimeli cümle, sonra `Sources: ...`. Görsel kullanıldıysa en sonda: `Game footage/images © their respective owners.` |
 | `tags` | ✔ | 10–15 arama ifadesi: oyun adı, kısaltmalar (gta 6, gta vi), "<oyun> news", "<oyun> release date" vb. |
@@ -56,7 +57,7 @@ Her sabah (ABD Doğu saati) **dünün** (son 24–36 saatin) oyun haberleri tara
 1. **Süre:** 55–85 kelime (≈20–30 sn; ses hızlı). Bir videoya tek haber.
 2. **Kanca:** İlk cümle en fazla 10 kelime, haberin en çarpıcı kısmı ("Hurricanes are coming to GTA 6.").
    "Hey guys", "breaking news", "in today's video" yok.
-3. **Ton:** enerjik, kısa cümleler, konuşma dili; ama abartma ve tıklama tuzağı yok — başlık ve ilk cümle
+3. **Ton:** akıcı haber anlatımı, kısa cümleler, konuşma dili; ama abartma ve tıklama tuzağı yok — başlık ve ilk cümle
    haberin gerçek içeriğini söyler.
 4. **Rakamlar** rakamla ("November 19", "$79.99", "170"). Tarih göreli değil kesin yazılır
    (video gecikerek yayınlanabilir: "tomorrow" yerine tarih).
