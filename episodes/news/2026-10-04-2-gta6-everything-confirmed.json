@@ -4,7 +4,21 @@
   "subject": "gta6",
   "wiki": {
     "site": "gta.fandom.com",
-    "page": "Grand Theft Auto VI"
+    "page": "Grand Theft Auto VI",
+    "avoid": [
+      "fallguys",
+      "fall guys",
+      "logo",
+      "icon",
+      "twitter",
+      "x.png",
+      "announcement",
+      "gtav-",
+      "gtaiv",
+      "gta5",
+      "gtao",
+      "online"
+    ]
   },
   "description": "Standard or Ultimate edition? 👇\n\nGTA 6 launches November 19, 2026 on PS5 and Xbox Series X|S. Standard Edition $79.99, Ultimate Edition $99.99, boxed copies contain a download code, pre-load starts November 12 and purchases before November 20 include the Vintage Vice City Pack.\n\nSources: Rockstar Games, VideoGamer\nGame images © Rockstar Games.",
   "tags": [
@@ -30,7 +44,7 @@
   "scenes": [
     {
       "text": "Everything Rockstar has confirmed about GTA 6, in 30 seconds.",
-      "image": "Grand Theft Auto VI"
+      "image": "Artwork GTAVI"
     },
     {
       "text": "It launches November 19 on PS5 and Xbox Series X and S, and there's still no PC version announced.",
@@ -48,7 +62,8 @@
     },
     {
       "text": "And if you buy before November 20, you get the Vintage Vice City Pack. That's",
-      "image": "Vice City"
+      "image": "Vice City GTAVI",
+      "image_page": "Vice City (HD Universe)"
     }
   ]
 }
