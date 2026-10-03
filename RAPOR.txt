@@ -1,0 +1,9 @@
+Metin: Okay, gamers, this is big. Yesterday a brand new trailer dropped, and fans already found three secrets hiding in the background. But the craziest part? Nobody noticed the last one until this morning. Here's everything you need to know in thirty seconds.
+
+OK    01_brian_hizli: en-US-BrianMultilingualNeural hız +14% perde +3% stil -
+OK    02_andrew_hizli: en-US-AndrewMultilingualNeural hız +14% perde +2% stil -
+OK    03_davis_heyecanli: en-US-DavisNeural hız +10% perde +0% stil excited
+OK    04_tony_heyecanli: en-US-TonyNeural hız +10% perde +0% stil excited
+OK    05_jason_heyecanli: en-US-JasonNeural hız +10% perde +0% stil excited
+OK    06_guy_haberci: en-US-GuyNeural hız +10% perde +0% stil newscast
+HATA  07_andrew_hd: en-US-Andrew:DragonHDLatestNeural -> Azure TTS başarısız: ResultReason.Canceled Connection was closed by the remote host. Error code: 1007. Error details: Unsupported voice en-US-Andrew:DragonHDLat
