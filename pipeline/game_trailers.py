@@ -96,7 +96,7 @@ def _cut(src: str, start: float, length: float, out: Path) -> subprocess.Complet
 
 
 def _frame_ok(clip: Path, work: Path, length: float) -> tuple[bool, Path | None, str]:
-    """Klipten 3 kare (yüzde 20/50/80) alır: hepsi yeterince aydınlık/dolu ve yazısız mı?
+    """Klipten 6 kare alır: hepsi yeterince aydınlık/dolu ve yazısız mı?
 
     Döner: (uygun mu, orta kare, neden). Yazı: fragman başlık/tarih kartları ve menü (UI) görüntüleri.
     """
@@ -105,7 +105,8 @@ def _frame_ok(clip: Path, work: Path, length: float) -> tuple[bool, Path | None,
     from text_detect import text_ratio
 
     mid = None
-    for k, frac in enumerate((0.5, 0.2, 0.8)):
+    # Fragmanlarda yazı kartları 1–2 sn sürer: ~1 sn aralıklı 6 kare bakılır (önce orta kare)
+    for k, frac in enumerate((0.5, 0.08, 0.25, 0.42, 0.75, 0.92)):
         frame = work / f"{clip.stem}_f{k}.jpg"
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{length * frac:.2f}", "-i", str(clip),
                         "-frames:v", "1", "-vf", "scale=640:-2", str(frame)], capture_output=True, timeout=60)
