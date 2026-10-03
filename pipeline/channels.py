@@ -32,9 +32,6 @@ CHANNELS: dict[str, dict] = {
     "global": {
         "token_env": "YT_REFRESH_TOKEN_GLOBAL",
         "expect_title": "BirdsVaultGlobal",
-        # 2 Eki: YT_REFRESH_TOKEN_GLOBAL hâlâ BirdsVaultGaming hesabına ait (uzay videosu gaming'e gitti).
-        # Doğru token (youtube.readonly izniyle) girilene kadar kapalı.
-        "enabled": False,
         "channel_id": "UCp2rjdN1M1z0GMJ2Gshzdfw",
         "category": "27",
         "defaults": {"language": "en", "style": "global"},
