@@ -18,7 +18,7 @@ from pathlib import Path
 UA = "BirdsVaultShorts/1.0 (+https://github.com/FindBird10/youtube)"
 HEAD_SKIP = 4.0      # fragman başı (yayıncı logoları)
 TAIL_SKIP = 12.0     # fragman sonu (çıkış tarihi, derecelendirme kartları)
-BAD_NAME = re.compile(r"pc features|accolade|pre-?order|dlc|bundle|sale|update|patch|esrb|pegi|"
+BAD_NAME = re.compile(r"accolade|pre-?order|dlc|bundle|sale|update|patch|esrb|pegi|"
                       r"launch date|price|subscription|season pass|teaser 15", re.I)
 GOOD_NAME = re.compile(r"story|cinematic|launch|reveal|official trailer|announce", re.I)
 
@@ -117,8 +117,10 @@ def _frame_ok(clip: Path, work: Path, length: float) -> tuple[bool, Path | None,
             import cv2
 
             g = cv2.imread(str(frame), cv2.IMREAD_GRAYSCALE)
-            if g is not None and (float(np.mean(g)) < 28 or float(np.std(g)) < 22):
-                return False, mid, "karanlık/düz"
+            # Yalnızca orta kare için: neredeyse siyah ya da tek renk (geçiş/kart) olmasın.
+            # Sinematik fragmanlar zaten karanlık; eşik düşük tutuldu.
+            if k == 0 and g is not None and (float(np.mean(g)) < 16 or float(np.std(g)) < 10):
+                return False, mid, "siyah/düz"
         except Exception:
             pass
         tr = text_ratio(frame)
@@ -133,7 +135,7 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
     if not want:
         return 0
     try:
-        trailers = list_trailers(appid)[:3]
+        trailers = list_trailers(appid)[:4]
     except Exception as e:
         _log(f"Steam fragman listesi alınamadı ({type(e).__name__}); stok/wiki'ye düşülecek")
         return 0
@@ -149,7 +151,7 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
         if dur < HEAD_SKIP + TAIL_SKIP + 6:
             continue
         span = dur - HEAD_SKIP - TAIL_SKIP
-        n = max(3, int(span // 6))
+        n = max(4, int(span // 3))      # ~3 saniyede bir aday başlangıç
         pool += [(src, HEAD_SKIP + span * k / n, t["name"]) for k in range(n)]
     if not pool:
         _log("Kullanılabilir fragman yok")
@@ -161,7 +163,7 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
     placed = 0
     for i, sc in enumerate(want):
         length = min(12.0, max(2.5, sc.duration + 0.8))
-        for _ in range(6):
+        for _ in range(10):
             if not pool:
                 break
             src, start, name = pool.pop()
