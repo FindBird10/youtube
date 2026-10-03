@@ -3,6 +3,7 @@
   episodes/*.json          → birdsvault (Türkçe bilgi kanalı)
   episodes/gaming/*.json   → gaming     (İngilizce oyun karakteri hikâyeleri)
   episodes/global/*.json   → global     (İngilizce genel kanal)
+  episodes/news/*.json     → news       (İngilizce günlük oyun haberleri)
 
 Her kanal kendi YouTube refresh token'ı ile yüklenir (aynı OAuth istemcisi).
 """
@@ -37,6 +38,15 @@ CHANNELS: dict[str, dict] = {
         "defaults": {"language": "en", "style": "global"},
         "hashtags": [],
         "tags": [],
+    },
+    "news": {
+        "token_env": "YT_REFRESH_TOKEN_NEWS",
+        "expect_title": None,                # kanal adı belli olunca yaz
+        "channel_id": None,
+        "category": "20",                     # Oyun
+        "defaults": {"language": "en", "style": "global", "format": "news"},
+        "hashtags": ["#gamingnews", "#gaming"],
+        "tags": ["gaming news", "video game news", "gaming", "new games", "game news today"],
     },
 }
 DEFAULT_CHANNEL = "birdsvault"

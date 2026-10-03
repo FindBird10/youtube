@@ -46,6 +46,12 @@ VOICE_BY_FORMAT = {
     "dark-history": ("en-US-AndrewMultilingualNeural", "+3%"),
     "psychology": ("en-US-BrianMultilingualNeural", "+5%"),
     "business": ("en-US-AndrewMultilingualNeural", "+5%"),
+    # Oyun haberleri: enerjik (ses örneklerinden kullanıcı seçene kadar Brian, hızlı)
+    "news": ("en-US-BrianMultilingualNeural", "+14%"),
+}
+# Formata göre ek ses ayarları: perde ve Azure konuşma stili (yalnızca stil destekleyen seslerde)
+VOICE_EXTRA = {
+    "news": {"pitch": "+3%", "style": "", "style_degree": 1.0},
 }
 DEFAULT_AZURE_VOICE = ("en-US-AndrewMultilingualNeural", "+8%")
 EDGE_FALLBACK_VOICE = "tr-TR-AhmetNeural"  # Azure çalışmazsa Türkçe yerel sesle devam
@@ -238,7 +244,8 @@ EDGE_FALLBACK = {"tr": "tr-TR-AhmetNeural", "en": "en-US-AndrewMultilingualNeura
 
 
 def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: bool, pitch: str = "+0%",
-               language: str = "tr") -> tuple[Path, list[Word], float]:
+               language: str = "tr", speak_style: str = "", style_degree: float = 1.0
+               ) -> tuple[Path, list[Word], float]:
     mp3 = work / "narration.mp3"
     full_text = " ".join(s.text for s in scenes)
     if offline:
@@ -252,7 +259,8 @@ def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: 
         if os.environ.get("AZURE_SPEECH_KEY", "").strip():
             try:
                 words = _azure_tts(full_text, voice, rate, mp3, pitch=pitch,
-                                   speak_lang=SPEAK_LANG.get(language, "tr-TR"))
+                                   speak_lang=SPEAK_LANG.get(language, "tr-TR"),
+                                   style=speak_style, style_degree=style_degree)
                 log(f"Seslendirme: Azure Speech ({voice}, {rate})")
             except Exception as e:
                 log(f"Azure TTS hatası, Edge-TTS'e geçiliyor: {e}")
@@ -676,7 +684,8 @@ def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
 AUDIO_EXT = {".mp3", ".wav", ".m4a", ".ogg"}
 # Video türüne göre müzik klasörü: assets/music/<ruh hali>/ (boşsa assets/music/ kökü)
 MOOD_BY_FORMAT = {"lore": "lore", "gizem": "gizem", "neden": "genel", "ne-olurdu": "genel",
-                  "what-if": "genel", "dark-history": "gizem", "psychology": "genel", "business": "genel"}
+                  "what-if": "genel", "dark-history": "gizem", "psychology": "genel", "business": "genel",
+                  "news": "news"}
 
 
 def pick_music_tracks(episode: dict) -> list[Path]:
@@ -758,9 +767,12 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         raise ValueError("Bölümde hiç sahne yok.")
 
     style = STYLES.get(episode.get("style", "birdsvault"), STYLES["birdsvault"])
+    extra = {} if episode.get("voice") else VOICE_EXTRA.get(episode.get("format", ""), {})
     narration, words, total = synthesize(
         scenes, *pick_voice(episode), work, offline,
-        pitch=episode.get("pitch", "+0%"), language=language)
+        pitch=episode.get("pitch", extra.get("pitch", "+0%")), language=language,
+        speak_style=episode.get("speak_style", extra.get("style", "")),
+        style_degree=float(extra.get("style_degree", 1.0)))
     # Açılış başlık kartı: her şey kart süresi kadar ileri kayar, anlatım kartın ardından başlar
     title_s = TITLE_CARD_S if style["title_card"] else 0.0
     if title_s:

@@ -22,6 +22,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           YT_REFRESH_TOKEN_GAMING: ${{ secrets.YT_REFRESH_TOKEN_GAMING }}
           YT_REFRESH_TOKEN_GLOBAL: ${{ secrets.YT_REFRESH_TOKEN_GLOBAL }}
+          YT_REFRESH_TOKEN_NEWS: ${{ secrets.YT_REFRESH_TOKEN_NEWS }}
         run: |
           pip install -q google-api-python-client google-auth requests
           mkdir -p /tmp/k
