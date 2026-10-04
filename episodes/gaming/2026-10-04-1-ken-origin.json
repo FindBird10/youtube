@@ -1,0 +1,74 @@
+{
+  "title": "Why Ken Masters was sent away as a boy in Street Fighter",
+  "angle": "origin",
+  "subject": "ken",
+  "wiki": {
+    "site": "streetfighter.fandom.com",
+    "page": "Ken Masters",
+    "avoid": [
+      "smash",
+      "ssbu",
+      "ultimate",
+      "concept",
+      "artwork",
+      "cosplay",
+      "comic",
+      "manga",
+      "movie",
+      "film",
+      "udon",
+      "sketch"
+    ]
+  },
+  "description": "Would you rather train with Ryu or with Ken? 👇\n\nHow a rich American kid became Ryu's rival and brother under Gouken. Light spoilers for the Street Fighter series.\n\nFan-made content. Not affiliated with or endorsed by Capcom. Game images © their respective owners.",
+  "tags": [
+    "ken masters",
+    "ken",
+    "street fighter",
+    "street fighter 6",
+    "sf6",
+    "ken masters story",
+    "ken explained",
+    "street fighter lore",
+    "ken and ryu",
+    "gouken",
+    "ken masters backstory",
+    "street fighter story"
+  ],
+  "hashtags": [
+    "#streetfighter",
+    "#kenmasters",
+    "#sf6"
+  ],
+  "publish_at": "2026-10-04T17:00:00Z",
+  "scenes": [
+    {
+      "text": "Ken Masters was born rich, so his father sent him away.",
+      "image": "Ken"
+    },
+    {
+      "text": "His dad, an American hotel tycoon, shipped the spoiled boy to Japan to learn discipline.",
+      "trailer": true
+    },
+    {
+      "text": "His teacher was Gouken, a quiet master, and the only other student was a boy Gouken had raised, named Ryu.",
+      "image": "Ryu",
+      "image_page": "Ryu"
+    },
+    {
+      "text": "Ryu trained for the path itself. Ken trained to prove he was more than his last name.",
+      "trailer": true
+    },
+    {
+      "text": "But here's the twist. The rivalry that should have split them made them brothers.",
+      "trailer": true
+    },
+    {
+      "text": "Ken became a U.S. champion, married Eliza and raised a son, yet every fight still answers one old truth:",
+      "image": "Ken"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 1364780
+  }
+}

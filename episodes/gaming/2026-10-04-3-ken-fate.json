@@ -1,0 +1,74 @@
+{
+  "title": "Ken Masters' hardest choice in Street Fighter 6",
+  "angle": "fate",
+  "subject": "ken",
+  "wiki": {
+    "site": "streetfighter.fandom.com",
+    "page": "Ken Masters",
+    "avoid": [
+      "smash",
+      "ssbu",
+      "ultimate",
+      "concept",
+      "artwork",
+      "cosplay",
+      "comic",
+      "manga",
+      "movie",
+      "film",
+      "udon",
+      "sketch"
+    ]
+  },
+  "description": "Would you have walked away from your family to protect them? 👇\n\nWhy Ken Masters vanished after being framed by JP in Street Fighter 6. Spoilers for Street Fighter 6.\n\nFan-made content. Not affiliated with or endorsed by Capcom. Game images © their respective owners.",
+  "tags": [
+    "ken masters",
+    "ken",
+    "street fighter",
+    "street fighter 6",
+    "sf6",
+    "ken masters story",
+    "ken explained",
+    "street fighter lore",
+    "ken masters sf6",
+    "ken masters family",
+    "ken and mel",
+    "sf6 story"
+  ],
+  "hashtags": [
+    "#streetfighter6",
+    "#kenmasters",
+    "#sf6"
+  ],
+  "publish_at": "2026-10-05T01:00:00Z",
+  "scenes": [
+    {
+      "text": "Ken Masters lost everything, and then he chose to disappear.",
+      "image": "Ken"
+    },
+    {
+      "text": "Framed by JP for terror attacks in Nayshall, he lost his fortune, his foundation and his good name.",
+      "trailer": true
+    },
+    {
+      "text": "He could have run home to his wife Eliza and his son Mel.",
+      "image": "Mel",
+      "image_page": "Mel"
+    },
+    {
+      "text": "But here's what hurts most. He stayed away, so the people hunting him would never reach them.",
+      "trailer": true
+    },
+    {
+      "text": "Now he works construction under the radar, and even Ryu and Guile can only help from a distance.",
+      "trailer": true
+    },
+    {
+      "text": "He still trains, still asks what he's fighting for, and still relives the night",
+      "image": "Ken"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 1364780
+  }
+}
