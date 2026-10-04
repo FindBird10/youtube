@@ -1,0 +1,23 @@
+[make_video] Seslendirme: Azure Speech (en-US-AndrewMultilingualNeural, +0%)
+[make_video] Sahne 1: 0.0–2.6 sn, 6 kelime
+[make_video] Sahne 2: 2.6–12.1 sn, 22 kelime
+[make_video] Sahne 3: 12.1–17.7 sn, 16 kelime
+[make_video] Sahne 4: 17.7–26.8 sn, 19 kelime
+[make_video] Sahne 5: 26.8–35.7 sn, 20 kelime
+[wiki_images] gta.fandom.com/Grand Theft Auto VI: 12 uygun görsel
+[wiki_images] gta.fandom.com/Vice City (HD Universe): 1 uygun görsel
+[wiki_images] gta.fandom.com/State of Leonida: 3 uygun görsel
+[ WARN:0@0.074] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[wiki_images] Sahne 1: File:Artwork-BoobieIke-GTAVI.jpg (3840x2160), yüz x=0.50 y=0.14
+[ WARN:0@0.470] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[wiki_images] Sahne 3: File:ViceCity-GTAVI-Montage.jpg (1920x2700), yüz yok (ortadan kırpılacak)
+[ WARN:0@0.983] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@1.250] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@1.720] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[wiki_images] Sahne 5: File:Leonida-GTAVI-Montage.png (1920x2700), yüz yok (ortadan kırpılacak)
+[make_video] Sahne 1: pixabay:20305 3840x2160 puan 10.8 (hurricane storm palm trees)
+[make_video] Sahne 2: pixabay:83831 3840x2160 puan 9.9 (alligator swamp florida)
+[make_video] Müzik: birdsvault_merak.mp3 (27. sn'den)
+[make_video] Hazır: /home/runner/work/youtube/youtube/build/news__2026-10-04-1-gta6-hurricanes-wildlife.mp4 (35.7 sn)
+- 🔑 `2026-10-04-1-gta6-hurricanes-wildlife.json`: YT_REFRESH_TOKEN_NEWS geçersiz (invalid_grant); token yenilenene kadar news bekletiliyor.
+- ⏳ `2026-10-04-2-gta6-everything-confirmed.json`: news günlük yükleme sınırında, atlandı.
