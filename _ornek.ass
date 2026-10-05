@@ -1,0 +1,86 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Word,DejaVu Sans,112,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,1,0,1,6,3,2,60,60,560,1
+Style: Cap,DejaVu Sans,82,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,2,80,80,560,1
+Style: Hook,DejaVu Sans,92,&H00FFFFFF,&H00FFFFFF,&H50000000,&H00000000,-1,0,0,0,100,100,0,0,3,22,0,8,110,110,300,1
+Style: Box,Poppins ExtraBold,94,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,6,3,2,60,60,560,1
+Style: Title,Anton,150,&H00FFFFFF,&H00FFFFFF,&H00000000,&H90000000,0,0,0,0,100,100,2,0,1,8,5,5,80,80,0,1
+Style: Dim,Poppins ExtraBold,10,&H60000000,&H60000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: Reveal,Poppins Medium,56,&H20FFFFFF,&H20FFFFFF,&H90000000,&H90000000,0,0,0,0,100,100,7,0,1,1.5,3,2,90,90,600,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.09,0:00:00.25,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}ÜÇ{\c&HFFFFFF&} DENİZ FENERİ
+Dialogue: 0,0:00:00.25,0:00:00.54,Cap,,0,0,0,,{\fs82}ÜÇ {\c&H00E5FF&}DENİZ{\c&HFFFFFF&} FENERİ
+Dialogue: 0,0:00:00.54,0:00:00.85,Cap,,0,0,0,,{\fs82}ÜÇ DENİZ {\c&H00E5FF&}FENERİ{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.85,0:00:01.80,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}BEKÇİSİ{\c&HFFFFFF&}
+Dialogue: 0,0:00:01.80,0:00:02.25,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}ISSIZ{\c&HFFFFFF&} BİR ADADA
+Dialogue: 0,0:00:02.25,0:00:02.52,Cap,,0,0,0,,{\fs82}ISSIZ {\c&H00E5FF&}BİR{\c&HFFFFFF&} ADADA
+Dialogue: 0,0:00:02.52,0:00:03.00,Cap,,0,0,0,,{\fs82}ISSIZ BİR {\c&H00E5FF&}ADADA{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.00,0:00:03.23,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}İZ{\c&HFFFFFF&} BIRAKMADAN
+Dialogue: 0,0:00:03.23,0:00:03.86,Cap,,0,0,0,,{\fs82}İZ {\c&H00E5FF&}BIRAKMADAN{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.86,0:00:04.72,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}KAYBOLDU{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.72,0:00:05.05,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}ARALIK{\c&HFFFFFF&} 1900'DE
+Dialogue: 0,0:00:05.05,0:00:06.36,Cap,,0,0,0,,{\fs82}ARALIK {\c&H00E5FF&}1900'DE{\c&HFFFFFF&}
+Dialogue: 0,0:00:06.36,0:00:07.01,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}İSKOÇYA'NIN{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.01,0:00:07.60,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}FLANNAN{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.60,0:00:08.07,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}ADALARI'NA{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.07,0:00:08.56,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}YARDIM{\c&HFFFFFF&} GEMİSİ
+Dialogue: 0,0:00:08.56,0:00:08.91,Cap,,0,0,0,,{\fs82}YARDIM {\c&H00E5FF&}GEMİSİ{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.91,0:00:09.64,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}GELDİĞİNDE{\c&HFFFFFF&}
+Dialogue: 0,0:00:09.64,0:00:10.00,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}ONLARI{\c&HFFFFFF&}
+Dialogue: 0,0:00:10.00,0:00:10.78,Cap,,0,0,0,,{\fs79}{\c&H00E5FF&}KARŞILAYAN{\c&HFFFFFF&} KİMSE
+Dialogue: 0,0:00:10.78,0:00:11.19,Cap,,0,0,0,,{\fs79}KARŞILAYAN {\c&H00E5FF&}KİMSE{\c&HFFFFFF&}
+Dialogue: 0,0:00:11.19,0:00:11.86,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}YOKTU{\c&HFFFFFF&}
+Dialogue: 0,0:00:11.86,0:00:12.34,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}KAPILAR{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.34,0:00:13.34,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}KAPALIYDI{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.34,0:00:13.99,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}LAMBALAR{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.99,0:00:14.60,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}TEMİZLENİP{\c&HFFFFFF&}
+Dialogue: 0,0:00:14.60,0:00:15.77,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}DOLDURULMUŞTU{\c&HFFFFFF&}
+Dialogue: 0,0:00:15.77,0:00:15.95,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}AMA{\c&HFFFFFF&} YATAKLAR
+Dialogue: 0,0:00:15.95,0:00:16.51,Cap,,0,0,0,,{\fs82}AMA {\c&H00E5FF&}YATAKLAR{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.51,0:00:17.22,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}DAĞINIKTI{\c&HFFFFFF&} VE
+Dialogue: 0,0:00:17.22,0:00:17.35,Cap,,0,0,0,,{\fs82}DAĞINIKTI {\c&H00E5FF&}VE{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.35,0:00:17.74,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}SAAT{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.74,0:00:18.76,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}KURULMAMIŞTI{\c&HFFFFFF&}
+Dialogue: 0,0:00:18.76,0:00:18.91,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}EN{\c&HFFFFFF&} TUHAFI ŞUYDU
+Dialogue: 0,0:00:18.91,0:00:19.34,Cap,,0,0,0,,{\fs82}EN {\c&H00E5FF&}TUHAFI{\c&HFFFFFF&} ŞUYDU
+Dialogue: 0,0:00:19.34,0:00:20.19,Cap,,0,0,0,,{\fs82}EN TUHAFI {\c&H00E5FF&}ŞUYDU{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.19,0:00:20.96,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}BEKÇİLERDEN{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.96,0:00:21.39,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}BİRİNİN{\c&HFFFFFF&}
+Dialogue: 0,0:00:21.39,0:00:22.09,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}YAĞMURLUĞU{\c&HFFFFFF&} HÂLÂ
+Dialogue: 0,0:00:22.09,0:00:22.62,Cap,,0,0,0,,{\fs82}YAĞMURLUĞU {\c&H00E5FF&}HÂLÂ{\c&HFFFFFF&}
+Dialogue: 0,0:00:22.62,0:00:23.64,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}YERİNDEYDİ{\c&HFFFFFF&}
+Dialogue: 0,0:00:23.64,0:00:24.01,Cap,,0,0,0,,{\fs79}{\c&H00E5FF&}YANİ{\c&HFFFFFF&} BİRİ DIŞARI
+Dialogue: 0,0:00:24.01,0:00:24.26,Cap,,0,0,0,,{\fs79}YANİ {\c&H00E5FF&}BİRİ{\c&HFFFFFF&} DIŞARI
+Dialogue: 0,0:00:24.26,0:00:24.62,Cap,,0,0,0,,{\fs79}YANİ BİRİ {\c&H00E5FF&}DIŞARI{\c&HFFFFFF&}
+Dialogue: 0,0:00:24.62,0:00:25.25,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}KORUNMADAN{\c&HFFFFFF&}
+Dialogue: 0,0:00:25.25,0:00:26.05,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}ÇIKMIŞTI{\c&HFFFFFF&}
+Dialogue: 0,0:00:26.05,0:00:26.42,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}RESMÎ{\c&HFFFFFF&} RAPORA
+Dialogue: 0,0:00:26.42,0:00:26.81,Cap,,0,0,0,,{\fs82}RESMÎ {\c&H00E5FF&}RAPORA{\c&HFFFFFF&}
+Dialogue: 0,0:00:26.81,0:00:27.09,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}GÖRE{\c&HFFFFFF&} DEV BİR
+Dialogue: 0,0:00:27.09,0:00:27.35,Cap,,0,0,0,,{\fs82}GÖRE {\c&H00E5FF&}DEV{\c&HFFFFFF&} BİR
+Dialogue: 0,0:00:27.35,0:00:27.55,Cap,,0,0,0,,{\fs82}GÖRE DEV {\c&H00E5FF&}BİR{\c&HFFFFFF&}
+Dialogue: 0,0:00:27.55,0:00:27.92,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}DALGA{\c&HFFFFFF&} ÜÇÜNÜ DE
+Dialogue: 0,0:00:27.92,0:00:28.27,Cap,,0,0,0,,{\fs82}DALGA {\c&H00E5FF&}ÜÇÜNÜ{\c&HFFFFFF&} DE
+Dialogue: 0,0:00:28.27,0:00:28.42,Cap,,0,0,0,,{\fs82}DALGA ÜÇÜNÜ {\c&H00E5FF&}DE{\c&HFFFFFF&}
+Dialogue: 0,0:00:28.42,0:00:29.15,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}KAYALARDAN{\c&HFFFFFF&}
+Dialogue: 0,0:00:29.15,0:00:30.10,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}SÜRÜKLEDİ{\c&HFFFFFF&}
+Dialogue: 0,0:00:30.10,0:00:30.31,Cap,,0,0,0,,{\fs79}{\c&H00E5FF&}AMA{\c&HFFFFFF&} CESETLER HİÇ
+Dialogue: 0,0:00:30.31,0:00:31.17,Cap,,0,0,0,,{\fs79}AMA {\c&H00E5FF&}CESETLER{\c&HFFFFFF&} HİÇ
+Dialogue: 0,0:00:31.17,0:00:31.41,Cap,,0,0,0,,{\fs79}AMA CESETLER {\c&H00E5FF&}HİÇ{\c&HFFFFFF&}
+Dialogue: 0,0:00:31.41,0:00:32.06,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}BULUNAMADI{\c&HFFFFFF&} VE
+Dialogue: 0,0:00:32.06,0:00:32.24,Cap,,0,0,0,,{\fs82}BULUNAMADI {\c&H00E5FF&}VE{\c&HFFFFFF&}
+Dialogue: 0,0:00:32.24,0:00:32.67,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}BUGÜN{\c&HFFFFFF&} HÂLÂ
+Dialogue: 0,0:00:32.67,0:00:33.09,Cap,,0,0,0,,{\fs82}BUGÜN {\c&H00E5FF&}HÂLÂ{\c&HFFFFFF&}
+Dialogue: 0,0:00:33.09,0:00:34.19,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}TARTIŞILIYOR{\c&HFFFFFF&}
+Dialogue: 0,0:00:34.19,0:00:34.57,Cap,,0,0,0,,{\fs82}{\c&H00E5FF&}NASIL{\c&HFFFFFF&} OLDU DA
+Dialogue: 0,0:00:34.57,0:00:34.81,Cap,,0,0,0,,{\fs82}NASIL {\c&H00E5FF&}OLDU{\c&HFFFFFF&} DA
+Dialogue: 0,0:00:34.81,0:00:35.60,Cap,,0,0,0,,{\fs82}NASIL OLDU {\c&H00E5FF&}DA{\c&HFFFFFF&}

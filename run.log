@@ -1,0 +1,18 @@
+> Yükleme kapalı: videolar yalnızca üretilecek.
+[make_video] Seslendirme: Azure Speech (en-US-AndrewMultilingualNeural, +0%)
+[make_video] Sahne 1: 0.0–4.7 sn, 10 kelime
+[make_video] Sahne 2: 4.7–11.9 sn, 12 kelime
+[make_video] Sahne 3: 11.9–18.8 sn, 11 kelime
+[make_video] Sahne 4: 18.8–26.0 sn, 13 kelime
+[make_video] Sahne 5: 26.0–35.9 sn, 21 kelime
+[wiki_images] en.wikipedia.org/Flannan Isles Lighthouse: 2 uygun görsel
+[ WARN:0@0.019] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@0.105] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[wiki_images] Sahne 1: File:Flannan Isles southwest from the lighthouse - Geograph-3204860-by-Chris-Downer.jpg (640x480), yüz yok (ortadan kırpılacak)
+[make_video] Sahne 1: pixabay:197525 1080x1920 puan 9.9 (stormy sea old ship)
+[make_video] Sahne 2: pixabay:11186 1920x1080 puan 9.2 (old oil lamp dark room)
+[make_video] Sahne 3: pexels:8498898 1080x1920 puan 9.4 (raincoat hanging wooden wall)
+[make_video] Sahne 4: pexels:34672826 1080x1920 puan 9.1 (giant waves crashing rocks storm)
+[make_video] Müzik: birdsvault_uzay.mp3 (11. sn'den)
+[make_video] Hazır: /home/runner/work/youtube/youtube/build/_ornek.mp4 (35.9 sn)
+- 🎬 **3 fener bekçisi iz bırakmadan kayboldu 🌊** üretildi: `build/_ornek.mp4`
