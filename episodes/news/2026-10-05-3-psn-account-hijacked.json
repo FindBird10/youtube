@@ -1,0 +1,48 @@
+{
+  "title": "PlayStation: another big PSN account hijacked 🔒",
+  "hook": "PSN ACCOUNT HIJACKED",
+  "subject": "playstation",
+  "description": "Do you have 2FA on your PSN account? 👇\n\nOn October 3, 2026, PlayStation content creator RealRadec said his PSN account was hijacked even with two-factor authentication: the attacker disabled 2FA and changed his email. It follows Colin Moriarty's similar case in May 2026.\n\nSources: Push Square (Oct 3, 2026), Notebookcheck, TweakTown",
+  "tags": [
+    "psn account hacked",
+    "playstation account hacked",
+    "psn hack",
+    "ps5 account security",
+    "playstation network",
+    "psn 2fa",
+    "playstation support",
+    "ps5 news",
+    "playstation news",
+    "account takeover",
+    "colin moriarty",
+    "realradec"
+  ],
+  "hashtags": [
+    "#playstation",
+    "#ps5",
+    "#psn"
+  ],
+  "publish_at": "2026-10-05T22:00:00Z",
+  "scenes": [
+    {
+      "text": "Another big PlayStation account was just hijacked.",
+      "search": "game controller dark room neon"
+    },
+    {
+      "text": "On October 3, content creator RealRadec, with over 30,000 followers on X, said he lost his PSN account.",
+      "search": "man looking at phone worried night"
+    },
+    {
+      "text": "He says he wasn't phished, yet the attacker disabled his two-factor authentication and changed the account's email, locking him out.",
+      "search": "hacker laptop code dark"
+    },
+    {
+      "text": "It mirrors podcaster Colin Moriarty's case from May, when attackers reportedly fooled PlayStation support with just a PSN ID and a transaction ID.",
+      "search": "customer support headset call center"
+    },
+    {
+      "text": "Sony hadn't commented at the time of reporting, so check your account's linked email, because",
+      "search": "two factor authentication phone code"
+    }
+  ]
+}

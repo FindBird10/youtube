@@ -1,0 +1,52 @@
+{
+  "title": "RuneScape 4 is real: Jagex reveals new MMO RS4 🐉",
+  "hook": "NEW RUNESCAPE MMO",
+  "subject": "runescape",
+  "trailer": {
+    "steam_appid": 1374490
+  },
+  "description": "Would you play a new RuneScape MMO? 👇\n\nJagex revealed RS4, a new RuneScape MMO built in Unreal Engine, at RuneFest 2026 in Birmingham on October 3. RS4 began as an expansion for RuneScape: Dragonwilds, is set after its events starting in Ashenfall, and is still a few years away.\n\nSources: Jagex via Gematsu (Oct 3, 2026), PC Gamer, Well Played\nGame footage © Jagex.",
+  "tags": [
+    "runescape 4",
+    "rs4",
+    "runescape",
+    "new runescape mmo",
+    "runescape 4 announced",
+    "runefest 2026",
+    "jagex",
+    "runescape dragonwilds",
+    "old school runescape",
+    "osrs",
+    "runescape news",
+    "rs4 trailer",
+    "unreal engine mmo"
+  ],
+  "hashtags": [
+    "#runescape",
+    "#rs4",
+    "#jagex"
+  ],
+  "publish_at": "2026-10-05T13:00:00Z",
+  "scenes": [
+    {
+      "text": "Jagex just announced a brand-new RuneScape MMO.",
+      "search": "medieval fantasy castle mountains"
+    },
+    {
+      "text": "It's called RS4, revealed at RuneFest on October 3, and it's built in Unreal Engine.",
+      "search": "misty fantasy valley landscape"
+    },
+    {
+      "text": "It started as an expansion for the survival game RuneScape: Dragonwilds, until the team realized it deserved to be a full MMO.",
+      "trailer": true
+    },
+    {
+      "text": "It's set years after Dragonwilds, starting in Ashenfall, and the teaser shows dragons and floating islands.",
+      "trailer": true
+    },
+    {
+      "text": "Jagex says it won't replace Old School, RuneScape or Dragonwilds, and it's still a few years away. For now, the headline is simple:",
+      "search": "dragon silhouette sky clouds"
+    }
+  ]
+}
