@@ -35,7 +35,9 @@ SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 BASE_HASHTAGS = {
     "tr": {"neden": ["#bilgi", "#ilginçbilgiler", "#neden", "#bilim"],
            "ne-olurdu": ["#neolurdu", "#bilim", "#ilginçbilgiler", "#uzay"],
-           "gizem": ["#gizem", "#tarih", "#gizemliolaylar", "#ilginçbilgiler"],
+           "gizem": ["#gizem", "#tarih", "#gizemliolaylar", "#çözülemeyengizemler"],
+           "karanlik-tarih": ["#tarih", "#karanlıktarih", "#gerçekhikaye", "#gizem"],
+           "turkiye-gizem": ["#gizem", "#türkiye", "#tarih", "#efsane"],
            "": ["#bilgi", "#ilginçbilgiler"]},
     "en": {"lore": [],
            "what-if": ["#whatif", "#science", "#facts"],
@@ -45,13 +47,15 @@ BASE_HASHTAGS = {
            "": ["#facts", "#didyouknow"]},
 }
 BASE_TAGS = {
-    "tr": ["ilginç bilgiler", "bilgi", "bilmediğiniz bilgiler", "shorts", "kısa bilgi"],
+    "tr": ["gizem", "gizemli olaylar", "tarih", "shorts", "gerçek hikayeler"],
     "en": ["shorts"],
 }
 FORMAT_TAGS = {
     "neden": ["neden", "bilim", "merak edilenler", "günlük bilgiler", "yanlış bilinen doğrular"],
     "ne-olurdu": ["ne olurdu", "bilim", "senaryo", "uzay", "düşünce deneyi"],
     "gizem": ["gizem", "tarih", "çözülemeyen gizemler", "gizemli olaylar", "gerçek hikayeler"],
+    "karanlik-tarih": ["karanlık tarih", "tarih", "gerçek hikaye", "tarihin karanlık yüzü", "ilginç tarih"],
+    "turkiye-gizem": ["türkiye gizemleri", "gizem", "tarih", "anadolu efsaneleri", "gizemli yerler"],
     "lore": [],
     "what-if": ["what if", "science", "hypothetical", "space", "facts", "did you know"],
     "dark-history": ["dark history", "history", "unsolved mysteries", "true story", "creepy history"],

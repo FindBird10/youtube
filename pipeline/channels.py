@@ -1,6 +1,6 @@
 """Kanal tanımları. Bölümün kanalı, bulunduğu klasörden anlaşılır:
 
-  episodes/*.json          → birdsvault (Türkçe bilgi kanalı)
+  episodes/*.json          → birdsvault (Türkçe gizem ve karanlık tarih)
   episodes/gaming/*.json   → gaming     (İngilizce oyun karakteri hikâyeleri)
   episodes/global/*.json   → global     (İngilizce genel kanal)
   episodes/news/*.json     → news       (İngilizce günlük oyun haberleri)
@@ -17,7 +17,8 @@ CHANNELS: dict[str, dict] = {
         "expect_title": "BirdsVault",        # yükleme bu adlı kanala gitmezse durdurulur
         "channel_id": None,
         "category": "27",                     # Eğitim
-        "defaults": {"language": "tr"},
+        # 5 Eki: konu gizem ve karanlık tarih; görünüm ve ses gaming kanalıyla aynı
+        "defaults": {"language": "tr", "style": "cinematic", "format": "gizem"},
         "hashtags": [],
         "tags": ["BirdsVault"],
     },

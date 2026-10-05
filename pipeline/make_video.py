@@ -39,7 +39,9 @@ DEFAULT_RATE = "+5%"      # +12% aceleci duruyordu; +5% daha doğal ve akıcı
 VOICE_BY_FORMAT = {
     "neden": ("en-US-BrianMultilingualNeural", "+8%"),
     "ne-olurdu": ("en-US-BrianMultilingualNeural", "+8%"),
-    "gizem": ("en-US-AndrewMultilingualNeural", "+8%"),
+    "gizem": ("en-US-AndrewMultilingualNeural", "+0%"),        # BirdsVault (gizem kanalı): gaming ile aynı ses
+    "karanlik-tarih": ("en-US-AndrewMultilingualNeural", "+0%"),
+    "turkiye-gizem": ("en-US-AndrewMultilingualNeural", "+0%"),
     # İngilizce kanallar
     "lore": ("en-US-AndrewMultilingualNeural", "+0%"),
     "what-if": ("en-US-BrianMultilingualNeural", "+5%"),
@@ -681,7 +683,7 @@ def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
 
 AUDIO_EXT = {".mp3", ".wav", ".m4a", ".ogg"}
 # Video türüne göre müzik klasörü: assets/music/<ruh hali>/ (boşsa assets/music/ kökü)
-MOOD_BY_FORMAT = {"lore": "lore", "gizem": "gizem", "neden": "genel", "ne-olurdu": "genel",
+MOOD_BY_FORMAT = {"lore": "lore", "gizem": "gizem", "karanlik-tarih": "gizem", "turkiye-gizem": "gizem", "neden": "genel", "ne-olurdu": "genel",
                   "what-if": "genel", "dark-history": "gizem", "psychology": "genel", "business": "genel",
                   "news": "lore"}
 
@@ -813,7 +815,7 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
                 log(f"Wiki görselleri alınamadı: {page} ({type(e).__name__})")
                 pools[page] = []
         assign(scenes, pools, wiki["page"], episode.get("subject", wiki["page"]), work,
-               avoid=wiki.get("avoid"))
+               avoid=wiki.get("avoid"), game_site="fandom" in wiki["site"])
     for sc in scenes:  # görseli bulunamayan sahneler stoka düşer
         if sc.image is None:
             sc.image_query = None

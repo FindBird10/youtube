@@ -25,7 +25,9 @@ def _log(msg: str) -> None:
 def list_images(site: str, page: str, min_w: int = 600, min_h: int = 400) -> list[dict]:
     import requests
 
-    api = f"https://{site}/api.php"
+    wikimedia = "wikipedia.org" in site or "wikimedia.org" in site
+    # Wikipedia/Commons'un API yolu /w/api.php; Fandom'unki /api.php
+    api = f"https://{site}/w/api.php" if wikimedia else f"https://{site}/api.php"
     s = requests.Session()
     s.headers["User-Agent"] = UA
     r = s.get(api, timeout=30, params={"action": "query", "titles": page, "prop": "images", "imlimit": 500,
@@ -38,22 +40,33 @@ def list_images(site: str, page: str, min_w: int = 600, min_h: int = 400) -> lis
     out = []
     for k in range(0, len(titles), 50):
         r = s.get(api, timeout=30, params={"action": "query", "titles": "|".join(titles[k:k + 50]),
-                                           "prop": "imageinfo", "iiprop": "url|size|mime", "format": "json"})
+                                           "prop": "imageinfo", "iiprop": "url|size|mime|extmetadata",
+                                           "iiextmetadatafilter": "LicenseShortName|NonFree", "format": "json"})
         r.raise_for_status()
         for p in r.json().get("query", {}).get("pages", {}).values():
             ii = (p.get("imageinfo") or [{}])[0]
-            if ii.get("url") and ii.get("width", 0) >= min_w and ii.get("height", 0) >= min_h:
-                out.append({"name": p["title"], "url": ii["url"], "w": ii["width"], "h": ii["height"]})
+            if not (ii.get("url") and ii.get("width", 0) >= min_w and ii.get("height", 0) >= min_h):
+                continue
+            meta = ii.get("extmetadata") or {}
+            lic = (meta.get("LicenseShortName") or {}).get("value", "")
+            if wikimedia:
+                # Yalnızca kamu malı / CC0: atıf gerektirmez, telif riski yok. "Fair use" görseller elenir.
+                nonfree = str((meta.get("NonFree") or {}).get("value", "")).lower() in ("true", "1")
+                if nonfree or not FREE_LICENSE_RE.search(lic):
+                    continue
+            out.append({"name": p["title"], "url": ii["url"], "w": ii["width"], "h": ii["height"], "license": lic})
     _log(f"{site}/{page}: {len(out)} uygun görsel")
     return out
 
+
+FREE_LICENSE_RE = re.compile(r"public domain|^pd|pd-|cc0|no restrictions|copyrighted free use", re.I)
 
 NON_GAME_RE = re.compile(r"drawing|sketch|concept|comic|american dreams|artwork|illustration|poster|"
                          r"cover|fan ?art|render|model|cosplay|merch|figure|statue|funko|book", re.I)
 
 
 def assign(scenes: list, pools: dict[str, list[dict]], main_page: str, subject: str, work: Path,
-           avoid: list[str] | None = None) -> None:
+           avoid: list[str] | None = None, game_site: bool = True) -> None:
     """image_query'si olan sahnelere görsel indirir (dosya adı eşleşmesine göre, tekrar etmeden).
 
     Sahnenin image_page'i varsa önce o sayfanın görsellerine, yoksa bölümün ana sayfasına bakılır.
@@ -69,7 +82,7 @@ def assign(scenes: list, pools: dict[str, list[dict]], main_page: str, subject: 
         s = 3.0 * sum(1 for w in want if w in name)
         s += 1.0 * sum(1 for w in subj if w in name)          # karakterin adı geçen görseller öne
         s += 0.5 if img["w"] >= 1200 else 0.0                    # net görsel
-        if NON_GAME_RE.search(name):                              # çizim/konsept/çizgi roman geri planda
+        if game_site and NON_GAME_RE.search(name):                # oyun wiki'sinde çizim/konsept geri planda
             s -= 4.0
         if avoid and any(a in name for a in avoid):               # ör. başka oyunun görselleri
             s -= 6.0

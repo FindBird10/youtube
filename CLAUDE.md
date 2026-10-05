@@ -6,7 +6,7 @@ Dört YouTube kanalı için Shorts otomasyonu; Claude bölüm dosyalarını yaza
 
 | Kanal | Klasör | Dil | Rehber | Token secret'ı |
 |---|---|---|---|---|
-| **BirdsVault** (genel ilginç bilgiler) | `episodes/*.json` | Türkçe | `docs/BOLUM_REHBERI.md` | `YT_REFRESH_TOKEN` |
+| **BirdsVault** (gizem ve karanlık tarih) | `episodes/*.json` | Türkçe | `docs/BOLUM_REHBERI.md` | `YT_REFRESH_TOKEN` |
 | **Gaming** (oyun karakteri hikâyeleri) | `episodes/gaming/` | İngilizce | `docs/GAMING_REHBERI.md` | `YT_REFRESH_TOKEN_GAMING` |
 | **Global** (what-if, psikoloji, iş, karanlık tarih) | `episodes/global/` | İngilizce | `docs/GLOBAL_REHBERI.md` | `YT_REFRESH_TOKEN_GLOBAL` |
 | **News** (günlük oyun haberleri) | `episodes/news/` | İngilizce | `docs/NEWS_REHBERI.md` | `YT_REFRESH_TOKEN_NEWS` |

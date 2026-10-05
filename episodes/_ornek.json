@@ -1,46 +1,50 @@
 {
-  "title": "Ahtapotun bir kalbi yüzerken duruyor 🐙",
-  "subject": "octopus",
-  "description": "Sence doğadaki en tuhaf hayvan hangisi? 👇\n\nAhtapotun 3 kalbi var ve mavi kanı bakır sayesinde oksijen taşıyor. Ahtapot neden yüzmek yerine sürünüyor?\n\nKaynak: Smithsonian Ocean",
+  "title": "3 fener bekçisi iz bırakmadan kayboldu 🌊",
+  "format": "gizem",
+  "subject": "lighthouse",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Flannan Isles Lighthouse"
+  },
+  "description": "Sence o gece ne oldu? 👇\n\nAralık 1900'de İskoçya'daki Flannan Adaları deniz fenerinin üç bekçisi James Ducat, Thomas Marshall ve Donald McArthur iz bırakmadan kayboldu. Resmî rapor dev bir dalgayı suçladı.\n\nKaynak: Northern Lighthouse Board kayıtları, Wikipedia (Flannan Isles Lighthouse), Mike Dash",
   "tags": [
-    "ahtapot",
-    "ahtapotun kaç kalbi var",
-    "ahtapot kalbi",
-    "ahtapot mavi kan",
-    "ahtapot neden yüzmez",
-    "deniz canlıları",
-    "hayvanlar",
-    "ilginç hayvanlar",
-    "okyanus",
-    "hayvan bilgileri"
-  ],
-  "language": "tr",
-  "privacy": "private",
-  "scenes": [
-    {
-      "text": "Ahtapotun tam 3 kalbi var, ve biri yüzerken duruyor.",
-      "search": "octopus underwater"
-    },
-    {
-      "text": "İki kalp kanı sadece solungaçlara pompalar, üçüncüsü ise bütün vücuda.",
-      "search": "octopus close up"
-    },
-    {
-      "text": "Ama ahtapot yüzmeye başladığında bu üçüncü kalp atmayı bırakır, bu yüzden yüzmek onu çok yorar.",
-      "search": "octopus swimming ocean"
-    },
-    {
-      "text": "O da çoğu zaman yüzmek yerine deniz tabanında sürünmeyi seçer.",
-      "search": "octopus crawling seabed"
-    },
-    {
-      "text": "Kanı da mavidir, çünkü oksijeni demir değil bakır taşır, ve bütün bunların sebebi şu:",
-      "search": "octopus tentacles"
-    }
+    "flannan adaları",
+    "flannan isles",
+    "deniz feneri gizemi",
+    "kaybolan fener bekçileri",
+    "1900 gizemi",
+    "çözülemeyen gizemler",
+    "iskoçya gizemi",
+    "deniz feneri",
+    "gizemli kayboluşlar",
+    "gerçek gizemler",
+    "tarih gizemleri"
   ],
   "hashtags": [
-    "#ahtapot",
-    "#hayvanlar",
-    "#denizcanlıları"
+    "#denizfeneri",
+    "#flannan",
+    "#iskoçya"
+  ],
+  "scenes": [
+    {
+      "text": "Üç deniz feneri bekçisi, ıssız bir adada iz bırakmadan kayboldu.",
+      "image": "Flannan lighthouse"
+    },
+    {
+      "text": "Aralık 1900'de, İskoçya'nın Flannan Adaları'na yardım gemisi geldiğinde onları karşılayan kimse yoktu.",
+      "search": "stormy sea old ship"
+    },
+    {
+      "text": "Kapılar kapalıydı, lambalar temizlenip doldurulmuştu, ama yataklar dağınıktı ve saat kurulmamıştı.",
+      "search": "old oil lamp dark room"
+    },
+    {
+      "text": "En tuhafı şuydu: bekçilerden birinin yağmurluğu hâlâ yerindeydi, yani biri dışarı korunmadan çıkmıştı.",
+      "search": "raincoat hanging wooden wall"
+    },
+    {
+      "text": "Resmî rapora göre dev bir dalga üçünü de kayalardan sürükledi, ama cesetler hiç bulunamadı ve bugün hâlâ tartışılıyor, nasıl oldu da",
+      "search": "giant waves crashing rocks storm"
+    }
   ]
 }
