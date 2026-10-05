@@ -167,6 +167,9 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
     from googleapiclient.http import MediaFileUpload
 
     desc = episode.get("description", "").strip()
+    if episode.get("_credits"):  # CC BY / CC BY-SA görseller için zorunlu atıf
+        head = "Görseller (Wikimedia Commons):" if episode.get("language") == "tr" else "Images (Wikimedia Commons):"
+        desc += "\n\n" + head + "\n" + "\n".join(f"• {c}" for c in episode["_credits"][:8])
     present = {w.lower() for w in desc.split() if w.startswith("#")}
     tags_line = " ".join(h for h in build_hashtags(episode) if h.lower() not in present)
     if tags_line:

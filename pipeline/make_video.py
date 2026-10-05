@@ -806,7 +806,8 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
                 sc.clip = scenes[donor].clip
                 log(f"Sahne {i + 1}: fragman klibi yok, sahne {donor + 1}'in klibi kullanılıyor")
     if wiki.get("site") and wiki.get("page") and any(sc.image_query is not None for sc in scenes) and not offline:
-        from wiki_images import assign, list_images
+        from wiki_images import CREDITS, assign, list_images
+        CREDITS.clear()
         pools: dict[str, list[dict]] = {}
         for page in dict.fromkeys([wiki["page"]] + [sc.image_page for sc in scenes if sc.image_page]):
             try:
@@ -816,9 +817,13 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
                 pools[page] = []
         assign(scenes, pools, wiki["page"], episode.get("subject", wiki["page"]), work,
                avoid=wiki.get("avoid"), game_site="fandom" in wiki["site"])
+        episode["_credits"] = list(dict.fromkeys(CREDITS))
     for sc in scenes:  # görseli bulunamayan sahneler stoka düşer
         if sc.image is None:
             sc.image_query = None
+    for sc in scenes:  # görseli bulunamayan ve arama kelimesi olmayan sahne konunun öznesiyle stok arasın
+        if sc.image is None and sc.clip is None and not sc.search:
+            sc.search = episode.get("subject", "") or "dark atmosphere"
     fetch_clips([sc for sc in scenes if sc.image is None and sc.clip is None], work, offline,
                 episode.get("subject", ""))
 

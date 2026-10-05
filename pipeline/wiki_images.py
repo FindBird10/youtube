@@ -11,6 +11,7 @@ from pathlib import Path
 
 import faces
 
+CREDITS: list[str] = []   # atıf gerektiren (CC BY/BY-SA) kullanılan görseller; açıklamaya eklenir
 UA = "BirdsVaultShorts/1.0 (+https://github.com/FindBird10/youtube)"
 IMG_EXT = (".jpg", ".jpeg", ".png", ".webp")
 # Simge, logo, harita vb. küçük/alakasız dosyaları ele
@@ -41,7 +42,7 @@ def list_images(site: str, page: str, min_w: int = 600, min_h: int = 400) -> lis
     for k in range(0, len(titles), 50):
         r = s.get(api, timeout=30, params={"action": "query", "titles": "|".join(titles[k:k + 50]),
                                            "prop": "imageinfo", "iiprop": "url|size|mime|extmetadata",
-                                           "iiextmetadatafilter": "LicenseShortName|NonFree", "format": "json"})
+                                           "iiextmetadatafilter": "LicenseShortName|NonFree|Artist", "format": "json"})
         r.raise_for_status()
         for p in r.json().get("query", {}).get("pages", {}).values():
             ii = (p.get("imageinfo") or [{}])[0]
@@ -54,12 +55,17 @@ def list_images(site: str, page: str, min_w: int = 600, min_h: int = 400) -> lis
                 nonfree = str((meta.get("NonFree") or {}).get("value", "")).lower() in ("true", "1")
                 if nonfree or not FREE_LICENSE_RE.search(lic):
                     continue
-            out.append({"name": p["title"], "url": ii["url"], "w": ii["width"], "h": ii["height"], "license": lic})
+            artist = re.sub(r"<[^>]+>", "", (meta.get("Artist") or {}).get("value", "")).strip()
+            out.append({"name": p["title"], "url": ii["url"], "w": ii["width"], "h": ii["height"],
+                        "license": lic, "artist": re.sub(r"\s+", " ", artist)[:80]})
     _log(f"{site}/{page}: {len(out)} uygun görsel")
     return out
 
 
-FREE_LICENSE_RE = re.compile(r"public domain|^pd|pd-|cc0|no restrictions|copyrighted free use", re.I)
+# Kamu malı / CC0 (atıf gerekmez) ve CC BY / CC BY-SA (atıf açıklamaya otomatik eklenir).
+# NC/ND (ticari olmayan / türetilemez) ve "fair use" görseller elenir.
+FREE_LICENSE_RE = re.compile(r"public domain|^pd|pd-|cc0|no restrictions|copyrighted free use|^cc[ -]by(?![ -]?n[cd])", re.I)
+NEEDS_CREDIT_RE = re.compile(r"^cc[ -]by", re.I)
 
 NON_GAME_RE = re.compile(r"drawing|sketch|concept|comic|american dreams|artwork|illustration|poster|"
                          r"cover|fan ?art|render|model|cosplay|merch|figure|statue|funko|book", re.I)
@@ -139,6 +145,9 @@ def assign(scenes: list, pools: dict[str, list[dict]], main_page: str, subject: 
             sc.image_query = None
             continue
         best, sc.image = chosen
+        if NEEDS_CREDIT_RE.search(best.get("license", "")):
+            CREDITS.append(f"{best['name'].removeprefix('File:')} — {best.get('artist') or 'Wikimedia Commons'}, "
+                           f"{best['license']}")
         used.add(best["url"])
         f = faces.focus(sc.image)
         _log(f"Sahne {i + 1}: {best['name']} ({best['w']}x{best['h']})"
