@@ -40,8 +40,14 @@ jobs:
           ns = {"a": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
           try:
               root = ET.parse(sys.argv[1]).getroot()
+              ns["media"] = "http://search.yahoo.com/mrss/"
               for e in root.findall("a:entry", ns):
-                  print(e.findtext("yt:videoId", "", ns), e.findtext("a:published", "", ns), e.findtext("a:title", "", ns))
+                  st = e.find("media:group/media:community/media:statistics", ns)
+                  rt = e.find("media:group/media:community/media:starRating", ns)
+                  views = st.get("views") if st is not None else "?"
+                  likes = rt.get("count") if rt is not None else "?"
+                  print(e.findtext("yt:videoId", "", ns), e.findtext("a:published", "", ns)[:16],
+                        f"izlenme={views}", f"begeni={likes}", e.findtext("a:title", "", ns), sep="\t")
           except Exception as ex:
               print("hata:", ex)
           PY
