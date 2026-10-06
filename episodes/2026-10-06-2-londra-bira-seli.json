@@ -1,0 +1,53 @@
+{
+  "title": "Bir Londra mahallesini bira seli yuttu 🍺",
+  "format": "karanlik-tarih",
+  "subject": "brewery",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "London Beer Flood"
+  },
+  "description": "Sence bu felaket önlenebilir miydi? 👇\n\n17 Ekim 1814'te Londra'daki Meux Horse Shoe bira fabrikasında dev bir fıçı patladı; yüz binlerce litre bira St Giles mahallesine yayıldı ve 8 kişi hayatını kaybetti. Jüri olayı kaza saydı.\n\nKaynak: Wikipedia (London Beer Flood) ve kaynakları, bira tarihçisi Martyn Cornell",
+  "tags": [
+    "londra bira seli",
+    "london beer flood",
+    "1814 bira seli",
+    "bira felaketi",
+    "tarihin tuhaf olayları",
+    "londra tarihi",
+    "st giles",
+    "meux bira fabrikası",
+    "tuhaf kazalar",
+    "bira seli nedir",
+    "karanlık tarih",
+    "tarihte bugün"
+  ],
+  "hashtags": [
+    "#londra",
+    "#biraseli",
+    "#tuhaftarih"
+  ],
+  "scenes": [
+    {
+      "text": "Bir Londra mahallesini dev bir bira dalgası yuttu.",
+      "image": "Horse Shoe Brewery",
+      "image_page": "Horse Shoe Brewery"
+    },
+    {
+      "text": "17 Ekim 1814'te Meux bira fabrikasında yaklaşık 7 metrelik bir fıçının 300 kiloluk demir çemberi yerinden kaydı.",
+      "search": "old wooden barrels brewery"
+    },
+    {
+      "text": "Bir kâtip durumu bildirdi ama hiçbir zarar gelmeyeceği söylendi; bir saat sonra fıçı patladı ve yüz binlerce litre bira sokaklara taştı.",
+      "search": "flooded cobblestone street night"
+    },
+    {
+      "text": "Dalga yoksul St Giles mahallesindeki evlere girdi ve aralarında küçük çocukların da olduğu 8 kişi hayatını kaybetti.",
+      "image": "London"
+    },
+    {
+      "text": "Jüri olayı kaza saydı, bira fabrikaları dev ahşap fıçılardan vazgeçti, ama o ekim akşamı tek bir gevşek çember yüzünden",
+      "search": "old london alley fog"
+    }
+  ],
+  "publish_at": "2026-10-06T18:00:00Z"
+}
