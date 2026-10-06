@@ -42,6 +42,21 @@ def save_state(items: list[dict]) -> None:
     STATE.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def remote_done() -> set[str]:
+    """origin/main'deki en güncel kayıttaki anahtarlar (başka çalıştırmanın az önce yüklediği dahil)."""
+    import subprocess
+
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return set()
+    subprocess.run(["git", "fetch", "-q", "origin", "main"], cwd=ROOT, capture_output=True)
+    r = subprocess.run(["git", "show", "origin/main:state/published.json"], cwd=ROOT,
+                       capture_output=True, text=True)
+    try:
+        return {x["slug"] for x in json.loads(r.stdout)}
+    except Exception:
+        return set()
+
+
 def push_state(note: str) -> None:
     """Kaydı her yüklemeden hemen sonra main'e gönderir (yalnızca GitHub Actions'ta).
 
@@ -144,6 +159,9 @@ def main() -> int:
     for p in pending:
         try:
             ep = load_episode(p)
+            if not a.no_upload and not a.episode and ep["_key"] in remote_done():
+                summary(f"- ↩️ `{p.name}`: başka bir çalıştırma az önce yüklemiş, atlandı.")
+                continue
             if not a.no_upload and ep["_channel"] in limited:
                 summary(f"- ⏳ `{p.name}`: {ep['_channel']} günlük yükleme sınırında, atlandı.")
                 continue

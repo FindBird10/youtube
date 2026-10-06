@@ -31,6 +31,9 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Olayın eski commit'i değil en güncel main: önceki çalıştırmanın yükleme kaydı da gelsin
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
