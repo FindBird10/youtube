@@ -1,0 +1,73 @@
+{
+  "title": "How Marcus Fenix became a Gears of War legend",
+  "angle": "origin",
+  "subject": "marcus",
+  "wiki": {
+    "site": "gearsofwar.fandom.com",
+    "page": "Marcus Fenix",
+    "avoid": [
+      "kait",
+      "jd fenix",
+      "jd",
+      "del walker",
+      "gears 5",
+      "gears of war 4",
+      "gow4",
+      "concept",
+      "comic",
+      "fahz",
+      "old"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 3010850
+  },
+  "description": "Would you have followed Marcus into the Hollow? 👇\n\nThe story of Marcus Fenix before the Locust war, as Gears of War: E-Day launches. Light spoilers for the Gears of War series.\n\nFan-made content. Not affiliated with or endorsed by The Coalition or Xbox Game Studios. Game images © their respective owners.",
+  "tags": [
+    "marcus fenix",
+    "gears of war",
+    "gears of war e-day",
+    "gears e-day",
+    "marcus fenix story",
+    "marcus fenix explained",
+    "gears of war lore",
+    "emergence day",
+    "marcus and dom",
+    "gears of war story",
+    "adam fenix"
+  ],
+  "hashtags": [
+    "#gearsofwar",
+    "#marcusfenix",
+    "#gearsofwareday"
+  ],
+  "publish_at": "2026-10-06T17:00:00Z",
+  "scenes": [
+    {
+      "text": "Marcus Fenix was already a war hero before the Locust surfaced.",
+      "image": "Marcus Fenix"
+    },
+    {
+      "text": "He was the son of Adam Fenix, a brilliant scientist. His mother, Elain, went missing when he was a boy.",
+      "image": "Adam Fenix",
+      "image_page": "Adam Fenix"
+    },
+    {
+      "text": "He grew up beside his best friend, Dom Santiago, and they fought side by side in the Pendulum Wars.",
+      "trailer": true
+    },
+    {
+      "text": "There, Marcus earned the Embry Star, the COG's highest medal for valor. But the real war hadn't started yet.",
+      "trailer": true
+    },
+    {
+      "text": "On Emergence Day, monsters burst from underground and attacked cities across the planet at once.",
+      "trailer": true
+    },
+    {
+      "text": "Young Marcus and Dom were thrown into the chaos. Few people remember that",
+      "image": "Marcus Dom",
+      "image_page": "Marcus Fenix"
+    }
+  ]
+}
