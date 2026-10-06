@@ -1,0 +1,56 @@
+{
+  "title": "The Witcher 3 breaks its all-time Steam record 🐺",
+  "hook": "WITCHER 3 RECORD",
+  "subject": "witcher3",
+  "trailer": {
+    "steam_appid": 292030
+  },
+  "description": "Are you jumping back into The Witcher 3? 👇\n\nThe Witcher 3: Wild Hunt hit 137,724 concurrent players on Steam, beating its January 2020 record of 103,329. The boost comes from The Witcher 3: Wild Hunt — Remastered, a free upgrade for owners released September 29, 2026 that bundles both expansions.\n\nSources: SteamDB, GamesRadar+ (Oct 5, 2026), CD PROJEKT RED\nGame footage © CD PROJEKT RED.",
+  "tags": [
+    "the witcher 3",
+    "witcher 3",
+    "witcher 3 remastered",
+    "the witcher 3 wild hunt",
+    "witcher 3 steam record",
+    "witcher 3 player count",
+    "witcher 3 news",
+    "witcher 3 free upgrade",
+    "cd projekt red",
+    "hearts of stone",
+    "blood and wine",
+    "steamdb",
+    "geralt"
+  ],
+  "hashtags": [
+    "#thewitcher3",
+    "#witcher",
+    "#cdprojektred"
+  ],
+  "publish_at": "2026-10-06T13:00:00Z",
+  "scenes": [
+    {
+      "text": "The Witcher 3 just broke its all-time Steam record.",
+      "trailer": true
+    },
+    {
+      "text": "This past weekend, it hit 137,724 players at the same time, according to SteamDB.",
+      "trailer": true
+    },
+    {
+      "text": "The old record was 103,329, set in January 2020, right after the Netflix series.",
+      "search": "watching tv at night living room"
+    },
+    {
+      "text": "The reason? The Witcher 3: Wild Hunt Remastered, released September 29 as a free upgrade for owners.",
+      "trailer": true
+    },
+    {
+      "text": "It even bundles both expansions, Hearts of Stone and Blood and Wine.",
+      "search": "medieval castle vineyard sunset"
+    },
+    {
+      "text": "An 11-year-old RPG, back on top. And that's how",
+      "search": "wolf howling moon forest"
+    }
+  ]
+}
