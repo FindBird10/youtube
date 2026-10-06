@@ -33,6 +33,14 @@ farkı otomatik hesaplansın). 21:00 ET ertesi gün UTC'ye düşebilir, bu norma
 - Hikâyesi güçlü olsun: trajedi, ihanet, sır, büyük bir seçim. Sadece "havalı" ama hikâyesi
   zayıf karakterleri seçme.
 
+## Performans notları (6 Ekim 2026, ilk 5 gün)
+- Video başına ~1.000–1.700 izlenme; en iyisi **GTA 4 / Niko Bellic** (3 videonun üçü de 1.500+ ve en yüksek
+  beğeni oranı ~%4). Büyük, herkesin bildiği seriler (GTA, Gears, Street Fighter) yeni/niş oyunlardan iyi gidiyor.
+- Karakter seçerken **çok bilinen serilere öncelik ver** (GTA, Red Dead, The Last of Us, God of War, Resident Evil,
+  The Witcher, Elden Ring/Dark Souls, Halo, Mortal Kombat, Street Fighter, Mass Effect, BioShock); niş/yeni oyunları
+  ancak gündemdeyse seç. GTA 6 çıkışına (19 Kasım) kadar GTA evreni karakterleri ekstra ilgi görüyor.
+- Başlık kalıpları iyi çalışıyor: "Why <karakter> really …", "<karakter>'s impossible choice …", "The secret behind …".
+
 ## Görseller (wiki)
 
 Görüntüler karakterin Fandom wiki sayfasındaki oyun içi görsellerden gelir.
