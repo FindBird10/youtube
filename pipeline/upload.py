@@ -44,6 +44,7 @@ BASE_HASHTAGS = {
            "dark-history": ["#history", "#mystery", "#darkhistory"],
            "psychology": ["#psychology", "#brain", "#facts"],
            "business": ["#business", "#entrepreneur", "#history"],
+           "body": ["#humanbody", "#science", "#facts"],
            "": ["#facts", "#didyouknow"]},
 }
 BASE_TAGS = {
@@ -61,6 +62,7 @@ FORMAT_TAGS = {
     "dark-history": ["dark history", "history", "unsolved mysteries", "true story", "creepy history"],
     "psychology": ["psychology", "psychology facts", "brain", "human behavior", "mind tricks"],
     "business": ["business", "business story", "entrepreneur", "company history", "success story"],
+    "body": ["human body", "body facts", "science", "how your body works", "biology"],
 }
 MAX_HASHTAGS = 8          # çok fazla hashtag spam sayılır (60'ı aşınca YouTube hepsini yok sayar)
 TAGS_CHAR_LIMIT = 480     # YouTube sınırı 500 karakter (boşluklu etiketler tırnakla sayılır)

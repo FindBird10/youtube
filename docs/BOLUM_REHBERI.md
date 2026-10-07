@@ -10,6 +10,35 @@ yazma.
 Her Short, `episodes/` klasöründe tek bir JSON dosyasıdır. Dosya `main` dalına gönderildiğinde GitHub
 Actions videoyu üretir ve YouTube'a yükler.
 
+## Performans notları (7 Ekim 2026) — konu seçmeden önce oku
+
+İlk 32 videonun izlenmeleri: 28 Eyl–4 Eki arası neredeyse hepsi **4–45** izlenmede kaldı. Son 3 günde kanal
+itilmeye başladı ve şunlar kazandı:
+
+| Video | İzlenme | İlk cümle |
+|---|---|---|
+| Arılar yok olsa | **863** | "Arılar yok olsa önce manavdaki renkler kaybolurdu." |
+| Tunguska | **814** | "Bir adam 65 kilometre uzaktaki sandalyesinden fırlatıldı." |
+| Londra bira seli | **455** | "Bir Londra mahallesini dev bir bira dalgası yuttu." |
+| Vombatın küp dışkısı | 337 | "Doğada küp şeklinde dışkı yapan bir hayvan var…" |
+| Pamukkale Cehennem Kapısı | **316** | "Bu mağaraya atılan kuşlar anında ölüp yere düşüyordu." |
+
+Tutmayanlar: Voynich el yazması **4**, Roanoke/CROATOAN **1**, dans salgını 7, Wow! sinyali 13, Derinkuyu 25,
+ve "X neden olur? Çoğu kişi … sanıyor" kalıbındaki bütün `neden` videoları (4–41).
+
+Çıkarımlar (bundan sonraki bütün bölümlerde uygula):
+1. **Fiziksel ve gözle görülür olay kazanır.** Patlama, sel, dalga, ölen kuşlar, devrilen ağaçlar — ilk
+   karede *görülebilen* bir şey. Bir kitabı okuyamamak, bir kelime, bir sinyal, bir kişinin ortadan
+   kaybolması gibi **soyut/yazıya dayalı** gizemler tutmadı; bunları seçme.
+2. **Türk izleyicinin tanıdığı bir şeye bağla.** Manav, arı, Pamukkale, Londra: izleyici 1 saniyede
+   "bunu biliyorum" diyor. Roanoke, CROATOAN, Voynich gibi Türkiye'de bilinmeyen adlar başlıkta ve ilk
+   cümlede kullanılmaz; gerekirse olay anlatılır, ad sonra söylenir.
+3. **Kanca = imkânsız görünen tek bir görüntü**, 6–10 kelime. Soru ile açma ("… neden …?"), tarih/yer ile
+   açma ("14 Temmuz 1518'de…") ve "çoğu kişi … sanıyor" kalıbı kullanılmaz.
+4. **Ölçek:** rakamla anlatılan büyüklük (80 milyon ağaç, 65 km, 1,4 milyon litre) izlenmeyi taşıyor.
+5. Seçmeden önce test: "Hiç duymamış biri ilk karede ve ilk cümlede neyi *görecek*?" Cevap bir nesne ya da
+   olay değil de bir fikirse, başka konu seç.
+
 ## Günlük akış
 
 Her gün 3 bölüm yazılır ve `publish_at` ile zamanlanır (Türkiye saati = UTC+3). Gizem içeriği akşam ve
@@ -24,21 +53,24 @@ gece daha çok izlenir.
 ## Formatlar
 
 ### 1. Çözülememiş gizem (`gizem`)
-Belgelenmiş ama hâlâ açıklanamayan olaylar: kayıp uçak/gemi/kişiler, açıklanamayan sinyaller ve
-buluntular, çözülemeyen şifreler (ör. Somerton Adamı, Voynich El Yazması, Flannan Adaları deniz feneri,
-Hinterkaifeck, Baltık Denizi anomalisi, Antikythera düzeneği).
-- **Soğuk açılış:** en tuhaf an ilk cümlede ("Masasında oturan adamın cebinde tek bir kelime vardı.").
+Belgelenmiş ama hâlâ tam açıklanamayan **fiziksel** olaylar ve buluntular: gökten düşen/patlayan şeyler,
+açıklanamayan ışıklar ve sesler, tuhaf doğa olayları, hayalet gemiler, imkânsız buluntular (ör. Antikythera
+düzeneği, Hessdalen ışıkları, Kırmızı Yağmur (Kerala), Baltık Denizi anomalisi, Flannan Adaları deniz feneri,
+"Gökten balık yağması"). Yazıya/şifreye dayalı gizemler (Voynich, Somerton) seçilmez.
+- **Soğuk açılış:** en tuhaf fiziksel görüntü ilk cümlede ("Bir adam 65 kilometre uzaktaki sandalyesinden
+  fırlatıldı.").
 - Akış: olay → neden tuhaf → en güçlü 1–2 açıklama → hâlâ cevapsız kalan kısım → döngü cümlesi.
 
 ### 2. Tarihin karanlık/tuhaf olayı (`karanlik-tarih`)
-Gerçekten yaşanmış, şaşırtıcı ve karanlık olaylar: felaketler, salgınlar, tuhaf kazalar, deneyler
-(ör. Radyum Kızları, Büyük Londra Sisi, Yaz Olmayan Yıl, Cesur Hayvanat Bahçesi kaçışları, Titanik'in
-kardeşi Britannic).
+Gerçekten yaşanmış, şaşırtıcı ve **absürt ya da büyük ölçekli** olaylar: tuhaf seller ve dalgalar, felaketler,
+tuhaf kazalar (ör. Londra bira seli ✓, Boston pekmez seli, Yaz Olmayan Yıl, Büyük Londra Sisi, Krakatoa'nın
+4.800 km öteden duyulan sesi, Halifax patlaması). İlk cümlede gözle görülebilen bir olay olsun.
 - Kanca: olayın en inanılmaz rakamı ya da anı. Akış: ne oldu → neden oldu → ne değişti → döngü.
 
 ### 3. Türkiye'den gizem (`turkiye-gizem`)
-Türkiye ve Anadolu'dan gizemli yerler, buluntular, olaylar ve belgelenmiş efsaneler (ör. Göbeklitepe,
-Hierapolis'teki Cehennem Kapısı, Sümela, Ani Harabeleri, Kaymaklı, Yerebatan'ın Medusa başları, Nemrut).
+Türkiye ve Anadolu'dan **izleyicinin tanıdığı ya da gezdiği** yerlerin gizemli/tehlikeli yanları
+(ör. Pamukkale Cehennem Kapısı ✓, Göbeklitepe, Sümela, Ani Harabeleri, Kaymaklı, Nemrut, Kapadokya peri
+bacaları, Van Gölü canavarı efsanesi, Ağrı Dağı, Salda Gölü). Yerin adı başlıkta geçsin.
 - Efsane ile belgelenmiş gerçeği açıkça ayır ("Efsaneye göre…", "Arkeologlara göre…").
 - Not: Derinkuyu daha önce işlendi; aynı yeri başka açıdan ancak yeni ve güçlü bir bilgiyle işle.
 
@@ -51,7 +83,7 @@ Hierapolis'teki Cehennem Kapısı, Sümela, Ani Harabeleri, Kaymaklı, Yerebatan
 İnsanların merak ettiğine dair kanıt ara (WebSearch): Reddit r/UnresolvedMysteries, r/history,
 r/todayilearned, Türkçe forum/haber gündemi, o günün yıldönümleri ("bugün tarihte"). Daha önce işlenen
 konuları tekrarlama (`state/published.json`, `episodes/` dosya adları: Derinkuyu, Wow! sinyali, 1518 dans
-salgını, Mary Celeste, Dyatlov, Roanoke, Tunguska işlendi). Seçtiğin konunun neden ilgi çekeceğini commit
+salgını, Mary Celeste, Dyatlov, Roanoke, Tunguska, Voynich, Londra bira seli, Cehennem Kapısı, Poe, Eyam, Yerebatan Medusa işlendi). Seçtiğin konunun neden ilgi çekeceğini commit
 mesajında bir cümleyle yaz.
 
 ## Görseller

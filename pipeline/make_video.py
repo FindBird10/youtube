@@ -48,6 +48,7 @@ VOICE_BY_FORMAT = {
     "dark-history": ("en-US-AndrewMultilingualNeural", "+3%"),
     "psychology": ("en-US-BrianMultilingualNeural", "+5%"),
     "business": ("en-US-AndrewMultilingualNeural", "+5%"),
+    "body": ("en-US-BrianMultilingualNeural", "+5%"),        # 7 Eki: psychology/business yerine
     # Oyun haberleri: gaming kanalıyla aynı ses (kullanıcı isteği, 4 Eki)
     "news": ("en-US-AndrewMultilingualNeural", "+0%"),
 }
@@ -684,7 +685,7 @@ def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
 AUDIO_EXT = {".mp3", ".wav", ".m4a", ".ogg"}
 # Video türüne göre müzik klasörü: assets/music/<ruh hali>/ (boşsa assets/music/ kökü)
 MOOD_BY_FORMAT = {"lore": "lore", "gizem": "gizem", "karanlik-tarih": "gizem", "turkiye-gizem": "gizem", "neden": "genel", "ne-olurdu": "genel",
-                  "what-if": "genel", "dark-history": "gizem", "psychology": "genel", "business": "genel",
+                  "what-if": "genel", "dark-history": "gizem", "psychology": "genel", "business": "genel", "body": "genel",
                   "news": "lore"}
 
 

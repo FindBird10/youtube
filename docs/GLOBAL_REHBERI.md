@@ -4,45 +4,64 @@ Kanal: dünya geneline **İngilizce** merak videoları · Günde **3** video · 
 `episodes/global/` klasörüne yazılır; dil (`en`) ve stil (`global`: açılış başlık kartı, mor kutulu
 altyazı, hızlı kesmeler) klasörden otomatik gelir.
 
+## Performans notları (7 Ekim 2026) — önce bunu oku
+
+İlk 21 videonun izlenmeleri (1–5 günlük): çoğu 0–20 izlenmede kaldı, yalnızca şunlar itildi:
+"It snowed in June" / Yaz Olmayan Yıl **499**, Dünya dönmeyi bıraksa **272**, uyurken vücudun sıçraması
+(hypnic jerk) **164**, Yellowstone patlasa **112 (ilk 1 saatte)**, 1859 güneş fırtınası **55**.
+Aynı "uzayda skafandrasız" videosu yanlışlıkla gaming kanalına yüklendiğinde **1.400**, burada **16** aldı:
+sorun büyük ölçüde içerikte değil, kanalın henüz belirli bir kitlesi olmamasında. Kitleyi bulmak için konu
+yelpazesi daraltıldı:
+
+- **Kazanan tema:** bütün gezegeni ya da *senin vücudunu* etkileyen fiziksel, büyük ölçekli olay.
+  "Dünya / Güneş / Ay / volkan / uzay / senin vücudun" — herkesin kendini koyabileceği bir sonuç.
+- **Ölü formatlar:** `business` (Blockbuster 7, Kodak 0, IKEA 7) **kaldırıldı**. Soyut beyin konuları
+  (doorway effect 11, earworm 5) zayıf; `psychology` yerine fiziksel his anlatan `body` geldi.
+- **Yerel felaket hikâyeleri** (Boston pekmez seli 2, Nyos Gölü 1, Peshtigo 6, Radyum Kızları 8,
+  dans salgını 4) tutmadı. Karanlık tarih slotunda yalnızca **dünyayı/milyonları etkilemiş, tuhaf ve
+  büyük ölçekli** olaylar (Yaz Olmayan Yıl gibi).
+- **Kanca:** kazananların ilk cümlesi ya çok kısa ve imkânsız bir görüntü ("It snowed in June.") ya da
+  "you" ile başlayan fiziksel sonuç ("…you'd fly at 1,000 mph", "…you'd see ash in Miami",
+  "Your whole body jolts…"). Soyut ya da kurumsal ilk cümle yok.
+
 ## Formatlar ve günlük akış
 
 | Sıra | Format (`format`) | ABD Doğu saati (ET) |
 |---|---|---|
-| 1 | `what-if` — bilime dayalı "What if…?" senaryosu | 11:00 |
-| 2 | Tek günler `psychology`, çift günler `business` (ayın gününe göre) | 15:00 |
-| 3 | `dark-history` — gerçek, belgelenmiş karanlık/gizemli tarih | 19:00 |
+| 1 | `what-if` — Dünya/uzay/doğa ölçeğinde bilime dayalı "What if…?" | 11:00 |
+| 2 | `body` — senin vücudunun yaptığı ya da başına gelebilecek fiziksel şey | 15:00 |
+| 3 | `dark-history` — gerçek, büyük ölçekli ve tuhaf felaket/doğa olayı | 19:00 |
 
 `publish_at` UTC yazılır; ET saatini `zoneinfo("America/New_York")` ile çevir.
-Ses formata göre otomatik (Brian: what-if/psychology, Andrew: dark-history/business).
+Ses formata göre otomatik (Brian: what-if/body, Andrew: dark-history).
 
 ### `what-if`
-"What if the Moon disappeared?", "What if you fell into a black hole?", "What if humans stopped
-sleeping?". İlk cümle en çarpıcı sonucu ima eder; akış zaman çizelgesiyle tırmanır
-("In the first second… a week later… a year later…", en fazla 3–4 adım). Kaynak: NASA, üniversiteler,
-ciddi bilim yayınları; kesin olmayanı "scientists think…" diye söyle.
+Gezegen ve uzay ölçeğinde senaryolar: "What if Earth stopped spinning?", "What if Yellowstone erupted?",
+"What if a solar storm hit today?", "What if the oceans drained?". İlk cümle izleyicinin başına gelecek en
+çarpıcı fiziksel sonucu söyler ("you'd…"); akış zaman çizelgesiyle tırmanır ("In the first second… a week
+later…", en fazla 3–4 adım). Kaynak: NASA, USGS, NOAA, üniversiteler; kesin olmayanı "scientists think…" diye
+söyle.
 
-### `psychology`
-Beynin hileleri ve gerçek deneyler: "Why you remember embarrassing moments at 3 a.m.",
-"The experiment that made people obey", "Why your brain hates unfinished tasks". Kanca: izleyicinin
-kendinde tanıyacağı bir an ("You've done this today without noticing."). Kaynak: hakemli çalışmalar,
-APA, üniversiteler; çalışmanın adını/yılını söyle. Tıbbi/terapi tavsiyesi yok, teşhis koyma.
-
-### `business`
-Şirketlerin ve kararların şaşırtıcı hikâyeleri: "The company that turned down buying Netflix",
-"Why IKEA makes you build it yourself", "The $1 decision that saved Apple". Kanca: kararın ya da
-sonucun en çarpıcı kısmı. Rakamları doğrula ve kaynağını yaz. Yaşayan kişiler hakkında suçlama
-yok; yatırım tavsiyesi yok.
+### `body`
+Vücudunun yaptığı tuhaf şeyler ve uç koşullarda vücuduna ne olur: "Why your body jolts as you fall asleep",
+"Why you can't tickle yourself", "What happens to your body if you stop sleeping", "What 15 seconds in space
+does to you", "Why you get goosebumps". Kanca: izleyicinin bugün hissettiği bir şey ya da vücuduna olacak
+fiziksel sonuç. Kaynak: hakemli çalışmalar, NIH, üniversiteler. Tıbbi tavsiye ve teşhis yok; korku/iğrenç
+ayrıntı yok.
 
 ### `dark-history`
-Belgelenmiş, gerçek ve tuhaf/karanlık olaylar: Dyatlov Pass, Radium Girls, the Great Molasses
-Flood, the Year Without a Summer. Soğuk açılış: en tuhaf an, tarih/yer sonra gelir. Gerçekleri
-teorilerden ayır; kan/vahşet ayrıntısı yok, kurbanlara saygılı dil.
+Gerçek, belgelenmiş ve **büyük ölçekli** tuhaf olaylar: Yaz Olmayan Yıl (Tambora), Carrington olayı,
+Krakatoa'nın 4.800 km öteden duyulan sesi, Toba süpervolkanı, 536 yılı ("the worst year to be alive"),
+Büyük Londra Sisi. Ölçütler: (1) çok sayıda insanı ya da bütün dünyayı etkiledi, (2) tek cümlede imkânsız
+gibi duran bir görüntüsü var ("It snowed in June."), (3) bugün de olabilir mi sorusunu doğuruyor. Soğuk açılış:
+en tuhaf görüntü önce, tarih/yer sonra. Kan/vahşet ayrıntısı yok, kurbanlara saygılı dil.
 
 ### Konu bulma
-İnsanların zaten merak ettiğine dair kanıt ara (WebSearch): Google "People also ask", Reddit
-r/whatif, r/askscience, r/psychology, r/todayilearned, r/UnresolvedMysteries, r/history,
-r/business; o haftanın gündemi (uzay görevi, yıldönümü, haber). Daha önce işlenen konuları
-(`episodes/global/`, `state/published.json`) tekrarlama.
+İnsanların zaten merak ettiğine dair kanıt ara (WebSearch): Google "People also ask", Reddit r/whatif,
+r/askscience, r/todayilearned, r/HumanBody, r/history; o haftanın gündemi (güneş fırtınası, volkan, uzay
+görevi, yıldönümü). Daha önce işlenen konuları (`episodes/global/`, `state/published.json`) tekrarlama.
+Seçmeden önce test: "Bu konunun ilk karesi ve ilk cümlesi, hiç bilmeyen birine 1 saniyede imkânsız bir
+fiziksel görüntü gösteriyor mu?" Hayırsa başka konu seç.
 
 ## Alanlar
 
@@ -50,7 +69,7 @@ r/business; o haftanın gündemi (uzay görevi, yıldönümü, haber). Daha önc
 |---|---|---|
 | `title` | ✔ | En fazla ~55 karakter, merak uyandıran, doğru, cevabı vermez. 1 emoji olabilir. |
 | `hook` | ✔ | Açılış başlık kartında görünen **2–5 kelime**, büyük harfle okunur ("WHAT IF THE SUN VANISHED?"). |
-| `format` | ✔ | Tablodaki format. |
+| `format` | ✔ | Tablodaki format (`what-if`, `body`, `dark-history`). |
 | `subject` | ✔ | Ana özne, İngilizce tek kelime (görüntü seçimi için). |
 | `description` | ✔ | İlk satır yorum sorusu, sonra anahtar kelimeli 1–2 cümle + `Sources: ...`. |
 | `tags` | ✔ | 10–15 arama ifadesi (konu adı, soru biçimi, eş anlamlılar). Format etiketleri otomatik. |
