@@ -1,0 +1,53 @@
+{
+  "title": "Poe'nun son 5 gününü kimse bilmiyor 🖋️",
+  "format": "gizem",
+  "subject": "writer",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Death of Edgar Allan Poe"
+  },
+  "description": "Sence Poe'ya o 5 günde ne oldu? 👇\n\nEdgar Allan Poe, 3 Ekim 1849'da Baltimore'da başkasının kıyafetleriyle yarı baygın bulundu ve 7 Ekim'de öldü. Ölüm nedeni hâlâ bilinmiyor; seçim hilesi (cooping), kuduz ve alkol en çok konuşulan teoriler.\n\nKaynak: Smithsonian (The Torch, 'The Still Mysterious Death of Edgar Allan Poe'), Wikipedia (Death of Edgar Allan Poe)",
+  "tags": [
+    "edgar allan poe",
+    "poe'nun ölümü",
+    "edgar allan poe gizemi",
+    "reynolds gizemi",
+    "baltimore 1849",
+    "çözülemeyen gizemler",
+    "gizemli ölümler",
+    "yazar gizemi",
+    "kuzgun yazarı",
+    "tarih gizemleri",
+    "gerçek gizemler",
+    "poe nasıl öldü"
+  ],
+  "hashtags": [
+    "#edgarallanpoe",
+    "#poe",
+    "#gizem"
+  ],
+  "scenes": [
+    {
+      "text": "Ünlü bir yazar, başkasının kıyafetleriyle sokakta bulundu.",
+      "image": "Poe",
+      "image_page": "Edgar Allan Poe"
+    },
+    {
+      "text": "Bu kişi Edgar Allan Poe'ydu; 3 Ekim 1849'da Baltimore'da, seçim günü bir meyhanenin önünde yarı baygındı.",
+      "search": "old tavern street night lantern"
+    },
+    {
+      "text": "Philadelphia'ya gitmek için yola çıkmıştı ama 5 gün boyunca nerede olduğunu kimse bilmiyordu.",
+      "search": "foggy cobblestone street night"
+    },
+    {
+      "text": "Hastanede hiç kendine gelemedi, son gece kimliği hâlâ bilinmeyen birini, Reynolds'u çağırdı ve 7 Ekim'de öldü.",
+      "image": "Poe"
+    },
+    {
+      "text": "Ölüm belgesi bile kayıp; bir teoriye göre seçim çeteleri onu kılık değiştirtip defalarca oy kullandırdı, kimi kuduzdan şüpheleniyor, ve bilinen tek şey şu:",
+      "search": "old candle quill dark desk"
+    }
+  ],
+  "publish_at": "2026-10-07T15:00:00Z"
+}
