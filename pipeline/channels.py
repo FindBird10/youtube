@@ -15,7 +15,7 @@ CHANNELS: dict[str, dict] = {
     "birdsvault": {
         "token_env": "YT_REFRESH_TOKEN",
         "expect_title": "BirdsVault",        # yükleme bu adlı kanala gitmezse durdurulur
-        "channel_id": None,
+        "channel_id": "UC5w1LBA7sE_U9taLW0kuKYA",
         "category": "27",                     # Eğitim
         # 5 Eki: konu gizem ve karanlık tarih; görünüm ve ses gaming kanalıyla aynı
         "defaults": {"language": "tr", "style": "cinematic", "format": "gizem"},
