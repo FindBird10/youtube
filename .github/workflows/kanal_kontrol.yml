@@ -52,6 +52,7 @@ jobs:
               print("hata:", ex)
           PY
           done
+          python3 "$GITHUB_WORKSPACE/tools/video_stats.py" > videos.tsv 2> videos_err.txt || true
           git init -q -b logs-kanal && git add . \
             && git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "Kanal kontrolü [skip ci]" \
             && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" logs-kanal
