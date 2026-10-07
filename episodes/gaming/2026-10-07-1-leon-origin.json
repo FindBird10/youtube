@@ -1,0 +1,85 @@
+{
+  "title": "Leon Kennedy's first day from hell in Resident Evil 2",
+  "angle": "origin",
+  "subject": "leon",
+  "wiki": {
+    "site": "residentevil.fandom.com",
+    "page": "Leon S. Kennedy",
+    "avoid": [
+      "concept",
+      "artwork",
+      "cg",
+      "film",
+      "movie",
+      "degeneration",
+      "damnation",
+      "vendetta",
+      "death island",
+      "infinite darkness",
+      "comic",
+      "manga",
+      "figure",
+      "re4",
+      "re6",
+      "requiem",
+      "re9",
+      "village",
+      "operation raccoon city"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 883710
+  },
+  "description": "Would you have survived Leon's first shift? 👇\n\nHow a rookie cop's first day in Raccoon City turned Leon S. Kennedy into a survivor. Spoilers for Resident Evil 2.\n\nFan-made content. Not affiliated with or endorsed by Capcom. Game images © their respective owners.",
+  "tags": [
+    "leon kennedy",
+    "leon s kennedy",
+    "resident evil 2",
+    "resident evil 2 remake",
+    "re2",
+    "leon kennedy story",
+    "leon kennedy explained",
+    "resident evil lore",
+    "raccoon city",
+    "ada wong",
+    "claire redfield",
+    "resident evil story"
+  ],
+  "hashtags": [
+    "#residentevil",
+    "#leonkennedy",
+    "#re2"
+  ],
+  "publish_at": "2026-10-07T17:00:00Z",
+  "scenes": [
+    {
+      "text": "Leon Kennedy's first day as a cop was his city's last.",
+      "image": "Leon"
+    },
+    {
+      "text": "In 1998, the 21-year-old rookie drove into Raccoon City, already late for his first shift.",
+      "trailer": true
+    },
+    {
+      "text": "Umbrella's virus had already turned almost everyone there into the walking dead.",
+      "trailer": true
+    },
+    {
+      "text": "At a gas station, he met Claire Redfield, a student searching for her missing brother.",
+      "image": "Claire",
+      "image_page": "Claire Redfield"
+    },
+    {
+      "text": "Inside the police station, a woman named Ada Wong said she was FBI. She was lying.",
+      "trailer": true
+    },
+    {
+      "text": "Leon got Claire and a little girl, Sherry Birkin, onto a train before a missile erased the city.",
+      "trailer": true
+    },
+    {
+      "text": "Everything he became later traces back to one cruel twist:",
+      "image": "Leon Kennedy"
+    }
+  ]
+}
