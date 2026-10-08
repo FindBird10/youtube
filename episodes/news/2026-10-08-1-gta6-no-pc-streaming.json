@@ -1,0 +1,76 @@
+{
+  "title": "GTA 6 won't stream to PC, Xbox says ☁️",
+  "hook": "NO GTA 6 ON PC",
+  "subject": "gta6",
+  "wiki": {
+    "site": "gta.fandom.com",
+    "page": "Grand Theft Auto VI",
+    "avoid": [
+      "fallguys",
+      "fall guys",
+      "logo",
+      "icon",
+      "twitter",
+      "x.png",
+      "announcement",
+      "gtav-",
+      "gtaiv",
+      "gta5",
+      "gtao",
+      "online",
+      "merch",
+      "collector"
+    ]
+  },
+  "description": "Were you hoping to stream GTA 6 on PC? 👇\n\nOn October 6, 2026, The Verge reported that Xbox had exclusive cloud streaming rights for GTA 6 at launch, which would have let PC players stream it through Xbox Cloud Gaming. On October 7, Xbox chief strategy officer Matthew Ball called it \"misreporting\" and said the game \"will not be streaming exclusively or to PC.\" GTA 6 launches November 19, 2026 on PS5 and Xbox Series X|S.\n\nSources: Matthew Ball on X (Oct 7, 2026), Kotaku (Oct 6, 2026), Forbes (Oct 7, 2026), VICE (Oct 7, 2026)\nGame images © Rockstar Games.",
+  "tags": [
+    "gta 6",
+    "gta vi",
+    "gta 6 pc",
+    "gta 6 news",
+    "gta 6 xbox cloud",
+    "gta 6 streaming",
+    "gta 6 xbox cloud gaming",
+    "gta 6 pc release",
+    "grand theft auto 6",
+    "rockstar games",
+    "xbox cloud gaming",
+    "gta 6 release date",
+    "gta 6 game pass"
+  ],
+  "hashtags": [
+    "#gta6",
+    "#xbox",
+    "#rockstargames"
+  ],
+  "publish_at": "2026-10-08T13:00:00Z",
+  "scenes": [
+    {
+      "text": "GTA 6 won't stream to PC after all.",
+      "image": "Artwork GTAVI"
+    },
+    {
+      "text": "On October 6, The Verge reported that Xbox had exclusive cloud streaming rights for GTA 6 at launch.",
+      "search": "server room data center blue lights"
+    },
+    {
+      "text": "That would have let PC players stream it through Xbox Cloud Gaming.",
+      "search": "gaming pc setup dark room"
+    },
+    {
+      "text": "But on October 7, Xbox strategy chief Matthew Ball called it misreporting.",
+      "image": "Vice City GTAVI",
+      "image_page": "Vice City (HD Universe)"
+    },
+    {
+      "text": "He said the game will not be streaming exclusively, or to PC.",
+      "image": "Jason",
+      "image_page": "Jason Duval"
+    },
+    {
+      "text": "GTA 6 still lands November 19 on PS5 and Xbox. Rockstar hasn't announced a PC version, and no,",
+      "image": "Leonida GTAVI",
+      "image_page": "State of Leonida"
+    }
+  ]
+}
