@@ -46,6 +46,7 @@ CHANNELS: dict[str, dict] = {
         "channel_id": None,
         "category": "20",                     # Oyun
         "defaults": {"language": "en", "style": "cinematic", "format": "news"},   # gaming ile aynı görünüm
+        "max_age_hours": 12,                  # yayın saatinden 12 saat sonra hâlâ yüklenmediyse bayat haber: atla
         "hashtags": ["#gamingnews", "#gaming"],
         "tags": ["gaming news", "video game news", "gaming", "new games", "game news today"],
     },

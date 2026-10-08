@@ -133,6 +133,16 @@ def main() -> int:
                     until.replace("Z", "+00:00")):
                 summary(f"- ⏸️ `{ch}/{p.name}`: {ch} yüklemeleri {until} sonrasına kadar bekletiliyor.")
                 continue
+            max_age = CHANNELS[ch].get("max_age_hours")
+            if not a.no_upload and max_age:
+                try:
+                    pa = json.loads(p.read_text()).get("publish_at")
+                    if pa and dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(
+                            pa.replace("Z", "+00:00")) > dt.timedelta(hours=max_age):
+                        summary(f"- 🗓️ `{ch}/{p.name}`: yayın saati {max_age} saatten eski (bayat haber), yüklenmiyor.")
+                        continue
+                except (ValueError, OSError):
+                    pass
             if not a.no_upload and not CHANNELS[ch].get("enabled", True):
                 summary(f"- ⏸️ `{ch}/{p.name}`: {ch} kanalına yükleme geçici olarak kapalı (channels.py).")
                 continue
