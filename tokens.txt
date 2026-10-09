@@ -1,0 +1,4 @@
+birdsvault: kanal adı okunamadı (iz fdef63aff99ad7ae) [403 insufficientPermissions]
+gaming: kanal adı okunamadı (iz e989f1128754252e) [403 insufficientPermissions]
+global: kanal adı okunamadı (iz dbbdb542e9f20edb) [403 insufficientPermissions]
+news: hata RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
