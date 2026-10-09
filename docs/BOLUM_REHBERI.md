@@ -10,6 +10,18 @@ yazma.
 Her Short, `episodes/` klasöründe tek bir JSON dosyasıdır. Dosya `main` dalına gönderildiğinde GitHub
 Actions videoyu üretir ve YouTube'a yükler.
 
+## Güncelleme (9 Ekim 2026): Türkiye videoları kanalın motoru
+
+Yeni kurallarla yazılan 9 videoda (6–8 Ekim), formata göre izlenmeler:
+- `turkiye-gizem`: Pamukkale **998**, Yerebatan Medusa **1.140**, Nemrut **1.125** (3'te 3, ortalama ~1.100)
+- `karanlik-tarih`: Londra bira seli **952**, Eyam veba köyü **1.032**, Şikago/Peshtigo yangını 126
+- `gizem`: Voynich 218, Poe 313, Hessdalen ışıkları 404 (en zayıf slot)
+
+Kanal 2 günde izlenmesini ikiye katladı (4,7 bin → 9,8 bin) ve 9 abone kazandı. Bu yüzden zayıf `gizem`
+slotu da **Türkiye** oldu: artık günde 2 `turkiye-gizem` + 1 `karanlik-tarih`. İki Türkiye videosu aynı gün
+farklı türden olsun: biri **tarihî yapı/şehir** (İstanbul, antik kentler), biri **doğa** (dağ, göl, mağara,
+volkan). Şikago yangını gibi Türk izleyicinin bilmediği yabancı olaylar karanlık-tarih slotunda da zayıf kaldı.
+
 ## Performans notları (7 Ekim 2026) — konu seçmeden önce oku
 
 İlk 32 videonun izlenmeleri: 28 Eyl–4 Eki arası neredeyse hepsi **4–45** izlenmede kaldı. Son 3 günde kanal
@@ -46,9 +58,12 @@ gece daha çok izlenir.
 
 | Sıra | Format (`format` alanı) | TR saati → `publish_at` (her gün) |
 |---|---|---|
-| 1 | Çözülememiş gizem (`gizem`) | 18:00 → `YYYY-AA-GGT15:00:00Z` |
+| 1 | Türkiye'den gizem — tarihî yapı/şehir (`turkiye-gizem`) | 18:00 → `YYYY-AA-GGT15:00:00Z` |
 | 2 | Tarihin karanlık/tuhaf olayı (`karanlik-tarih`) | 21:00 → `YYYY-AA-GGT18:00:00Z` |
-| 3 | Türkiye'den ya da Anadolu'dan gizem (`turkiye-gizem`) | 23:30 → `YYYY-AA-GGT20:30:00Z` |
+| 3 | Türkiye'den gizem — doğa: dağ, göl, mağara (`turkiye-gizem`) | 23:30 → `YYYY-AA-GGT20:30:00Z` |
+
+`gizem` formatı (dünyadan fiziksel gizemler) şimdilik günlük akışta yok; Türkiye konusu bulunamayan
+istisnai bir günde 1. slotta kullanılabilir.
 
 ## Formatlar
 
@@ -69,8 +84,14 @@ tuhaf kazalar (ör. Londra bira seli ✓, Boston pekmez seli, Yaz Olmayan Yıl, 
 
 ### 3. Türkiye'den gizem (`turkiye-gizem`)
 Türkiye ve Anadolu'dan **izleyicinin tanıdığı ya da gezdiği** yerlerin gizemli/tehlikeli yanları
-(ör. Pamukkale Cehennem Kapısı ✓, Göbeklitepe, Sümela, Ani Harabeleri, Kaymaklı, Nemrut, Kapadokya peri
-bacaları, Van Gölü canavarı efsanesi, Ağrı Dağı, Salda Gölü). Yerin adı başlıkta geçsin.
+(işlenenler ✓: Pamukkale Cehennem Kapısı, Yerebatan Medusa, Nemrut, Ağrı'daki gemi tepesi, Derinkuyu).
+- **Tarihî yapı/şehir adayları:** Göbeklitepe, Sümela, Ani Harabeleri, Kaymaklı, Ayasofya, Kız Kulesi,
+  Efes, Truva, Hattuşa, Zeugma, Çatalhöyük, Hasankeyf, Likya kaya mezarları, Topkapı'nın gizli geçitleri.
+- **Doğa adayları:** Olimpos Yanartaş (sönmeyen alevler), Van Gölü canavarı efsanesi, Salda Gölü (Mars'a
+  benzeyen göl), Kapadokya peri bacaları, Damlataş/Karain mağaraları, Erciyes, Nemrut Kalderası, Tuz Gölü,
+  Kelebekler Vadisi, Yedigöller.
+- Yerin adı başlıkta geçsin. Başlıkta soru ya da gizemli vaat işe yarıyor ("…neden ters?", "…altında ne
+  saklı?").
 - Efsane ile belgelenmiş gerçeği açıkça ayır ("Efsaneye göre…", "Arkeologlara göre…").
 - Not: Derinkuyu daha önce işlendi; aynı yeri başka açıdan ancak yeni ve güçlü bir bilgiyle işle.
 

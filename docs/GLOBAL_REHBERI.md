@@ -4,6 +4,15 @@ Kanal: dünya geneline **İngilizce** merak videoları · Günde **3** video · 
 `episodes/global/` klasörüne yazılır; dil (`en`) ve stil (`global`: açılış başlık kartı, mor kutulu
 altyazı, hızlı kesmeler) klasörden otomatik gelir.
 
+## Güncelleme (9 Ekim 2026): yeni kurallar çalıştı
+
+7–8 Ekim'de yeni kurallarla yazılan 6 videonun medyanı ~355 (önceki 15 videonun medyanı ~10):
+Centralia yangını **798**, Yellowstone **758**, Krakatoa **485**, kendini gıdıklayamamak 230, dinozor
+asteroidi 224, tüyleri diken diken olması (`body`) **31**. Kanal 2 günde izlenmesini ikiye katladı.
+Büyük ölçekli `dark-history` ve gezegen ölçeğinde `what-if` güçlü; `body` slotu henüz kanıtlanmadı:
+`body` için yalnızca **çarpıcı/tehlikeli** fiziksel sonuçları seç ("Why your vision goes black when you
+stand up" türü), sıradan vücut bilgileri (tüy diken diken olması) değil.
+
 ## Performans notları (7 Ekim 2026) — önce bunu oku
 
 İlk 21 videonun izlenmeleri (1–5 günlük): çoğu 0–20 izlenmede kaldı, yalnızca şunlar itildi:
