@@ -968,7 +968,36 @@ def load_episode(path: Path) -> dict:
     for k in ("title", "scenes"):
         if k not in ep:
             raise ValueError(f"{path}: '{k}' alanı eksik")
+    fix_dangling_end(ep)
     return ep
+
+
+def fix_dangling_end(ep: dict) -> None:
+    """Son sahne yarım cümleyle bitiyorsa ("…same spot. And back then,") yarım kısmı atar.
+
+    9 Eki: izleyiciler cümle ortasında biten anlatımdan şikâyet etti; döngü kapanışı artık
+    tam cümleyle yapılır. Bu, eski kuralla yazılmış bölümler için güvenlik ağıdır.
+    """
+    scenes = ep.get("scenes") or []
+    if not scenes or not isinstance(scenes[-1], dict):
+        return
+    t = (scenes[-1].get("text") or "").rstrip()
+    if not t or re.search(r"[.!?…][\"'”’)]*$", t):
+        return
+    ends = [m.end() for m in re.finditer(r"[.!?…][\"'”’)]*(?=\s)", t)]
+    comma = t.rfind(",")
+    if ends:
+        fixed = t[: ends[-1]].rstrip()
+    elif comma > 0 and len(t[:comma].split()) >= 5:
+        fixed = t[:comma].rstrip() + "."
+    elif len(scenes) > 1 and re.search(r"[.!?…][\"'”’)]*$", (scenes[-2].get("text") or "").rstrip()):
+        print(f"[make_video] Son sahne yalnızca yarım cümleydi, çıkarıldı: {t[-60:]!r}", flush=True)
+        scenes.pop()
+        return
+    else:
+        fixed = re.sub(r"[\s,;:—–-]+$", "", t) + "."
+    print(f"[make_video] Son cümle yarım kalmıştı, düzeltildi: {t[-60:]!r} → {fixed[-60:]!r}", flush=True)
+    scenes[-1]["text"] = fixed
 
 
 def main() -> None:

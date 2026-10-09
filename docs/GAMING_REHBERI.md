@@ -100,8 +100,10 @@ Hareketli görüntü için oyunun **resmî Steam mağaza fragmanlarından** kıs
    açılış yok.
 3. **Akış:** sinematik, sakin ve duygulu anlatım; kısa cümleler ama arka arkaya noktalarla
    kesme. Ortada bir kez yeniden kanca ("But that's not the worst part.").
-4. **Kapanış = döngü:** son cümle yarım kalıp ilk cümleye bağlansın; video başa sardığında anlatım
-   kesintisiz devam etsin. "Comment below", "subscribe" yok; yorum sorusu açıklamada.
+4. **Kapanış = tam cümle:** son cümle **mutlaka tamamlanmış** bir cümledir (". ! ?" ile biter). Yarım
+   bırakma ("And back then," gibi) yok: 9 Ekim'de izleyiciler cümle ortasında biten anlatımdan şikâyet
+   etti. Döngü istenirse son cümle tam bir cümle olarak açılışa göndermede bulunur ("And it all started
+   with one bite."). "Comment below", "subscribe" yok; yorum sorusu açıklamada.
 5. **Doğruluk:** Olayları resmî oyun içeriğine ve wiki/fandom kaynaklarına göre yaz; fan teorisini
    "fans believe…" diye açıkça ayır. Spoiler veren videoda açıklamaya spoiler uyarısı koy.
 6. Kan ve vahşet ayrıntısı yok; ölümler saygılı ve kısa anlatılır. Gerçek kişilerle (seslendirme

@@ -59,13 +59,13 @@ düzeneği, Hessdalen ışıkları, Kırmızı Yağmur (Kerala), Baltık Denizi 
 "Gökten balık yağması"). Yazıya/şifreye dayalı gizemler (Voynich, Somerton) seçilmez.
 - **Soğuk açılış:** en tuhaf fiziksel görüntü ilk cümlede ("Bir adam 65 kilometre uzaktaki sandalyesinden
   fırlatıldı.").
-- Akış: olay → neden tuhaf → en güçlü 1–2 açıklama → hâlâ cevapsız kalan kısım → döngü cümlesi.
+- Akış: olay → neden tuhaf → en güçlü 1–2 açıklama → hâlâ cevapsız kalan kısım → tam bir kapanış cümlesi.
 
 ### 2. Tarihin karanlık/tuhaf olayı (`karanlik-tarih`)
 Gerçekten yaşanmış, şaşırtıcı ve **absürt ya da büyük ölçekli** olaylar: tuhaf seller ve dalgalar, felaketler,
 tuhaf kazalar (ör. Londra bira seli ✓, Boston pekmez seli, Yaz Olmayan Yıl, Büyük Londra Sisi, Krakatoa'nın
 4.800 km öteden duyulan sesi, Halifax patlaması). İlk cümlede gözle görülebilen bir olay olsun.
-- Kanca: olayın en inanılmaz rakamı ya da anı. Akış: ne oldu → neden oldu → ne değişti → döngü.
+- Kanca: olayın en inanılmaz rakamı ya da anı. Akış: ne oldu → neden oldu → ne değişti → tam bir kapanış cümlesi.
 
 ### 3. Türkiye'den gizem (`turkiye-gizem`)
 Türkiye ve Anadolu'dan **izleyicinin tanıdığı ya da gezdiği** yerlerin gizemli/tehlikeli yanları
@@ -120,8 +120,11 @@ Adı `_` ile başlayan dosyalar işlenmez (taslak/örnek için).
 1. **Süre:** 60–90 kelime (≈28–38 sn; Andrew sakin okur). 95'i geçme. Tek hikâye.
 2. **Kanca:** İlk cümle en fazla 10 kelime ve tek başına kaydırmayı durdurur. Selamlama, "biliyor muydunuz",
    tarih/yer girişi yok — tuhaf an önce, tarih/yer sonra.
-3. **Kapanış = döngü:** son cümle yarım kalıp ilk cümleye bağlanır; "yorumlara yaz", "abone ol" yok,
-   yorum sorusu açıklamada.
+3. **Kapanış = tam cümle:** son cümle **mutlaka tamamlanmış** bir cümledir (nokta, soru ya da ünlem
+   işaretiyle biter). Yarım bırakma ("…ve o gece," gibi) yok: 9 Ekim'de izleyiciler cümle ortasında biten
+   anlatımdan şikâyet etti. Döngü istenirse son cümle tam bir cümle olarak açılışa göndermede bulunur
+   ("Ve o sandalye hâlâ 65 kilometre uzakta duruyordu."). "Yorumlara yaz", "abone ol" yok; yorum sorusu
+   açıklamada.
 4. **Doğruluk:** Her iddiayı güvenilir kaynakla (Britannica, Smithsonian, BBC, National Geographic,
    üniversiteler, müzeler, Wikipedia'nın kaynakları) web aramasıyla doğrula; kaynağı açıklamaya yaz.
 5. **Dil:** Konuşma diliyle akıcı Türkçe; sayıları rakamla yaz. Birbirine bağlı fikirleri tek cümlede

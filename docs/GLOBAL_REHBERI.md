@@ -84,7 +84,10 @@ fiziksel görüntü gösteriyor mu?" Hayırsa başka konu seç.
 1. **Süre:** 55–85 kelime (≈22–33 sn), asla 90'ı geçme. Tek fikir.
 2. **Kanca:** İlk cümle en fazla 10 kelime ve kaydırmayı durdurur; "Did you know", selamlama yok.
 3. Cevabı/sonucu sona doğru ver; ortada bir kez yeniden kanca ("But here's the strange part.").
-4. **Kapanış = döngü:** son cümle ilk cümleye bağlanır; "comment", "subscribe" yok.
+4. **Kapanış = tam cümle:** son cümle **mutlaka tamamlanmış** bir cümledir (". ! ?" ile biter). Yarım
+   bırakma ("And back then," gibi) yok: 9 Ekim'de izleyiciler cümle ortasında biten anlatımdan şikâyet
+   etti. Döngü istenirse son cümle tam bir cümle olarak açılışa göndermede bulunur ("That's how loud
+   one volcano can be."). "Comment", "subscribe" yok.
 5. Sayıları rakamla yaz ("8 minutes"); İngilizce sade, konuşma dili.
 6. Her iddiayı güvenilir kaynakla doğrula; kaynakları açıklamaya yaz.
 

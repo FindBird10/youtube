@@ -61,7 +61,8 @@ Her sabah (ABD Doğu saati) **dünün** (son 24–36 saatin) oyun haberleri tara
    haberin gerçek içeriğini söyler.
 4. **Rakamlar** rakamla ("November 19", "$79.99", "170"). Tarih göreli değil kesin yazılır
    (video gecikerek yayınlanabilir: "tomorrow" yerine tarih).
-5. **Kapanış = döngü:** son cümle ilk cümleye bağlanır. "Subscribe", "comment below" yok; soru açıklamada.
+5. **Kapanış = tam cümle:** son cümle **mutlaka tamamlanmış** bir cümledir (". ! ?" ile biter); yarım
+   bırakma yok (izleyici şikâyeti, 9 Eki). "Subscribe", "comment below" yok; soru açıklamada.
 6. Görüş değil haber: "fans think…", "reportedly…" ayrımı net.
 
 ## Dosya adı
