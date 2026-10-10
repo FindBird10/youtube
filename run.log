@@ -1,0 +1,56 @@
+- 🗓️ `news/2026-10-04-1-gta6-hurricanes-wildlife.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-04-2-gta6-everything-confirmed.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-05-1-runescape-rs4-announced.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-05-2-ace-combat-8-steam-record.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-05-3-psn-account-hijacked.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-06-1-witcher3-steam-record.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-06-2-gta6-love-magazine-politics.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-06-3-ninja-theory-layoffs.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-07-1-gears-eday-launch.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-07-2-sega-ai-creative-work.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-07-3-star-wars-galactic-racer.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-08-1-gta6-no-pc-streaming.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-08-2-battlefield6-game-pass.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-08-3-ps5-crunchyroll-anime-hub.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-09-1-gta6-radio-stations.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-09-2-forza-horizon-6-ps5-date.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+- 🗓️ `news/2026-10-09-3-cyberpunk-2077-movie.json`: yayın saati 12 saatten eski (bayat haber), yüklenmiyor.
+[make_video] Seslendirme: Azure Speech (en-US-AndrewMultilingualNeural, +0%)
+[make_video] Sahne 1: 0.0–2.9 sn, 7 kelime
+[make_video] Sahne 2: 2.9–9.4 sn, 14 kelime
+[make_video] Sahne 3: 9.4–16.2 sn, 17 kelime
+[make_video] Sahne 4: 16.2–23.9 sn, 17 kelime
+[make_video] Sahne 5: 23.9–30.1 sn, 14 kelime
+[make_video] Sahne 6: 30.1–34.6 sn, 12 kelime
+[trailers] Steam 2807960: 5 uygun fragman (Battlefield 6: Official Launch Hype Trailer, Battlefield 6 Official Reveal Trailer, Battlefield 6 Season 4 Official Gameplay Trailer, Battlefield 2026 Roadmap Video)
+[trailers] Battlefield 6: Official Launch Hype Trailer: 63 sn, akış 56dabb7e3b1e736f7b4239f0d5ec/1759925948/hls_264_0_video.m3u8
+[trailers] Battlefield 6 Official Reveal Trailer: 122 sn, akış a62f20f09a4aef125acf9f0ecf5a/1759159208/hls_264_0_video.m3u8
+[trailers] Battlefield 6 Season 4 Official Gameplay Trailer: 124 sn, akış 97074150e91df10e5f095fc7ac60/1784732416/hls_264_0_video.m3u8
+[trailers] Battlefield 2026 Roadmap Video: 352 sn, akış 85fa8e6d71d8d3d9186b8837ba8f/1776355175/hls_264_0_video.m3u8
+[ WARN:0@0.011] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne → Battlefield 6 Official Reveal Trailer @92s (3.7 sn)
+[ WARN:0@16.635] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (siyah/düz): Battlefield 6 Season 4 Official Gameplay Trailer @87s
+[ WARN:0@27.337] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (yazı %18): Battlefield 6: Official Launch Hype Trailer @17s
+[ WARN:0@40.665] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne → Battlefield 6 Season 4 Official Gameplay Trailer @99s (7.6 sn)
+[ WARN:0@97.122] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne klibi elendi (yazı %5): Battlefield 2026 Roadmap Video @118s
+[ WARN:0@120.562] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[trailers] Sahne → Battlefield 6 Official Reveal Trailer @28s (7.0 sn)
+[make_video] Fragman klibi: 3/3 sahne
+[wiki_images] battlefield.fandom.com/Battlefield 6: 65 uygun görsel
+[ WARN:0@122.870] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@123.345] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@123.724] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@124.194] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[wiki_images] Sahne 6: File:Battlefield 6 All-Out Warfare.jpg (1920x1080), yüz yok (ortadan kırpılacak)
+[make_video] Sahne 1: pexels:32457237 1080x1920 puan 10.5 (las vegas strip night aerial)
+[make_video] Sahne 2: pexels:19157965 1080x1920 puan 8.8 (dark alien obelisk fog)
+[make_video] Müzik: birdsvault_merak.mp3 (16. sn'den)
+[make_video] Hazır: /home/runner/work/youtube/youtube/build/news__2026-10-10-1-battlefield6-season5-vegas.mp4 (34.6 sn)
+[upload] publish_at geçmişte (2026-10-10T13:00:00Z); hemen yayınlanıyor (public).
+- 🔑 `2026-10-10-1-battlefield6-season5-vegas.json`: YT_REFRESH_TOKEN_NEWS geçersiz (invalid_grant); token yenilenene kadar news bekletiliyor.
+- ⏳ `2026-10-10-2-rainbow-six-mobile-shutdown.json`: news günlük yükleme sınırında, atlandı.
+- ⏳ `2026-10-10-3-ace-combat-8-million-sales.json`: news günlük yükleme sınırında, atlandı.
