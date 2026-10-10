@@ -1,0 +1,75 @@
+{
+  "title": "Battlefield 6 Season 5 brings Vegas and Dead Space 🎰",
+  "hook": "BF6 GOES TO VEGAS",
+  "subject": "battlefield6",
+  "trailer": {
+    "steam_appid": 2807960
+  },
+  "wiki": {
+    "site": "battlefield.fandom.com",
+    "page": "Battlefield 6",
+    "avoid": [
+      "logo",
+      "icon",
+      "twitter",
+      "x.png",
+      "2042",
+      "bf1",
+      "bfv",
+      "bf4"
+    ]
+  },
+  "description": "Would you play a Dead Space mode in Battlefield? 👇\n\nEA revealed the Battlefield 6 Season 5 roadmap on October 9, 2026. The season starts October 13 with the Vegas Strip and Area 51 maps, 4 new weapons and the REDSEC Rapid Royale mode, followed by a limited-time Dead Space Convergence event for Halloween. Platoons and a server browser arrive December 8.\n\nSources: EA Battlefield 6 Season 5 Roadmap (Oct 9, 2026), This Week in Videogames (Oct 9, 2026), GamingBolt (Oct 9, 2026)\nGame footage/images © their respective owners.",
+  "tags": [
+    "battlefield 6",
+    "bf6",
+    "battlefield 6 season 5",
+    "bf6 season 5",
+    "battlefield 6 vegas",
+    "battlefield 6 area 51",
+    "battlefield 6 dead space",
+    "battlefield dead space crossover",
+    "battlefield 6 roadmap",
+    "battlefield redsec",
+    "rapid royale",
+    "battlefield 6 server browser",
+    "battlefield 6 news",
+    "ea battlefield"
+  ],
+  "hashtags": [
+    "#battlefield6",
+    "#deadspace",
+    "#bf6"
+  ],
+  "publish_at": "2026-10-10T13:00:00Z",
+  "scenes": [
+    {
+      "text": "Battlefield 6 is heading to Las Vegas.",
+      "trailer": true,
+      "search": "las vegas strip night aerial"
+    },
+    {
+      "text": "EA's Season 5 starts October 13 with two new maps: Vegas Strip and Area 51.",
+      "search": "las vegas strip night aerial"
+    },
+    {
+      "text": "Launch day also adds 4 new weapons and Rapid Royale, a faster battle royale mode for REDSEC.",
+      "trailer": true,
+      "search": "soldiers battlefield smoke explosion"
+    },
+    {
+      "text": "Then comes a Dead Space crossover for Halloween, where soldiers uncover an alien Marker beneath Area 51.",
+      "search": "dark alien obelisk fog"
+    },
+    {
+      "text": "A European Casino map comes later, and Platoons and a server browser arrive December 8.",
+      "trailer": true,
+      "search": "helicopter war city ruins"
+    },
+    {
+      "text": "EA says more Dead Space details will come closer to the event.",
+      "image": "Battlefield 6",
+      "search": "soldier silhouette dark smoke"
+    }
+  ]
+}
