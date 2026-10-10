@@ -1,0 +1,74 @@
+{
+  "title": "James Sunderland's final choice in Silent Hill 2",
+  "angle": "fate",
+  "subject": "james",
+  "wiki": {
+    "site": "silenthill.fandom.com",
+    "page": "James Sunderland",
+    "avoid": [
+      "film",
+      "return to",
+      "concept",
+      "artwork",
+      "art",
+      "townfall",
+      "heather",
+      "silent hill 3",
+      "silent hill f",
+      "comic",
+      "shattered"
+    ]
+  },
+  "description": "Which Silent Hill 2 ending do you think is the real one? 👇\n\nWhy Pyramid Head hunted James Sunderland, and how he finally faced his guilt. Spoilers for Silent Hill 2 and its endings.\n\nFan-made content. Not affiliated with or endorsed by Konami or Bloober Team. Game images © their respective owners.",
+  "tags": [
+    "silent hill 2",
+    "james sunderland",
+    "silent hill",
+    "silent hill 2 remake",
+    "sh2",
+    "pyramid head",
+    "pyramid head explained",
+    "silent hill 2 ending",
+    "silent hill 2 endings explained",
+    "leave ending silent hill 2",
+    "james sunderland ending",
+    "silent hill 2 lore",
+    "laura silent hill 2"
+  ],
+  "hashtags": [
+    "#silenthill2",
+    "#pyramidhead",
+    "#jamessunderland"
+  ],
+  "publish_at": "2026-10-11T01:00:00Z",
+  "scenes": [
+    {
+      "text": "James Sunderland's executioner was something he created himself.",
+      "image": "James Sunderland"
+    },
+    {
+      "text": "Pyramid Head stalked him across Silent Hill. It was never a random monster.",
+      "trailer": true
+    },
+    {
+      "text": "It was born from his guilt, the punishment James believed he deserved for Mary's death.",
+      "trailer": true
+    },
+    {
+      "text": "But that's not how it ends. James finally admits he was weak, that he needed someone to punish him, and that he doesn't anymore.",
+      "trailer": true
+    },
+    {
+      "text": "His executioners fall by their own hand. Then James faces Mary one last time.",
+      "image": "Mary",
+      "image_page": "Mary Shepherd-Sunderland"
+    },
+    {
+      "text": "In the Leave ending, he reads her true letter, takes young Laura's hand, and chooses to live. He stopped running from the monster he made.",
+      "image": "James"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 2124490
+  }
+}

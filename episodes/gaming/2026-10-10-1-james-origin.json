@@ -1,0 +1,74 @@
+{
+  "title": "Why James Sunderland came back to Silent Hill 2",
+  "angle": "origin",
+  "subject": "james",
+  "wiki": {
+    "site": "silenthill.fandom.com",
+    "page": "James Sunderland",
+    "avoid": [
+      "film",
+      "return to",
+      "concept",
+      "artwork",
+      "art",
+      "townfall",
+      "heather",
+      "silent hill 3",
+      "silent hill f",
+      "comic",
+      "shattered"
+    ]
+  },
+  "description": "Would you have gone to Silent Hill after reading that letter? 👇\n\nHow a letter from his late wife Mary pulled James Sunderland into the fog of Silent Hill. Spoilers for Silent Hill 2.\n\nFan-made content. Not affiliated with or endorsed by Konami or Bloober Team. Game images © their respective owners.",
+  "tags": [
+    "silent hill 2",
+    "james sunderland",
+    "silent hill",
+    "silent hill 2 remake",
+    "sh2",
+    "james sunderland story",
+    "silent hill 2 story",
+    "silent hill 2 explained",
+    "silent hill lore",
+    "mary sunderland",
+    "silent hill 2 letter",
+    "maria silent hill 2",
+    "james sunderland explained"
+  ],
+  "hashtags": [
+    "#silenthill2",
+    "#jamessunderland",
+    "#silenthill"
+  ],
+  "publish_at": "2026-10-10T17:00:00Z",
+  "scenes": [
+    {
+      "text": "James Sunderland's dead wife sent him a letter.",
+      "image": "James Sunderland"
+    },
+    {
+      "text": "Mary had died of an illness three years earlier. Yet her letter asked him to meet her in their special place: Silent Hill.",
+      "trailer": true
+    },
+    {
+      "text": "So James drove there alone, and found streets buried in fog and creatures that should not exist.",
+      "trailer": true
+    },
+    {
+      "text": "Then he met Maria. She had Mary's face, but none of her gentle soul.",
+      "image": "Maria",
+      "image_page": "Maria"
+    },
+    {
+      "text": "But that's not the strangest part. Every lost soul he meets seems trapped by their own guilt.",
+      "trailer": true
+    },
+    {
+      "text": "James thought he was searching for his wife. It all started with one impossible letter.",
+      "image": "James"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 2124490
+  }
+}
