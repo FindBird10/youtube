@@ -1,0 +1,59 @@
+{
+  "title": "The fog that turned London black for 5 days 🌫️",
+  "hook": "LONDON WENT DARK",
+  "format": "dark-history",
+  "subject": "fog",
+  "emphasis": [
+    "5 days",
+    "feet",
+    "12,000"
+  ],
+  "description": "Could a city vanish in smog like this today? 👇\n\nIn December 1952, the Great Smog covered London for 5 days. Coal smoke trapped under still, cold air turned the fog yellow-black, people couldn't see their own feet, and buses were guided by conductors with flashlights. About 4,000 deaths were counted at the time; later estimates reach 12,000. It led to the Clean Air Act of 1956.\n\nSources: Met Office (\"The Great Smog of 1952\"), London Museum (\"Five days of pollution which killed 12,000\"), History.com",
+  "tags": [
+    "great smog of london",
+    "great smog 1952",
+    "london smog",
+    "killer fog london",
+    "london fog 1952",
+    "air pollution disaster",
+    "clean air act 1956",
+    "coal smoke",
+    "dark history",
+    "history facts",
+    "history mystery",
+    "london history",
+    "smog"
+  ],
+  "hashtags": [
+    "#history",
+    "#london",
+    "#greatsmog"
+  ],
+  "publish_at": "2026-10-10T23:00:00Z",
+  "scenes": [
+    {
+      "text": "London went dark for 5 days.",
+      "search": "thick fog city street"
+    },
+    {
+      "text": "People couldn't see their own feet. Bus conductors walked ahead of buses with flashlights.",
+      "search": "foggy street night lamps"
+    },
+    {
+      "text": "Cinemas closed because nobody could see the screen.",
+      "search": "fog city buildings"
+    },
+    {
+      "text": "It was December 1952. Freezing Londoners burned huge amounts of coal, and still air trapped the smoke over the city.",
+      "search": "chimney smoke coal"
+    },
+    {
+      "text": "But here's the strange part. It wasn't just fog. It was soot, mixed with sulfuric acid.",
+      "search": "smoke haze sky"
+    },
+    {
+      "text": "About 4,000 people died in days, and later estimates reach 12,000. Four years later, Britain passed the Clean Air Act.",
+      "search": "london skyline fog"
+    }
+  ]
+}
