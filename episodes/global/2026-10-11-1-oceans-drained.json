@@ -1,0 +1,55 @@
+{
+  "title": "What if all the oceans drained tonight? 🌊",
+  "hook": "WHAT IF THE OCEANS DRAINED?",
+  "format": "what-if",
+  "subject": "ocean",
+  "emphasis": [
+    "65,000",
+    "29%",
+    "half"
+  ],
+  "description": "Where would you walk first? 👇\n\nWhat would we see if all the oceans drained? Earth's longest mountain range, the mid-ocean ridge, runs nearly 65,000 km along the seafloor, and the Challenger Deep in the Mariana Trench is about 10,935 m deep, roughly 2,100 m deeper than Everest is tall. As of April 2026, only about 28.7% of the seafloor had been mapped in high resolution, and about half of Earth's oxygen comes from the ocean.\n\nSources: NOAA Ocean Exploration (\"What is the mid-ocean ridge?\", \"How much of the ocean has been explored?\"), NOAA Ocean Service (\"How much oxygen comes from the ocean?\"), NOAA via Live Science (\"How deep is the Mariana Trench?\")",
+  "tags": [
+    "what if the oceans drained",
+    "what if all the water disappeared",
+    "draining the ocean",
+    "ocean drained",
+    "what is under the ocean",
+    "mid-ocean ridge",
+    "mariana trench",
+    "challenger deep",
+    "ocean floor",
+    "what if",
+    "earth without oceans",
+    "ocean facts",
+    "science"
+  ],
+  "hashtags": [
+    "#ocean",
+    "#earth",
+    "#marianatrench"
+  ],
+  "publish_at": "2026-10-11T15:00:00Z",
+  "scenes": [
+    {
+      "text": "You could walk from New York to London.",
+      "search": "dry seabed aerial"
+    },
+    {
+      "text": "If the oceans drained, you'd cross Earth's longest mountain range, nearly 65,000 kilometers long.",
+      "search": "mountain ridge aerial"
+    },
+    {
+      "text": "But here's the strange part. Only about 29% of that seafloor has ever been mapped in high detail.",
+      "search": "ocean floor underwater rocks"
+    },
+    {
+      "text": "Then you'd reach the Mariana Trench, almost 11 kilometers deep. Drop Everest in, and its peak would sit 2 kilometers below the rim.",
+      "search": "deep canyon cliffs aerial"
+    },
+    {
+      "text": "And the air would change too. About half of Earth's oxygen comes from tiny life in the ocean.",
+      "search": "plankton microscope"
+    }
+  ]
+}
