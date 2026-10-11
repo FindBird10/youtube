@@ -1,0 +1,76 @@
+{
+  "title": "Squadron 42 finally has a Steam page 🚀",
+  "hook": "SQUADRON 42 ON STEAM",
+  "subject": "squadron42",
+  "trailer": {
+    "steam_appid": 4045720
+  },
+  "wiki": {
+    "site": "starcitizen.fandom.com",
+    "page": "Squadron 42",
+    "avoid": [
+      "logo",
+      "icon",
+      "twitter",
+      "x.png",
+      "patch",
+      "insignia",
+      "roundel"
+    ]
+  },
+  "description": "Will you wishlist Squadron 42? 👇\n\nStar Citizen's single-player campaign Squadron 42 now has a Steam store page with wishlisting open, as of October 10, 2026. Cloud Imperium Games is targeting Q2 2027 on PC, with a cast led by Mark Hamill, Gary Oldman, Gillian Anderson and Henry Cavill.\n\nSources: Squadron 42 Steam store page, tbreak (Oct 10, 2026), MonsterVine (Oct 10, 2026), IGN / TechSpot on the Q2 2027 delay\nGame footage/images © their respective owners.",
+  "tags": [
+    "squadron 42",
+    "squadron 42 steam",
+    "squadron 42 release date",
+    "squadron 42 2027",
+    "squadron 42 trailer",
+    "squadron 42 news",
+    "star citizen",
+    "star citizen squadron 42",
+    "cloud imperium games",
+    "chris roberts",
+    "mark hamill squadron 42",
+    "henry cavill game",
+    "space games",
+    "pc games 2027"
+  ],
+  "hashtags": [
+    "#squadron42",
+    "#starcitizen",
+    "#pcgaming"
+  ],
+  "publish_at": "2026-10-11T13:00:00Z",
+  "scenes": [
+    {
+      "text": "Squadron 42 finally has a Steam page.",
+      "trailer": true,
+      "search": "spaceship flying through space nebula"
+    },
+    {
+      "text": "Star Citizen's single-player campaign is now listed on Steam, and you can wishlist it today.",
+      "image": "Squadron 42",
+      "search": "space station orbit planet"
+    },
+    {
+      "text": "Cloud Imperium is targeting a release between April and June 2027, on PC.",
+      "trailer": true,
+      "search": "spaceship cockpit view stars"
+    },
+    {
+      "text": "You play a rookie in the UEE Navy in the year 2945, from fighter cockpits to capital ships.",
+      "image": "",
+      "image_page": "United Empire of Earth Navy",
+      "search": "space battle fleet"
+    },
+    {
+      "text": "The cast includes Mark Hamill, Gary Oldman, Gillian Anderson and Henry Cavill.",
+      "trailer": true,
+      "search": "astronaut helmet portrait dark"
+    },
+    {
+      "text": "Chris Roberts moved the game out of late 2026 to avoid the launch of GTA 6.",
+      "search": "galaxy stars deep space"
+    }
+  ]
+}

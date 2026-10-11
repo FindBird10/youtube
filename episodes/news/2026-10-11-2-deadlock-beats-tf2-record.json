@@ -1,0 +1,68 @@
+{
+  "title": "Deadlock beats Team Fortress 2's all-time peak 🔥",
+  "hook": "DEADLOCK BEATS TF2",
+  "subject": "deadlock",
+  "wiki": {
+    "site": "deadlock.wiki",
+    "page": "Solomon",
+    "avoid": [
+      "logo",
+      "icon",
+      "twitter",
+      "x.png",
+      "card",
+      "ability"
+    ]
+  },
+  "description": "Do you have a Deadlock invite yet? 👇\n\nValve's Deadlock peaked at 262,145 concurrent players on Steam on October 9, 2026, per SteamDB, passing Team Fortress 2's all-time peak of 253,997 from 2023. The record came as Valve added Solomon, a chess-themed hero. Deadlock is still an invite-only test.\n\nSources: SteamDB (Oct 9, 2026), PC Gamer (Oct 10, 2026), TheGamer via OpenCritic (Oct 10, 2026), Tech4Gamers (Oct 10, 2026)\nGame images © Valve.",
+  "tags": [
+    "deadlock",
+    "deadlock valve",
+    "deadlock player count",
+    "deadlock record",
+    "deadlock steam",
+    "deadlock solomon",
+    "deadlock new hero",
+    "deadlock invite",
+    "deadlock news",
+    "team fortress 2",
+    "tf2",
+    "valve",
+    "valve new game",
+    "steamdb"
+  ],
+  "hashtags": [
+    "#deadlock",
+    "#valve",
+    "#tf2"
+  ],
+  "publish_at": "2026-10-11T17:00:00Z",
+  "scenes": [
+    {
+      "text": "Valve's Deadlock just beat Team Fortress 2's record.",
+      "image": "Solomon",
+      "search": "gamer playing pc neon lights"
+    },
+    {
+      "text": "On October 9, Deadlock peaked at 262,145 concurrent players on Steam, according to SteamDB.",
+      "search": "gaming pc setup rgb dark room"
+    },
+    {
+      "text": "That passes Team Fortress 2's all-time peak of 253,997, set back in 2023.",
+      "search": "esports players computers arena"
+    },
+    {
+      "text": "The spike came as Valve added Solomon, a chess-themed hero whose gun is a chess board.",
+      "image": "",
+      "search": "chess pieces dramatic lighting"
+    },
+    {
+      "text": "And Deadlock still isn't officially released.",
+      "search": "keyboard mouse gaming close up"
+    },
+    {
+      "text": "It's an invite-only test, so you need an invite from a friend to play.",
+      "search": "friends gaming together night"
+    }
+  ]
+}
