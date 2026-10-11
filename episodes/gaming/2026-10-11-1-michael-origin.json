@@ -1,0 +1,73 @@
+{
+  "title": "How Michael De Santa faked his own death in GTA 5",
+  "angle": "origin",
+  "subject": "michael",
+  "wiki": {
+    "site": "gta.fandom.com",
+    "page": "Michael De Santa",
+    "avoid": [
+      "gta vi",
+      "gta 6",
+      "gta iv",
+      "gtaiv",
+      "online",
+      "concept",
+      "artwork",
+      "cosplay",
+      "comic",
+      "beta",
+      "merch"
+    ]
+  },
+  "description": "Would you have taken Michael's deal with the FIB? 👇\n\nHow Michael Townley sold out his crew, faked his death and became Michael De Santa. Spoilers for Grand Theft Auto V.\n\nFan-made content. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Game images © their respective owners.",
+  "tags": [
+    "gta 5",
+    "gta v",
+    "michael de santa",
+    "michael gta 5",
+    "grand theft auto 5",
+    "michael townley",
+    "michael de santa story",
+    "gta 5 story",
+    "gta 5 lore",
+    "gta 5 prologue",
+    "north yankton",
+    "trevor philips"
+  ],
+  "hashtags": [
+    "#gta5",
+    "#michaeldesanta",
+    "#gtav"
+  ],
+  "publish_at": "2026-10-11T17:00:00Z",
+  "scenes": [
+    {
+      "text": "Michael De Santa had to die to keep his family.",
+      "image": "Michael De Santa"
+    },
+    {
+      "text": "In 2004, under his real name, Michael Townley, he robbed a bank in snowy North Yankton with his partners Trevor and Brad.",
+      "trailer": true
+    },
+    {
+      "text": "But the job was a setup. Michael had secretly made a deal with FIB agent Dave Norton.",
+      "trailer": true
+    },
+    {
+      "text": "Brad was shot and killed. Trevor escaped, believing his best friend Michael was dead too.",
+      "image": "Trevor",
+      "image_page": "Trevor Philips"
+    },
+    {
+      "text": "Michael got a new name, a Los Santos mansion, and a family that could barely stand him.",
+      "trailer": true
+    },
+    {
+      "text": "He faked his death for that perfect life, and it was slowly killing him.",
+      "image": "Michael"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 3240220
+  }
+}
