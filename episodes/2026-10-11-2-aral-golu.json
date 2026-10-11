@@ -1,0 +1,57 @@
+{
+  "title": "Bir göl kayboldu, gemiler çölde kaldı 🏜️",
+  "format": "karanlik-tarih",
+  "subject": "ship",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Aral Sea"
+  },
+  "description": "Sence Aral Gölü bir gün geri döner mi? 👇\n\nÖzbekistan ile Kazakistan arasındaki Aral Gölü, 1960'larda Sovyet pamuk sulaması için nehirleri çevrilince 2007'ye kadar eski boyutunun yüzde 10'una indi. Muynak'taki balıkçı gemileri bugün kumların üstünde duruyor.\n\nKaynak: Wikipedia (Aral Sea) ve kaynakları, NASA Earth Observatory",
+  "tags": [
+    "aral gölü",
+    "aral denizi",
+    "muynak",
+    "gemi mezarlığı",
+    "aral gölü neden kurudu",
+    "özbekistan",
+    "kazakistan",
+    "aralkum çölü",
+    "çevre felaketi",
+    "sovyetler birliği",
+    "pamuk",
+    "kuruyan göl",
+    "karanlık tarih"
+  ],
+  "hashtags": [
+    "#aralgölü",
+    "#özbekistan",
+    "#çevrefelaketi"
+  ],
+  "scenes": [
+    {
+      "text": "Balıkçı gemileri çölün ortasında kumların üstünde paslanıyor.",
+      "image": "Moynaq ship"
+    },
+    {
+      "text": "Burası Özbekistan'daki Muynak, bir zamanlar Aral Gölü'nün kıyısında işlek bir liman kentiydi.",
+      "search": "rusty ship desert sand"
+    },
+    {
+      "text": "68 bin kilometrekarelik Aral dünyanın en büyük 4 gölünden biriydi, ama 1960'larda Sovyetler pamuk sulaması için onu besleyen 2 nehri başka yöne çevirdi.",
+      "image": "Aral Sea 1989"
+    },
+    {
+      "text": "2007'ye gelindiğinde göl eski boyutunun yüzde 10'una indi ve kıyı Muynak'tan 30 ila 90 kilometre uzaklaştı.",
+      "search": "cracked dry lake bed aerial"
+    },
+    {
+      "text": "Zirvede 40 bin kişiye iş veren balıkçılık çöktü, açıkta kalan tuzlu zeminden de rüzgârla zehirli tozlar yayıldı.",
+      "search": "dust storm desert wind"
+    },
+    {
+      "text": "Gölün doğu yarısı 2014'te tamamen kurudu ve yerinde bugün Aralkum adında yeni bir çöl uzanıyor.",
+      "image": "Aral Sea 2014"
+    }
+  ],
+  "publish_at": "2026-10-11T18:00:00Z"
+}
