@@ -54,7 +54,7 @@ Görüntüler karakterin Fandom wiki sayfasındaki oyun içi görsellerden gelir
 - `avoid`: istenmeyen görsellerin dosya adında geçebilecek kelimeler (başka oyun, spoiler vb.).
 - Sahnede `"image": "anahtar kelimeler"` → o sahne için dosya adında bu kelimeleri arar
   (ör. `"Ellie Riley mall"`). Başka bir karakterin sayfasından görsel için `"image_page": "Joel"`.
-- Sahnelerin her biri `image` ya da `trailer: true` olsun (Steam fragmanı yoksa çoğunda `image`); en fazla 1 sahnede atmosfer için `search`
+- Sahnelerin her biri `image` içersin (Steam fragmanı varsa 2. sahneden itibaren otomatik klibe döner); en fazla 1 sahnede atmosfer için `search`
   (stok video, İngilizce: "rainy dark forest").
 
 ## Fragman klipleri (Steam)
@@ -69,11 +69,20 @@ Hareketli görüntü için oyunun **resmî Steam mağaza fragmanlarından** kıs
   `https://store.steampowered.com/api/storesearch/?term=<oyun adı>&l=english&cc=US` → `items[].id`.
   Doğru oyun olduğundan emin ol (DLC, soundtrack, demo değil; karakterin geçtiği oyun).
   Seri birden fazla oyunsa karakterin hikâyesinin geçtiği oyunu seç.
+  **Karakterin hikâyesini gösteren fragmanların bulunduğu sürümü seç.** Örnek: GTA V Enhanced (3240220)
+  sürümünün fragmanları GTA Online güncellemeleri (Michael'ı göstermiyor). Seçmeden önce
+  `https://store.steampowered.com/api/appdetails?appids=<N>&filters=movies` ile fragman adlarına bak;
+  birden fazla sürüm varsa adları hikâyeye en uygun olanı al.
 - Oyun Steam'de yoksa (ör. yalnızca PlayStation/Xbox) `trailer` alanını yazma; tüm sahneler wiki görseli olur.
-- Sahnede `"trailer": true` → o sahnenin arka planı fragmandan bir klip olur (o sahneye `image` yazma).
-- Dağılım: **1. sahne her zaman karakterin wiki görseli** (`image`: karakterin adı; izleyici kimin
-  anlatıldığını hemen görsün). Ortadaki sahnelerin **2–4 tanesi `trailer: true`**, kalanlar wiki görseli.
-  Karakterin yüzünün önemli olduğu sahnelerde (ör. son sahne) wiki görselini tercih et.
+  Eşit adaylar arasında **Steam'de olan oyunu seç**: hareketli oyun içi görüntü videoyu belirgin şekilde
+  canlandırıyor.
+- **Otomatik dolum (12 Ekim):** `trailer` alanı varsa **1. sahne dışındaki bütün sahneler** otomatik olarak
+  fragman klibi alır (oynanış fragmanları öncelikli). Yine de her sahneye `image` yaz: klip bulunamazsa o
+  wiki görseli kullanılır. `"trailer": true` yazmak artık zorunlu değil.
+- **1. sahne her zaman karakterin wiki görseli** (`image`: karakterin adı; izleyici kimin anlatıldığını hemen
+  görsün).
+- Belirli bir sahnede klip değil mutlaka wiki görseli istiyorsan (ör. karakterin yüzünün göründüğü kritik an)
+  o sahneye `"still": true` ekle. Bunu en fazla 1 sahnede kullan.
 
 ## Alanlar
 
