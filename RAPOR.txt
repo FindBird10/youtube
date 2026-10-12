@@ -1,0 +1,11 @@
+Metin: On the night of February first, 1959, nine experienced hikers pitched their tent on a snowy slope in the northern Ural Mountains. Weeks later, searchers found that tent cut open from the inside. Their boots were still there. The hikers were not. Some were found more than a kilometer down the mountain, wearing little more than socks, in temperatures far below freezing. For over sixty years, investigators have tried to explain what drove them out into the dark. Tonight, we open the file on the Dyatlov Pass incident.
+
+HATA  01_andrew_hd_sakin: en-US-Andrew:DragonHDLatestNeural -> Azure TTS başarısız: ResultReason.Canceled Connection was closed by the remote host. Error code: 1007. Error details: Unsupported voice en-US-Andrew:DragonHDLat
+HATA  02_brian_hd_sakin: en-US-Brian:DragonHDLatestNeural -> Azure TTS başarısız: ResultReason.Canceled Connection was closed by the remote host. Error code: 1007. Error details: Unsupported voice en-US-Brian:DragonHDLate
+OK    03_davis_derin: en-US-DavisNeural hız -8% perde -4% stil -
+OK    04_guy_klasik: en-US-GuyNeural hız -8% perde -3% stil -
+OK    05_ryan_ingiliz: en-GB-RyanNeural hız -6% perde +0% stil -
+OK    06_thomas_ingiliz: en-GB-ThomasNeural hız -6% perde +0% stil -
+OK    07_ollie_ingiliz: en-GB-OllieMultilingualNeural hız -6% perde +0% stil -
+HATA  08_ava_hd_kadin: en-US-Ava:DragonHDLatestNeural -> Azure TTS başarısız: ResultReason.Canceled Connection was closed by the remote host. Error code: 1007. Error details: Unsupported voice en-US-Ava:DragonHDLatest
+OK    09_sonia_ingiliz_kadin: en-GB-SoniaNeural hız -6% perde +0% stil -
