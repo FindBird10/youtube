@@ -8,7 +8,7 @@ on:
         required: false
         default: "episodes/_test_ucak_neden_beyaz.json"
       voice_set:
-        description: "Ses seti (boş = Türkçe karşılaştırma, news = oyun haberleri)"
+        description: "Ses seti (boş = Türkçe karşılaştırma, news = oyun haberleri, docs = uzun belgesel)"
         required: false
         default: ""
 

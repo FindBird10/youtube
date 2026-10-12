@@ -43,6 +43,26 @@ NEWS_TEXT = ("Okay, gamers, this is big. Yesterday a brand new trailer dropped, 
              "until this morning. Here's everything you need to know in thirty seconds.")
 
 
+# Global kanal uzun videoları (vaka dosyası belgeseli): sakin, ağır anlatıcılar (ad, ses, hız, perde, stil)
+DOC_VOICES = [
+    ("01_andrew_hd_sakin", "en-US-Andrew:DragonHDLatestNeural", "-6%", "+0%", ""),
+    ("02_brian_hd_sakin", "en-US-Brian:DragonHDLatestNeural", "-6%", "+0%", ""),
+    ("03_davis_derin", "en-US-DavisNeural", "-8%", "-4%", ""),
+    ("04_guy_klasik", "en-US-GuyNeural", "-8%", "-3%", ""),
+    ("05_ryan_ingiliz", "en-GB-RyanNeural", "-6%", "+0%", ""),
+    ("06_thomas_ingiliz", "en-GB-ThomasNeural", "-6%", "+0%", ""),
+    ("07_ollie_ingiliz", "en-GB-OllieMultilingualNeural", "-6%", "+0%", ""),
+    ("08_ava_hd_kadin", "en-US-Ava:DragonHDLatestNeural", "-6%", "+0%", ""),
+    ("09_sonia_ingiliz_kadin", "en-GB-SoniaNeural", "-6%", "+0%", ""),
+]
+DOC_TEXT = ("On the night of February first, 1959, nine experienced hikers pitched their tent on a snowy "
+            "slope in the northern Ural Mountains. Weeks later, searchers found that tent cut open from the "
+            "inside. Their boots were still there. The hikers were not. Some were found more than a kilometer "
+            "down the mountain, wearing little more than socks, in temperatures far below freezing. For over "
+            "sixty years, investigators have tried to explain what drove them out into the dark. "
+            "Tonight, we open the file on the Dyatlov Pass incident.")
+
+
 def main() -> None:
     import os
 
@@ -50,6 +70,8 @@ def main() -> None:
     out.mkdir(parents=True, exist_ok=True)
     if os.environ.get("VOICE_SET") == "news":
         text, voices, lang = NEWS_TEXT, NEWS_VOICES, "en-US"
+    elif os.environ.get("VOICE_SET") == "docs":
+        text, voices, lang = DOC_TEXT, DOC_VOICES, "en-US"
     else:
         ep = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
         text = " ".join(s["text"] for s in ep["scenes"][:4])
@@ -57,7 +79,8 @@ def main() -> None:
     report = [f"Metin: {text}\n"]
     for name, voice, rate, pitch, style in voices:
         try:
-            _azure_tts(text, voice, rate, out / f"{name}.mp3", pitch=pitch, speak_lang=lang, style=style,
+            _azure_tts(text, voice, rate, out / f"{name}.mp3", pitch=pitch,
+                       speak_lang=voice[:5] if voice[:2] == "en" else lang, style=style,
                        style_degree=1.4 if style else 1.0)
             report.append(f"OK    {name}: {voice} hız {rate} perde {pitch} stil {style or '-'}")
         except Exception as e:
