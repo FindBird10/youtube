@@ -791,10 +791,21 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
         log(f"UYARI: video {total:.1f} sn; Shorts için 60 saniyenin altı önerilir.")
     wiki = episode.get("wiki") or {}
     trailer = episode.get("trailer") or {}
+    # 12 Eki: oyun içi görüntü daha canlı. Steam fragmanı varsa 1. sahne (karakter tanıtımı) dışındaki
+    # bütün sahneler fragman klibi alır; "still": true yazılan sahne ve klip çıkmazsa wiki görseli kalır.
+    filled: set[int] = set()
+    if trailer.get("steam_appid") and trailer.get("fill", True):
+        for i, (sc, raw) in enumerate(zip(scenes, [s for s in episode["scenes"] if s.get("text", "").strip()])):
+            if i > 0 and not sc.trailer and not raw.get("still") and not sc.search:
+                sc.trailer = True
+                filled.add(i)
     if trailer.get("steam_appid") and any(sc.trailer for sc in scenes) and not offline:
         from game_trailers import assign as assign_trailers
         n = assign_trailers(scenes, int(trailer["steam_appid"]), work, seed=slug)
         log(f"Fragman klibi: {n}/{sum(sc.trailer for sc in scenes)} sahne")
+        for i in filled:
+            if scenes[i].clip is not None:
+                scenes[i].image_query = None     # klip bulundu: wiki görseli indirilmesin (görsel klibi ezer)
     # Fragmandan temiz klip çıkmayan sahne stoka değil, karakterin wiki görseline düşsün;
     # wiki yoksa fragmandan zaten seçilmiş en yakın klibi kullansın (alakasız stoktan iyidir)
     placed = [k for k, sc in enumerate(scenes) if sc.trailer and sc.clip is not None]

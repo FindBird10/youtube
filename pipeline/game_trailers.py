@@ -21,6 +21,7 @@ TAIL_SKIP = 12.0     # fragman sonu (çıkış tarihi, derecelendirme kartları)
 BAD_NAME = re.compile(r"accolade|pre-?order|dlc|bundle|sale|update|patch|esrb|pegi|"
                       r"launch date|price|subscription|season pass|teaser 15", re.I)
 GOOD_NAME = re.compile(r"story|cinematic|launch|reveal|official trailer|announce", re.I)
+GAMEPLAY_NAME = re.compile(r"gameplay|walkthrough|in-?game|combat|mission|open world|overview", re.I)
 
 
 def _log(msg: str) -> None:
@@ -41,7 +42,9 @@ def list_trailers(appid: int) -> list[dict]:
         name = m.get("name", "")
         if not url or BAD_NAME.search(name):
             continue
-        score = (2 if GOOD_NAME.search(name) else 0) + (1 if m.get("highlight") else 0)
+        # Oynanış fragmanları öne: oyun içi görüntü daha canlı (12 Eki); hikâye fragmanları ardından
+        score = (3 if GAMEPLAY_NAME.search(name) else 0) + (2 if GOOD_NAME.search(name) else 0) \
+            + (1 if m.get("highlight") else 0)
         out.append({"name": name, "url": url, "score": score})
     out.sort(key=lambda m: m["score"], reverse=True)
     _log(f"Steam {appid}: {len(out)} uygun fragman ({', '.join(m['name'] for m in out[:4])})")
@@ -140,7 +143,7 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
     if not want:
         return 0
     try:
-        trailers = list_trailers(appid)[:4]
+        trailers = list_trailers(appid)[:6]
     except Exception as e:
         _log(f"Steam fragman listesi alınamadı ({type(e).__name__}); stok/wiki'ye düşülecek")
         return 0
@@ -169,7 +172,7 @@ def assign(scenes: list, appid: int, work: Path, seed: str = "") -> int:
     used: list[tuple[str, float, float]] = []   # aynı fragman parçası iki sahnede tekrar etmesin
     for i, sc in enumerate(want):
         length = min(12.0, max(2.5, sc.duration + 0.8))
-        for _ in range(16):
+        for _ in range(20):
             if not pool:
                 break
             src, start, name = pool.pop()
