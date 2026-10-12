@@ -36,7 +36,7 @@ Dosya adı: `episodes/longform/YYYY-AA-GG-kisa-konu.json` (tarih = yayın günü
   yılın taze acıları (aileler hâlâ yasta), açık şiddet ağırlıklı cinayetler, intihar ayrıntıları.
 - Daha önce işlenen vakaları tekrarlama (`episodes/longform/`, `state/published.json`).
 
-## Yapı (6–7 bölüm, toplam 1.250–1.450 kelime ≈ 8–10 dk)
+## Yapı (6–7 bölüm, toplam 1.250–1.500 kelime ≈ 8,5–10 dk; Davis dakikada ~160 kelime okur)
 
 | Bölüm | İçerik | Kelime |
 |---|---|---|

@@ -226,7 +226,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Sub,{FONT_SUB},52,&H00FFFFFF,&H00FFFFFF,&H00101010,&H90000000,0,0,0,0,100,100,0,0,1,2.6,1.2,2,200,200,62,1
+Style: Sub,{FONT_SUB},52,&H00FFFFFF,&H00FFFFFF,&H00101010,&H90000000,0,0,0,0,100,100,0,0,1,2.6,1.2,2,120,120,62,1
 Style: Card,{FONT_TYPE},44,{INK},{INK},&H00000000,&H78000000,0,0,0,0,100,100,1,0,3,14,0,7,0,0,0,1
 Style: Amber,{FONT_TYPE},50,{AMBER},{AMBER},&H00000000,&H00000000,0,0,0,0,100,100,4,0,1,0,0,5,0,0,0,1
 Style: Big,{FONT_TYPE},98,{INK},{INK},&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,0,3,5,0,0,0,1
@@ -269,12 +269,25 @@ def _subtitle_events(words: list[Word], total: float) -> list[str]:
         evs.append(_ev(cur[0].start, end, "Sub", mv.ass_escape(text)))
         cur.clear()
 
+    weak = {"a", "an", "the", "of", "to", "for", "in", "on", "at", "by", "and", "or", "but", "with", "from",
+            "into", "as", "that", "their", "his", "her", "its", "was", "were", "had", "is", "be", "than"}
     for k, w in enumerate(words):
         cur.append(w)
         length = len(" ".join(x.text for x in cur))
         nxt = words[k + 1].start if k + 1 < len(words) else None
         gap = (nxt - w.end) if nxt is not None else 9
-        if getattr(w, "brk", False) or len(cur) >= 7 or length >= 44 or gap > 0.6:
+        full = len(cur) >= 7 or length >= 42
+        # Satır "for about a" gibi bağlaçla bitmesin: en fazla 3 kelime daha bekle
+        hanging = w.text.lower().strip(".,;:!?\"'") in weak and len(cur) < 10 and length < 56
+        # Cümle/virgül sonunda tek başına kalacak 1–2 kelimeyi bu satıra al
+        rem = 0
+        for x in words[k + 1:]:
+            rem += 1
+            if getattr(x, "brk", False) or rem > 2:
+                break
+        orphan = rem <= 2 and k + rem < len(words) and getattr(words[k + rem], "brk", False) and length < 60
+        brk = getattr(w, "brk", False) and (len(cur) >= 3 or w.text[-1:] in ".!?")
+        if brk or gap > 0.6 or (full and not hanging and not orphan):
             flush(nxt)
     flush(None)
     return evs
