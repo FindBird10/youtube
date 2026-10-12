@@ -95,7 +95,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: shorts-${{ github.run_number }}
-          path: build/*.mp4
+          path: |
+            build/*.mp4
+            build/*_thumbnail.jpg
           retention-days: 14
           if-no-files-found: ignore
 
@@ -105,7 +107,23 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           rm -rf /tmp/pv && mkdir /tmp/pv
-          cp build/*.mp4 /tmp/pv/ 2>/dev/null || true
+          for f in build/*.mp4; do
+            [ -f "$f" ] || continue
+            b=$(basename "$f" .mp4)
+            if [ "$(stat -c %s "$f")" -gt 90000000 ]; then
+              # Uzun video: GitHub 100 MB sınırı; 640x360 küçük kopya + 10 kare
+              ffmpeg -v error -y -i "$f" -vf scale=640:-2 -c:v libx264 -preset veryfast -crf 30 \
+                -c:a aac -b:a 64k "/tmp/pv/${b}_360p.mp4" || true
+              d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+              for k in 1 2 3 4 5 6 7 8 9 10; do
+                ffmpeg -v error -y -ss "$(python3 -c "print($d*$k/11)")" -i "$f" -frames:v 1 -vf scale=960:-2 \
+                  "/tmp/pv/${b}_kare$k.jpg" || true
+              done
+            else
+              cp "$f" /tmp/pv/
+            fi
+          done
+          cp build/*_thumbnail.jpg /tmp/pv/ 2>/dev/null || true
           cp build/run.log /tmp/pv/ 2>/dev/null || true
           for d in build/*_work; do [ -f "$d/subs.ass" ] && cp "$d/subs.ass" "/tmp/pv/$(basename "$d" _work).ass" || true; done
           git -C "$GITHUB_WORKSPACE" log -1 --format=%h > /tmp/pv/COMMIT.txt

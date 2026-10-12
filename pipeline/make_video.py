@@ -240,8 +240,10 @@ def mark_breaks(words: list[Word], text: str) -> None:
         w.brk = j < len(low) and low[j] in ".!?,;:…"
 
 
-SPEAK_LANG = {"tr": "tr-TR", "en": "en-US"}
-EDGE_FALLBACK = {"tr": "tr-TR-AhmetNeural", "en": "en-US-AndrewMultilingualNeural"}
+SPEAK_LANG = {"tr": "tr-TR", "en": "en-US", "en-US": "en-US", "en-GB": "en-GB"}
+EDGE_FALLBACK = {"tr": "tr-TR-AhmetNeural", "en": "en-US-AndrewMultilingualNeural",
+                 "en-US": "en-US-AndrewMultilingualNeural", "en-GB": "en-GB-RyanNeural"}
+CLIP_ORIENTATION = "portrait"   # stok video yönü; uzun (16:9) videolar "landscape" yapar
 
 
 def synthesize(scenes: list[Scene], voice: str, rate: str, work: Path, offline: bool, pitch: str = "+0%",
@@ -313,17 +315,23 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool, subject: str = "
     def pexels(query: str) -> list[dict]:
         r = requests.get("https://api.pexels.com/videos/search", timeout=30,
                          headers={"Authorization": pexels_key},
-                         params={"query": query, "orientation": "portrait", "size": "medium", "per_page": 20})
+                         params={"query": query, "orientation": CLIP_ORIENTATION, "size": "medium", "per_page": 20})
         r.raise_for_status()
         out = []
         for v in r.json().get("videos", []):
             files = [f for f in v.get("video_files", []) if f.get("height") and f.get("width") and f.get("link")]
             if not files:
                 continue
-            portrait = [f for f in files if f["height"] >= f["width"]] or files
-            # 1080 genişliğe en yakın, ondan küçük olmayanı seç
-            portrait.sort(key=lambda f: (f["width"] < 1080, abs(f["width"] - 1080)))
-            f = portrait[0]
+            if CLIP_ORIENTATION == "landscape":
+                land = [f for f in files if f["width"] > f["height"]] or files
+                # 1920 genişliğe en yakın, ondan küçük olmayanı seç
+                land.sort(key=lambda f: (f["width"] < 1920, abs(f["width"] - 1920)))
+                f = land[0]
+            else:
+                portrait = [f for f in files if f["height"] >= f["width"]] or files
+                # 1080 genişliğe en yakın, ondan küçük olmayanı seç
+                portrait.sort(key=lambda f: (f["width"] < 1080, abs(f["width"] - 1080)))
+                f = portrait[0]
             slug = v.get("url", "").rstrip("/").rsplit("/", 1)[-1]
             out.append({"key": f"pexels:{v['id']}", "rank": len(out),
                         "words": stems(slug + " " + " ".join(v.get("tags", []))),
@@ -341,7 +349,10 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool, subject: str = "
             if not files:
                 continue
             # Dikeye kırpılınca bulanık olmasın: yeterince yüksek olan en küçük dosya
-            files.sort(key=lambda f: (f["height"] < 1900, f["height"] if f["height"] >= 1900 else -f["height"]))
+            if CLIP_ORIENTATION == "landscape":
+                files.sort(key=lambda f: (f.get("width", 0) < 1900, abs(f.get("width", 0) - 1920)))
+            else:
+                files.sort(key=lambda f: (f["height"] < 1900, f["height"] if f["height"] >= 1900 else -f["height"]))
             f = files[0]
             out.append({"key": f"pixabay:{v['id']}", "rank": len(out), "words": stems(v.get("tags", "")),
                         "duration": v.get("duration", 0), "w": f["width"], "h": f["height"], "url": f["url"]})
@@ -352,7 +363,7 @@ def fetch_clips(scenes: list[Scene], work: Path, offline: bool, subject: str = "
         s = 6.0 if key & c["words"] else 0.0
         s += 3.0 * len(want & c["words"]) / max(1, len(want))
         s += 1.0 * (1 - min(c.get("rank", 19), 19) / 20)          # sitenin kendi uygunluk sırası
-        s += 0.8 if c["h"] >= c["w"] else 0.0                    # dikey video kırpılmaz
+        s += 0.8 if (c["h"] >= c["w"]) == (CLIP_ORIENTATION == "portrait") else 0.0   # yönü uyan kırpılmaz
         s += 0.5 if c["duration"] >= need else 0.0               # döngüye girmez
         s += 0.3 if min(c["w"], c["h"]) >= 1080 else 0.0         # net görüntü
         return s + random.uniform(0, 0.2)                          # her seferinde aynı video çıkmasın
@@ -751,6 +762,9 @@ def pick_voice(episode: dict) -> tuple[str, str]:
 
 
 def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
+    if episode.get("chapters"):     # uzun (16:9) belgesel: ayrı üretici
+        from longform import render_long
+        return render_long(episode, out_dir, offline=offline)
     slug = episode["_slug"]
     work = out_dir / f"{slug}_work"
     if work.exists():
@@ -976,10 +990,13 @@ def load_episode(path: Path) -> dict:
         ep.setdefault(k, v)
     ep["_key"] = episode_key(ch, path.stem)
     ep["_slug"] = path.stem if ch == DEFAULT_CHANNEL else f"{ch}__{path.stem}"
-    for k in ("title", "scenes"):
+    for k in ("title", "chapters" if "chapters" in ep else "scenes"):
         if k not in ep:
             raise ValueError(f"{path}: '{k}' alanı eksik")
-    fix_dangling_end(ep)
+    if "chapters" in ep:
+        fix_dangling_end(ep["chapters"][-1])
+    else:
+        fix_dangling_end(ep)
     return ep
 
 

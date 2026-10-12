@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from make_video import ROOT, load_episode, render  # noqa: E402
 from channels import CHANNELS, channel_of, episode_key  # noqa: E402
-from upload import UploadLimit, WrongChannel, find_existing, have_credentials, token_fingerprint, upload  # noqa: E402
+from upload import UploadLimit, WrongChannel, find_existing, have_credentials, token_fingerprint, upload, video_url  # noqa: E402
 
 STATE = ROOT / "state" / "published.json"
 # Yanlış kanala ait çıkan token'lar (parmak izi). Secret değişince engel kendiliğinden kalkar.
@@ -180,12 +180,12 @@ def main() -> int:
                 if dup:
                     state.append({
                         "slug": ep["_key"], "title": ep["title"], "video_id": dup,
-                        "url": f"https://youtube.com/shorts/{dup}", "channel": CHANNELS[ep["_channel"]]["expect_title"],
+                        "url": video_url(dup, ep), "channel": CHANNELS[ep["_channel"]]["expect_title"],
                         "account": ep["_channel"], "format": ep.get("format"), "publish_at": ep.get("publish_at"),
                         "uploaded_at": None, "note": "kanalda zaten vardı (RSS), yeniden yüklenmedi",
                     })
                     save_state(state)
-                    summary(f"- ♻️ **{ep['title']}** kanalda zaten var → https://youtube.com/shorts/{dup}")
+                    summary(f"- ♻️ **{ep['title']}** kanalda zaten var → {video_url(dup, ep)}")
                     continue
             video = render(ep, out)
             if not a.no_upload and have_credentials(ep["_channel"]):
@@ -217,14 +217,14 @@ def main() -> int:
                     continue
                 state.append({
                     "slug": ep["_key"], "title": ep["title"], "video_id": vid,
-                    "url": f"https://youtube.com/shorts/{vid}", "channel": channel, "account": ep["_channel"], "format": ep.get("format"),
+                    "url": video_url(vid, ep), "channel": channel, "account": ep["_channel"], "format": ep.get("format"),
                     "publish_at": ep.get("publish_at"),
                     "uploaded_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                 })
                 save_state(state)
                 push_state(ep["_key"])
                 when = f", yayın: {ep['publish_at']}" if ep.get("publish_at") else ""
-                summary(f"- ✅ **{ep['title']}** → https://youtube.com/shorts/{vid} (kanal: **{channel}**{when})")
+                summary(f"- ✅ **{ep['title']}** → {video_url(vid, ep)} (kanal: **{channel}**{when})")
             else:
                 summary(f"- 🎬 **{ep['title']}** üretildi: `build/{video.name}`")
         except Exception as e:

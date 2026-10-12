@@ -68,6 +68,10 @@ MAX_HASHTAGS = 8          # çok fazla hashtag spam sayılır (60'ı aşınca Yo
 TAGS_CHAR_LIMIT = 480     # YouTube sınırı 500 karakter (boşluklu etiketler tırnakla sayılır)
 
 
+def video_url(vid: str, episode: dict) -> str:
+    return f"https://youtube.com/watch?v={vid}" if episode.get("chapters") else f"https://youtube.com/shorts/{vid}"
+
+
 def _norm_hashtag(h: str) -> str:
     h = "".join(ch for ch in h.strip().lstrip("#") if ch.isalnum() or ch == "_")
     return f"#{h}" if h else ""
@@ -79,7 +83,9 @@ def build_hashtags(episode: dict) -> list[str]:
     fmt = episode.get("format", "")
     out, seen = [], set()
     chan = CHANNELS.get(episode.get("_channel", DEFAULT_CHANNEL), CHANNELS[DEFAULT_CHANNEL])
-    for h in ["#Shorts"] + list(episode.get("hashtags", [])) + base.get(fmt, base[""]) + chan["hashtags"]:
+    shorts = [] if (chan.get("long") or episode.get("chapters")) else ["#Shorts"]
+    for h in shorts + list(episode.get("hashtags", [])) + base.get(fmt, [] if chan.get("long") else base[""]) \
+            + chan["hashtags"]:
         h = _norm_hashtag(h)
         if h and h.lower() not in seen:
             seen.add(h.lower())
@@ -172,6 +178,10 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
     if episode.get("_credits"):  # CC BY / CC BY-SA görseller için zorunlu atıf
         head = "Görseller (Wikimedia Commons):" if episode.get("language") == "tr" else "Images (Wikimedia Commons):"
         desc += "\n\n" + head + "\n" + "\n".join(f"• {c}" for c in episode["_credits"][:8])
+    if episode.get("_chapters") and len(episode["_chapters"]) >= 3:
+        # YouTube bölümleri: 0:00 ile başlayan en az 3 zaman damgası
+        lines = [f"{int(t // 60)}:{int(t % 60):02d} {title}" for t, title in episode["_chapters"]]
+        desc += "\n\nChapters:\n" + "\n".join(lines)
     present = {w.lower() for w in desc.split() if w.startswith("#")}
     tags_line = " ".join(h for h in build_hashtags(episode) if h.lower() not in present)
     if tags_line:
@@ -241,11 +251,18 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
                 raise UploadLimit(str(e)) from e
             raise
     vid = response["id"]
+    if episode.get("_thumbnail"):
+        try:  # özel kapak: kanal telefonla doğrulanmış olmalı; olmazsa video yine de yüklenmiş olur
+            yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(episode["_thumbnail"],
+                                                                         mimetype="image/jpeg")).execute()
+            print("[upload] Kapak görseli yüklendi", flush=True)
+        except HttpError as e:
+            print(f"[upload] Kapak görseli yüklenemedi ({e.resp.status}): {str(e)[:200]}", flush=True)
     channel = response.get("snippet", {}).get("channelTitle") or response.get("snippet", {}).get("channelId", "?")
-    print(f"[upload] Yüklendi: https://youtube.com/shorts/{vid} kanal: {channel} "
+    print(f"[upload] Yüklendi: {video_url(vid, episode)} kanal: {channel} "
           f"(durum: {status['privacyStatus']})", flush=True)
     problem = check_channel(ch, response.get("snippet", {}).get("channelTitle", ""))
     if problem:
         raise WrongChannel(f"{ch} videosu yanlış kanala yüklendi ({problem}). "
-                           f"Studio'dan sil: https://youtube.com/shorts/{vid}", video_id=vid)
+                           f"Studio'dan sil: {video_url(vid, episode)}", video_id=vid)
     return vid, channel

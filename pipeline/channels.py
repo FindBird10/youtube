@@ -4,6 +4,7 @@
   episodes/gaming/*.json   → gaming     (İngilizce oyun karakteri hikâyeleri)
   episodes/global/*.json   → global     (İngilizce genel kanal)
   episodes/news/*.json     → news       (İngilizce günlük oyun haberleri)
+  episodes/longform/*.json → longform   (Global kanalın uzun 16:9 gizem belgeselleri)
 
 Her kanal kendi YouTube refresh token'ı ile yüklenir (aynı OAuth istemcisi).
 """
@@ -51,6 +52,18 @@ CHANNELS: dict[str, dict] = {
         "tags": ["gaming news", "video game news", "gaming", "new games", "game news today"],
     },
 }
+# Global kanalın uzun videoları: aynı kanal ve token, ayrı klasör ve üretici (pipeline/longform.py)
+CHANNELS["longform"] = {
+    "token_env": "YT_REFRESH_TOKEN_GLOBAL",
+    "expect_title": "BirdsVaultGlobal",
+    "channel_id": "UCp2rjdN1M1z0GMJ2Gshzdfw",
+    "category": "27",
+    "defaults": {"language": "en", "format": "case"},
+    "hashtags": ["#mystery", "#unsolvedmysteries", "#documentary"],
+    "tags": ["unsolved mysteries", "mystery documentary", "unexplained mysteries", "case file",
+             "mysterious cases", "documentary"],
+    "long": True,
+}
 DEFAULT_CHANNEL = "birdsvault"
 
 
@@ -77,6 +90,8 @@ def check_channel(channel: str, title: str) -> str | None:
     if exp and t != exp.lower():
         return f"'{title}' kanalına gitti, beklenen '{exp}'"
     for other, cfg in CHANNELS.items():
+        if cfg.get("expect_title", "") == exp:      # aynı kanalı paylaşan girdi (global / longform)
+            continue
         if other != channel and cfg.get("expect_title") and t == cfg["expect_title"].lower():
             return f"'{title}' kanalına gitti; bu {other} kanalı"
     return None
