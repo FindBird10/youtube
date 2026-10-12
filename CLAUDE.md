@@ -10,8 +10,10 @@ Dört YouTube kanalı için Shorts otomasyonu; Claude bölüm dosyalarını yaza
 | **Gaming** (oyun karakteri hikâyeleri) | `episodes/gaming/` | İngilizce | `docs/GAMING_REHBERI.md` | `YT_REFRESH_TOKEN_GAMING` |
 | **Global** (what-if, psikoloji, iş, karanlık tarih) | `episodes/global/` | İngilizce | `docs/GLOBAL_REHBERI.md` | `YT_REFRESH_TOKEN_GLOBAL` |
 | **News** (günlük oyun haberleri) | `episodes/news/` | İngilizce | `docs/NEWS_REHBERI.md` | `YT_REFRESH_TOKEN_NEWS` |
+| **Global uzun videolar** (8–10 dk gizem belgeseli, haftada 3) | `episodes/longform/` | İngilizce | `docs/LONGFORM_REHBERI.md` | `YT_REFRESH_TOKEN_GLOBAL` |
 
-Token'ı tanımlı olmayan kanalın bölümleri yüklenmez, bekletilir. Her kanal günde 3 video.
+Token'ı tanımlı olmayan kanalın bölümleri yüklenmez, bekletilir. Her kanal günde 3 Shorts; uzun videolar
+`pipeline/longform.py` ile 16:9 üretilir (bölümde `chapters` alanı olunca).
 
 - Bölüm biçimi, günlük saatler ve içerik kuralları: ilgili kanalın rehberi — yazmadan önce oku.
 - Daha önce yayınlananlar: `state/published.json` (Actions günceller, elle düzenleme).
