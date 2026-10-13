@@ -1,0 +1,76 @@
+{
+  "title": "Why Joel Miller stopped caring in The Last of Us",
+  "angle": "origin",
+  "subject": "joel",
+  "wiki": {
+    "site": "thelastofus.fandom.com",
+    "page": "Joel Miller",
+    "avoid": [
+      "tv series",
+      "hbo",
+      "pedro",
+      "concept",
+      "comic",
+      "american dreams",
+      "abby",
+      "part ii",
+      "tlou2"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 1888930
+  },
+  "description": "Would you have survived what Joel lost? 👇\n\nThe night that turned Joel Miller into the hardened survivor of The Last of Us. Spoilers for The Last of Us Part I.\n\nFan-made content. Not affiliated with or endorsed by Naughty Dog or Sony Interactive Entertainment. Game images © their respective owners.",
+  "tags": [
+    "joel",
+    "joel miller",
+    "the last of us",
+    "tlou",
+    "joel the last of us",
+    "joel story",
+    "joel explained",
+    "joel backstory",
+    "sarah the last of us",
+    "joel sarah",
+    "the last of us lore",
+    "tlou opening",
+    "the last of us part 1"
+  ],
+  "hashtags": [
+    "#thelastofus",
+    "#joel",
+    "#tlou"
+  ],
+  "publish_at": "2026-10-13T17:00:00Z",
+  "scenes": [
+    {
+      "text": "Joel lost his daughter on the very first night of the outbreak.",
+      "image": "Joel"
+    },
+    {
+      "text": "Hours earlier, twelve-year-old Sarah had given him a birthday watch.",
+      "image": "Joel Sarah"
+    },
+    {
+      "text": "Fleeing Austin with his brother Tommy, they met a soldier ordered to shoot.",
+      "image": "Joel Tommy outbreak"
+    },
+    {
+      "text": "Sarah died in Joel's arms, and part of him died with her.",
+      "image": "Joel Sarah",
+      "still": true
+    },
+    {
+      "text": "But that's not the worst part. For twenty years, he survived by letting no one close.",
+      "image": "Joel Boston"
+    },
+    {
+      "text": "Then he was paid to smuggle a girl named Ellie, and his walls began to crack.",
+      "image": "Joel Ellie"
+    },
+    {
+      "text": "And it all started with one shot on a dark highway.",
+      "image": "Joel"
+    }
+  ]
+}
