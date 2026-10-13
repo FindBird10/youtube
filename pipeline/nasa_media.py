@@ -117,8 +117,15 @@ def _footage_ok(clip: Path, work: Path, length: float) -> tuple[bool, str]:
         f = focus(frame)
         if f and f[2] >= 0.16:
             return False, "konuşan kişi"
-        if text_ratio(frame) > 0.012:
-            return False, "isim/yazı bandı"
+        # İsim bandı (lower third) alt %40'ta, geniş bir yazı bloğudur; köşedeki küçük saat/logo sayılmaz
+        import cv2
+
+        img = cv2.imread(str(frame))
+        if img is not None:
+            band = work / f"{clip.stem}_n{k}_alt.jpg"
+            cv2.imwrite(str(band), img[int(img.shape[0] * 0.6):, :])
+            if text_ratio(band) > 0.06:
+                return False, "isim/yazı bandı"
     return True, ""
 
 
