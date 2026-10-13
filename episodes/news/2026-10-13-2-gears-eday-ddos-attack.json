@@ -1,0 +1,58 @@
+{
+  "title": "Gears of War: E-Day hit by a DDoS attack ⚠️",
+  "hook": "GEARS E-DAY ATTACKED",
+  "subject": "gearsofwar",
+  "trailer": {
+    "steam_appid": 3010850
+  },
+  "description": "Did you get disconnected this weekend? 👇\n\nThe Coalition confirmed on October 12 that Gears of War: E-Day's online services were targeted by DDoS attacks, causing intermittent disconnects, login issues and other service disruptions. The team says it is monitoring and mitigating the activity. Gears of War: E-Day launched October 6, 2026 on Xbox Series X|S and PC.\n\nSources: The Coalition / Gears of War on X (Oct 12, 2026), VGC, Pure Xbox, Xbox Wire\nGame footage © Microsoft / Xbox Game Studios.",
+  "tags": [
+    "gears of war e-day",
+    "gears of war",
+    "gears e-day",
+    "e-day ddos",
+    "gears of war e-day ddos",
+    "gears of war e-day servers",
+    "gears of war e-day server down",
+    "gears of war e-day login issues",
+    "gears of war e-day multiplayer",
+    "the coalition",
+    "xbox news",
+    "gaming news"
+  ],
+  "hashtags": [
+    "#gearsofwar",
+    "#xbox",
+    "#gearsofwareday"
+  ],
+  "publish_at": "2026-10-13T17:00:00Z",
+  "scenes": [
+    {
+      "text": "Gears of War: E-Day was hit by a DDoS attack.",
+      "trailer": true,
+      "search": "soldier ruined city smoke"
+    },
+    {
+      "text": "Over the weekend, players struggled to connect to multiplayer matches, and some got dropped mid-game.",
+      "search": "gamer frustrated controller dark room"
+    },
+    {
+      "text": "On October 12, The Coalition confirmed that DDoS attacks were targeting the game's online services.",
+      "search": "server room network cables"
+    },
+    {
+      "text": "It said players faced intermittent disconnects, login issues and other service disruptions.",
+      "trailer": true,
+      "search": "explosion night city ruins"
+    },
+    {
+      "text": "The team says it is still monitoring and fighting the attacks, and will share updates if anything major changes.",
+      "search": "cyber security screen code"
+    },
+    {
+      "text": "E-Day launched October 6 on Xbox Series X|S and PC.",
+      "trailer": true,
+      "search": "soldiers squad battlefield"
+    }
+  ]
+}
