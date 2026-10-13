@@ -178,6 +178,9 @@ def upload(video: Path, episode: dict) -> tuple[str, str]:
     if episode.get("_credits"):  # CC BY / CC BY-SA görseller için zorunlu atıf
         head = "Görseller (Wikimedia Commons):" if episode.get("language") == "tr" else "Images (Wikimedia Commons):"
         desc += "\n\n" + head + "\n" + "\n".join(f"• {c}" for c in episode["_credits"][:8])
+    if episode.get("_nasa"):
+        desc += "\n\n" + ("Görüntüler: NASA (images.nasa.gov)" if episode.get("language") == "tr"
+                           else "Footage and images: NASA (images.nasa.gov)")
     if episode.get("_chapters") and len(episode["_chapters"]) >= 3:
         # YouTube bölümleri: 0:00 ile başlayan en az 3 zaman damgası
         lines = [f"{int(t // 60)}:{int(t % 60):02d} {title}" for t, title in episode["_chapters"]]

@@ -1,0 +1,58 @@
+{
+  "title": "What if Earth stopped orbiting the Sun? ☀️",
+  "hook": "WHAT IF EARTH STOPPED?",
+  "format": "what-if",
+  "subject": "sun",
+  "emphasis": [
+    "64 days",
+    "boil",
+    "apart"
+  ],
+  "description": "How many days would you last? 👇\n\nWhat would happen if Earth suddenly stopped orbiting the Sun? With no sideways speed, gravity would pull us straight in, and the fall would take about 64 days. Calculations put the oceans boiling around day 47. It's a thought experiment: nothing could really stop Earth's orbit.\n\nSources: Smithsonian Magazine (\"If Earth's Orbit Stopped, We Would Have About a Month to Contemplate Our Doom\", citing Aatish Bhatia's calculations for WIRED), Cornell University Ask an Astronomer via Universe Today",
+  "tags": [
+    "what if earth stopped orbiting the sun",
+    "earth falls into the sun",
+    "what if earth stopped moving",
+    "how long to fall into the sun",
+    "earth orbit stopped",
+    "what if",
+    "earth and sun",
+    "space facts",
+    "science",
+    "end of the world scenario",
+    "oceans boil",
+    "64 days"
+  ],
+  "hashtags": [
+    "#sun",
+    "#space",
+    "#earth"
+  ],
+  "scenes": [
+    {
+      "text": "Without Earth's orbit, you'd hit the Sun in 64 days.",
+      "search": "sun solar surface flares",
+      "nasa": "sun solar flare SDO"
+    },
+    {
+      "text": "Our sideways speed is the only thing keeping us from falling, so without it, gravity pulls us straight in.",
+      "search": "earth from space orbit",
+      "nasa": "earth from space ISS"
+    },
+    {
+      "text": "After 3 weeks, the average temperature passes 95 degrees Fahrenheit, and crops fail.",
+      "search": "dry cracked earth heat",
+      "nasa": "drought from space"
+    },
+    {
+      "text": "Around day 47, the oceans boil away, weeks before we even arrive.",
+      "search": "boiling water steam",
+      "nasa": "ocean from space"
+    },
+    {
+      "text": "And on day 64, the Sun's gravity tears Earth apart before it ever touches the surface.",
+      "search": "sun close up plasma",
+      "nasa": "sun corona SDO"
+    }
+  ]
+}

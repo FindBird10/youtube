@@ -90,6 +90,7 @@ class Scene:
     extra_clips: list[Path] = field(default_factory=list)
     extra_images: list[Path] = field(default_factory=list)
     trailer: bool = False            # arka plan oyunun Steam fragmanından kesilsin (gaming)
+    nasa: str | None = None          # NASA görsel/video kütüphanesinde aranacak sorgu (global)
 
 
 # ----------------------------------------------------------------- yardımcılar
@@ -776,7 +777,8 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
     CAPTION_LANG = language
     scenes = [Scene(text=s["text"].strip(), search=s.get("search", "").strip(),
                     image_query=(s.get("image") if isinstance(s.get("image"), str) else None),
-                    image_page=s.get("image_page"), trailer=bool(s.get("trailer")))
+                    image_page=s.get("image_page"), trailer=bool(s.get("trailer")),
+                    nasa=(s.get("nasa") or "").strip() or None)
               for s in episode["scenes"] if s.get("text", "").strip()]
     if not scenes:
         raise ValueError("Bölümde hiç sahne yok.")
@@ -831,6 +833,15 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
                 donor = min(placed, key=lambda k: (abs(k - i), k))
                 sc.clip = scenes[donor].clip
                 log(f"Sahne {i + 1}: fragman klibi yok, sahne {donor + 1}'in klibi kullanılıyor")
+    if any(sc.nasa for sc in scenes):
+        if offline:
+            for sc in scenes:
+                sc.search = sc.search or (sc.nasa or "")
+        else:
+            from nasa_media import assign as assign_nasa
+            n = assign_nasa(scenes, work)
+            log(f"NASA görüntüsü: {n}/{sum(1 for sc in scenes if sc.nasa)} sahne")
+            episode["_nasa"] = n > 0
     if wiki.get("site") and wiki.get("page") and any(sc.image_query is not None for sc in scenes) and not offline:
         from wiki_images import CREDITS, assign, list_images
         CREDITS.clear()
