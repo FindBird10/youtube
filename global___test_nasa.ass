@@ -1,0 +1,89 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Word,DejaVu Sans,112,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,1,0,1,6,3,2,60,60,560,1
+Style: Cap,DejaVu Sans,82,&H00FFFFFF,&H00FFFFFF,&H00202020,&H80000000,-1,0,0,0,100,100,0,0,1,6,3,2,80,80,560,1
+Style: Hook,DejaVu Sans,92,&H00FFFFFF,&H00FFFFFF,&H50000000,&H00000000,-1,0,0,0,100,100,0,0,3,22,0,8,110,110,300,1
+Style: Box,Poppins ExtraBold,94,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,6,3,2,60,60,560,1
+Style: Title,Anton,150,&H00FFFFFF,&H00FFFFFF,&H00000000,&H90000000,0,0,0,0,100,100,2,0,1,8,5,5,80,80,0,1
+Style: Dim,Poppins ExtraBold,10,&H60000000,&H60000000,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: Reveal,Poppins Medium,56,&H20FFFFFF,&H20FFFFFF,&H90000000,&H90000000,0,0,0,0,100,100,7,0,1,1.5,3,2,90,90,600,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 3,0:00:00.00,0:00:01.30,Dim,,0,0,0,,{\p1\fad(0,150)}m 0 0 l 1080 0 1080 1920 0 1920{\p0}
+Dialogue: 4,0:00:00.00,0:00:01.30,Title,,0,0,0,,{\q0\fad(0,180)\fscx135\fscy135\t(0,140,\fscx100\fscy100)}WHAT IF EARTH STOPPED?
+Dialogue: 0,0:00:01.40,0:00:01.76,Box,,0,0,0,,{\fs85}{\3c&HF65C8B&\bord16\shad0}WITHOUT{\3c&H000000&\bord6\shad3} EARTH'S
+Dialogue: 0,0:00:01.76,0:00:02.04,Box,,0,0,0,,{\fs85}WITHOUT {\3c&HF65C8B&\bord16\shad0}EARTH'S{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:02.04,0:00:02.88,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}ORBIT{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:02.88,0:00:03.03,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}YOU'D{\3c&H000000&\bord6\shad3} HIT THE
+Dialogue: 0,0:00:03.03,0:00:03.20,Box,,0,0,0,,{\fs94}YOU'D {\3c&HF65C8B&\bord16\shad0}HIT{\3c&H000000&\bord6\shad3} THE
+Dialogue: 0,0:00:03.20,0:00:03.30,Box,,0,0,0,,{\fs94}YOU'D HIT {\3c&HF65C8B&\bord16\shad0}THE{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:03.30,0:00:03.70,Box,,0,0,0,,{\fs91}{\3c&HF65C8B&\bord16\shad0}SUN{\3c&H000000&\bord6\shad3} IN 64 DAYS
+Dialogue: 0,0:00:03.70,0:00:03.88,Box,,0,0,0,,{\fs91}SUN {\3c&HF65C8B&\bord16\shad0}IN{\3c&H000000&\bord6\shad3} 64 DAYS
+Dialogue: 0,0:00:03.88,0:00:05.21,Box,,0,0,0,,{\fs91}SUN IN {\3c&HF65C8B&\bord16\shad0}64 DAYS{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:05.21,0:00:05.34,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}OUR{\3c&H000000&\bord6\shad3} SIDEWAYS
+Dialogue: 0,0:00:05.34,0:00:05.81,Box,,0,0,0,,{\fs94}OUR {\3c&HF65C8B&\bord16\shad0}SIDEWAYS{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:05.81,0:00:06.22,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}SPEED{\3c&H000000&\bord6\shad3} IS THE
+Dialogue: 0,0:00:06.22,0:00:06.40,Box,,0,0,0,,{\fs94}SPEED {\3c&HF65C8B&\bord16\shad0}IS{\3c&H000000&\bord6\shad3} THE
+Dialogue: 0,0:00:06.40,0:00:06.48,Box,,0,0,0,,{\fs94}SPEED IS {\3c&HF65C8B&\bord16\shad0}THE{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:06.48,0:00:06.84,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}ONLY{\3c&H000000&\bord6\shad3} THING
+Dialogue: 0,0:00:06.84,0:00:07.04,Box,,0,0,0,,{\fs94}ONLY {\3c&HF65C8B&\bord16\shad0}THING{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:07.04,0:00:07.37,Box,,0,0,0,,{\fs85}{\3c&HF65C8B&\bord16\shad0}KEEPING{\3c&H000000&\bord6\shad3} US FROM
+Dialogue: 0,0:00:07.37,0:00:07.52,Box,,0,0,0,,{\fs85}KEEPING {\3c&HF65C8B&\bord16\shad0}US{\3c&H000000&\bord6\shad3} FROM
+Dialogue: 0,0:00:07.52,0:00:07.68,Box,,0,0,0,,{\fs85}KEEPING US {\3c&HF65C8B&\bord16\shad0}FROM{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:07.68,0:00:08.18,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}FALLING{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:08.18,0:00:08.40,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}SO{\3c&H000000&\bord6\shad3} WITHOUT IT
+Dialogue: 0,0:00:08.40,0:00:08.73,Box,,0,0,0,,{\fs94}SO {\3c&HF65C8B&\bord16\shad0}WITHOUT{\3c&H000000&\bord6\shad3} IT
+Dialogue: 0,0:00:08.73,0:00:09.12,Box,,0,0,0,,{\fs94}SO WITHOUT {\3c&HF65C8B&\bord16\shad0}IT{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:09.12,0:00:09.62,Box,,0,0,0,,{\fs79}{\3c&HF65C8B&\bord16\shad0}GRAVITY{\3c&H000000&\bord6\shad3} PULLS US
+Dialogue: 0,0:00:09.62,0:00:09.90,Box,,0,0,0,,{\fs79}GRAVITY {\3c&HF65C8B&\bord16\shad0}PULLS{\3c&H000000&\bord6\shad3} US
+Dialogue: 0,0:00:09.90,0:00:09.98,Box,,0,0,0,,{\fs79}GRAVITY PULLS {\3c&HF65C8B&\bord16\shad0}US{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:09.98,0:00:10.30,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}STRAIGHT{\3c&H000000&\bord6\shad3} IN
+Dialogue: 0,0:00:10.30,0:00:10.86,Box,,0,0,0,,{\fs94}STRAIGHT {\3c&HF65C8B&\bord16\shad0}IN{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:10.86,0:00:11.11,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}AFTER{\3c&H000000&\bord6\shad3} 3 WEEKS
+Dialogue: 0,0:00:11.11,0:00:11.39,Box,,0,0,0,,{\fs94}AFTER {\3c&HF65C8B&\bord16\shad0}3{\3c&H000000&\bord6\shad3} WEEKS
+Dialogue: 0,0:00:11.39,0:00:12.13,Box,,0,0,0,,{\fs94}AFTER 3 {\3c&HF65C8B&\bord16\shad0}WEEKS{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:12.13,0:00:12.25,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}THE{\3c&H000000&\bord6\shad3} AVERAGE
+Dialogue: 0,0:00:12.25,0:00:12.65,Box,,0,0,0,,{\fs94}THE {\3c&HF65C8B&\bord16\shad0}AVERAGE{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:12.65,0:00:13.11,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}TEMPERATURE{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:13.11,0:00:13.54,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}PASSES{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:13.54,0:00:14.47,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}95 DEGREES{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:14.47,0:00:15.42,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}FAHRENHEIT{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:15.42,0:00:15.63,Box,,0,0,0,,{\fs91}{\3c&HF65C8B&\bord16\shad0}AND{\3c&H000000&\bord6\shad3} CROPS FAIL
+Dialogue: 0,0:00:15.63,0:00:16.01,Box,,0,0,0,,{\fs91}AND {\3c&HF65C8B&\bord16\shad0}CROPS{\3c&H000000&\bord6\shad3} FAIL
+Dialogue: 0,0:00:16.01,0:00:16.69,Box,,0,0,0,,{\fs91}AND CROPS {\3c&HF65C8B&\bord16\shad0}FAIL{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:16.69,0:00:17.02,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}AROUND{\3c&H000000&\bord6\shad3} DAY 47
+Dialogue: 0,0:00:17.02,0:00:17.19,Box,,0,0,0,,{\fs94}AROUND {\3c&HF65C8B&\bord16\shad0}DAY{\3c&H000000&\bord6\shad3} 47
+Dialogue: 0,0:00:17.19,0:00:18.41,Box,,0,0,0,,{\fs94}AROUND DAY {\3c&HF65C8B&\bord16\shad0}47{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:18.41,0:00:18.52,Box,,0,0,0,,{\fs85}{\3c&HF65C8B&\bord16\shad0}THE{\3c&H000000&\bord6\shad3} OCEANS BOIL
+Dialogue: 0,0:00:18.52,0:00:18.93,Box,,0,0,0,,{\fs85}THE {\3c&HF65C8B&\bord16\shad0}OCEANS{\3c&H000000&\bord6\shad3} BOIL
+Dialogue: 0,0:00:18.93,0:00:19.20,Box,,0,0,0,,{\fs85}THE OCEANS {\3c&HF65C8B&\bord16\shad0}BOIL{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:19.20,0:00:20.12,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}AWAY{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:20.13,0:00:20.44,Box,,0,0,0,,{\fs85}{\3c&HF65C8B&\bord16\shad0}WEEKS{\3c&H000000&\bord6\shad3} BEFORE WE
+Dialogue: 0,0:00:20.44,0:00:20.84,Box,,0,0,0,,{\fs85}WEEKS {\3c&HF65C8B&\bord16\shad0}BEFORE{\3c&H000000&\bord6\shad3} WE
+Dialogue: 0,0:00:20.84,0:00:21.00,Box,,0,0,0,,{\fs85}WEEKS BEFORE {\3c&HF65C8B&\bord16\shad0}WE{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:21.00,0:00:21.21,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}EVEN{\3c&H000000&\bord6\shad3} ARRIVE
+Dialogue: 0,0:00:21.21,0:00:22.02,Box,,0,0,0,,{\fs94}EVEN {\3c&HF65C8B&\bord16\shad0}ARRIVE{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:22.02,0:00:22.14,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}AND{\3c&H000000&\bord6\shad3} ON DAY
+Dialogue: 0,0:00:22.14,0:00:22.30,Box,,0,0,0,,{\fs94}AND {\3c&HF65C8B&\bord16\shad0}ON{\3c&H000000&\bord6\shad3} DAY
+Dialogue: 0,0:00:22.30,0:00:22.55,Box,,0,0,0,,{\fs94}AND ON {\3c&HF65C8B&\bord16\shad0}DAY{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:22.55,0:00:23.87,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}64{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:23.87,0:00:23.96,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}THE{\3c&H000000&\bord6\shad3} SUN'S
+Dialogue: 0,0:00:23.96,0:00:24.35,Box,,0,0,0,,{\fs94}THE {\3c&HF65C8B&\bord16\shad0}SUN'S{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:24.35,0:00:24.77,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}GRAVITY{\3c&H000000&\bord6\shad3} TEARS
+Dialogue: 0,0:00:24.77,0:00:25.19,Box,,0,0,0,,{\fs94}GRAVITY {\3c&HF65C8B&\bord16\shad0}TEARS{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:25.19,0:00:25.43,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}EARTH{\3c&H000000&\bord6\shad3} APART
+Dialogue: 0,0:00:25.43,0:00:25.95,Box,,0,0,0,,{\fs94}EARTH {\3c&HF65C8B&\bord16\shad0}APART{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:25.95,0:00:26.29,Box,,0,0,0,,{\fs91}{\3c&HF65C8B&\bord16\shad0}BEFORE{\3c&H000000&\bord6\shad3} IT EVER
+Dialogue: 0,0:00:26.29,0:00:26.45,Box,,0,0,0,,{\fs91}BEFORE {\3c&HF65C8B&\bord16\shad0}IT{\3c&H000000&\bord6\shad3} EVER
+Dialogue: 0,0:00:26.45,0:00:26.69,Box,,0,0,0,,{\fs91}BEFORE IT {\3c&HF65C8B&\bord16\shad0}EVER{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:26.69,0:00:27.14,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}TOUCHES{\3c&H000000&\bord6\shad3} THE
+Dialogue: 0,0:00:27.14,0:00:27.24,Box,,0,0,0,,{\fs94}TOUCHES {\3c&HF65C8B&\bord16\shad0}THE{\3c&H000000&\bord6\shad3}
+Dialogue: 0,0:00:27.24,0:00:28.42,Box,,0,0,0,,{\fs94}{\3c&HF65C8B&\bord16\shad0}SURFACE{\3c&H000000&\bord6\shad3}

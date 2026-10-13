@@ -1,0 +1,87 @@
+> Yükleme kapalı: videolar yalnızca üretilecek.
+[make_video] Seslendirme: Azure Speech (en-US-BrianMultilingualNeural, +5%)
+[make_video] Sahne 1: 0.0–3.9 sn, 9 kelime
+[make_video] Sahne 2: 3.9–9.6 sn, 19 kelime
+[make_video] Sahne 3: 9.6–15.4 sn, 12 kelime
+[make_video] Sahne 4: 15.4–20.7 sn, 12 kelime
+[make_video] Sahne 5: 20.7–27.4 sn, 16 kelime
+[ WARN:0@0.018] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] NASA’s SDO Captures Stunning View of April 17 Sola @10s elendi (siyah/düz)
+[ WARN:0@3.362] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@5.389] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@5.910] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@6.208] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@8.570] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] NASA’s SDO Captures Stunning View of April 17 Sola @16s elendi (siyah/düz)
+[ WARN:0@10.383] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@12.271] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@12.607] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@13.002] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Sahne 1: video 'NASA’s SDO Captures Stunning View of April 17 Solar Flare' (2 parça)
+[ WARN:0@15.552] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@17.297] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@17.600] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@17.954] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@19.974] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@21.690] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@21.995] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@22.349] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@24.345] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@26.073] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@26.387] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@26.739] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Sahne 2: video 'Earth Views from the ISS' (3 parça)
+[ WARN:0@29.559] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@31.486] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@31.853] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@32.121] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@34.089] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@35.820] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Brazil’s Extreme Drought Seen From Space @37s elendi (konuşan kişi)
+[ WARN:0@36.839] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Brazil’s Extreme Drought Seen From Space @29s elendi (siyah/düz)
+[ WARN:0@37.768] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Brazil’s Extreme Drought Seen From Space @45s elendi (siyah/düz)
+[ WARN:0@39.362] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@40.974] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Brazil’s Extreme Drought Seen From Space @86s elendi (konuşan kişi)
+[ WARN:0@43.116] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@45.248] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@45.644] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@46.096] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@48.264] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Brazil’s Extreme Drought Seen From Space @12s elendi (yazı %4)
+[ WARN:0@50.554] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@52.562] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@52.918] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@53.348] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Sahne 3: video 'Brazil’s Extreme Drought Seen From Space' (3 parça)
+[ WARN:0@56.571] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@58.754] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@59.146] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@59.616] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@62.408] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@64.328] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@64.675] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@65.088] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Sahne 4: video 'iss065m262071028_Expedition_65_Progress_77_and_Pirs_Undockin' (2 parça)
+[ WARN:0@68.016] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@69.976] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@70.324] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@70.743] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@73.066] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@75.181] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@75.557] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@76.011] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@78.761] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] SDO: Year 5 @148s elendi (yazı %4)
+[ WARN:0@81.187] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@83.178] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@83.535] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@83.951] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[nasa] Sahne 5: video 'SDO: Year 5' (3 parça)
+[make_video] NASA görüntüsü: 5/5 sahne
+[make_video] Ses efektleri: 5 olay
+[make_video] Müzik: birdsvault_merak.mp3 (0. sn'den)
+[make_video] Hazır: /home/runner/work/youtube/youtube/build/global___test_nasa.mp4 (28.7 sn)
+- 🎬 **What if Earth stopped orbiting the Sun? ☀️** üretildi: `build/global___test_nasa.mp4`
