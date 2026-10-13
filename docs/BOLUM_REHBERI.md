@@ -10,6 +10,22 @@ yazma.
 Her Short, `episodes/` klasöründe tek bir JSON dosyasıdır. Dosya `main` dalına gönderildiğinde GitHub
 Actions videoyu üretir ve YouTube'a yükler.
 
+## Yapay zekâ izi bırakmayan yazım (13 Ekim 2026) — her bölümde uygula
+
+İzleyiciler yapay zekâ metnini kalıp cümlelerden tanıyor (bir Global videosuna "AI slop" yorumu geldi). Kurallar:
+
+1. **Kalıp geçiş cümlesi yok:** "Ama asıl ilginç olan…", "İşte asıl…", "Peki ya…", "Biliyor muydunuz",
+   "İnanamayacaksınız", "Gelin birlikte…", "Kimse bunu beklemiyordu" vb. (tam liste: `tools/check_episode.py`).
+   Dönüm noktası bir kalıpla duyurulmaz, doğrudan somut bilgiyle gelir.
+   ✗ "Ama asıl şaşırtıcı olan şu: patlama tek değildi." ✓ "Patlama durmadı, sekiz ay sürdü."
+2. **Somutluk:** her videoda en az 2 özel isim (kişi, yer, kurum), en az 2 kesin rakam ya da tarih ve
+   araştırmadan gelen, çoğu videonun atladığı **1 ayrıntı**.
+3. **Abartı sıfatı en fazla 1:** tüyler ürpertici, korkunç, inanılmaz. Olayın kendisi etkilesin.
+4. **Yapıyı çeşitlendir:** son günlerin bölümleriyle aynı açılış kalıbı yok; sahneler aynı kelimelerle başlamaz.
+5. **Konuşur gibi yaz:** kısa ve uzun cümleler karışık; ders kitabı ya da reklam dili değil.
+6. Yazdıktan sonra `python tools/check_episode.py <dosya>` çalıştır: **HATA** kalmayana kadar düzelt,
+   **UYARI**'ları gözden geçir.
+
 ## Güncelleme (9 Ekim 2026): Türkiye videoları kanalın motoru
 
 Yeni kurallarla yazılan 9 videoda (6–8 Ekim), formata göre izlenmeler:

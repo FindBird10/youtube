@@ -4,6 +4,26 @@ Kanal: oyun karakterlerinin hikâyelerini anlatan **İngilizce** Shorts · Günd
 Bölümler `episodes/gaming/` klasörüne yazılır; kanal, dil (`en`), stil (`cinematic`) ve format
 (`lore`) klasörden otomatik gelir, bu alanları yazma. Ses: Andrew (otomatik).
 
+## Yapay zekâ izi bırakmayan yazım (13 Ekim 2026) — her bölümde uygula
+
+Bir izleyici Global Shorts'una "narrator, texts and video is AI. This is AI slop" yazdı. Son 12 Global videosunun
+10'unda aynı kalıp cümle ("But here's the strange part.") vardı. Kurallar:
+
+1. **Kalıp geçiş cümlesi yok:** "But here's the strange part", "Here's the thing", "But that's not all",
+   "the strangest part", "you won't believe", "Did you know", "little did they know", "buckle up",
+   "Tonight, we open the file" vb. (tam liste: `tools/check_episode.py`). Dönüm noktası bir kalıpla duyurulmaz,
+   doğrudan somut bilgiyle gelir.
+   ✗ "But here's the strange part. It wasn't one eruption." ✓ "The eruption didn't stop. It went on for eight months."
+2. **Somutluk:** her videoda en az 2 özel isim (kişi, yer, kurum, gemi…), en az 2 kesin rakam ya da tarih ve
+   araştırmadan gelen, çoğu videonun atladığı **1 ayrıntı** (bir tanığın sözü, bir raporun bulgusu, bir ölçüm).
+3. **Abartı sıfatı en fazla 1:** chilling, eerie, terrifying, mind-blowing, shocking. Olayın kendisi korkutsun.
+4. **Yapıyı çeşitlendir:** son günlerin bölümleriyle aynı açılış kalıbı yok; sahneler aynı kelimelerle başlamaz;
+   kanca türünü değiştir (bir an, bir rakam, bir alıntı, bir yer, bir nesne).
+5. **Konuşur gibi yaz:** kısa ve uzun cümleler karışık; ders kitabı, reklam ya da "içerik" dili değil, olayı
+   anlatan gerçek bir anlatıcının cümleleri.
+6. Yazdıktan sonra `python tools/check_episode.py <dosya>` çalıştır: **HATA** kalmayana kadar düzelt,
+   **UYARI**'ları gözden geçir.
+
 ## Günün karakteri
 
 Her gün **tek bir karakter** seçilir ve o karakter hakkında 3 farklı açıdan 3 video yazılır.
@@ -108,7 +128,7 @@ Hareketli görüntü için oyunun **resmî Steam mağaza fragmanlarından** kıs
    bite made her the most important person on Earth."). Selamlama, "Did you know", oyun adıyla
    açılış yok.
 3. **Akış:** sinematik, sakin ve duygulu anlatım; kısa cümleler ama arka arkaya noktalarla
-   kesme. Ortada bir kez yeniden kanca ("But that's not the worst part.").
+   kesme. Ortada bir dönüm noktası olsun, kalıp cümleyle değil doğrudan olayla ("Then Joel found the hospital.").
 4. **Kapanış = tam cümle:** son cümle **mutlaka tamamlanmış** bir cümledir (". ! ?" ile biter). Yarım
    bırakma ("And back then," gibi) yok: 9 Ekim'de izleyiciler cümle ortasında biten anlatımdan şikâyet
    etti. Döngü istenirse son cümle tam bir cümle olarak açılışa göndermede bulunur ("And it all started

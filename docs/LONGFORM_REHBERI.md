@@ -9,6 +9,26 @@ Video şöyle akar: **soğuk açılış** (1. bölüm, bölüm kartı yok) → *
 önce **CHAPTER N** kartı → sonda kırmızı damgalı **CASE STATUS** kartı. Açıklamaya YouTube bölüm zamanları
 otomatik eklenir. Kapak görseli otomatik üretilir (`thumbnail` alanından).
 
+## Yapay zekâ izi bırakmayan yazım (13 Ekim 2026) — her bölümde uygula
+
+Bir izleyici Global Shorts'una "narrator, texts and video is AI. This is AI slop" yazdı. Son 12 Global videosunun
+10'unda aynı kalıp cümle ("But here's the strange part.") vardı. Kurallar:
+
+1. **Kalıp geçiş cümlesi yok:** "But here's the strange part", "Here's the thing", "But that's not all",
+   "the strangest part", "you won't believe", "Did you know", "little did they know", "buckle up",
+   "Tonight, we open the file" vb. (tam liste: `tools/check_episode.py`). Dönüm noktası bir kalıpla duyurulmaz,
+   doğrudan somut bilgiyle gelir.
+   ✗ "But here's the strange part. It wasn't one eruption." ✓ "The eruption didn't stop. It went on for eight months."
+2. **Somutluk:** her videoda en az 2 özel isim (kişi, yer, kurum, gemi…), en az 2 kesin rakam ya da tarih ve
+   araştırmadan gelen, çoğu videonun atladığı **1 ayrıntı** (bir tanığın sözü, bir raporun bulgusu, bir ölçüm).
+3. **Abartı sıfatı en fazla 1:** chilling, eerie, terrifying, mind-blowing, shocking. Olayın kendisi korkutsun.
+4. **Yapıyı çeşitlendir:** son günlerin bölümleriyle aynı açılış kalıbı yok; sahneler aynı kelimelerle başlamaz;
+   kanca türünü değiştir (bir an, bir rakam, bir alıntı, bir yer, bir nesne).
+5. **Konuşur gibi yaz:** kısa ve uzun cümleler karışık; ders kitabı, reklam ya da "içerik" dili değil, olayı
+   anlatan gerçek bir anlatıcının cümleleri.
+6. Yazdıktan sonra `python tools/check_episode.py <dosya>` çalıştır: **HATA** kalmayana kadar düzelt,
+   **UYARI**'ları gözden geçir.
+
 ## Günlük akış
 
 | Gün | Yayın saati (ABD Doğu) | `publish_at` |
@@ -40,7 +60,7 @@ Dosya adı: `episodes/longform/YYYY-AA-GG-kisa-konu.json` (tarih = yayın günü
 
 | Bölüm | İçerik | Kelime |
 |---|---|---|
-| 0 — soğuk açılış | Vakanın en tuhaf anı; sonunda "Tonight, we open the file." gibi bir kapanış | 100–140 |
+| 0 — soğuk açılış | Vakanın en tuhaf anı; sonunda vakayı tek cümlede tanıtan, her seferinde farklı bir kapanış | 100–140 |
 | 1 | Kimler, nerede, ne zaman: arka plan | 180–230 |
 | 2 | Olay: ne oldu, nasıl fark edildi | 180–230 |
 | 3 | Soruşturma ve arama: kanıtlar | 180–230 |
@@ -49,7 +69,8 @@ Dosya adı: `episodes/longform/YYYY-AA-GG-kisa-konu.json` (tarih = yayın günü
 | 6 | En iyi cevap ve hâlâ açık kalanlar; son cümle açılışa göndermede bulunur | 150–220 |
 
 - Bölüm başlıkları kısa ve merak uyandırıcı (2–5 kelime): "The Empty Tent", "The Ravine", "An Answer?".
-- Her bölüm küçük bir merak kancasıyla biter ("But that was not the strangest part.").
+- Her bölüm küçük bir merak kancasıyla biter: kalıp cümleyle değil, bir sonraki bölümü açan somut bir bilgiyle
+  ("Five of the nine were found. Four were still missing.").
 - Her sahne 1–3 cümle, **20–35 kelime**. Bölüm başına 5–8 sahne.
 
 ## Yazım üslubu

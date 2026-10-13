@@ -4,6 +4,26 @@ Kanal: dünya geneline **İngilizce** merak videoları · Günde **3** video · 
 `episodes/global/` klasörüne yazılır; dil (`en`) ve stil (`global`: açılış başlık kartı, mor kutulu
 altyazı, hızlı kesmeler) klasörden otomatik gelir.
 
+## Yapay zekâ izi bırakmayan yazım (13 Ekim 2026) — her bölümde uygula
+
+Bir izleyici Global Shorts'una "narrator, texts and video is AI. This is AI slop" yazdı. Son 12 Global videosunun
+10'unda aynı kalıp cümle ("But here's the strange part.") vardı. Kurallar:
+
+1. **Kalıp geçiş cümlesi yok:** "But here's the strange part", "Here's the thing", "But that's not all",
+   "the strangest part", "you won't believe", "Did you know", "little did they know", "buckle up",
+   "Tonight, we open the file" vb. (tam liste: `tools/check_episode.py`). Dönüm noktası bir kalıpla duyurulmaz,
+   doğrudan somut bilgiyle gelir.
+   ✗ "But here's the strange part. It wasn't one eruption." ✓ "The eruption didn't stop. It went on for eight months."
+2. **Somutluk:** her videoda en az 2 özel isim (kişi, yer, kurum, gemi…), en az 2 kesin rakam ya da tarih ve
+   araştırmadan gelen, çoğu videonun atladığı **1 ayrıntı** (bir tanığın sözü, bir raporun bulgusu, bir ölçüm).
+3. **Abartı sıfatı en fazla 1:** chilling, eerie, terrifying, mind-blowing, shocking. Olayın kendisi korkutsun.
+4. **Yapıyı çeşitlendir:** son günlerin bölümleriyle aynı açılış kalıbı yok; sahneler aynı kelimelerle başlamaz;
+   kanca türünü değiştir (bir an, bir rakam, bir alıntı, bir yer, bir nesne).
+5. **Konuşur gibi yaz:** kısa ve uzun cümleler karışık; ders kitabı, reklam ya da "içerik" dili değil, olayı
+   anlatan gerçek bir anlatıcının cümleleri.
+6. Yazdıktan sonra `python tools/check_episode.py <dosya>` çalıştır: **HATA** kalmayana kadar düzelt,
+   **UYARI**'ları gözden geçir.
+
 ## Güncelleme (9 Ekim 2026): yeni kurallar çalıştı
 
 7–8 Ekim'de yeni kurallarla yazılan 6 videonun medyanı ~355 (önceki 15 videonun medyanı ~10):
@@ -92,7 +112,8 @@ fiziksel görüntü gösteriyor mu?" Hayırsa başka konu seç.
 
 1. **Süre:** 55–85 kelime (≈22–33 sn), asla 90'ı geçme. Tek fikir.
 2. **Kanca:** İlk cümle en fazla 10 kelime ve kaydırmayı durdurur; "Did you know", selamlama yok.
-3. Cevabı/sonucu sona doğru ver; ortada bir kez yeniden kanca ("But here's the strange part.").
+3. Cevabı/sonucu sona doğru ver; ortada bir dönüm noktası olsun, ama kalıp cümleyle değil doğrudan somut bilgiyle
+   ("Around day 47, the oceans start to boil.").
 4. **Kapanış = tam cümle:** son cümle **mutlaka tamamlanmış** bir cümledir (". ! ?" ile biter). Yarım
    bırakma ("And back then," gibi) yok: 9 Ekim'de izleyiciler cümle ortasında biten anlatımdan şikâyet
    etti. Döngü istenirse son cümle tam bir cümle olarak açılışa göndermede bulunur ("That's how loud
