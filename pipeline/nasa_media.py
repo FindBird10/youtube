@@ -19,9 +19,10 @@ API = "https://images-api.nasa.gov/search"
 UA = "BirdsVaultShorts/1.0 (+https://github.com/FindBird10/youtube)"
 COPYRIGHT_RE = re.compile(r"©|copyright|all rights reserved", re.I)
 SYNTH_RE = re.compile(r"artist'?s? (concept|impression|rendering)|illustration|animation|animated|simulation|"
-                      r"visualization|conceptual|render(ing)?\b", re.I)
+                      r"visualization|conceptual|render(ing)?\b|explainer|cartoon|drawn|sketch|infographic", re.I)
 TALK_RE = re.compile(r"interview|press conference|briefing|news conference|panel|lecture|talk\b|webinar|"
-                     r"town hall|podcast|ceremony|award", re.I)
+                     r"town hall|podcast|ceremony|award|explains|discusses|scientist|researcher|q&a|"
+                     r"media resources|b-roll package|soundbite", re.I)
 STOP = {"the", "a", "an", "of", "in", "on", "from", "and", "with", "to", "at"}
 USED: set[str] = set()
 
@@ -99,6 +100,28 @@ def _cut(url: str, start: float, length: float, out: Path) -> bool:
     return r.returncode == 0 and out.exists() and out.stat().st_size > 50_000
 
 
+def _footage_ok(clip: Path, work: Path, length: float) -> tuple[bool, str]:
+    """NASA'ya özgü ek eleme: röportaj/konuşan kişi ve tüm karedeki isim yazıları (alt bant).
+
+    Karede büyük bir yüz varsa (röportaj) ya da tam genişlikte yazı oranı yüksekse klip kullanılmaz.
+    """
+    from faces import focus
+    from text_detect import text_ratio
+
+    for k, frac in enumerate((0.2, 0.5, 0.8)):
+        frame = work / f"{clip.stem}_n{k}.jpg"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{length * frac:.2f}", "-i", str(clip),
+                        "-frames:v", "1", "-vf", "scale=640:-2", str(frame)], capture_output=True, timeout=60)
+        if not frame.exists():
+            continue
+        f = focus(frame)
+        if f and f[2] >= 0.16:
+            return False, "konuşan kişi"
+        if text_ratio(frame) > 0.012:
+            return False, "isim/yazı bandı"
+    return True, ""
+
+
 def _video_clips(item: dict, n: int, length: float, work: Path, tag: str) -> list[Path]:
     from game_trailers import _frame_ok
 
@@ -127,7 +150,9 @@ def _video_clips(item: dict, n: int, length: float, work: Path, tag: str) -> lis
         out = work / f"nasa_{tag}_{k}_{int(st)}.mp4"
         if not _cut(src, st, length, out):
             continue
-        ok, _, why = _frame_ok(out, work, length)
+        ok, mid, why = _frame_ok(out, work, length)
+        if ok:
+            ok, why = _footage_ok(out, work, length)
         if not ok:
             _log(f"{item['title'][:50]} @{st:.0f}s elendi ({why})")
             continue

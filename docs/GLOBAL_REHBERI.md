@@ -92,6 +92,22 @@ görevi, yıldönümü). Daha önce işlenen konuları (`episodes/global/`, `sta
 Seçmeden önce test: "Bu konunun ilk karesi ve ilk cümlesi, hiç bilmeyen birine 1 saniyede imkânsız bir
 fiziksel görüntü gösteriyor mu?" Hayırsa başka konu seç.
 
+## Görseller (13 Ekim 2026): önce gerçek görüntü, stok en son
+
+"Video is AI" eleştirisinin bir nedeni de genel stok görüntüydü. Her sahnede önce **gerçek** kaynak kullan:
+
+- **`"nasa": "<İngilizce sorgu>"`** → NASA Görsel ve Video Kütüphanesi (images.nasa.gov): gerçek uzay ve Dünya
+  çekimleri, önce video, yoksa fotoğraf. what-if, uzay, Güneş, volkan, kasırga, iklim konularında birinci tercih.
+  Sorguyu NASA'nın kendi adlandırmasıyla yaz: "earth from ISS", "SDO solar flare", "hurricane from space",
+  "volcano eruption from space", "Apollo 11 launch", "Hubble galaxy", "astronaut spacewalk", "aurora from ISS".
+- **`"wiki": {...}` + sahnede `"image": "anahtar kelimeler"`** → Wikipedia/Commons arşiv fotoğrafları, gravürler,
+  haritalar, belgeler. dark-history'de birinci tercih (ör. Centralia, Krakatoa gravürleri, Tambora haritası).
+- **`body`** konularında: NASA insan araştırması görüntüleri ("astronaut exercise ISS", "astronaut sleeping ISS",
+  "astronaut medical exam") ya da Wikipedia (tarihî deney fotoğrafları, anatomi çizimleri).
+- **`"search"`** (stok video) yalnızca atmosfer ya da kişi çekimi için ve **en fazla 2 sahnede**. `nasa` olan her
+  sahneye yedek olarak bir `search` de yaz (NASA'da sonuç çıkmazsa ona düşülür).
+- **1. sahne** en güçlü gerçek görüntü olsun: izleyici ilk karede "bu gerçek" desin.
+
 ## Alanlar
 
 | Alan | Zorunlu | Açıklama |
@@ -104,7 +120,7 @@ fiziksel görüntü gösteriyor mu?" Hayırsa başka konu seç.
 | `tags` | ✔ | 10–15 arama ifadesi (konu adı, soru biçimi, eş anlamlılar). Format etiketleri otomatik. |
 | `hashtags` | ✔ | 2–4 konuya özel hashtag. `#Shorts` ve format hashtag'leri otomatik. |
 | `publish_at` | ✔ | Tablodaki saat (UTC). |
-| `scenes` | ✔ | 4–6 sahne: `text` + `search` (stok video için somut İngilizce 2–4 kelime, çoğu ana özneyle başlar). |
+| `scenes` | ✔ | 4–6 sahne: `text` + `nasa` ya da `image` (gerçek görüntü, yukarıya bak) + yedek `search` (somut İngilizce 2–4 kelime). |
 
 `style`, `language`, `voice`, `rate`, `privacy` **yazma**.
 
