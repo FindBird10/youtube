@@ -1,0 +1,68 @@
+{
+  "title": "How many G's can your body take? 🚀",
+  "hook": "YOUR BODY UNDER G-FORCE",
+  "format": "body",
+  "subject": "pilot",
+  "emphasis": [
+    "black",
+    "12 seconds",
+    "46.2 G"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "John Stapp"
+  },
+  "description": "Have you ever felt your vision fade on a ride or a fast stand-up? 👇\n\nWhy do pilots black out under G-force, and how much can a human survive? Centrifuge studies show blackout starting around 4 to 5.6 G, while Air Force doctor John Stapp survived 46.2 G on a rocket sled in 1954.\n\nSources: NIH / StatPearls (\"G-Force Induced Loss of Consciousness\"), Wikipedia (\"John Stapp\", citing Aviation Week, 1955), NASA",
+  "tags": [
+    "g force",
+    "how many g can a human survive",
+    "g-loc",
+    "g force blackout",
+    "why pilots black out",
+    "g force on human body",
+    "john stapp",
+    "rocket sled",
+    "46.2 g",
+    "fighter pilot g force",
+    "centrifuge training",
+    "human body facts",
+    "9 g"
+  ],
+  "hashtags": [
+    "#gforce",
+    "#pilot",
+    "#humanbody"
+  ],
+  "publish_at": "2026-10-14T19:00:00Z",
+  "scenes": [
+    {
+      "text": "At around 5 G, your vision goes black.",
+      "nasa": "astronaut centrifuge",
+      "search": "fighter jet pilot cockpit"
+    },
+    {
+      "text": "Your heart can't push blood up to your brain, so it drains toward your legs.",
+      "nasa": "Mercury astronaut centrifuge training",
+      "search": "pilot g force face"
+    },
+    {
+      "text": "In 888 centrifuge blackouts, people stayed out for about 12 seconds, then confused for 16 more.",
+      "nasa": "human centrifuge Ames",
+      "search": "centrifuge spinning machine"
+    },
+    {
+      "text": "Fighter pilots wear suits that squeeze their legs.",
+      "search": "fighter jet sharp turn"
+    },
+    {
+      "text": "Air Force doctor John Stapp went further. In 1954, his rocket sled stopped from 632 mph in 1.4 seconds.",
+      "image": "Stapp",
+      "search": "rocket sled test track"
+    },
+    {
+      "text": "He took 46.2 G, said his eyes felt like a molar being pulled, and survived with no lasting injury.",
+      "image": "Stapp sled",
+      "search": "desert test track"
+    }
+  ]
+}
