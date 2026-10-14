@@ -1,0 +1,78 @@
+{
+  "title": "How Master Chief was taken at age six in Halo",
+  "angle": "origin",
+  "subject": "masterchief",
+  "wiki": {
+    "site": "halo.fandom.com",
+    "page": "John-117",
+    "avoid": [
+      "tv show",
+      "tv series",
+      "paramount",
+      "concept",
+      "comic",
+      "fortnite",
+      "lego",
+      "halo wars",
+      "novel",
+      "cover"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 2806050
+  },
+  "description": "Would you have survived the Spartan program? 👇\n\nHow a six-year-old boy from Eridanus II became John-117, the Master Chief of Halo. Spoilers for Halo lore.\n\nFan-made content. Not affiliated with or endorsed by Halo Studios, Xbox Game Studios or Microsoft. Game images © their respective owners.",
+  "tags": [
+    "master chief",
+    "halo",
+    "john 117",
+    "master chief story",
+    "master chief origin",
+    "master chief explained",
+    "halo lore",
+    "spartan ii",
+    "spartan program",
+    "catherine halsey",
+    "halo backstory",
+    "halo campaign evolved",
+    "halo mcc"
+  ],
+  "hashtags": [
+    "#halo",
+    "#masterchief",
+    "#john117"
+  ],
+  "publish_at": "2026-10-14T17:00:00Z",
+  "scenes": [
+    {
+      "text": "He was six years old when a stranger chose him.",
+      "image": "Master Chief"
+    },
+    {
+      "text": "In 2517, Dr. Catherine Halsey came to Elysium City on Eridanus II.",
+      "image": "Halsey",
+      "image_page": "Catherine Halsey"
+    },
+    {
+      "text": "Her last test was a coin toss. John caught it mid-air and called the side.",
+      "image": "John young"
+    },
+    {
+      "text": "That year, he and 74 other children were taken and replaced with clones that later died.",
+      "image": "Spartan-II"
+    },
+    {
+      "text": "On Reach, Chief Petty Officer Franklin Mendez trained them for eight years.",
+      "image": "Reach training"
+    },
+    {
+      "text": "At fourteen came the augmentations. Thirty of the children died, and twelve were left disabled.",
+      "image": "augmentation"
+    },
+    {
+      "text": "John walked out unscathed. Halsey later called him quite possibly the luckiest of them all.",
+      "image": "Master Chief",
+      "still": true
+    }
+  ]
+}
