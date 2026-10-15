@@ -1,0 +1,70 @@
+{
+  "title": "The earthquake wave that crossed the Pacific 🌊",
+  "hook": "IT CROSSED AN OCEAN",
+  "format": "dark-history",
+  "subject": "tsunami",
+  "emphasis": [
+    "9.5",
+    "22 hours",
+    "Japan"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "1960 Valdivia earthquake"
+  },
+  "description": "Could a tsunami warning today stop this from happening again? 👇\n\nOn May 22, 1960, a magnitude 9.5 earthquake in southern Chile, the strongest ever recorded, sent a tsunami across the whole Pacific. It hit Hilo, Hawaii, about 15 hours later and Japan about 22 hours later, where nobody had felt the quake and no alert was issued.\n\nSources: Britannica (\"Chile earthquake of 1960\"), INGV Centro Allerta Tsunami (\"22 May 1960: sixty years after the biggest earthquake ever recorded and the global tsunami\"), USGS",
+  "tags": [
+    "1960 valdivia earthquake",
+    "great chilean earthquake",
+    "biggest earthquake ever recorded",
+    "strongest earthquake in history",
+    "1960 chile tsunami",
+    "hilo tsunami 1960",
+    "tsunami crossed the pacific",
+    "9.5 earthquake",
+    "cordon caulle eruption",
+    "dark history",
+    "history facts",
+    "tsunami",
+    "earthquake history"
+  ],
+  "hashtags": [
+    "#tsunami",
+    "#earthquake",
+    "#history"
+  ],
+  "publish_at": "2026-10-15T23:00:00Z",
+  "scenes": [
+    {
+      "text": "A wave crossed the entire Pacific Ocean.",
+      "image": "tsunami travel time map 1960",
+      "search": "pacific ocean waves aerial"
+    },
+    {
+      "text": "It began with a magnitude 9.5 earthquake in southern Chile on May 22, 1960.",
+      "image": "Valdivia after earthquake 1960",
+      "search": "destroyed old town street"
+    },
+    {
+      "text": "The strongest ever recorded, it tore open a fault about 600 miles long.",
+      "image": "Valdivia earthquake",
+      "search": "cracked ground earthquake"
+    },
+    {
+      "text": "Nearly 15 hours later, waves up to 35 feet hit Hilo, Hawaii, killing 61 people.",
+      "image": "Hilo tsunami",
+      "search": "hawaii coast waves"
+    },
+    {
+      "text": "About 22 hours later it reached Japan, where nobody had felt the quake. No alert went out, and 138 people died.",
+      "image": "tsunami Japan",
+      "search": "japanese fishing harbor"
+    },
+    {
+      "text": "Two days later, Chile's Cordón Caulle volcano erupted after nearly 40 quiet years.",
+      "image": "eruption",
+      "image_page": "Cordón Caulle",
+      "search": "volcano eruption ash cloud"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "title": "How long you'd last if your plane lost pressure ✈️",
+  "hook": "YOU HAVE 30 SECONDS",
+  "format": "body",
+  "subject": "airplane",
+  "emphasis": [
+    "30 seconds",
+    "feel fine",
+    "first"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Helios Airways Flight 522"
+  },
+  "description": "Would you get your mask on in time? 👇\n\nWhat happens to your body if a plane loses cabin pressure at 35,000 feet? Aviation medicine tables give you 30 seconds to 1 minute of useful consciousness, and low oxygen can feel calm, even pleasant. In FAA altitude chamber tests, people couldn't write their names but thought they were fine.\n\nSources: FAA (\"Hypoxia: The Higher You Fly… The Less Air in the Sky\"), Naval Medical Research Unit Dayton (NAMRU-D Report 16-19, time of useful consciousness table), Wikipedia (\"Helios Airways Flight 522\", citing the Greek AAIASB final report)",
+  "tags": [
+    "plane loses cabin pressure",
+    "what happens if a plane loses pressure",
+    "time of useful consciousness",
+    "hypoxia",
+    "hypoxia at altitude",
+    "oxygen masks plane",
+    "why put your own mask on first",
+    "helios airways 522",
+    "helios flight 522",
+    "35000 feet",
+    "cabin decompression",
+    "human body facts",
+    "aviation facts"
+  ],
+  "hashtags": [
+    "#aviation",
+    "#hypoxia",
+    "#humanbody"
+  ],
+  "publish_at": "2026-10-15T19:00:00Z",
+  "scenes": [
+    {
+      "text": "Your plane loses pressure at 35,000 feet. You get about 30 seconds.",
+      "image": "oxygen mask",
+      "image_page": "Emergency oxygen system",
+      "search": "airplane oxygen masks cabin"
+    },
+    {
+      "text": "Pilots call it time of useful consciousness: 30 seconds to 1 minute up there.",
+      "nasa": "altitude chamber",
+      "search": "airplane window clouds high"
+    },
+    {
+      "text": "You probably won't panic. Low oxygen can feel calm, even pleasant.",
+      "nasa": "pilot oxygen mask",
+      "search": "passenger sleeping airplane"
+    },
+    {
+      "text": "In FAA chamber tests, people couldn't write their names, yet thought they were fine.",
+      "nasa": "hypobaric chamber training",
+      "search": "hand writing shaky"
+    },
+    {
+      "text": "In 2005, the pilots of Helios Airways Flight 522 mistook their pressure alarm for another warning and blacked out.",
+      "image": "5B-DBY",
+      "search": "boeing 737 flying"
+    },
+    {
+      "text": "That's why the masks drop on their own, and why yours goes on first.",
+      "image": "oxygen mask",
+      "image_page": "Emergency oxygen system",
+      "search": "flight attendant safety demonstration"
+    }
+  ]
+}
