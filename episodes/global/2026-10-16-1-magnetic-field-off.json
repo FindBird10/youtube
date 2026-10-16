@@ -1,0 +1,66 @@
+{
+  "title": "What if Earth's magnetic field switched off? 🧲",
+  "hook": "IF EARTH'S SHIELD FAILED",
+  "format": "what-if",
+  "subject": "magnetosphere",
+  "emphasis": [
+    "equator",
+    "5 percent",
+    "100 grams"
+  ],
+  "description": "Would you rather lose the magnetic field or the ozone layer? 👇\n\nWhat would happen if Earth's magnetic field disappeared? 41,000 years ago, during the Laschamp event, it fell to about 5% of today's strength. Mars shows what a planet without a global field looks like over billions of years.\n\nSources: University of Oulu / Journal of Geophysical Research: Space Physics (Laschamp excursion, 2026), University of Michigan via Space.com (\"41,000 years ago, auroras blazed near the equator\"), NASA MAVEN mission (Spaceflight Now, 2015), Wikipedia (\"South Atlantic Anomaly\")",
+  "tags": [
+    "what if earth lost its magnetic field",
+    "what if the magnetic field disappeared",
+    "earth magnetic field",
+    "magnetosphere",
+    "laschamp event",
+    "laschamp excursion",
+    "south atlantic anomaly",
+    "magnetic pole reversal",
+    "mars atmosphere loss",
+    "maven mars",
+    "solar wind",
+    "what if",
+    "space facts",
+    "auroras at the equator"
+  ],
+  "hashtags": [
+    "#space",
+    "#earth",
+    "#aurora"
+  ],
+  "publish_at": "2026-10-16T15:00:00Z",
+  "scenes": [
+    {
+      "text": "Picture the northern lights over the equator.",
+      "nasa": "aurora from ISS",
+      "search": "aurora borealis night sky"
+    },
+    {
+      "text": "Models suggest it happened 41,000 years ago, when Earth's magnetic field fell to 5 percent.",
+      "nasa": "magnetosphere",
+      "search": "earth from space night"
+    },
+    {
+      "text": "Switch it off completely, and the solar wind slams into the upper air.",
+      "nasa": "SDO solar flare",
+      "search": "sun solar flare space"
+    },
+    {
+      "text": "Even now, Hubble turns off its UV detectors over one weak spot, the South Atlantic Anomaly.",
+      "nasa": "Hubble Space Telescope orbit",
+      "search": "satellite orbiting earth"
+    },
+    {
+      "text": "Over millions of years, the air could leak away. NASA's MAVEN probe measured Mars losing 100 grams of atmosphere a second.",
+      "nasa": "MAVEN Mars atmosphere",
+      "search": "mars planet surface"
+    },
+    {
+      "text": "Earth's field isn't vanishing, but it weakened about 9 percent in 200 years.",
+      "nasa": "earth from ISS",
+      "search": "earth rotating space"
+    }
+  ]
+}
