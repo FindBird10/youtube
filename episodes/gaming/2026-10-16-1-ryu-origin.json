@@ -1,0 +1,85 @@
+{
+  "title": "Why Ryu never knew his parents in Street Fighter",
+  "angle": "origin",
+  "subject": "ryu",
+  "wiki": {
+    "site": "streetfighter.fandom.com",
+    "page": "Ryu",
+    "avoid": [
+      "smash",
+      "ssbu",
+      "ultimate",
+      "concept",
+      "artwork",
+      "cosplay",
+      "comic",
+      "manga",
+      "movie",
+      "film",
+      "udon",
+      "sketch",
+      "marvel",
+      "tekken"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 1364780
+  },
+  "description": "Who do you think Ryu's parents were? 👇\n\nHow an orphan raised by Gouken became the most famous fighter in Street Fighter, and lost his master. Spoilers for the Street Fighter series.\n\nFan-made content. Not affiliated with or endorsed by Capcom. Game images © their respective owners.",
+  "tags": [
+    "ryu",
+    "ryu street fighter",
+    "street fighter",
+    "street fighter 6",
+    "sf6",
+    "ryu story",
+    "ryu explained",
+    "street fighter lore",
+    "gouken",
+    "akuma",
+    "ryu and ken",
+    "ryu backstory",
+    "street fighter movie"
+  ],
+  "hashtags": [
+    "#streetfighter",
+    "#ryu",
+    "#sf6"
+  ],
+  "publish_at": "2026-10-16T17:00:00Z",
+  "scenes": [
+    {
+      "text": "Ryu grew up with no memory of his mother or father.",
+      "image": "Ryu"
+    },
+    {
+      "text": "A master named Gouken took the orphan in and raised him at a mountain dojo in Japan.",
+      "image": "Gouken",
+      "image_page": "Gouken"
+    },
+    {
+      "text": "Gouken taught him Ansatsuken, an assassin's art, minus its darkest techniques.",
+      "image": "Gouken Ryu",
+      "image_page": "Gouken"
+    },
+    {
+      "text": "Then a spoiled American kid named Ken arrived, and Ryu got a brother and a rival.",
+      "image": "Ken",
+      "image_page": "Ken Masters"
+    },
+    {
+      "text": "At 23, Ryu won the first World Warrior tournament by beating the champion, Sagat.",
+      "image": "Sagat",
+      "image_page": "Sagat"
+    },
+    {
+      "text": "He came home to a silent dojo. Gouken had been killed by his own brother, Akuma.",
+      "image": "Akuma",
+      "image_page": "Akuma"
+    },
+    {
+      "text": "Ryu has wandered ever since, asking what his fists are really for.",
+      "image": "Ryu"
+    }
+  ]
+}

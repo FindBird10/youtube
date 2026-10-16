@@ -1,0 +1,86 @@
+{
+  "title": "Ryu's hardest fight was with himself in Street Fighter",
+  "angle": "fate",
+  "subject": "ryu",
+  "wiki": {
+    "site": "streetfighter.fandom.com",
+    "page": "Ryu",
+    "avoid": [
+      "smash",
+      "ssbu",
+      "ultimate",
+      "concept",
+      "artwork",
+      "cosplay",
+      "comic",
+      "manga",
+      "movie",
+      "film",
+      "udon",
+      "sketch",
+      "marvel",
+      "tekken"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 1364780
+  },
+  "description": "Should Ryu have accepted the dark power? 👇\n\nHow Ryu learned to control the Satsui no Hado and used it to bring down M. Bison. Spoilers for Street Fighter IV and Street Fighter V: A Shadow Falls.\n\nFan-made content. Not affiliated with or endorsed by Capcom. Game images © their respective owners.",
+  "tags": [
+    "ryu",
+    "ryu street fighter",
+    "street fighter",
+    "street fighter 6",
+    "sf6",
+    "ryu story",
+    "ryu explained",
+    "street fighter lore",
+    "power of nothingness",
+    "sf5 story",
+    "a shadow falls",
+    "ryu vs bison",
+    "necalli"
+  ],
+  "hashtags": [
+    "#streetfighter",
+    "#ryu",
+    "#streetfighter5"
+  ],
+  "publish_at": "2026-10-17T01:00:00Z",
+  "scenes": [
+    {
+      "text": "Ryu's master came back from the dead to save him.",
+      "image": "Ryu"
+    },
+    {
+      "text": "Gouken had survived Akuma's Raging Demon by emptying his soul, then woke from a long coma.",
+      "image": "Gouken",
+      "image_page": "Gouken",
+      "still": true
+    },
+    {
+      "text": "In Street Fighter IV, he sealed Ryu's dark power with the Power of Nothingness.",
+      "image": "Gouken Ryu",
+      "image_page": "Gouken"
+    },
+    {
+      "text": "In Street Fighter V, a creature called Necalli hunted him to devour that darkness.",
+      "image": "Necalli",
+      "image_page": "Necalli"
+    },
+    {
+      "text": "On the roof of the Kanzuki Estate, Ryu stopped running from it and took control.",
+      "image": "Ryu"
+    },
+    {
+      "text": "Inside the Shadaloo base, one Hadoken full of nothingness cracked M. Bison's body apart.",
+      "image": "M. Bison",
+      "image_page": "M. Bison"
+    },
+    {
+      "text": "At a waterfall with Ken, Ryu tied his headband back on. The road never ends.",
+      "image": "Ryu Ken",
+      "image_page": "Ken Masters"
+    }
+  ]
+}
