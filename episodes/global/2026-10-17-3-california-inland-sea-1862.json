@@ -1,0 +1,73 @@
+{
+  "title": "The winter California turned into a lake 🌊",
+  "hook": "A 300-MILE LAKE",
+  "format": "dark-history",
+  "subject": "flood",
+  "emphasis": [
+    "300 miles",
+    "43 days",
+    "$725 billion"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Great Flood of 1862"
+  },
+  "description": "Could a storm like 1862 hit California again? 👇\n\nIn the winter of 1861–62, about 43 days of storms filled the Sacramento and San Joaquin valleys into an inland sea about 300 miles long. Governor Leland Stanford rowed to his inauguration, at least 4,000 people died, and the USGS ARkStorm scenario estimates a repeat today would cost about $725 billion.\n\nSources: USGS (\"ARkStorm Scenario\", \"ARkStorm: California's Other 'Big One'\"), William H. Brewer, \"Up and Down California in 1860–1864\", Wikipedia (\"Great Flood of 1862\")",
+  "tags": [
+    "great flood of 1862",
+    "1862 california flood",
+    "california megaflood",
+    "arkstorm",
+    "california inland sea",
+    "atmospheric river",
+    "sacramento flood 1862",
+    "leland stanford rowboat",
+    "worst flood in california history",
+    "could california flood again",
+    "dark history",
+    "history facts",
+    "american history"
+  ],
+  "hashtags": [
+    "#california",
+    "#history",
+    "#flood"
+  ],
+  "publish_at": "2026-10-17T23:00:00Z",
+  "scenes": [
+    {
+      "text": "California once had a lake 300 miles long.",
+      "image": "Sacramento K Street flood 1862",
+      "search": "flooded valley aerial"
+    },
+    {
+      "text": "In the winter of 1861, about 43 days of storms filled the Sacramento and San Joaquin valleys into one inland sea.",
+      "image": "atmospheric river satellite",
+      "image_page": "Atmospheric river",
+      "nasa": "atmospheric river California",
+      "search": "heavy rain storm clouds"
+    },
+    {
+      "text": "On January 10, 1862, Leland Stanford rowed a boat to his inauguration as governor.",
+      "image": "Leland Stanford",
+      "image_page": "Leland Stanford",
+      "search": "old rowboat flood water"
+    },
+    {
+      "text": "Botanist William Brewer wrote, \"Thousands of farms are entirely under water.\" At least 4,000 people died.",
+      "image": "William Henry Brewer",
+      "image_page": "William Henry Brewer",
+      "search": "flooded farmland"
+    },
+    {
+      "text": "The legislature fled to San Francisco.",
+      "image": "Sacramento flood",
+      "search": "old san francisco street"
+    },
+    {
+      "text": "The USGS modeled a repeat: $725 billion in losses and 1.5 million people evacuated.",
+      "nasa": "atmospheric river from space",
+      "search": "flood evacuation rescue boat"
+    }
+  ]
+}

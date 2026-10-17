@@ -1,0 +1,64 @@
+{
+  "title": "Why 87°F can be too hot for your body 🥵",
+  "hook": "SWEAT STOPS WORKING",
+  "format": "body",
+  "subject": "heat",
+  "emphasis": [
+    "87°F",
+    "24",
+    "31"
+  ],
+  "description": "What's the most humid place you've ever been? 👇\n\nYour body cools itself by evaporating sweat, and very humid air stops that. In a 2022 Penn State HEAT Project study, 24 young adults lost control of their core temperature at a wet-bulb temperature of about 31°C (87°F at 100% humidity), well below the 35°C limit long assumed.\n\nSources: Penn State News (\"Humans can't endure temperatures and humidities as high as previously thought\", 2022), Penn State Institutes of Energy and the Environment (\"Beyond the thermometer\"), Vecellio et al., Journal of Applied Physiology (PSU HEAT Project), AAAS / Raymond et al., Science Advances (2020)",
+  "tags": [
+    "wet bulb temperature",
+    "wet bulb 31",
+    "how hot is too hot for humans",
+    "heat and humidity",
+    "why humidity feels hotter",
+    "human heat limit",
+    "what heat does to your body",
+    "sweat evaporation",
+    "heat wave",
+    "penn state heat study",
+    "extreme heat",
+    "human body facts",
+    "core body temperature"
+  ],
+  "hashtags": [
+    "#heatwave",
+    "#humanbody",
+    "#science"
+  ],
+  "publish_at": "2026-10-17T19:00:00Z",
+  "scenes": [
+    {
+      "text": "Your sweat stops cooling you in 87°F wet air.",
+      "nasa": "heat wave from space",
+      "search": "man sweating hot sun"
+    },
+    {
+      "text": "Sweat cools you only by evaporating. In saturated air, it just drips off.",
+      "search": "sweat drops skin close up"
+    },
+    {
+      "text": "At Penn State, 24 volunteers swallowed a radio pill to track core temperature, then walked in a hot chamber.",
+      "nasa": "astronaut exercise ISS treadmill",
+      "search": "person walking treadmill lab"
+    },
+    {
+      "text": "Their bodies lost control at a wet-bulb of 31°C, about 87°F at full humidity.",
+      "nasa": "ECOSTRESS surface temperature",
+      "search": "thermometer high temperature"
+    },
+    {
+      "text": "Scientists long called 35°C the limit. Near the Persian Gulf, stations have already touched it.",
+      "nasa": "Persian Gulf from ISS",
+      "search": "hazy hot city skyline"
+    },
+    {
+      "text": "On a humid day, watch the water in the air, not just the thermometer.",
+      "nasa": "earth from ISS clouds",
+      "search": "humid tropical haze"
+    }
+  ]
+}
