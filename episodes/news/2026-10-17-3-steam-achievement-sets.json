@@ -1,0 +1,55 @@
+{
+  "title": "Steam Achievement Sets: Valve splits up 100% runs 🏆",
+  "hook": "STEAM ACHIEVEMENT SETS",
+  "subject": "steam",
+  "trailer": {
+    "steam_appid": 620
+  },
+  "description": "Would sets make you go for 100% more often? 👇\n\nValve added Steam Achievement Sets to the Steam Client Beta on October 15, 2026. Developers can group achievements into sets with their own progress bars, DLC sets only count once you own the content, and archived achievements no longer block completion. 17 games already use it, including Portal 2, Team Fortress 2 and Forza Horizon 5.\n\nSources: Steam Client Beta update notes and Steam announcement (Oct 15, 2026), Video Games Chronicle (Oct 16, 2026), Gaming.net\nGame footage © Valve.",
+  "tags": [
+    "steam",
+    "steam achievement sets",
+    "steam achievements",
+    "steam update",
+    "steam client beta",
+    "valve",
+    "steam news",
+    "100% achievements",
+    "steam new feature",
+    "portal 2",
+    "team fortress 2",
+    "pc gaming news"
+  ],
+  "hashtags": [
+    "#steam",
+    "#valve",
+    "#pcgaming"
+  ],
+  "publish_at": "2026-10-17T22:00:00Z",
+  "scenes": [
+    {
+      "text": "Steam is splitting achievements into sets.",
+      "search": "pc gaming setup monitor dark room"
+    },
+    {
+      "text": "Valve added Achievement Sets to the Steam Client Beta on October 15.",
+      "search": "computer screen code dark close up"
+    },
+    {
+      "text": "Developers can group achievements, say single-player and multiplayer, each with its own progress bar.",
+      "trailer": true
+    },
+    {
+      "text": "Finish a set and a trophy lands on your profile. DLC sets only count once you own the DLC.",
+      "search": "gold trophy close up"
+    },
+    {
+      "text": "Achievements you can't unlock anymore, like old seasonal events, can be archived so they stop blocking 100%.",
+      "trailer": true
+    },
+    {
+      "text": "17 games already use it, including Portal 2, Team Fortress 2 and Forza Horizon 5.",
+      "trailer": true
+    }
+  ]
+}
