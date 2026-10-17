@@ -1,0 +1,77 @@
+{
+  "title": "Why John Marston really joined Dutch's gang in Red Dead",
+  "angle": "origin",
+  "subject": "marston",
+  "wiki": {
+    "site": "reddead.fandom.com",
+    "page": "John Marston",
+    "avoid": [
+      "red dead online",
+      "rdo",
+      "online",
+      "concept",
+      "artwork",
+      "undead",
+      "zombie",
+      "fan",
+      "mod"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 2668510
+  },
+  "description": "Would you have trusted Dutch at twelve? 👇\n\nHow an orphan named John Marston became an outlaw, and where his famous scars came from. Spoilers for Red Dead Redemption 2.\n\nFan-made content. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Game images © their respective owners.",
+  "tags": [
+    "john marston",
+    "red dead redemption",
+    "rdr",
+    "rdr2",
+    "john marston story",
+    "john marston explained",
+    "red dead lore",
+    "john marston backstory",
+    "john marston scars",
+    "dutch van der linde",
+    "van der linde gang",
+    "rockstar games"
+  ],
+  "hashtags": [
+    "#reddeadredemption",
+    "#johnmarston",
+    "#rdr2"
+  ],
+  "publish_at": "2026-10-17T17:00:00Z",
+  "scenes": [
+    {
+      "text": "John Marston was twelve when Dutch saved him from a noose.",
+      "image": "John Marston"
+    },
+    {
+      "text": "His mother died giving birth in 1873, and his Scottish father was dead by 1881.",
+      "image": "John Marston"
+    },
+    {
+      "text": "John ran from an orphanage, got caught stealing, and a crowd wanted him hanged.",
+      "image": "John Marston"
+    },
+    {
+      "text": "Dutch van der Linde cut him loose and raised him beside Arthur Morgan.",
+      "image": "Dutch",
+      "image_page": "Dutch van der Linde"
+    },
+    {
+      "text": "The scars on his face came in 1899, when wolves caught him alone near Colter.",
+      "image": "John Marston scars",
+      "still": true
+    },
+    {
+      "text": "Arthur drove them off, and Javier Escuella carried him back to camp on his horse.",
+      "image": "Javier",
+      "image_page": "Javier Escuella"
+    },
+    {
+      "text": "Twelve years later, the government made John hunt down that same family.",
+      "image": "John Marston"
+    }
+  ]
+}
