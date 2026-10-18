@@ -1,0 +1,82 @@
+{
+  "title": "Why Chun-Li really became a cop in Street Fighter",
+  "angle": "origin",
+  "subject": "chunli",
+  "wiki": {
+    "site": "streetfighter.fandom.com",
+    "page": "Chun-Li",
+    "avoid": [
+      "smash",
+      "concept",
+      "artwork",
+      "cosplay",
+      "comic",
+      "manga",
+      "movie",
+      "film",
+      "legend of chun-li",
+      "udon",
+      "sketch",
+      "marvel",
+      "tekken",
+      "fan",
+      "panda"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 1364780
+  },
+  "description": "Would you have gone after Bison alone? 👇\n\nHow Chun-Li's missing father turned her into Interpol's Shadaloo hunter. Spoilers for the Street Fighter series.\n\nFan-made content. Not affiliated with or endorsed by Capcom. Game images © their respective owners.",
+  "tags": [
+    "chun-li",
+    "chun li",
+    "street fighter",
+    "street fighter 6",
+    "sf6",
+    "chun li story",
+    "chun li explained",
+    "street fighter lore",
+    "chun li father",
+    "m bison",
+    "shadaloo",
+    "street fighter movie"
+  ],
+  "hashtags": [
+    "#streetfighter",
+    "#chunli",
+    "#sf6"
+  ],
+  "publish_at": "2026-10-18T17:00:00Z",
+  "scenes": [
+    {
+      "text": "Chun-Li was a detective at 18, searching for one missing man.",
+      "image": "Chun-Li"
+    },
+    {
+      "text": "He was her father, a police officer who taught her every kick she knew.",
+      "image": "Chun-Li"
+    },
+    {
+      "text": "Then he vanished, and nobody could tell her who took him.",
+      "image": "Chun-Li"
+    },
+    {
+      "text": "His old friend Gen, an aging assassin, finally gave her a name: Shadaloo, the drug empire of M. Bison.",
+      "image": "Gen",
+      "image_page": "Gen"
+    },
+    {
+      "text": "She joined Interpol as a narcotics investigator and found Bison herself. \"Stuff it, Bison! You're under arrest!\"",
+      "image": "Chun-Li"
+    },
+    {
+      "text": "He beat her easily and promised she would die the same way her father did.",
+      "image": "Bison",
+      "image_page": "M. Bison"
+    },
+    {
+      "text": "She got up and swore she would bring Shadaloo down.",
+      "image": "Chun-Li"
+    }
+  ]
+}
