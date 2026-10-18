@@ -1,0 +1,58 @@
+{
+  "title": "Gökyüzü kızardı, itfaiye yangın aradı 🌋",
+  "format": "karanlik-tarih",
+  "subject": "volcano",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "1883 eruption of Krakatoa"
+  },
+  "description": "Sence Çığlık tablosundaki kızıl gök gerçekten Krakatoa'dan mı geliyor? 👇\n\n27 Ağustos 1883'te Endonezya'daki Krakatoa yanardağı patladı; sesi 4.800 km öteden duyuldu, basınç dalgası Dünya'yı 3,5 kez dolaştı. Kül bulutunun boyadığı gün batımları yüzünden New York, Poughkeepsie ve New Haven'da itfaiye çağrıldı.\n\nKaynak: Wikipedia (1883 eruption of Krakatoa), Sky & Telescope (When the Sky Ran Red, 2004)",
+  "tags": [
+    "krakatoa",
+    "krakatoa patlaması",
+    "krakatau yanardağı",
+    "1883 krakatoa",
+    "en yüksek ses",
+    "tarihin en yüksek sesi",
+    "yanardağ patlaması",
+    "çığlık tablosu",
+    "munch çığlık",
+    "kızıl gökyüzü",
+    "endonezya yanardağ",
+    "tarihin karanlık olayları",
+    "gerçek tarih"
+  ],
+  "hashtags": [
+    "#krakatoa",
+    "#yanardağ",
+    "#çığlık"
+  ],
+  "scenes": [
+    {
+      "text": "New York'ta itfaiyeciler, olmayan bir yangını söndürmeye koştu.",
+      "image": "Krakatoa eruption lithograph"
+    },
+    {
+      "text": "Gökyüzü kıpkırmızıydı, ama ateş dünyanın öbür ucunda, Endonezya'daki Krakatoa yanardağındaydı.",
+      "search": "red sunset sky city skyline"
+    },
+    {
+      "text": "27 Ağustos 1883'te yanardağ patladı ve sesi 4.800 kilometre ötedeki Rodrigues Adası'nda top atışı sanıldı.",
+      "image": "Krakatoa"
+    },
+    {
+      "text": "64 kilometre açıktaki bir gemide denizcilerin kulak zarı yırtıldı, basınç dalgası Dünya'yı 3 buçuk kez dolaştı.",
+      "search": "old sailing ship rough sea"
+    },
+    {
+      "text": "Patlama ve ardından gelen dev dalgalar en az 36 bin kişinin hayatına mal oldu.",
+      "search": "giant waves tropical coast storm"
+    },
+    {
+      "text": "Havaya savrulan kül aylarca gün batımlarını boyadı ve bir teoriye göre Munch'un Çığlık tablosundaki kızıl gök de oradan geliyor.",
+      "image": "Scream",
+      "image_page": "The Scream"
+    }
+  ],
+  "publish_at": "2026-10-18T18:00:00Z"
+}
