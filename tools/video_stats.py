@@ -81,6 +81,9 @@ def shorts_tab(cid: str) -> dict[str, str]:
         if not m:
             print(f"Shorts sekmesi {cid}: ytInitialData yok ({len(html)} bayt)", file=sys.stderr)
             return found
+        subs = re.search(r'"subscriberCountText":\{"simpleText":"([^"]+)"', html) \
+            or re.search(r'"content":"([\d.,]+[KMB]? subscribers?)"', html)
+        print(f"ABONE {cid}: {subs.group(1) if subs else '?'}", file=sys.stderr)
         data = json.loads(m.group(1))
         _walk(data, found)
         # devamı (48'den fazla Shorts varsa)
