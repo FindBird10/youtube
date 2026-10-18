@@ -635,65 +635,6 @@ def build_ass(words: list[Word], total: float, font: str, path: Path, style: str
     path.write_text(header + "\n".join(events) + "\n", encoding="utf-8")
 
 
-# ------------------------------------------------------------- seri etiketi + takip çağrısı
-# 18 Eki: ~114 bin izlenmeye 92 abone. İzleyiciye takip etmesi için sebep: üstte seri etiketi
-# (kanal kimliği / "PART 1 OF 3"), son 2 saniyede kısa, sessiz bir takip çağrısı (seslendirme yok).
-BRAND_TAGS = {
-    "lore": None,  # gaming: bölüm sırası (angle) kullanılır
-    "turkiye-gizem": "TÜRKİYE'NİN GİZEMLERİ", "karanlik-tarih": "KARANLIK TARİH", "gizem": "ÇÖZÜLEMEYEN GİZEMLER",
-    "what-if": "WHAT IF", "body": "YOUR BODY", "dark-history": "DARK HISTORY", "news": "DAILY GAMING NEWS",
-}
-PART_OF = {"origin": 1, "secret": 2, "fate": 3}
-
-
-def branding_events(episode: dict, total: float, start: float, bars: bool) -> list[str]:
-    if episode.get("branding") is False:
-        return []
-    fmt, lang = episode.get("format", ""), episode.get("language", "tr")
-    tag = BRAND_TAGS.get(fmt)
-    part = PART_OF.get(episode.get("angle", ""))
-    if fmt == "lore" and part:
-        tag = f"PART {part} OF 3"
-    if fmt == "lore":
-        cta = (f"PART {part + 1} IS NEXT", "FOLLOW SO YOU DON'T MISS IT") if part and part < 3 \
-            else ("A NEW CHARACTER TOMORROW", "FOLLOW FOR MORE")
-    elif fmt == "news":
-        cta = ("GAMING NEWS EVERY DAY", "FOLLOW")
-    elif fmt == "dark-history":
-        cta = ("FULL CASE FILES ON THE CHANNEL", "FOLLOW FOR MORE")
-    elif lang == "tr":
-        cta = ("HER AKŞAM 3 YENİ GİZEM", "TAKİP ET")
-    else:
-        cta = ("NEW STORIES EVERY DAY", "FOLLOW FOR MORE")
-    ev = []
-    if tag:
-        y = CINE_BAR // 2 if bars else 150
-        box = "" if bars else "\\bord14\\3c&H000000&\\3a&H70&"
-        ev.append(f"Dialogue: 2,{ts(start + 0.2)},{ts(total)},Tag,,0,0,0,,"
-                  f"{{\\an5\\pos({W // 2},{y})\\fad(300,0){box}}}{ass_escape(tag)}")
-    t0 = max(start + 1.0, total - 2.2)
-    ev.append(f"Dialogue: 3,{ts(t0)},{ts(total)},Cta,,0,0,0,,{{\\an5\\pos({W // 2},{H // 2 - 300})"
-              f"\\fad(200,0)\\fscx90\\fscy90\\t(0,200,\\fscx100\\fscy100)}}{ass_escape(cta[0])}")
-    ev.append(f"Dialogue: 3,{ts(t0 + 0.15)},{ts(total)},CtaSub,,0,0,0,,{{\\an5\\pos({W // 2},{H // 2 - 205})"
-              f"\\fad(200,0)}}{ass_escape(cta[1])}")
-    return ev
-
-
-def add_branding(ass: Path, episode: dict, total: float, start: float, bars: bool) -> None:
-    ev = branding_events(episode, total, start, bars)
-    if not ev:
-        return
-    text = ass.read_text(encoding="utf-8")
-    styles = ("Style: Tag,Poppins Medium,46,&H10FFFFFF,&H10FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,8,0,"
-              "3,0,0,5,0,0,0,1\n"
-              "Style: Cta,Poppins ExtraBold,76,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,0,0,0,0,100,100,2,0,"
-              "1,6,4,5,60,60,0,1\n"
-              "Style: CtaSub,Poppins ExtraBold,52,&H0000E5FF,&H0000E5FF,&H00000000,&HA0000000,0,0,0,0,100,100,3,0,"
-              "1,5,3,5,60,60,0,1\n")
-    text = text.replace("\n[Events]", "\n" + styles + "\n[Events]", 1) if "Style: Tag," not in text else text
-    ass.write_text(text.rstrip("\n") + "\n" + "\n".join(ev) + "\n", encoding="utf-8")
-
-
 # -------------------------------------------------------------------- montaj
 def render_scene_video(sc: Scene, idx: int, length: float, work: Path) -> Path:
     """Sahne parçasını üretir: ortadan kırpma + yavaş yakınlaşma."""
@@ -957,7 +898,6 @@ def render(episode: dict, out_dir: Path, offline: bool = False) -> Path:
               hook=hook_text(episode) if episode.get("show_hook", False) else "",
               title=(hook_text(episode) or EMOJI_RE.sub("", episode.get("title", "")).strip()) if title_s else "",
               title_until=title_s)
-    add_branding(ass, episode, total, title_s, bool(style.get("bars")))
 
     # Görüntü zinciri: seg0 x seg1 x ... -> (vurgu yakınlaşması) -> altyazı
     vchain, last = [], "0:v"

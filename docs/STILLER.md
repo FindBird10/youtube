@@ -21,11 +21,3 @@ Bölüm dosyasında `"style"` alanıyla seçilir. Kod: `pipeline/make_video.py` 
   **Steam mağaza fragmanlarından** sessiz kısa klipler (`trailer.steam_appid`, sahnede `trailer: true`); yazı kartı ve
   menü görüntüleri otomatik elenir. Ara sahne (cutscene) ancak kullanıcının kendi kayıtlarıyla eklenebilir.
 - Wiki görsellerinde oyun içi görüntüler tercih edilir; çizim/konsept/çizgi roman dosyaları geri plana atılır.
-
-## Seri etiketi ve takip çağrısı (18 Ekim 2026)
-
-Bütün Shorts'larda otomatik: üstte küçük seri etiketi (gaming: "PART 1 OF 3"; BirdsVault: "TÜRKİYE'NİN
-GİZEMLERİ" / "KARANLIK TARİH"; Global: "WHAT IF" / "YOUR BODY" / "DARK HISTORY"; news: "DAILY GAMING NEWS") ve
-son 2 saniyede sessiz takip çağrısı ("PART 2 IS NEXT · FOLLOW…", "HER AKŞAM 3 YENİ GİZEM · TAKİP ET",
-dark-history'de "FULL CASE FILES ON THE CHANNEL"). Neden: ~114 bin izlenmeye yalnızca 92 abone. Seslendirmede
-abone çağrısı yine yok. Bir bölümde kapatmak için `"branding": false`.
