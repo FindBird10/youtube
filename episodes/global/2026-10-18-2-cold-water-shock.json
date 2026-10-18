@@ -1,0 +1,69 @@
+{
+  "title": "What cold water does to you in 60 seconds 🥶",
+  "hook": "THE FIRST 60 SECONDS",
+  "format": "body",
+  "subject": "water",
+  "emphasis": [
+    "15°C",
+    "1-10-1",
+    "first minute"
+  ],
+  "description": "Have you ever jumped into water that took your breath away? 👇\n\nCold water shock can start below 15°C (59°F): skin cooling triggers a gasp and breathing you can't control. Hypothermia expert Gordon Giesbrecht of the University of Manitoba sums up survival as 1-10-1: about 1 minute of cold shock, 10 minutes of useful movement, and roughly 1 hour before hypothermia causes unconsciousness. General information only, not medical advice.\n\nSources: RNLI (\"Cold water shock: a bolt from the blue\", 2016), McGill Office for Science and Society (\"Professor Popsicle's physiological proof\"), University of Portsmouth Extreme Environments Laboratory (cold water immersion studies)",
+  "tags": [
+    "cold water shock",
+    "what happens when you fall into cold water",
+    "1-10-1 rule",
+    "cold shock response",
+    "gasp reflex",
+    "cold water immersion",
+    "hypothermia",
+    "professor popsicle",
+    "gordon giesbrecht",
+    "cold plunge",
+    "falling through ice",
+    "human body facts",
+    "water safety"
+  ],
+  "hashtags": [
+    "#coldwater",
+    "#humanbody",
+    "#science"
+  ],
+  "publish_at": "2026-10-18T19:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Cold shock response"
+  },
+  "scenes": [
+    {
+      "text": "Your first breath in cold water can be water.",
+      "nasa": "astronaut water survival training",
+      "search": "person jumping into cold lake"
+    },
+    {
+      "text": "Below about 15°C, the chill on your skin forces a gasp, then fast breathing you can't stop.",
+      "image": "cold water immersion",
+      "search": "cold water splash underwater"
+    },
+    {
+      "text": "In an RNLI test, Olympic sailor Shirley Robertson entered a 12°C tank. \"I could not control my breathing,\" she said.",
+      "image": "Shirley Robertson",
+      "image_page": "Shirley Robertson",
+      "search": "sailor in cold sea water"
+    },
+    {
+      "text": "Gordon Giesbrecht, at the University of Manitoba, calls it 1-10-1.",
+      "nasa": "Winnipeg Manitoba from space",
+      "search": "frozen lake winter canada"
+    },
+    {
+      "text": "One minute of shock, 10 minutes of useful movement, an hour before hypothermia knocks you out.",
+      "search": "ice hole frozen lake"
+    },
+    {
+      "text": "Most cold water deaths come in those first minutes, long before your core gets cold.",
+      "nasa": "astronaut water survival training raft",
+      "search": "life jacket floating cold water"
+    }
+  ]
+}

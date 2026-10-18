@@ -1,0 +1,71 @@
+{
+  "title": "The day the sky went dark at noon 🌑",
+  "hook": "MIDNIGHT AT NOON",
+  "format": "dark-history",
+  "subject": "smoke",
+  "emphasis": [
+    "May 19, 1780",
+    "12:45",
+    "2023"
+  ],
+  "description": "Would you have thought it was the end of the world? 👇\n\nOn May 19, 1780, darkness fell across New England at midday. Candles were lit by noon, roosters crowed in the afternoon, and some believed Judgment Day had come. In 2008, University of Missouri tree-ring researchers traced it to huge wildfires in Ontario, combined with fog and cloud.\n\nSources: University of Missouri (\"Fire Scars Reveal Source of New England's 1780 Dark Day\", 2008), McMurry et al., International Journal of Wildland Fire (2007), Wikipedia (\"New England's Dark Day\", \"Abraham Davenport\"), National Weather Service (June 2023 wildfire smoke)",
+  "tags": [
+    "new england dark day",
+    "dark day 1780",
+    "may 19 1780",
+    "sky went dark at noon",
+    "abraham davenport",
+    "1780 wildfire smoke",
+    "judgment day 1780",
+    "canadian wildfire smoke",
+    "dark history",
+    "history facts",
+    "american history",
+    "strange history",
+    "unexplained darkness"
+  ],
+  "hashtags": [
+    "#history",
+    "#darkday",
+    "#wildfire"
+  ],
+  "publish_at": "2026-10-18T23:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "New England's Dark Day"
+  },
+  "scenes": [
+    {
+      "text": "The sky went dark at noon.",
+      "nasa": "wildfire smoke from space Canada",
+      "search": "dark smoky sky daytime"
+    },
+    {
+      "text": "On May 19, 1780, darkness spread from Maine to New Jersey. At Harvard, it peaked at 12:45 p.m.",
+      "image": "Harvard 1780",
+      "image_page": "Harvard College",
+      "search": "dark storm clouds over town"
+    },
+    {
+      "text": "People ate lunch by candlelight. In Ipswich, roosters crowed at 2 in the afternoon.",
+      "search": "candle flame dark room"
+    },
+    {
+      "text": "Connecticut lawmakers feared Judgment Day. Abraham Davenport reportedly said, \"I choose to be found doing my duty.\"",
+      "image": "Davenport portrait",
+      "image_page": "Abraham Davenport",
+      "search": "old colonial meeting hall"
+    },
+    {
+      "text": "In 2008, Missouri researchers found the cause in tree rings: massive wildfires in Ontario.",
+      "image": "Algonquin forest",
+      "image_page": "Algonquin Provincial Park",
+      "search": "tree rings close up"
+    },
+    {
+      "text": "In June 2023, Canadian smoke turned New York's afternoon sky orange.",
+      "nasa": "Canada wildfire smoke New York",
+      "search": "orange smoky sky city"
+    }
+  ]
+}
