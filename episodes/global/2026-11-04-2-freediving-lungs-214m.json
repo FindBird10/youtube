@@ -1,0 +1,72 @@
+{
+  "title": "What 214 meters underwater does to your lungs 🌊",
+  "hook": "HOLD YOUR BREATH",
+  "format": "body",
+  "subject": "freediving",
+  "emphasis": [
+    "10 meters",
+    "214 meters",
+    "253 meters"
+  ],
+  "description": "How deep could you go on one breath? 👇\n\nThe diving reflex slows your heart the moment cold water hits your face, and at depth the pressure crushes your lungs. Herbert Nitsch went deeper than anyone, and the ascent was the hard part.\n\nSources: Wikipedia (\"Herbert Nitsch\", \"Diving reflex\", \"Freediving\", \"No-limits apnea\"), DeeperBlue (\"Herbert Nitsch Talks About His Fateful Dive And Recovery\"), Godek & Freeman, \"Physiology, Diving Reflex\", StatPearls (NIH NCBI)",
+  "tags": [
+    "diving reflex",
+    "what happens to your body deep underwater",
+    "freediving",
+    "herbert nitsch",
+    "deepest free dive",
+    "how deep can a human dive",
+    "lungs underwater pressure",
+    "mammalian dive reflex",
+    "cold water face heart rate",
+    "blood shift",
+    "no limits apnea",
+    "human body facts",
+    "body facts"
+  ],
+  "hashtags": [
+    "#freediving",
+    "#humanbody",
+    "#ocean"
+  ],
+  "publish_at": "2026-11-04T20:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Freediving"
+  },
+  "scenes": [
+    {
+      "text": "Your heart slows when cold water hits your face.",
+      "image": "freediver",
+      "search": "freediver deep blue ocean"
+    },
+    {
+      "text": "Nerves around your nose and eyes trigger the diving reflex, saving oxygen for your brain.",
+      "image": "diving reflex",
+      "image_page": "Diving reflex",
+      "search": "face underwater holding breath"
+    },
+    {
+      "text": "Then the ocean squeezes. Every 10 meters adds one more atmosphere of pressure.",
+      "image": "freediving depth",
+      "search": "diver descending rope"
+    },
+    {
+      "text": "In 2007, Austrian Herbert Nitsch rode a sled to 214 meters. His lungs shrank to under a twentieth of their size.",
+      "image": "Nitsch",
+      "image_page": "Herbert Nitsch",
+      "search": "freediver sled descent"
+    },
+    {
+      "text": "Blood floods your chest to keep your lungs from collapsing.",
+      "search": "deep dark ocean water"
+    },
+    {
+      "text": "In 2012, Nitsch hit 253 meters off Santorini. On the way up, he suffered several strokes.",
+      "image": "Nitsch",
+      "image_page": "Herbert Nitsch",
+      "nasa": "Santorini from space",
+      "search": "santorini sea cliffs"
+    }
+  ]
+}

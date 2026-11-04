@@ -1,0 +1,72 @@
+{
+  "title": "The night America set off a nuke in space ☢️",
+  "hook": "A NUKE IN SPACE",
+  "format": "dark-history",
+  "subject": "aurora",
+  "emphasis": [
+    "1.4 megatons",
+    "300 streetlights",
+    "a third"
+  ],
+  "description": "Would you have watched from the rooftop? 👇\n\nIn July 1962, the US detonated Starfish Prime, a 1.4-megaton hydrogen bomb, 400 km above the Pacific. Honolulu saw an artificial aurora, its streetlights failed, and a man-made radiation belt crippled satellites for months.\n\nSources: Wikipedia (\"Starfish Prime\", \"Telstar 1\", \"High-altitude nuclear explosion\"), Smithsonian Magazine (\"Going Nuclear Over the Pacific\"), APS News (\"Sixty Years After, Physicists Model Electromagnetic Pulse of a Once-Secret Nuclear Test\", 2022), Scientific American (\"What Happens if a Nuclear Weapon Goes Off in Space?\")",
+  "tags": [
+    "starfish prime",
+    "nuke in space",
+    "nuclear explosion in space",
+    "starfish prime 1962",
+    "high altitude nuclear test",
+    "artificial aurora",
+    "emp hawaii 1962",
+    "telstar 1",
+    "operation fishbowl",
+    "johnston island",
+    "cold war history",
+    "dark history",
+    "strange history"
+  ],
+  "hashtags": [
+    "#history",
+    "#coldwar",
+    "#space"
+  ],
+  "publish_at": "2026-11-05T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Starfish Prime"
+  },
+  "scenes": [
+    {
+      "text": "At 11 p.m., the sky over Honolulu turned red.",
+      "image": "Starfish Prime aurora",
+      "search": "red night sky glow"
+    },
+    {
+      "text": "In July 1962, the US had exploded a 1.4-megaton bomb 400 kilometers above the Pacific.",
+      "image": "Starfish Prime",
+      "nasa": "Pacific Ocean from space night",
+      "search": "pacific ocean night aerial"
+    },
+    {
+      "text": "It was launched from Johnston Island, about 1,450 kilometers away.",
+      "image": "Johnston",
+      "image_page": "Johnston Atoll",
+      "search": "remote pacific island aerial"
+    },
+    {
+      "text": "The pulse still reached Hawaii. About 300 streetlights went out and burglar alarms went off across Honolulu.",
+      "search": "old street lamp at night"
+    },
+    {
+      "text": "High above, the blast left a new radiation belt around Earth.",
+      "nasa": "Van Allen radiation belts",
+      "search": "earth orbit satellite space"
+    },
+    {
+      "text": "Within months, it crippled about a third of the satellites in low orbit, including Telstar 1.",
+      "image": "Telstar",
+      "image_page": "Telstar 1",
+      "nasa": "Telstar satellite",
+      "search": "vintage satellite space"
+    }
+  ]
+}

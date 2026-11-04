@@ -1,0 +1,64 @@
+{
+  "title": "What if we never fixed the ozone hole? ☀️",
+  "hook": "WHAT IF OZONE VANISHED?",
+  "format": "what-if",
+  "subject": "ozone",
+  "emphasis": [
+    "1985",
+    "two-thirds",
+    "2066"
+  ],
+  "description": "Would you still go outside at noon? 👇\n\nWhat would happen if the ozone layer disappeared? In 2009, NASA Goddard scientists simulated a world that never banned CFCs, and it got bad fast.\n\nSources: NASA Goddard (\"World Avoided\" simulation, Newman et al., Atmospheric Chemistry and Physics, 2009), NASA Ozone Watch, British Antarctic Survey (Farman et al., Nature, 1985), UNEP/WMO Scientific Assessment of Ozone Depletion (2022)",
+  "tags": [
+    "what if the ozone layer disappeared",
+    "ozone hole",
+    "what if there was no ozone layer",
+    "ozone layer",
+    "montreal protocol",
+    "world avoided nasa",
+    "cfcs",
+    "ozone hole antarctica",
+    "uv radiation",
+    "sunburn",
+    "what if",
+    "earth science",
+    "space facts"
+  ],
+  "hashtags": [
+    "#ozone",
+    "#earth",
+    "#science"
+  ],
+  "publish_at": "2026-11-04T16:00:00Z",
+  "scenes": [
+    {
+      "text": "Without ozone, you'd sunburn in minutes at noon.",
+      "nasa": "ozone hole Antarctica",
+      "search": "bright sun harsh sunlight sky"
+    },
+    {
+      "text": "In 1985, British scientists at Halley station in Antarctica found a hole in it every spring.",
+      "nasa": "Antarctica from space",
+      "search": "antarctica research station snow"
+    },
+    {
+      "text": "The culprit was CFCs, from spray cans and fridges. In 1987, the Montreal Protocol started banning them.",
+      "search": "aerosol spray can close up"
+    },
+    {
+      "text": "In 2009, Paul Newman at NASA Goddard simulated a world that never signed it.",
+      "nasa": "Goddard Space Flight Center",
+      "search": "scientist computer climate model"
+    },
+    {
+      "text": "By 2065, two-thirds of Earth's ozone would be gone, and a second hole would open over the Arctic.",
+      "nasa": "Arctic ozone",
+      "search": "arctic sea ice aerial"
+    },
+    {
+      "text": "Instead, the Antarctic hole should heal around 2066.",
+      "nasa": "earth from ISS",
+      "search": "earth atmosphere sunrise orbit"
+    }
+  ]
+}
