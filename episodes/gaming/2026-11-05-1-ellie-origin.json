@@ -1,0 +1,76 @@
+{
+  "title": "Where Ellie really came from in The Last of Us",
+  "angle": "origin",
+  "subject": "ellie",
+  "wiki": {
+    "site": "thelastofus.fandom.com",
+    "page": "Ellie",
+    "avoid": [
+      "abby",
+      "dina",
+      "part ii",
+      "tlou2",
+      "seattle",
+      "jackson",
+      "concept"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 1888930
+  },
+  "description": "Would you have trusted Marlene with Ellie? 👇\n\nEllie's life before Joel: Boston, the Fireflies and one night in a mall. Spoilers for The Last of Us Part I and Left Behind.\n\nFan-made content. Not affiliated with or endorsed by Naughty Dog or Sony Interactive Entertainment. Game images © their respective owners.",
+  "tags": [
+    "ellie",
+    "ellie williams",
+    "the last of us",
+    "tlou",
+    "ellie story",
+    "ellie explained",
+    "the last of us lore",
+    "naughty dog",
+    "left behind",
+    "riley abel",
+    "ellie and riley",
+    "ellie origin",
+    "tlou part 1"
+  ],
+  "hashtags": [
+    "#thelastofus",
+    "#ellie",
+    "#tlou"
+  ],
+  "publish_at": "2026-11-05T18:00:00Z",
+  "scenes": [
+    {
+      "text": "Ellie never knew her mother, Anna.",
+      "image": "Ellie"
+    },
+    {
+      "text": "Anna died soon after Ellie was born in 2019. Marlene, leader of the Fireflies, promised to watch over her.",
+      "image": "Marlene",
+      "image_page": "Marlene"
+    },
+    {
+      "text": "Ellie grew up in a FEDRA military boarding school in the Boston quarantine zone.",
+      "image": "Ellie Boston"
+    },
+    {
+      "text": "At fourteen, her best friend Riley Abel came back after weeks away, wearing a Firefly pendant.",
+      "image": "Riley",
+      "image_page": "Riley"
+    },
+    {
+      "text": "That night they snuck into the Liberty Gardens Mall. Infected found them, and both girls were bitten.",
+      "image": "Ellie Riley mall"
+    },
+    {
+      "text": "Riley didn't make it. Ellie waited for the fever, and it never came.",
+      "image": "Ellie"
+    },
+    {
+      "text": "Three weeks later, Marlene handed her to a smuggler named Joel.",
+      "image": "Joel",
+      "image_page": "Joel"
+    }
+  ]
+}
