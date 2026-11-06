@@ -1,0 +1,59 @@
+{
+  "title": "İstanbul 49 saat boyunca yandı 🔥",
+  "format": "karanlik-tarih",
+  "subject": "fire",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Great Fire of 1660"
+  },
+  "description": "Sence İstanbul'u en çok ne değiştirdi: yangınlar mı, depremler mi? 👇\n\n24 Temmuz 1660'ta Eminönü'nün batısında çıkan Büyük İstanbul Yangını, kentin üçte ikisini yok etti. Yangından sonra 1597'de başlayıp yarım kalan Yeni Cami'nin inşaatı Turhan Sultan'ın himayesinde yeniden başladı ve cami 1665'te açıldı.\n\nKaynak: Wikipedia (Great Fire of 1660; New Mosque, Istanbul), Marc David Baer, International Journal of Middle East Studies (2004)",
+  "tags": [
+    "1660 istanbul yangını",
+    "büyük istanbul yangını",
+    "istanbul yangını",
+    "yeni cami",
+    "eminönü tarihi",
+    "turhan sultan",
+    "safiye sultan",
+    "osmanlı yangınları",
+    "istanbul tarihi",
+    "osmanlı tarihi",
+    "karanlık tarih",
+    "tarihte bugün",
+    "yeni cami tarihi"
+  ],
+  "hashtags": [
+    "#istanbul",
+    "#yenicami",
+    "#osmanlı"
+  ],
+  "scenes": [
+    {
+      "text": "Bir şehrin üçte ikisi 2 gün içinde küle döndü.",
+      "search": "old wooden city burning night"
+    },
+    {
+      "text": "24 Temmuz 1660'ta Eminönü'nün batısında başlayan yangın, ahşap evlerle dolu İstanbul'da yaklaşık 49 saat boyunca durmadı.",
+      "search": "wooden houses fire flames"
+    },
+    {
+      "text": "Tarihçi Abdi Paşa alevlerin şehrin içinden işgalci bir ordu gibi yürüdüğünü yazdı.",
+      "search": "old manuscript candle"
+    },
+    {
+      "text": "Dönemin kaynakları 280 bin evin yandığını ve 40 bin kişinin öldüğünü söylüyor, ama bu rakamlar abartılmış olabilir.",
+      "search": "smoke over ruins city"
+    },
+    {
+      "text": "Yangın, 1597'de Safiye Sultan'ın başlattığı ve yarım kalan Eminönü'deki cami inşaatını da harap etti.",
+      "image": "New Mosque",
+      "image_page": "New Mosque, Istanbul"
+    },
+    {
+      "text": "Turhan Sultan aynı yıl inşaatı yeniden başlattı ve küllerin ortasından yükselen bina 1665'te açıldı, bugün hâlâ Yeni Cami diye anılıyor.",
+      "image": "Yeni Cami",
+      "image_page": "New Mosque, Istanbul"
+    }
+  ],
+  "publish_at": "2026-11-06T18:00:00Z"
+}
