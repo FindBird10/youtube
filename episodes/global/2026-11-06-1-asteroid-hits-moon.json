@@ -1,0 +1,60 @@
+{
+  "title": "What if a city-killer asteroid hit the Moon? 🌕",
+  "hook": "ASTEROID HITS THE MOON?",
+  "format": "what-if",
+  "subject": "moon",
+  "emphasis": [
+    "flash",
+    "340",
+    "meteor"
+  ],
+  "description": "Would you have stayed up to watch it? 👇\n\nWhat would happen if an asteroid hit the Moon? Asteroid 2024 YR4 had a 4.3% chance of hitting it on December 22, 2032, until new James Webb Space Telescope data ruled it out in March 2026.\n\nSources: NASA Science (2024 YR4 updates, Mar 2026), Wikipedia (2024 YR4: Moon impact estimates), Live Science (Mar 2026)",
+  "tags": [
+    "what if an asteroid hit the moon",
+    "asteroid hits the moon",
+    "2024 YR4",
+    "2024 YR4 moon",
+    "city killer asteroid",
+    "asteroid moon 2032",
+    "moon impact flash",
+    "what if",
+    "asteroid impact",
+    "James Webb asteroid",
+    "lunar impact",
+    "meteor shower from moon",
+    "space facts"
+  ],
+  "hashtags": [
+    "#moon",
+    "#asteroid",
+    "#space"
+  ],
+  "publish_at": "2026-11-06T16:00:00Z",
+  "scenes": [
+    {
+      "text": "You might have seen the Moon flash in daylight.",
+      "nasa": "Moon from ISS",
+      "search": "full moon rising sky"
+    },
+    {
+      "text": "In 2025, NASA gave asteroid 2024 YR4, as tall as a 15-story building, a 4.3 percent chance of hitting the Moon in December 2032.",
+      "nasa": "2024 YR4 Webb",
+      "search": "asteroid space rock"
+    },
+    {
+      "text": "The blast would equal about 340 Hiroshima bombs and leave a crater up to 2 kilometers wide.",
+      "nasa": "LRO lunar crater",
+      "search": "moon crater surface"
+    },
+    {
+      "text": "About 100,000 tons of rock would fly off the Moon. Some could reach Earth as a meteor shower.",
+      "nasa": "meteor from ISS",
+      "search": "meteor shower night sky"
+    },
+    {
+      "text": "In March 2026, Webb ruled it out. YR4 will miss the Moon by about 21,200 kilometers.",
+      "nasa": "James Webb Space Telescope",
+      "search": "telescope starry night"
+    }
+  ]
+}
