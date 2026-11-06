@@ -1,0 +1,72 @@
+{
+  "title": "GTA 6 drops nearly 40 new screenshots before launch 📸",
+  "hook": "NEW GTA 6 SCREENSHOTS",
+  "subject": "gta6",
+  "wiki": {
+    "site": "gta.fandom.com",
+    "page": "Grand Theft Auto VI",
+    "avoid": [
+      "fallguys",
+      "fall guys",
+      "logo",
+      "icon",
+      "twitter",
+      "x.png",
+      "announcement",
+      "gtav-",
+      "gtaiv",
+      "gta5",
+      "gtao",
+      "online",
+      "merch",
+      "collector"
+    ]
+  },
+  "description": "Which screenshot stood out to you? 👇\n\nRockstar published the Grand Theft Auto VI Launch Gallery on November 5, 2026: nearly 40 new uncaptioned GTA 6 screenshots of Jason and Lucia in Leonida. Pre-loading starts November 10 and GTA 6 launches November 19 on PS5 and Xbox Series X|S.\n\nSources: Rockstar Newswire (Nov 5, 2026), PC Gamer (Nov 5, 2026), VGC (Nov 5, 2026), Vice (Nov 5, 2026)\nGame images © Rockstar Games.",
+  "tags": [
+    "gta 6",
+    "gta vi",
+    "gta 6 news",
+    "gta 6 screenshots",
+    "gta 6 launch gallery",
+    "gta 6 new screenshots",
+    "gta 6 jason lucia",
+    "gta 6 pre load",
+    "grand theft auto 6",
+    "rockstar games",
+    "gta 6 release date",
+    "gta 6 november 19"
+  ],
+  "hashtags": [
+    "#gta6",
+    "#rockstargames",
+    "#gtavi"
+  ],
+  "publish_at": "2026-11-06T18:00:00Z",
+  "scenes": [
+    {
+      "text": "Rockstar posted nearly 40 new GTA 6 screenshots.",
+      "image": "Artwork GTAVI"
+    },
+    {
+      "text": "The Launch Gallery went up on the Rockstar Newswire on November 5, with no captions at all.",
+      "image": "Vice City GTAVI",
+      "image_page": "Vice City (HD Universe)"
+    },
+    {
+      "text": "Jason and Lucia pull armed robberies, hit dance clubs, outrun police and go scuba diving.",
+      "image": "Jason",
+      "image_page": "Jason Duval"
+    },
+    {
+      "text": "One shot shows Jason in tactical gear stepping off a military plane, next to a dog in combat gear.",
+      "image": "Lucia",
+      "image_page": "Lucia Caminos"
+    },
+    {
+      "text": "Pre-loading starts November 10, and GTA 6 launches November 19 on PS5 and Xbox Series X|S.",
+      "image": "Leonida GTAVI",
+      "image_page": "State of Leonida"
+    }
+  ]
+}
