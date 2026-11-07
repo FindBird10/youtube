@@ -1,0 +1,63 @@
+{
+  "title": "Why your blood can fizz like soda 🫧",
+  "hook": "YOUR BLOOD CAN FIZZ",
+  "format": "body",
+  "subject": "astronaut",
+  "emphasis": [
+    "bubbles",
+    "4 hours",
+    "pure oxygen"
+  ],
+  "description": "Would you sit in a spacesuit for 4 hours to avoid this? 👇\n\nWhat is decompression sickness, or the bends? When pressure drops too fast, nitrogen dissolved in your body forms bubbles. It's why NASA astronauts breathe pure oxygen before spacewalks.\n\nSources: NASA Office of the Chief Health & Medical Officer, Decompression Sickness Technical Brief (OCHMO-TB-037)",
+  "tags": [
+    "the bends",
+    "decompression sickness",
+    "what is the bends",
+    "nitrogen bubbles in blood",
+    "why astronauts breathe pure oxygen",
+    "spacewalk prebreathe",
+    "scuba diving bends",
+    "what happens if you surface too fast",
+    "human body facts",
+    "NASA spacesuit pressure",
+    "astronaut health",
+    "diving"
+  ],
+  "hashtags": [
+    "#humanbody",
+    "#NASA",
+    "#diving"
+  ],
+  "publish_at": "2026-11-07T20:00:00Z",
+  "scenes": [
+    {
+      "text": "Your blood can fizz like a freshly opened soda.",
+      "nasa": "astronaut spacewalk",
+      "search": "soda bubbles fizzing"
+    },
+    {
+      "text": "Under pressure, nitrogen dissolves into your body. Drop the pressure too fast, and it comes out as bubbles.",
+      "nasa": "Neutral Buoyancy Laboratory diver",
+      "search": "scuba diver bubbles underwater"
+    },
+    {
+      "text": "It's called the bends: aching joints, itching, sometimes numbness.",
+      "search": "scuba diver ascending"
+    },
+    {
+      "text": "Spacewalks carry the same risk. The International Space Station is kept at 14.7 psi. NASA's spacesuit runs at 4.3.",
+      "nasa": "spacesuit ISS airlock",
+      "search": "astronaut spacesuit"
+    },
+    {
+      "text": "So in one method, an astronaut sits in the suit for 4 hours breathing pure oxygen.",
+      "nasa": "astronaut prebreathe",
+      "search": "oxygen mask breathing"
+    },
+    {
+      "text": "NASA has never had a case reach an astronaut's nervous system in space.",
+      "nasa": "spacewalk Earth",
+      "search": "astronaut floating space"
+    }
+  ]
+}

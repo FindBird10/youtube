@@ -1,0 +1,69 @@
+{
+  "title": "The winter Europe froze solid ❄️",
+  "hook": "THE WINTER EUROPE FROZE",
+  "format": "dark-history",
+  "subject": "frost",
+  "emphasis": [
+    "Venice",
+    "500 years",
+    "600,000"
+  ],
+  "description": "Could a winter like this happen again? 👇\n\nThe Great Frost of 1709 was Europe's coldest winter in 500 years. The Thames and the Baltic Sea froze, wine froze in barrels, and France lost about 600,000 people.\n\nSources: Britannica (Today in History, January 5: The Great Frost), Wikipedia (Great Frost of 1709; William Derham's measurements, letters of Elizabeth Charlotte, Duchess of Orléans)",
+  "tags": [
+    "great frost of 1709",
+    "great frost",
+    "coldest winter in history",
+    "1709 winter",
+    "le grand hiver",
+    "europe froze",
+    "venice frozen lagoon",
+    "baltic sea frozen",
+    "little ice age",
+    "coldest winter in 500 years",
+    "history mysteries",
+    "dark history"
+  ],
+  "hashtags": [
+    "#history",
+    "#greatfrost",
+    "#winter"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Great Frost of 1709"
+  },
+  "publish_at": "2026-11-08T00:00:00Z",
+  "scenes": [
+    {
+      "text": "People skated through the canals of Venice.",
+      "image": "Venice frozen lagoon",
+      "search": "frozen canal ice winter"
+    },
+    {
+      "text": "It was January 1709, Europe's coldest winter in 500 years, stretching from England to Russia.",
+      "image": "Winter1709",
+      "nasa": "Europe snow cover from space",
+      "search": "snow storm night village"
+    },
+    {
+      "text": "Near London, William Derham measured minus 12 Celsius. The Thames and the Baltic Sea froze.",
+      "nasa": "Baltic Sea ice",
+      "search": "frozen sea ice coast"
+    },
+    {
+      "text": "The Duchess of Orléans wrote: \"Never in my life have I seen a winter such as this one.\"",
+      "image": "Elisabeth Charlotte",
+      "image_page": "Elizabeth Charlotte of the Palatinate",
+      "search": "old palace snow winter"
+    },
+    {
+      "text": "Wine froze in barrels. Bread had to be cut with an axe. In France, about 600,000 people died.",
+      "search": "frozen countryside winter fog"
+    },
+    {
+      "text": "Scientists still argue whether volcanic ash or a weak Sun caused it.",
+      "nasa": "SDO sun",
+      "search": "pale winter sun frozen landscape"
+    }
+  ]
+}
