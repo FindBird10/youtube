@@ -1,0 +1,70 @@
+{
+  "title": "The volcano that cooled the whole planet 🌋",
+  "hook": "IT COOLED THE PLANET",
+  "format": "dark-history",
+  "subject": "volcano",
+  "emphasis": [
+    "entire planet",
+    "40 kilometers",
+    "15 million tons"
+  ],
+  "description": "Could one eruption do this again? 👇\n\nThe 1991 eruption of Mount Pinatubo in the Philippines was the second-largest of the 20th century. Its sulfur dioxide haze spread around the world and lowered Earth's average temperature by about 1°F (0.6°C).\n\nSources: NASA Earth Observatory (\"Global Effects of Mount Pinatubo\"), Wikipedia (1991 eruption of Mount Pinatubo)",
+  "tags": [
+    "mount pinatubo",
+    "pinatubo 1991",
+    "1991 eruption of mount pinatubo",
+    "volcano that cooled the earth",
+    "volcanic winter",
+    "can a volcano cool the planet",
+    "sulfur dioxide stratosphere",
+    "philippines volcano",
+    "biggest eruptions 20th century",
+    "volcano facts",
+    "dark history",
+    "history mysteries"
+  ],
+  "hashtags": [
+    "#volcano",
+    "#pinatubo",
+    "#history"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "1991 eruption of Mount Pinatubo"
+  },
+  "publish_at": "2026-11-09T00:00:00Z",
+  "scenes": [
+    {
+      "text": "One volcano made the entire planet colder.",
+      "image": "Pinatubo91eruption plume",
+      "nasa": "Pinatubo eruption",
+      "search": "volcano eruption ash cloud"
+    },
+    {
+      "text": "On June 15, 1991, Mount Pinatubo in the Philippines blasted ash 40 kilometers into the sky.",
+      "image": "Eruption of Mount Pinatubo June 15 1991",
+      "nasa": "volcano eruption from space",
+      "search": "volcanic ash column sky"
+    },
+    {
+      "text": "It was the second-largest eruption of the 20th century.",
+      "image": "Pinatubo eruption cloud 1991",
+      "search": "volcano ash plume aerial"
+    },
+    {
+      "text": "Wet, heavy ash piled onto roofs until they caved in. 847 people died.",
+      "image": "Pinatubo91eruption clark air base",
+      "search": "ash covered town"
+    },
+    {
+      "text": "The blast pushed about 15 million tons of sulfur dioxide into the stratosphere.",
+      "nasa": "Pinatubo aerosol stratosphere",
+      "search": "hazy red sunset sky"
+    },
+    {
+      "text": "Winds spread the haze around the globe. Within 15 months, scientists measured the whole planet about 1 degree Fahrenheit cooler.",
+      "nasa": "earth from space",
+      "search": "earth from space globe"
+    }
+  ]
+}
