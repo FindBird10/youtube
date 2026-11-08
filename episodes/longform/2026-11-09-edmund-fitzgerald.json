@@ -1,0 +1,298 @@
+{
+  "title": "The Edmund Fitzgerald: What Sank the Giant of Lake Superior?",
+  "case_no": 4,
+  "case_title": "The Wreck of the Edmund Fitzgerald",
+  "case_meta": "Lake Superior · November 1975",
+  "status": "DISPUTED",
+  "subject": "fitzgerald",
+  "description": "What do you think broke the Edmund Fitzgerald: the hatches, a shoal, the waves or the hull itself? 👇\n\nOn the 10th of November, 1975, one of the largest ships on the Great Lakes vanished from radar in a Lake Superior storm, minutes after her captain said they were holding their own. All 29 men were lost and no distress call was ever made. This case file follows the last voyage, the search, the wreck on the lake bed, the official reports that disagreed with each other, and the bell that came back up in 1995.\n\nSources: Great Lakes Shipwreck Historical Society (\"The Fateful Journey\"); U.S. Coast Guard Marine Board of Investigation report (1977) and NTSB Marine Accident Report (1978), as quoted by the Detroit Free Press and Professional Mariner; Associated Press via PBS Wisconsin (2025); CIMSS, University of Wisconsin–Madison (2025); MeatEater (Patrick Durkin, 2025).",
+  "tags": [
+    "edmund fitzgerald",
+    "wreck of the edmund fitzgerald",
+    "edmund fitzgerald sinking",
+    "edmund fitzgerald explained",
+    "edmund fitzgerald mystery",
+    "lake superior shipwreck",
+    "great lakes shipwreck",
+    "november 1975 storm",
+    "ernest mcsorley",
+    "arthur m anderson",
+    "whitefish point",
+    "edmund fitzgerald bell",
+    "three sisters wave",
+    "shipwreck documentary",
+    "mystery documentary"
+  ],
+  "hashtags": [
+    "#edmundfitzgerald",
+    "#lakesuperior",
+    "#shipwreck"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "SS Edmund Fitzgerald"
+  },
+  "thumbnail": {
+    "text": "SHE SANK WITHOUT A MAYDAY",
+    "highlight": "MAYDAY",
+    "image": "fitzgerald"
+  },
+  "chapters": [
+    {
+      "title": "Holding Our Own",
+      "scenes": [
+        {
+          "text": "At ten past seven in the evening, Morgan Clark, first mate of a freighter called the Arthur M. Anderson, picked up his radio and asked the ship ahead how she was making out with her problems.",
+          "search": "ship radio microphone night",
+          "card": "Lake Superior · 10 November 1975"
+        },
+        {
+          "text": "The answer came back from Captain Ernest McSorley of the Edmund Fitzgerald. \"We are holding our own.\" Then the line went quiet.",
+          "image": "fitzgerald"
+        },
+        {
+          "text": "Within minutes, the Fitzgerald's echo was gone from the Anderson's radar screen. She had been about fifteen miles from the safety of Whitefish Bay.",
+          "search": "radar screen sweep dark"
+        },
+        {
+          "text": "There was no mayday. No lifeboat was launched. Twenty-nine men disappeared in a few minutes, on a ship more than seven hundred feet long.",
+          "search": "stormy lake waves night"
+        },
+        {
+          "text": "Two federal investigations, a rival theory from the shipping industry and decades of dives have studied those minutes. They still have not settled what happened inside them.",
+          "search": "old typewritten report pages"
+        }
+      ]
+    },
+    {
+      "title": "The Pride of the Lakes",
+      "scenes": [
+        {
+          "text": "When the Edmund Fitzgerald was launched in Michigan in 1958, she was the largest ship on the Great Lakes. At 729 feet, she kept that title until 1971.",
+          "image": "launch",
+          "card": "Great Lakes Engineering Works · 1958"
+        },
+        {
+          "text": "She was built to haul iron ore from the western end of Lake Superior down to the steel mills of the lower lakes, one load after another, every shipping season.",
+          "image": "Edmund Fitzgerald"
+        },
+        {
+          "text": "Sailors called her the Fitz. Twenty-nine men signed on for her last trip. According to the Associated Press, one of them, Oliver Champeau, was making his first.",
+          "search": "large cargo ship river"
+        },
+        {
+          "text": "Her captain in 1975 was Ernest McSorley, sixty-three years old and one of the most experienced masters on the lakes. The Associated Press later reported that he planned to retire after that season.",
+          "image": "McSorley",
+          "image_page": "Ernest M. McSorley"
+        },
+        {
+          "text": "On the afternoon of the 9th of November, the Fitzgerald left Superior, Wisconsin, with 26,116 long tons of taconite pellets, small marbles of processed iron ore.",
+          "search": "iron ore pellets close up",
+          "card": "Superior, Wisconsin · 9 November 1975"
+        },
+        {
+          "text": "Her destination was Zug Island, on the Detroit River. For a ship like the Fitz, it was a routine run of a few days.",
+          "search": "industrial harbor dock cranes"
+        },
+        {
+          "text": "That evening, forecasters issued gale warnings for Lake Superior. Before dawn, they were upgraded to storm warnings. By then the Fitzgerald was far out on open water, heading east.",
+          "search": "dark storm clouds over lake"
+        },
+        {
+          "text": "McSorley chose a northern route, close to the Canadian shore, where the highlands might break the wind. Another freighter, the Arthur M. Anderson under Captain Jesse Cooper, followed the same course.",
+          "image": "map"
+        }
+      ]
+    },
+    {
+      "title": "The Last Afternoon",
+      "scenes": [
+        {
+          "text": "By the afternoon of the 10th, the storm had swung around to the northwest. The wind now had the full length of Lake Superior to build its waves.",
+          "search": "huge waves lake storm",
+          "card": "Off Caribou Island · 10 November 1975"
+        },
+        {
+          "text": "In the middle of the afternoon, McSorley called the Anderson. \"I have a fence rail down, two vents lost or damaged, and a list.\"",
+          "search": "ship deck railing waves"
+        },
+        {
+          "text": "Cooper asked if his pumps were running. \"Yes, both of them,\" McSorley replied, and he asked the Anderson to stay close until they reached Whitefish Point.",
+          "search": "ship engine room pumps"
+        },
+        {
+          "text": "Then the Fitzgerald lost both of her radars. Nearly blind, she now depended on the Anderson, trailing several miles behind, to tell her where she was.",
+          "search": "ship bridge instruments dark"
+        },
+        {
+          "text": "The captain of a Swedish ship, the Avafors, later recalled talking to McSorley that evening. \"I have a bad list,\" McSorley told him. \"One of the worst seas I've ever been in.\"",
+          "search": "snow storm sea night"
+        },
+        {
+          "text": "Captain Cooper logged winds of 58 knots, gusting to 70, and seas of eighteen to twenty-five feet, still building as the evening came on.",
+          "image": "Anderson",
+          "image_page": "SS Arthur M. Anderson"
+        },
+        {
+          "text": "Just before seven, two enormous waves rolled over the Anderson. Her crew said green water reached the bridge deck, thirty-five feet above the waterline.",
+          "search": "wave crashing over ship"
+        },
+        {
+          "text": "Some researchers believe the same waves went on to reach the Fitzgerald. A few minutes later came the radio call, the five words, and the silence.",
+          "search": "dark water surface storm"
+        }
+      ]
+    },
+    {
+      "title": "Turn Back",
+      "scenes": [
+        {
+          "text": "Cooper called the Coast Guard at Sault Ste. Marie and said he was very concerned. There were almost no rescue vessels able to go out in that storm.",
+          "search": "coast guard radio room",
+          "card": "Whitefish Bay · Night of 10 November 1975"
+        },
+        {
+          "text": "So the Coast Guard asked the Anderson, which had only just reached shelter, to turn around and search. Cooper's reply was recorded. \"I'll give it a try, but that's all I can do.\"",
+          "search": "ship turning in rough sea"
+        },
+        {
+          "text": "Only one other freighter, the William Clay Ford, left Whitefish Bay to join them. Aircraft and two Coast Guard cutters followed over the next days.",
+          "search": "search plane over water"
+        },
+        {
+          "text": "Through the night and the days that followed, the searchers found debris and both of the Fitzgerald's lifeboats, badly damaged and empty. They found no survivors.",
+          "image": "lifeboat"
+        },
+        {
+          "text": "A U.S. Navy plane carrying a magnetic anomaly detector, a device built to hunt submarines, picked up a strong contact on the lake bed on the 14th of November.",
+          "search": "navy patrol aircraft flying",
+          "card": "Lake Superior · 14 November 1975"
+        },
+        {
+          "text": "In May 1976, the Coast Guard lowered a remote underwater vehicle called CURV III. On the 20th, its camera found the name Edmund Fitzgerald, on a stern lying upside down.",
+          "image": "wreck"
+        },
+        {
+          "text": "The ship lay about seventeen miles north-northwest of Whitefish Point, at a depth of about 530 feet. She had broken in two.",
+          "search": "deep underwater dark murky"
+        },
+        {
+          "text": "The bow section sat upright in the mud. The stern had flipped over and landed less than two hundred feet away. Whatever happened, it had happened very fast.",
+          "search": "sunken ship hull underwater"
+        }
+      ]
+    },
+    {
+      "title": "Sixty-Eight Clamps",
+      "scenes": [
+        {
+          "text": "The Fitzgerald carried her cargo under twenty-one hatch covers, each held down by dozens of clamps. Those hatches became the centre of the investigation.",
+          "image": "hatch"
+        },
+        {
+          "text": "According to the Detroit Free Press, a man who had worked aboard her testified that the ship often left port without all of the roughly sixty-eight clamps on each cover fully secured.",
+          "search": "steel clamps bolts closeup"
+        },
+        {
+          "text": "Ten days before the last voyage, a Coast Guard inspection reportedly noted minor damage to several hatch covers. Repairs were scheduled for after the season.",
+          "search": "inspector clipboard ship"
+        },
+        {
+          "text": "There was also the question of how low she sat. Between 1969 and 1973, her required freeboard was reduced three times, letting her carry more cargo and ride deeper in the water.",
+          "search": "ship waterline marks hull"
+        },
+        {
+          "text": "According to one analysis, the Fitzgerald sailed more than three feet deeper than her original design allowed. In a storm, that meant less hull above the waves.",
+          "search": "waves washing over deck"
+        },
+        {
+          "text": "And then there was the silence itself. McSorley had been on the radio only minutes before. He never called for help, and nobody on board ever reached a lifeboat.",
+          "search": "empty ship corridor dim"
+        },
+        {
+          "text": "Whatever sank the Fitzgerald did not give her crew time to send one word. Two federal boards set out to explain that, and both looked first at the hatches.",
+          "search": "silent ship bridge night"
+        }
+      ]
+    },
+    {
+      "title": "Four Explanations",
+      "scenes": [
+        {
+          "text": "In 1977, the Coast Guard's Marine Board concluded that massive flooding of the cargo hold had sunk the ship, through ineffective hatch closures as waves rolled along the deck.",
+          "search": "government report documents table",
+          "card": "Washington, D.C. · 1977–1978"
+        },
+        {
+          "text": "In 1978, the National Transportation Safety Board blamed the sudden collapse of one or more hatch covers under the weight of the seas. It reached that finding by a majority vote.",
+          "search": "official meeting room old"
+        },
+        {
+          "text": "The Lake Carriers' Association, representing the ship owners, rejected both. It argued that the Fitzgerald had scraped over the Six Fathom Shoal near Caribou Island, damaging her bottom and ballast tanks.",
+          "search": "nautical chart shoal depths"
+        },
+        {
+          "text": "That would explain the list and the damaged vents McSorley reported. Against it, a Canadian survey in 1976 placed the shoal about a mile from where older charts had shown it.",
+          "image": "map"
+        },
+        {
+          "text": "Some sailors point to the three sisters, a Lake Superior pattern of three large waves in a row. The water of one wave has no time to drain before the next lands.",
+          "search": "three waves breaking sequence"
+        },
+        {
+          "text": "The two waves that swept over the Anderson came close to the moment the Fitzgerald disappeared. But no instrument recorded the waves that actually reached her.",
+          "search": "rough sea horizon grey"
+        },
+        {
+          "text": "A fourth theory blames the hull. A witness told investigators her keel had been loose, and some engineers argue years of bending stress cracked her in the storm.",
+          "search": "rusted steel hull plates"
+        },
+        {
+          "text": "Each explanation fits part of the evidence. None of them was ever proven, because the hatches, the hull and the bottom of the wreck lie under five hundred feet of cold water.",
+          "search": "deep blue water light rays"
+        }
+      ]
+    },
+    {
+      "title": "The Bell",
+      "scenes": [
+        {
+          "text": "Most people who study the wreck agree on one point. Wind and waves were at the centre of it, and somewhere water reached the cargo hold faster than the pumps could clear it.",
+          "search": "storm waves lake shore",
+          "card": "Whitefish Point · 4 July 1995"
+        },
+        {
+          "text": "Whether it came through the hatches, through a crack, or through a hole torn by a shoal is still argued about today.",
+          "search": "underwater shipwreck debris"
+        },
+        {
+          "text": "The wreck is protected as a grave under Canadian law. Divers may not visit it or take anything from it without permission.",
+          "image": "memorial"
+        },
+        {
+          "text": "At the request of the families, divers raised the ship's bronze bell on the 4th of July, 1995. A replica engraved with the crew's names took its place.",
+          "image": "bell",
+          "image_page": "Great Lakes Shipwreck Museum"
+        },
+        {
+          "text": "The original bell now hangs in the Great Lakes Shipwreck Museum at Whitefish Point, the point the Fitzgerald was trying to reach that night.",
+          "image": "lighthouse",
+          "image_page": "Whitefish Point Light"
+        },
+        {
+          "text": "In Detroit, the rector of the Mariners' Church rang his church bell twenty-nine times on the morning after the sinking, once for each man.",
+          "search": "church bell tower ringing"
+        },
+        {
+          "text": "Every November since, the names have been read aloud in Detroit and at Whitefish Point, and the bells have rung again.",
+          "search": "candles memorial evening"
+        },
+        {
+          "text": "Fifty-one years on, the last thing we know about those twenty-nine men is what their captain said into the radio, that they were holding their own.",
+          "search": "calm lake dusk horizon"
+        }
+      ]
+    }
+  ],
+  "publish_at": "2026-11-09T20:00:00Z"
+}
