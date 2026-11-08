@@ -1,0 +1,55 @@
+{
+  "title": "NieR: Automata patch makes Steam install 366GB 💾",
+  "hook": "366GB NIER PATCH",
+  "subject": "nierautomata",
+  "trailer": {
+    "steam_appid": 524220
+  },
+  "description": "Did this update hit your SSD? 👇\n\nA NieR: Automata Steam update released November 6, 2026 added Korean, Simplified Chinese and Traditional Chinese, but pushed the download size from under 50GB to 366GB. Square Enix says it is investigating the cause. Unchecking the DLC in Steam's Properties lets the base game download at its normal size.\n\nSources: Square Enix Steam post via PC Gamer (Nov 7, 2026), Kotaku (Nov 6, 2026), VGC\nGame footage © Square Enix.",
+  "tags": [
+    "nier automata",
+    "nier automata steam",
+    "nier automata update",
+    "nier automata 366gb",
+    "nier automata patch",
+    "nier automata file size",
+    "nier automata bug",
+    "nier automata pc",
+    "nier automata fix",
+    "square enix",
+    "steam news",
+    "nier"
+  ],
+  "hashtags": [
+    "#nierautomata",
+    "#squareenix",
+    "#steam"
+  ],
+  "publish_at": "2026-11-08T18:00:00Z",
+  "scenes": [
+    {
+      "text": "A NieR: Automata patch made the game 366GB on Steam.",
+      "trailer": true
+    },
+    {
+      "text": "The November 6 update only added Korean, Simplified Chinese and Traditional Chinese.",
+      "search": "computer hard drive storage full warning"
+    },
+    {
+      "text": "Before that, the full install sat under 50GB.",
+      "trailer": true
+    },
+    {
+      "text": "Square Enix posted on Steam that it's investigating the cause, and apologized for the inconvenience.",
+      "search": "pc gaming setup dark room monitor"
+    },
+    {
+      "text": "PC Gamer reports the bug seems tied to the eight DLC packs, each showing the full game's size.",
+      "trailer": true
+    },
+    {
+      "text": "Until a fix arrives, untick the DLC in Steam's Properties menu and the base game downloads normally.",
+      "search": "hand on computer mouse close up"
+    }
+  ]
+}
