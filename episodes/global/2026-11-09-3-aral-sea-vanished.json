@@ -1,0 +1,69 @@
+{
+  "title": "The sea that turned into a desert 🏜️",
+  "hook": "A SEA VANISHED",
+  "format": "dark-history",
+  "subject": "desert",
+  "emphasis": [
+    "desert",
+    "30 tonnes",
+    "150,000 tonnes"
+  ],
+  "description": "Could a sea this big really disappear in one lifetime? 👇\n\nThe Aral Sea in Central Asia was the world's fourth-largest lake until Soviet irrigation projects in the 1960s diverted the Amu Darya and Syr Darya rivers. Today most of its bed is the Aralkum desert, and ships still sit in the sand near Moynaq, Uzbekistan.\n\nSources: NASA Earth Observatory (\"Aral Sea Continues to Shrink\", 2009) and NASA Scientific Visualization Studio (\"Shrinking Aral Sea\"); ESA Earth from Space (Envisat Aral Sea images); ScienceAlert (2025); Caspian Post (\"Moynak: Memories of the Aral Sea\", 2023)",
+  "tags": [
+    "aral sea",
+    "aral sea disaster",
+    "aral sea ships in desert",
+    "moynaq ship graveyard",
+    "sea that disappeared",
+    "how did the aral sea dry up",
+    "aralkum desert",
+    "soviet cotton irrigation",
+    "amu darya syr darya",
+    "worst environmental disasters",
+    "dark history",
+    "uzbekistan"
+  ],
+  "hashtags": [
+    "#aralsea",
+    "#history",
+    "#uzbekistan"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Aral Sea"
+  },
+  "publish_at": "2026-11-10T00:00:00Z",
+  "scenes": [
+    {
+      "text": "Fishing ships are rusting in the middle of a desert.",
+      "image": "Aral Sea ship graveyard Moynaq",
+      "search": "abandoned ship desert sand"
+    },
+    {
+      "text": "That sand was the floor of the Aral Sea, once the world's fourth-largest lake.",
+      "nasa": "Aral Sea",
+      "search": "desert from above aerial"
+    },
+    {
+      "text": "In the 1960s, Soviet planners diverted its 2 rivers to water cotton.",
+      "image": "Aral Sea 1989 2014",
+      "nasa": "shrinking Aral Sea Landsat",
+      "search": "cotton field irrigation"
+    },
+    {
+      "text": "Moynaq's cannery once packed 30 tonnes of fish a day. The nearest shore is now about 100 kilometers away.",
+      "image": "Moynaq",
+      "search": "rusty ship hull sand"
+    },
+    {
+      "text": "Each year, storms lift at least 150,000 tonnes of salt and sand off the dry seabed.",
+      "nasa": "Aral Sea dust storm",
+      "search": "dust storm desert wind"
+    },
+    {
+      "text": "Of 68,000 square kilometers of sea, about 8,000 are still water.",
+      "nasa": "Aral Sea from space",
+      "search": "dry cracked lake bed"
+    }
+  ]
+}
