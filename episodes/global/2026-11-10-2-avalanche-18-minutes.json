@@ -1,0 +1,68 @@
+{
+  "title": "Buried in an avalanche, the clock starts at once ⏱️",
+  "hook": "BURIED IN AN AVALANCHE",
+  "format": "body",
+  "subject": "avalanche",
+  "emphasis": [
+    "18 minutes",
+    "34%",
+    "squeezes"
+  ],
+  "description": "Would you know which way is up? 👇\n\nWhat happens to your body when an avalanche buries you? Swiss and Canadian rescue data show survival stays above 91% for about 18 minutes, then collapses as packed snow stops you breathing. In 143 Canadian deaths, not one was from cold.\n\nSources: Haegeli et al. 2011, \"Comparison of avalanche survival patterns in Canada and Switzerland\", Canadian Medical Association Journal 183(7):789-795 (Simon Fraser University; Swiss data from Brugger et al.)",
+  "tags": [
+    "avalanche",
+    "buried in an avalanche",
+    "what happens if you get buried in an avalanche",
+    "avalanche survival",
+    "how long can you survive under snow",
+    "avalanche survival time",
+    "avalanche rescue",
+    "human body",
+    "body facts",
+    "winter survival",
+    "skiing safety",
+    "backcountry skiing"
+  ],
+  "hashtags": [
+    "#avalanche",
+    "#humanbody",
+    "#winter"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Avalanche"
+  },
+  "publish_at": "2026-11-10T20:00:00Z",
+  "scenes": [
+    {
+      "text": "Buried in an avalanche, you have about 18 minutes.",
+      "image": "avalanche",
+      "search": "avalanche snow mountain slope"
+    },
+    {
+      "text": "When the slide stops, the snow packs around you, up to five times denser than fresh powder.",
+      "image": "avalanche debris snow",
+      "nasa": "Alps from ISS",
+      "search": "snow debris mountain"
+    },
+    {
+      "text": "It squeezes your chest so you can't fully breathe.",
+      "search": "deep snow close up"
+    },
+    {
+      "text": "Swiss records show over 91% of buried people survive the first 18 minutes. By 35 minutes, only 34% do.",
+      "image": "avalanche rescue",
+      "search": "avalanche rescue team probe"
+    },
+    {
+      "text": "In Canada, doctors studied 143 avalanche deaths. 81% suffocated. Not one died of cold.",
+      "image": "avalanche dog",
+      "search": "rescue dog snow"
+    },
+    {
+      "text": "Canada's wetter snow kills faster, so Simon Fraser University researchers say dig within 10 minutes.",
+      "image": "avalanche transceiver probe",
+      "search": "skiers digging snow rescue"
+    }
+  ]
+}

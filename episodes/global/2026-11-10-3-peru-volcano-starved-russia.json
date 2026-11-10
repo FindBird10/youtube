@@ -1,0 +1,71 @@
+{
+  "title": "The volcano in Peru that starved Russia 🌋",
+  "hook": "A VOLCANO STARVED RUSSIA",
+  "format": "dark-history",
+  "subject": "volcano",
+  "emphasis": [
+    "Peru",
+    "600 years",
+    "127,000"
+  ],
+  "description": "Could one eruption do this again today? 👇\n\nIn February 1600, Huaynaputina in Peru produced the largest eruption ever recorded in South America. Tree rings show 1601 brought the Northern Hemisphere's worst short-term cooling in 600 years, and Russia fell into its deadliest famine.\n\nSources: Briffa et al. 1998, Nature 393:450-455; Verosub & Lippman 2008, Eos (AGU) 89(15), via UC Davis (\"1600 Eruption Caused Global Disruption\"); Wikipedia: Huaynaputina, Russian famine of 1601-1603",
+  "tags": [
+    "huaynaputina",
+    "huaynaputina eruption 1600",
+    "russian famine 1601",
+    "volcano caused famine",
+    "volcanic winter",
+    "largest eruption in south america",
+    "1601 coldest year",
+    "time of troubles",
+    "dark history",
+    "history facts",
+    "volcano history",
+    "boris godunov famine",
+    "little ice age"
+  ],
+  "hashtags": [
+    "#volcano",
+    "#history",
+    "#russia"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Huaynaputina"
+  },
+  "publish_at": "2026-11-11T00:00:00Z",
+  "scenes": [
+    {
+      "text": "A volcano in Peru starved Russia.",
+      "nasa": "volcano eruption from space",
+      "search": "volcano eruption ash cloud"
+    },
+    {
+      "text": "On 19 February 1600, Huaynaputina exploded. No eruption recorded in South America has been bigger.",
+      "image": "Huaynaputina",
+      "search": "volcano crater Andes"
+    },
+    {
+      "text": "Its sulfur haze circled the planet, and 1601 brought the sharpest Northern Hemisphere cooling in 600 years.",
+      "nasa": "volcanic aerosol stratosphere",
+      "search": "tree rings close up"
+    },
+    {
+      "text": "In Russia, the harvests failed in 1601 and 1602. Moscow alone buried 127,000 people in mass graves.",
+      "image": "famine",
+      "image_page": "Russian famine of 1601–1603",
+      "search": "frozen wheat field winter"
+    },
+    {
+      "text": "About 2 million died, nearly a third of the country.",
+      "image": "Boris Godunov",
+      "image_page": "Russian famine of 1601–1603",
+      "search": "old russian church snow"
+    },
+    {
+      "text": "Geologist Ken Verosub, who tied the famine to the eruption, admits he can't prove the volcano caused it all.",
+      "image": "Huaynaputina volcano",
+      "search": "volcano smoke mountain"
+    }
+  ]
+}
