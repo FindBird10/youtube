@@ -1,0 +1,71 @@
+{
+  "title": "Why Ezio Auditore became an Assassin in Assassin's Creed 2",
+  "angle": "origin",
+  "subject": "ezio",
+  "wiki": {
+    "site": "assassinscreed.fandom.com",
+    "page": "Ezio Auditore da Firenze",
+    "avoid": [
+      "revelations",
+      "embers",
+      "old",
+      "shao jun",
+      "chronicles",
+      "concept",
+      "artwork"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 33230
+  },
+  "description": "Would you have trusted Uberto Alberti? 👇\n\nHow a banker's son from Florence became the most famous Assassin of the Renaissance. Spoilers for Assassin's Creed II.\n\nFan-made content. Not affiliated with or endorsed by Ubisoft. Game images © their respective owners.",
+  "tags": [
+    "ezio",
+    "ezio auditore",
+    "ezio auditore da firenze",
+    "assassin's creed",
+    "assassins creed 2",
+    "ac2",
+    "ezio story",
+    "ezio explained",
+    "assassin's creed lore",
+    "ezio collection",
+    "ubisoft",
+    "ezio origin",
+    "ezio family execution",
+    "uberto alberti"
+  ],
+  "hashtags": [
+    "#assassinscreed",
+    "#ezio",
+    "#ac2"
+  ],
+  "publish_at": "2026-11-10T18:00:00Z",
+  "scenes": [
+    {
+      "text": "Ezio Auditore was seventeen when Florence hanged his father and brothers.",
+      "image": "Ezio Auditore"
+    },
+    {
+      "text": "In 1476 he was a banker's son, racing rooftops and brawling with Vieri de' Pazzi on the Ponte Vecchio.",
+      "image": "Ezio Vieri Ponte Vecchio"
+    },
+    {
+      "text": "Then guards took his father, Giovanni. Ezio carried the evidence to the man he trusted, Uberto Alberti.",
+      "image": "Giovanni Auditore"
+    },
+    {
+      "text": "On December 29, Uberto stood in the Piazza della Signoria and denied ever seeing it.",
+      "image": "Uberto Alberti",
+      "still": true
+    },
+    {
+      "text": "Giovanni, Federico and little Petruccio died on the gallows. From the crowd, Ezio shouted: I'll kill you for what you've done.",
+      "image": "Piazza della Signoria execution"
+    },
+    {
+      "text": "He kept that promise in the courtyard of Santa Croce, wearing his father's hidden blade.",
+      "image": "Ezio hidden blade"
+    }
+  ]
+}
