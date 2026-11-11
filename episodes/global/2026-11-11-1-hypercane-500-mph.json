@@ -1,0 +1,65 @@
+{
+  "title": "What if the ocean hit 122°F? 🌀",
+  "hook": "WHAT IF OCEANS HIT 122°F?",
+  "format": "what-if",
+  "subject": "hurricane",
+  "emphasis": [
+    "500 mph",
+    "122°F",
+    "21°F"
+  ],
+  "description": "How far inland would you need to run? 👇\n\nWhat is a hypercane? In 1995, MIT's Kerry Emanuel and NCAR's Richard Rotunno simulated hurricanes over ocean water heated to about 122°F by an asteroid impact or undersea eruption. The winds topped 500 mph. The hottest seawater ever measured, 101.1°F off Florida in 2023, is still about 21 degrees short.\n\nSources: Emanuel, Speer, Rotunno, Srivastava & Molina 1995, \"Hypercanes: A possible link in global extinction scenarios\", Journal of Geophysical Research 100(D7):13755-13765; Christian Science Monitor (10 Oct 1995, \"Could 'Superhurricanes' Have Done In Dinosaurs?\"); NOAA / AP via PBS NewsHour (Manatee Bay buoy, 24 July 2023); NOAA National Hurricane Center, Hurricane Patricia report",
+  "tags": [
+    "hypercane",
+    "what if the ocean got hotter",
+    "what is a hypercane",
+    "strongest hurricane possible",
+    "500 mph hurricane",
+    "what if",
+    "hurricane from space",
+    "hurricane patricia",
+    "hottest ocean temperature",
+    "asteroid hurricane",
+    "kerry emanuel",
+    "extreme weather",
+    "earth science"
+  ],
+  "hashtags": [
+    "#hurricane",
+    "#whatif",
+    "#earth"
+  ],
+  "publish_at": "2026-11-11T16:00:00Z",
+  "scenes": [
+    {
+      "text": "500 mph winds would need a 122°F ocean.",
+      "nasa": "hurricane from space",
+      "search": "hurricane eye satellite view"
+    },
+    {
+      "text": "MIT's Kerry Emanuel modeled that storm in 1995 and called it a hypercane. An asteroid or undersea eruption would have to heat the sea.",
+      "nasa": "hurricane eye from ISS",
+      "search": "storm clouds over ocean"
+    },
+    {
+      "text": "The hottest sea water ever measured was 101.1°F, off Florida's Manatee Bay in July 2023.",
+      "nasa": "Florida Keys from space",
+      "search": "Florida Keys shallow water aerial"
+    },
+    {
+      "text": "Hurricane Patricia, the strongest on record, peaked at 215 mph.",
+      "nasa": "Hurricane Patricia",
+      "search": "hurricane palm trees wind"
+    },
+    {
+      "text": "A hypercane's clouds would climb 20 miles, and scientists think its water could thin the ozone layer.",
+      "nasa": "thunderstorm from ISS",
+      "search": "thunderstorm cloud tower"
+    },
+    {
+      "text": "Today's oceans are still 21°F too cool.",
+      "nasa": "ocean from ISS",
+      "search": "calm ocean horizon"
+    }
+  ]
+}

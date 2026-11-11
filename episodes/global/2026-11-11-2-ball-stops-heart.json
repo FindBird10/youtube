@@ -1,0 +1,72 @@
+{
+  "title": "How a baseball can stop a healthy heart ⚾",
+  "hook": "BALL STOPS YOUR HEART",
+  "format": "body",
+  "subject": "heart",
+  "emphasis": [
+    "1%",
+    "40 mph",
+    "3 minutes"
+  ],
+  "description": "Is there an AED at your field? 👇\n\nCommotio cordis is sudden cardiac arrest from a blow to the chest, with no damage to the heart itself. The hit has to land during about 1% of the heartbeat. The US Commotio Cordis Registry logged 216 cases by 2012, and survival depended on how fast a defibrillator arrived. In that registry, 37% of athletes hit were wearing chest protectors. This video is not medical advice.\n\nSources: Tainter & Hughes, \"Commotio Cordis\", StatPearls (NCBI Bookshelf, NIH); Maron et al. 2013, \"Increasing survival rate from commotio cordis\", Heart Rhythm 10(2):219-223 (US Commotio Cordis Registry, Minneapolis)",
+  "tags": [
+    "commotio cordis",
+    "baseball to the chest",
+    "can a ball stop your heart",
+    "chest impact cardiac arrest",
+    "sudden cardiac arrest athletes",
+    "ventricular fibrillation",
+    "heart stopped by baseball",
+    "how does commotio cordis happen",
+    "AED sports",
+    "human body",
+    "body facts",
+    "heart facts",
+    "youth sports safety"
+  ],
+  "hashtags": [
+    "#heart",
+    "#humanbody",
+    "#baseball"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Commotio cordis"
+  },
+  "publish_at": "2026-11-11T20:00:00Z",
+  "scenes": [
+    {
+      "text": "One baseball to your chest can stop your heart.",
+      "image": "baseball pitch",
+      "image_page": "Baseball",
+      "search": "baseball pitcher throwing slow motion"
+    },
+    {
+      "text": "No broken ribs. The hit just has to land in about 1% of a heartbeat.",
+      "image": "cardiac cycle",
+      "image_page": "Cardiac cycle",
+      "search": "heart monitor beeping hospital"
+    },
+    {
+      "text": "That's the rising edge of the T wave. A blow then throws the heart into ventricular fibrillation.",
+      "image": "ventricular fibrillation",
+      "image_page": "Ventricular fibrillation",
+      "search": "ecg heart rhythm screen"
+    },
+    {
+      "text": "Risk peaks at about 40 mph.",
+      "search": "youth baseball game"
+    },
+    {
+      "text": "The registry in Minneapolis logged 216 cases by 2012, mostly boys around 15.",
+      "image": "commotio cordis",
+      "search": "lacrosse players field"
+    },
+    {
+      "text": "In a 2013 Heart Rhythm study, 40% survived with a shock or CPR inside 3 minutes. Later, only 2 of 42 did.",
+      "image": "automated external defibrillator",
+      "image_page": "Automated external defibrillator",
+      "search": "defibrillator AED wall"
+    }
+  ]
+}
