@@ -1,0 +1,66 @@
+{
+  "title": "What if Earth lost all its air in one second? 🌍",
+  "hook": "WHAT IF AIR VANISHED?",
+  "format": "what-if",
+  "subject": "atmosphere",
+  "emphasis": [
+    "stars at noon",
+    "boil",
+    "minus 18"
+  ],
+  "description": "Which change would hit you first? 👇\n\nWhat would happen if Earth's atmosphere disappeared? The sky goes black at noon, lakes boil and freeze at once, and the planet cools toward Moon-like extremes.\n\nSources: NASA Science, \"Weather on the Moon\"; NASA Climate / NASA Earth Observatory (greenhouse effect, Earth at about -18°C without heat-trapping gases); NASA Space Place, \"Why is the sky blue?\"; Harvard Natural Sciences Lecture Demonstrations, \"Boiling/Freezing of Water in a Vacuum\"",
+  "tags": [
+    "what if earth lost its atmosphere",
+    "what if the atmosphere disappeared",
+    "earth without atmosphere",
+    "what if earth had no air",
+    "no atmosphere",
+    "what if",
+    "atmosphere",
+    "why is the sky blue",
+    "stars during the day",
+    "water boiling in vacuum",
+    "moon temperature",
+    "greenhouse effect",
+    "space facts",
+    "science"
+  ],
+  "hashtags": [
+    "#atmosphere",
+    "#earth",
+    "#space"
+  ],
+  "publish_at": "2026-11-12T16:00:00Z",
+  "scenes": [
+    {
+      "text": "Without air, you'd see stars at noon.",
+      "nasa": "earth limb atmosphere from ISS",
+      "search": "starry night sky timelapse"
+    },
+    {
+      "text": "With nothing to scatter sunlight into blue, the sky turns black, like on the Moon.",
+      "nasa": "Apollo lunar surface",
+      "search": "moon surface black sky"
+    },
+    {
+      "text": "Sound stops. Outside, you'd pass out in about 15 seconds.",
+      "nasa": "astronaut spacewalk",
+      "search": "empty silent city street"
+    },
+    {
+      "text": "Lakes start to boil at room temperature. Harvard physicists show it in a jar: pump out the air, and water boils, then freezes.",
+      "nasa": "ocean from ISS",
+      "search": "boiling water bubbles close up"
+    },
+    {
+      "text": "Without heat-trapping gases, NASA puts Earth near minus 18°C. Moon nights hit minus 133°C.",
+      "nasa": "Lunar Reconnaissance Orbiter moon",
+      "search": "frozen ice landscape"
+    },
+    {
+      "text": "All of it depends on that thin blue line.",
+      "nasa": "earth limb from ISS",
+      "search": "earth atmosphere from space"
+    }
+  ]
+}

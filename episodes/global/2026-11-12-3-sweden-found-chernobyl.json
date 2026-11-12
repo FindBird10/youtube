@@ -1,0 +1,71 @@
+{
+  "title": "How Sweden found Chernobyl before Moscow said a word ☢️",
+  "hook": "THE RADIATION WASN'T THEIRS",
+  "format": "dark-history",
+  "subject": "chernobyl",
+  "emphasis": [
+    "shoes",
+    "1,100 kilometers",
+    "denied"
+  ],
+  "description": "Would a nuclear accident stay secret that long today? 👇\n\nOn 28 April 1986, radiation monitors at Sweden's Forsmark nuclear plant were set off by workers' shoes. The plant was fine. The fallout had come from Chernobyl in the Soviet Union, which denied any accident until that evening.\n\nSources: Kyiv Post, \"When Sweden Got Wind of an Apocalypse: the Man Who Raised the Chornobyl Alarm\" (2026); European Parliament, via Watching the Swedes, \"How Sweden exposed the Chernobyl catastrophe\" (2019); Wikipedia: Chernobyl disaster, Forsmark Nuclear Power Plant",
+  "tags": [
+    "chernobyl",
+    "chernobyl disaster",
+    "how the world found out about chernobyl",
+    "forsmark",
+    "sweden chernobyl",
+    "chernobyl 1986",
+    "chernobyl radiation sweden",
+    "nuclear disaster",
+    "soviet union cover up",
+    "radioactive cloud",
+    "dark history",
+    "history facts",
+    "nuclear accident"
+  ],
+  "hashtags": [
+    "#chernobyl",
+    "#history",
+    "#sweden"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Chernobyl disaster"
+  },
+  "publish_at": "2026-11-13T00:00:00Z",
+  "scenes": [
+    {
+      "text": "A worker's shoes set off Sweden's nuclear alarms.",
+      "image": "Forsmark",
+      "image_page": "Forsmark Nuclear Power Plant",
+      "search": "nuclear power plant sweden"
+    },
+    {
+      "text": "Just before 7 a.m. on 28 April 1986, at Forsmark, north of Stockholm. Every worker who walked through after him set it off too.",
+      "image": "Forsmark nuclear power plant",
+      "image_page": "Forsmark Nuclear Power Plant",
+      "search": "radiation detector geiger counter"
+    },
+    {
+      "text": "The plant was fine. Meteorologist Christer Persson traced the air back to the southwestern Soviet Union.",
+      "image": "Chernobyl radiation map",
+      "search": "weather map wind arrows"
+    },
+    {
+      "text": "Moscow denied any accident. Twice.",
+      "image": "Soviet",
+      "search": "kremlin moscow winter"
+    },
+    {
+      "text": "That evening, it admitted a reactor at Chernobyl, about 1,100 kilometers away, had exploded two days earlier.",
+      "image": "Chernobyl Disaster",
+      "search": "chernobyl reactor ruins"
+    },
+    {
+      "text": "Sweden found the disaster from radioactive dust on a pair of shoes.",
+      "image": "Chernobyl reactor",
+      "search": "abandoned pripyat city"
+    }
+  ]
+}
