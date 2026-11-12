@@ -1,0 +1,309 @@
+{
+  "title": "Franklin's Lost Expedition: What Happened to the 129 Men?",
+  "case_no": 5,
+  "case_title": "Franklin's Lost Expedition",
+  "case_meta": "King William Island, Canadian Arctic · 1845–1848",
+  "status": "UNSOLVED",
+  "subject": "franklin",
+  "description": "What do you think happened to the last of Franklin's men after they left the ships? 👇\n\nIn May 1845, Sir John Franklin sailed from England with two of the best-equipped ships of the Royal Navy to find the Northwest Passage. None of the 129 men came home. This case file follows the note left under a cairn on King William Island, the Inuit testimony that Britain did not want to hear, the lead poisoning theory, the two wrecks found in 2014 and 2016, and the DNA work that is still putting names to the dead in 2026.\n\nSources: Wikipedia, \"Franklin's lost expedition\" and its references; National Geographic (Erin Blakemore, May 2026); University of Waterloo via ScienceDaily (September 2026); ArcticToday (June 2026); Stenton, Fratpietro, Gorsalitz & Park, Journal of Archaeological Science: Reports (2026); Christensen et al., Scientific Reports (2017).",
+  "tags": [
+    "franklin expedition",
+    "franklin's lost expedition",
+    "franklin expedition mystery",
+    "franklin expedition explained",
+    "hms erebus",
+    "hms terror",
+    "northwest passage",
+    "king william island",
+    "victory point note",
+    "sir john franklin",
+    "franklin expedition dna",
+    "beechey island graves",
+    "arctic mystery",
+    "lost expedition documentary",
+    "unsolved mysteries"
+  ],
+  "hashtags": [
+    "#franklinexpedition",
+    "#arctic",
+    "#unsolved"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Franklin's lost expedition"
+  },
+  "thumbnail": {
+    "text": "THE NOTE SAID ALL WELL",
+    "highlight": "WELL",
+    "image": "Victory Point"
+  },
+  "chapters": [
+    {
+      "title": "Two Messages",
+      "scenes": [
+        {
+          "text": "Under a pile of stones on the north-west coast of King William Island, a British officer named William Hobson found a small metal canister in May 1859.",
+          "search": "rock cairn arctic coast",
+          "card": "Victory Point, King William Island · 5 May 1859"
+        },
+        {
+          "text": "Inside was a single printed Admiralty form. In the middle, in neat handwriting dated May 1847, someone had written two short words. All well.",
+          "image": "Victory Point note"
+        },
+        {
+          "text": "Around the edges of the same sheet, crowded into the margins, was a second message. It was dated almost a year later, and nothing in it was well.",
+          "image": "Victory Point note"
+        },
+        {
+          "text": "The ships had been abandoned. Their commander was dead. One hundred and five men were about to set off on foot across the ice, heading south.",
+          "search": "frozen sea ice arctic"
+        },
+        {
+          "text": "That sheet of paper is still the only written record of what happened to Sir John Franklin's expedition, the worst disaster in the history of British polar exploration.",
+          "search": "old paper document candle"
+        }
+      ]
+    },
+    {
+      "title": "The Best-Equipped Ships",
+      "scenes": [
+        {
+          "text": "On the morning of the 19th of May, 1845, two Royal Navy ships left Greenhithe on the River Thames. Their names were Erebus and Terror.",
+          "image_page": "HMS Erebus (1826)",
+          "image": "Erebus Terror",
+          "card": "Greenhithe, Kent · 19 May 1845"
+        },
+        {
+          "text": "Their mission was the Northwest Passage, a sea route over the top of North America that explorers had been chasing for three centuries.",
+          "image": "map"
+        },
+        {
+          "text": "In command was Sir John Franklin, fifty-nine years old, a veteran of earlier Arctic journeys. His second-in-command on Erebus was James Fitzjames. Francis Crozier captained Terror.",
+          "image_page": "John Franklin",
+          "image": "Franklin portrait"
+        },
+        {
+          "text": "The ships were the most advanced of their day. Each carried a steam engine converted from a railway locomotive, a reinforced bow, and heating pipes under the decks.",
+          "search": "old steam engine machinery"
+        },
+        {
+          "text": "They took three years of food, live cattle and a library of more than a thousand books. Much of the food came in tins.",
+          "search": "old tin cans shelf"
+        },
+        {
+          "text": "Those tins had been ordered in a hurry, about seven weeks before sailing. The lead solder on some of them was so sloppy that it ran down the inside like melted candle wax.",
+          "search": "melting candle wax close up"
+        },
+        {
+          "text": "After a stop in Greenland, five sick men were sent home. That left one hundred and twenty-nine aboard the two ships.",
+          "search": "greenland icebergs fjord"
+        },
+        {
+          "text": "In late July 1845, two whaling ships, the Prince of Wales and the Enterprise, met Erebus and Terror in Baffin Bay. They were waiting for the ice to clear.",
+          "search": "old sailing ship arctic ice"
+        },
+        {
+          "text": "The whalers sailed on toward their fishing grounds. No European ever saw Franklin's ships afloat again, and for almost three years nobody in Britain heard a word.",
+          "search": "ship sailing into fog"
+        }
+      ]
+    },
+    {
+      "title": "Three Graves",
+      "scenes": [
+        {
+          "text": "By 1848, the Admiralty sent the first rescue ships. Franklin's wife, Jane, had been pushing for a search, and would spend years and much of her money on it.",
+          "image_page": "Jane Franklin",
+          "image": "Jane Franklin",
+          "card": "London · 1848"
+        },
+        {
+          "text": "Over the next decade, dozens of British and American expeditions went looking, by sea and by sledge. Some of them became stuck in the ice themselves.",
+          "search": "ship trapped in sea ice"
+        },
+        {
+          "text": "In 1850, searchers landed on Beechey Island, a small, bare island at the entrance to the passage. They found the remains of a winter camp.",
+          "image_page": "Beechey Island",
+          "image": "Beechey Island"
+        },
+        {
+          "text": "And they found three graves, with wooden headboards. John Torrington, John Hartnell and William Braine had died during the expedition's first winter, in 1845 and 1846.",
+          "image_page": "Beechey Island",
+          "image": "graves"
+        },
+        {
+          "text": "There was no message at the camp. No note to say where the ships had gone next, or what the men intended to do.",
+          "search": "empty arctic shore wind"
+        },
+        {
+          "text": "Then, in April 1854, a Scottish explorer named John Rae met a group of Inuit near Pelly Bay, far to the south.",
+          "image_page": "John Rae (explorer)",
+          "image": "Rae"
+        },
+        {
+          "text": "They told him that years earlier, around thirty-five or forty white men had been seen dragging a boat over the ice. They had starved, near the mouth of a great river.",
+          "search": "inuit snow sled arctic"
+        },
+        {
+          "text": "Rae bought silver forks and spoons from them. Engraved on some were the crests and initials of Franklin, Crozier and other officers.",
+          "search": "antique silver spoons"
+        },
+        {
+          "text": "Rae also reported something many in Britain refused to accept. According to the Inuit, some of the dying men had been driven to eat their dead companions.",
+          "search": "old newspaper printing press"
+        }
+      ]
+    },
+    {
+      "title": "Back's Fish River",
+      "scenes": [
+        {
+          "text": "Jane Franklin paid for one more search herself, with help from public donations. A small steam yacht called the Fox sailed from Aberdeen in July 1857, under Francis McClintock.",
+          "image_page": "Francis Leopold McClintock",
+          "image": "Fox",
+          "card": "Aberdeen · 2 July 1857"
+        },
+        {
+          "text": "In the spring of 1859, his men set out on sledges across King William Island. That was when Hobson opened the canister at Victory Point.",
+          "search": "sled across snow plain"
+        },
+        {
+          "text": "The first message was signed by Lieutenant Graham Gore. It said the ships had wintered at Beechey Island, and that a party of two officers and six men had left the ships on the 24th of May, 1847.",
+          "image": "Victory Point note"
+        },
+        {
+          "text": "It ended with those two words, all well. Less than three weeks later, on the 11th of June, 1847, John Franklin died aboard his ship.",
+          "image_page": "John Franklin",
+          "image": "Franklin"
+        },
+        {
+          "text": "The second message was signed by Crozier and Fitzjames. The ships had been trapped in the ice since the 12th of September, 1846, and were deserted on the 22nd of April, 1848.",
+          "search": "ship frozen in ice night"
+        },
+        {
+          "text": "Nine officers and fifteen men were already dead. The last line gave the plan: start on tomorrow, the 26th, for Back's Fish River.",
+          "search": "old handwriting ink close up"
+        },
+        {
+          "text": "That river was hundreds of kilometres away, across the island and the frozen sea. The men would have to haul heavy boats on sledges the whole way.",
+          "search": "frozen river arctic tundra"
+        },
+        {
+          "text": "Not far down the coast, McClintock's men found one of those boats, still on its sledge. Two skeletons lay inside it.",
+          "search": "wooden boat on snow"
+        }
+      ]
+    },
+    {
+      "title": "The Wrong Uniform",
+      "scenes": [
+        {
+          "text": "The boat was loaded with things that made no sense on a march for survival: silk handkerchiefs, soap, slippers, combs, and a copy of the novel The Vicar of Wakefield.",
+          "search": "old leather books pile",
+          "card": "King William Island · May 1859"
+        },
+        {
+          "text": "On the south coast of the island, the searchers found another man, lying alone. He wore the clothes of an officers' steward, with a clothes brush and a necktie nearby.",
+          "search": "snow covered rocky shore"
+        },
+        {
+          "text": "His pocketbook held papers belonging to Harry Peglar, captain of the foretop on Terror, a senior sailor, not a servant. Some of the notes were written backwards.",
+          "search": "old notebook handwriting"
+        },
+        {
+          "text": "For more than a century and a half, no one could say whether this was Peglar, or another man carrying his papers.",
+          "search": "magnifying glass old document"
+        },
+        {
+          "text": "The Inuit had more to say than anyone in London was willing to hear. Later collections of their testimony described survivors seen years after 1848.",
+          "search": "arctic tundra summer"
+        },
+        {
+          "text": "Some accounts described a large ship that had drifted or sailed south, with people still aboard, before it sank. In the 1990s, researcher David Woodman argued that these accounts were largely accurate.",
+          "search": "old ship in ice drifting"
+        },
+        {
+          "text": "If he was right, the march of April 1848 was not the end of the story. Some of the men may have gone back to the ships.",
+          "search": "abandoned ship arctic"
+        }
+      ]
+    },
+    {
+      "title": "Lead and Ice",
+      "scenes": [
+        {
+          "text": "In the 1980s, a Canadian anthropologist named Owen Beattie returned to Beechey Island. His team carefully exhumed the three sailors buried there in 1846.",
+          "image_page": "Beechey Island",
+          "image": "Beechey",
+          "card": "Beechey Island · 1984"
+        },
+        {
+          "text": "The permafrost had preserved them remarkably well. Tests on their tissue showed high levels of lead, and suspicion fell on those badly soldered tins.",
+          "search": "permafrost frozen ground"
+        },
+        {
+          "text": "The idea was powerful. Lead poisoning can cause weakness and confusion. It seemed to explain why experienced officers made choices that looked reckless.",
+          "search": "laboratory test tubes"
+        },
+        {
+          "text": "Later studies were less certain. A 2017 analysis of John Hartnell's thumbnail suggested that severe zinc deficiency, a sign of poor diet, played a greater role than lead.",
+          "search": "scientist microscope lab"
+        },
+        {
+          "text": "Today, most researchers see lead as one factor among many. Scurvy, cold, starvation and disease all wore the men down after three Arctic winters.",
+          "search": "blizzard arctic wind"
+        },
+        {
+          "text": "In 2014, a search led by Parks Canada found the wreck of Erebus in the eastern part of Queen Maud Gulf. Two years later, Terror was found in a bay south of King William Island.",
+          "image_page": "HMS Erebus (1826)",
+          "image": "wreck",
+          "card": "Queen Maud Gulf · September 2014"
+        },
+        {
+          "text": "Both ships lay far to the south of where the note said they had been abandoned, closer to where Inuit witnesses had placed them.",
+          "search": "underwater shipwreck dark"
+        }
+      ]
+    },
+    {
+      "title": "Who Died Where",
+      "scenes": [
+        {
+          "text": "Since 2013, archaeologists Douglas Stenton and Robert Park have been working with bones found across King William Island, comparing their DNA with living descendants of the crew.",
+          "search": "dna sample laboratory",
+          "card": "University of Waterloo · 2026"
+        },
+        {
+          "text": "In 2021, they named John Gregory, an engineer on Erebus. In 2024, they identified Captain James Fitzjames, one of the two men who signed the final note.",
+          "image_page": "James Fitzjames",
+          "image": "Fitzjames"
+        },
+        {
+          "text": "This year, they named three more men from Erebus, all found at Erebus Bay: William Orren, David Young and John Bridgens.",
+          "search": "rocky arctic bay"
+        },
+        {
+          "text": "One of Bridgens' descendants turned out to be Rich Preston, a BBC journalist, who said the match came as a huge surprise.",
+          "search": "old family photographs"
+        },
+        {
+          "text": "They also solved the steward. The man in the wrong uniform was Harry Peglar after all, found about 130 kilometres from the others. The researchers think he may have been demoted.",
+          "search": "snowy coast lonely"
+        },
+        {
+          "text": "The team holds DNA from at least fourteen more sailors still without names. As Robert Park put it, we know all 129 died, but we need to learn who died where.",
+          "search": "bones research archive boxes"
+        },
+        {
+          "text": "Whether anyone reached the river, how long the last of them lived, and what was written in the logs that were never found remain open questions.",
+          "search": "arctic sunset ice"
+        },
+        {
+          "text": "The note at Victory Point began with two hopeful words, all well. Nearly 180 years later, the men who left it are still being found, one name at a time.",
+          "image": "Victory Point note"
+        }
+      ]
+    }
+  ],
+  "publish_at": "2026-11-13T20:00:00Z"
+}
