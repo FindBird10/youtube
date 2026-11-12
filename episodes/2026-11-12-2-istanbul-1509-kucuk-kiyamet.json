@@ -1,0 +1,57 @@
+{
+  "title": "1509'da Marmara İstanbul surlarını aştı 🌊",
+  "format": "karanlik-tarih",
+  "subject": "earthquake",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "1509 Constantinople earthquake"
+  },
+  "description": "Sence İstanbul bugün böyle bir depreme hazır mı? 👇\n\n10 Eylül 1509'da Marmara'daki 7,2 büyüklüğündeki deprem, Osmanlı kayıtlarında Kıyamet-i Suğra (Küçük Kıyamet) diye geçer. 109 cami ve 1.070 ev yıkıldı, kaynaklara göre dalgalar Galata surlarını aştı, II. Bayezid yeniden inşa için hane başına 22 akçe vergi koydu.\n\nKaynak: Wikipedia (1509 Constantinople earthquake ve kaynakları: Ambraseys, Kandilli Rasathanesi çalışmaları)",
+  "tags": [
+    "1509 istanbul depremi",
+    "küçük kıyamet",
+    "kıyamet-i suğra",
+    "istanbul depremi",
+    "marmara depremi",
+    "istanbul surları",
+    "2. bayezid",
+    "osmanlı depremi",
+    "ayasofya mozaikleri",
+    "istanbul tarihi",
+    "büyük istanbul depremi",
+    "tarihin tuhaf olayları"
+  ],
+  "hashtags": [
+    "#istanbuldepremi",
+    "#küçükkıyamet",
+    "#osmanlı"
+  ],
+  "scenes": [
+    {
+      "text": "Marmara'nın dalgaları İstanbul surlarının üstünden aşıp evlere girdi.",
+      "image": "Constantinople"
+    },
+    {
+      "text": "10 Eylül 1509 gecesi Adalar açığında 7,2 büyüklüğünde bir deprem oldu ve artçılar haftalarca sürdü.",
+      "search": "old city walls sea waves storm"
+    },
+    {
+      "text": "Kayıtlara göre Galata'da evleri su bastı, 109 cami ve 1.070 ev yıkıldı, surların 49 kulesi hasar gördü.",
+      "search": "collapsed stone building ruins"
+    },
+    {
+      "text": "II. Bayezid'in yatak odası çöktü, padişah birkaç saat önce namaza çıktığı için kurtuldu ve günlerce bahçedeki çadırda kaldı.",
+      "image": "Bayezid"
+    },
+    {
+      "text": "Ayasofya ayakta kaldı, ama kubbedeki sıva dökülünce altındaki Bizans mozaikleri yeniden göründü.",
+      "image_page": "Hagia Sophia",
+      "image": "mosaic"
+    },
+    {
+      "text": "Halk bu felakete Küçük Kıyamet dedi, şehir de her haneden alınan 22 akçelik vergiyle yeniden ayağa kalktı.",
+      "search": "istanbul old mosque minaret"
+    }
+  ],
+  "publish_at": "2026-11-12T18:00:00Z"
+}
