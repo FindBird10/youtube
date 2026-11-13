@@ -1,0 +1,55 @@
+{
+  "title": "Wolfenstein 3 is officially in production 🔫",
+  "hook": "WOLFENSTEIN 3 CONFIRMED",
+  "subject": "wolfenstein",
+  "trailer": {
+    "steam_appid": 612880
+  },
+  "description": "Who else waited 9 years for this? 👇\n\nXbox confirmed on November 12, 2026 at its 25th anniversary FanFest that Wolfenstein 3 is in production at MachineGames, with Brian Bloom and Debra Wilson returning as B.J. Blazkowicz and Grace Walker. No platforms or release date yet.\n\nSources: Xbox Wire 25th anniversary recap (Nov 12, 2026), Inven Global, Beebom\nGame footage © Bethesda Softworks / MachineGames.",
+  "tags": [
+    "wolfenstein 3",
+    "wolfenstein iii",
+    "wolfenstein 3 announced",
+    "wolfenstein 3 news",
+    "wolfenstein 3 release date",
+    "machinegames",
+    "wolfenstein the new colossus",
+    "bj blazkowicz",
+    "bethesda",
+    "xbox 25th anniversary",
+    "xbox fanfest",
+    "wolfenstein 2 sequel"
+  ],
+  "hashtags": [
+    "#wolfenstein",
+    "#machinegames",
+    "#xbox"
+  ],
+  "publish_at": "2026-11-13T14:00:00Z",
+  "scenes": [
+    {
+      "text": "Wolfenstein 3 is real.",
+      "trailer": true
+    },
+    {
+      "text": "On November 12, at its 25th anniversary FanFest, Xbox confirmed the game is in production at MachineGames in Sweden.",
+      "search": "crowd at gaming event stage lights"
+    },
+    {
+      "text": "Brian Bloom returns as B.J. Blazkowicz, and Debra Wilson is back as Grace Walker.",
+      "trailer": true
+    },
+    {
+      "text": "The last chapter, The New Colossus, came out in October 2017. That's a 9-year wait.",
+      "trailer": true
+    },
+    {
+      "text": "Xbox CEO Asha Sharma said the series has an important place in gaming history.",
+      "search": "gamer playing shooter dark room"
+    },
+    {
+      "text": "No trailer, platforms or release date yet. Sharma also said id Software's next project is in development.",
+      "search": "game controller close up red light"
+    }
+  ]
+}
