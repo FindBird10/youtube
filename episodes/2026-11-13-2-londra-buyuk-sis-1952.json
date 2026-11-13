@@ -1,0 +1,56 @@
+{
+  "title": "Londra'yı 5 gün boyunca kara bir sis yuttu 🌫️",
+  "format": "karanlik-tarih",
+  "subject": "smog",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Great Smog of London"
+  },
+  "description": "Sence bugün bir şehirde bu yaşanabilir mi? 👇\n\n5–9 Aralık 1952'de Londra'yı kömür dumanından oluşan Büyük Londra Sisi kapladı. Binlerce kişi öldü, ardından İngiltere 1956'da Temiz Hava Yasası'nı çıkardı.\n\nKaynak: Britannica (The Great Smog of London), Met Office (The Great Smog of 1952), Wikipedia (Great Smog of London)",
+  "tags": [
+    "büyük londra sisi",
+    "londra sisi 1952",
+    "great smog",
+    "londra",
+    "hava kirliliği",
+    "kömür dumanı",
+    "londra sisi nedir",
+    "temiz hava yasası",
+    "1952 felaketi",
+    "tarihte bugün",
+    "karanlık tarih",
+    "tarihin tuhaf olayları"
+  ],
+  "hashtags": [
+    "#londra",
+    "#londrasisi",
+    "#havakirliliği"
+  ],
+  "scenes": [
+    {
+      "text": "Londra'da insanlar sokakta kendi ayaklarını göremedi.",
+      "image": "Nelson"
+    },
+    {
+      "text": "5 Aralık 1952'de şehrin üstüne çöken soğuk hava, milyonlarca bacadan çıkan kömür dumanını yere hapsetti.",
+      "search": "chimneys smoke city winter"
+    },
+    {
+      "text": "Met Office'e göre sis her gün 1.000 ton is topladı, havadaki 370 ton kükürt dioksit de 800 ton sülfürik aside dönüştü.",
+      "search": "thick fog street lamp night"
+    },
+    {
+      "text": "Duman sinemaların havalandırmasına girdi, seyirciler perdeyi göremedi; Smithfield fuarındaki büyükbaş hayvanlara gaz maskesi takıldı.",
+      "image": "smog"
+    },
+    {
+      "text": "Sis 9 Aralık'ta dağıldığında en az 4.000 kişi ölmüştü, sonraki tahminler 12.000'e kadar çıkıyor.",
+      "search": "empty foggy london street"
+    },
+    {
+      "text": "Bu felaketten sonra İngiltere 1956'da Temiz Hava Yasası'nı çıkardı ve şehirlerde kara dumanı yasakladı.",
+      "image": "London"
+    }
+  ],
+  "publish_at": "2026-11-13T18:00:00Z"
+}
