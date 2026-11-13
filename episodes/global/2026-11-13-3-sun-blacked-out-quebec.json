@@ -1,0 +1,69 @@
+{
+  "title": "The night the Sun blacked out Quebec ⚡",
+  "hook": "THE SUN CUT THE POWER",
+  "format": "dark-history",
+  "subject": "sun",
+  "emphasis": [
+    "90 seconds",
+    "6 million",
+    "nuclear"
+  ],
+  "description": "Would today's power grids survive a storm like this? 👇\n\nOn March 13, 1989, a geomagnetic storm caused by a solar eruption collapsed the Hydro-Québec grid, leaving 6 million people without power for about 9 hours. Auroras were seen as far south as Texas and Cuba.\n\nSources: NOAA NESDIS, \"When Solar Storms Attack\" (2015); Astronomy, \"March 13, 1989: Quebec goes dark\"; Space.com, \"25 Years Ago: Amazing Auroras from 1989's Great Solar Storm\" (2014); Wikipedia: March 1989 geomagnetic storm",
+  "tags": [
+    "1989 quebec blackout",
+    "march 1989 geomagnetic storm",
+    "solar storm 1989",
+    "hydro quebec blackout",
+    "solar flare blackout",
+    "geomagnetic storm",
+    "sun knocked out power",
+    "northern lights texas",
+    "space weather",
+    "solar storm",
+    "dark history",
+    "history facts",
+    "power grid"
+  ],
+  "hashtags": [
+    "#solarstorm",
+    "#history",
+    "#quebec"
+  ],
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "March 1989 geomagnetic storm"
+  },
+  "publish_at": "2026-11-14T00:00:00Z",
+  "scenes": [
+    {
+      "text": "The Sun blacked out 6 million people in 90 seconds.",
+      "nasa": "SDO solar flare",
+      "search": "sun solar flare surface"
+    },
+    {
+      "text": "At 2:45 a.m. on March 13, 1989, Quebec's power grid collapsed on a cold winter night.",
+      "image": "",
+      "search": "city power outage night"
+    },
+    {
+      "text": "Three days earlier, a huge flare had hurled charged gas straight at Earth.",
+      "nasa": "coronal mass ejection SOHO",
+      "search": "sun eruption space"
+    },
+    {
+      "text": "It shook Earth's magnetic field and tripped breakers across Hydro-Québec's grid.",
+      "nasa": "magnetosphere",
+      "search": "high voltage power lines winter"
+    },
+    {
+      "text": "Auroras glowed as far south as Texas and Cuba. In the Cold War, some people feared a nuclear strike.",
+      "nasa": "aurora from ISS",
+      "search": "aurora borealis night sky"
+    },
+    {
+      "text": "For 9 hours, 6 million people sat in the dark because of the Sun.",
+      "nasa": "earth at night from ISS",
+      "search": "dark city night skyline"
+    }
+  ]
+}

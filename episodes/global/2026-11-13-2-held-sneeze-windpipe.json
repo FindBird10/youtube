@@ -1,0 +1,70 @@
+{
+  "title": "He held in a sneeze and tore his windpipe 🤧",
+  "hook": "DON'T HOLD IN A SNEEZE",
+  "format": "body",
+  "subject": "sneeze",
+  "emphasis": [
+    "windpipe",
+    "20 times",
+    "hole"
+  ],
+  "description": "Do you hold in your sneezes? 👇\n\nA man in his 30s pinched his nose and closed his mouth to stop a sneeze while driving. Doctors at Ninewells Hospital in Dundee, Scotland, found a 2-millimeter tear in his windpipe, the first known case of its kind, reported in BMJ Case Reports in December 2023. Not medical advice.\n\nSources: Misirovs et al., BMJ Case Reports (2023), doi 10.1136/bcr-2023-255633; Live Science (2023); The Courier, Dundee (2023); IFLScience (2023)",
+  "tags": [
+    "holding in a sneeze",
+    "is it bad to hold in a sneeze",
+    "stifled sneeze",
+    "man tore windpipe sneeze",
+    "sneeze tore throat",
+    "tracheal perforation",
+    "what happens if you hold in a sneeze",
+    "sneeze pressure",
+    "ninewells hospital",
+    "bmj case reports",
+    "human body",
+    "body facts",
+    "sneezing"
+  ],
+  "hashtags": [
+    "#sneeze",
+    "#humanbody",
+    "#health"
+  ],
+  "publish_at": "2026-11-13T20:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Sneeze"
+  },
+  "scenes": [
+    {
+      "text": "Hold in a sneeze, and you can tear your windpipe.",
+      "image": "sneeze",
+      "search": "man sneezing close up"
+    },
+    {
+      "text": "A man in Scotland was driving with hay fever when a sneeze came on.",
+      "search": "man driving car allergy"
+    },
+    {
+      "text": "He pinched his nose and shut his mouth. The pressure in his airway may have hit 20 times normal.",
+      "image": "trachea",
+      "image_page": "Trachea",
+      "search": "human throat anatomy"
+    },
+    {
+      "text": "His neck swelled. At Ninewells Hospital in Dundee, doctors heard a crackle under his skin.",
+      "image": "Ninewells",
+      "image_page": "Ninewells Hospital",
+      "search": "hospital emergency room"
+    },
+    {
+      "text": "A CT scan found a 2-millimeter hole in his windpipe.",
+      "image": "CT scan",
+      "image_page": "CT scan",
+      "search": "ct scan machine hospital"
+    },
+    {
+      "text": "It healed in 5 weeks. His doctors now warn against pinching your nose to stop a sneeze.",
+      "search": "person sneezing tissue"
+    }
+  ]
+}
