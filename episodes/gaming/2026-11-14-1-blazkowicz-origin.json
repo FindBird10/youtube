@@ -1,0 +1,71 @@
+{
+  "title": "Why B.J. Blazkowicz lost 14 years in Wolfenstein",
+  "angle": "origin",
+  "subject": "blazkowicz",
+  "wiki": {
+    "site": "wolfenstein.fandom.com",
+    "page": "William J. Blazkowicz (MachineGames)",
+    "avoid": [
+      "doom",
+      "quake",
+      "youngblood",
+      "3d",
+      "return to castle",
+      "rtcw",
+      "concept",
+      "cover"
+    ]
+  },
+  "description": "Could you have survived 14 years in that chair? 👇\n\nHow B.J. Blazkowicz went from a 1946 raid to a Polish asylum while the Nazis won the war. Spoilers for Wolfenstein: The New Order.\n\nFan-made content. Not affiliated with or endorsed by MachineGames or Bethesda Softworks. Game images © their respective owners.",
+  "tags": [
+    "wolfenstein",
+    "bj blazkowicz",
+    "blazkowicz",
+    "wolfenstein lore",
+    "wolfenstein story",
+    "machinegames",
+    "wolfenstein the new order",
+    "bj blazkowicz story",
+    "bj blazkowicz explained",
+    "anya oliwa",
+    "wolfenstein asylum",
+    "wolfenstein 3"
+  ],
+  "hashtags": [
+    "#wolfenstein",
+    "#blazkowicz",
+    "#theneworder"
+  ],
+  "publish_at": "2026-11-14T18:00:00Z",
+  "scenes": [
+    {
+      "text": "In 1946, a piece of shrapnel took fourteen years from B.J. Blazkowicz.",
+      "image": "Blazkowicz"
+    },
+    {
+      "text": "He was on an Allied raid against General Deathshead's fortress, one last push to end the war.",
+      "image": "Blazkowicz 1946"
+    },
+    {
+      "text": "He woke up in a Polish asylum, unable to speak, cared for by a nurse named Anya Oliwa.",
+      "image": "Anya",
+      "image_page": "Anya Oliwa",
+      "still": true
+    },
+    {
+      "text": "Outside those walls, the Nazis won. An atomic bomb on New York forced America to surrender.",
+      "image": "Nazi"
+    },
+    {
+      "text": "Then, in 1960, soldiers came to close the asylum. They killed the staff, Anya's parents among them.",
+      "image": "asylum"
+    },
+    {
+      "text": "B.J. got out of that wheelchair, carried Anya out, and went back to his war.",
+      "image": "Blazkowicz"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 201810
+  }
+}
