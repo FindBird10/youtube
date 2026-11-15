@@ -1,0 +1,75 @@
+{
+  "title": "GTA 6 boss Zelnick calls out OpenAI and Anthropic 🤖",
+  "hook": "AI CLONES CALLED OUT",
+  "subject": "gta6",
+  "wiki": {
+    "site": "gta.fandom.com",
+    "page": "Grand Theft Auto VI",
+    "avoid": [
+      "fallguys",
+      "fall guys",
+      "logo",
+      "icon",
+      "twitter",
+      "x.png",
+      "announcement",
+      "gtav-",
+      "gtaiv",
+      "gta5",
+      "gtao",
+      "online",
+      "merch",
+      "collector"
+    ]
+  },
+  "description": "Should AI tools block game clones? 👇\n\nIn an interview with IGN, Take-Two CEO Strauss Zelnick said all companies should protect intellectual property and called it ironic for AI companies like Anthropic and OpenAI to stomp on someone else's IP. Anthropic recently blocked Claude from recreating someone else's specific game. GTA 6 launches November 19, 2026 on PS5 and Xbox Series X|S.\n\nSources: GamesRadar+ (Nov 14, 2026) citing IGN, VGTimes (Nov 2026)\nGame images © Rockstar Games.",
+  "tags": [
+    "gta 6",
+    "gta vi",
+    "gta 6 news",
+    "take two",
+    "take-two interactive",
+    "strauss zelnick",
+    "gta 6 ai",
+    "ai game clones",
+    "openai",
+    "anthropic",
+    "gta 6 release date",
+    "grand theft auto 6",
+    "rockstar games"
+  ],
+  "hashtags": [
+    "#gta6",
+    "#taketwo",
+    "#rockstargames"
+  ],
+  "publish_at": "2026-11-15T18:00:00Z",
+  "scenes": [
+    {
+      "text": "GTA 6's publisher has a message for AI companies.",
+      "image": "Artwork GTAVI"
+    },
+    {
+      "text": "Take-Two CEO Strauss Zelnick told IGN that every company should protect intellectual property, its own and everyone else's.",
+      "search": "business man office window city"
+    },
+    {
+      "text": "He named Anthropic and OpenAI, calling it ironic to stomp on someone else's IP and hope yours is protected.",
+      "search": "laptop code screen dark room"
+    },
+    {
+      "text": "Anthropic recently changed Claude to refuse recreating someone else's specific game.",
+      "search": "programmer typing keyboard night"
+    },
+    {
+      "text": "GamesRadar reports some Steam developers cancelled demos, fearing their games would be cloned before release.",
+      "image": "Vice City GTAVI",
+      "image_page": "Vice City (HD Universe)"
+    },
+    {
+      "text": "GTA 6 arrives November 19 on PS5 and Xbox Series X|S.",
+      "image": "Leonida GTAVI",
+      "image_page": "State of Leonida"
+    }
+  ]
+}
