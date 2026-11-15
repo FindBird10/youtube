@@ -1,0 +1,74 @@
+{
+  "title": "How Big Boss lost his mentor in Metal Gear Solid 3",
+  "angle": "origin",
+  "subject": "bigboss",
+  "wiki": {
+    "site": "metalgear.fandom.com",
+    "page": "Big Boss",
+    "avoid": [
+      "venom",
+      "phantom",
+      "concept",
+      "artwork",
+      "cover",
+      "box art",
+      "comic",
+      "mgsv",
+      "ground zeroes",
+      "portable ops"
+    ]
+  },
+  "description": "Could you have followed that order? 👇\n\nBefore he was Big Boss, Naked Snake watched his mentor defect to the Soviets in 1964. Spoilers for Metal Gear Solid 3: Snake Eater.\n\nFan-made content. Not affiliated with or endorsed by Konami. Game images © their respective owners.",
+  "tags": [
+    "big boss",
+    "naked snake",
+    "metal gear solid",
+    "metal gear solid 3",
+    "mgs3",
+    "snake eater",
+    "metal gear solid delta",
+    "the boss",
+    "big boss story",
+    "big boss origin",
+    "virtuous mission",
+    "metal gear lore"
+  ],
+  "hashtags": [
+    "#metalgearsolid",
+    "#bigboss",
+    "#snakeeater"
+  ],
+  "publish_at": "2026-11-15T18:00:00Z",
+  "scenes": [
+    {
+      "text": "In August 1964, Big Boss was still just a codename: Naked Snake.",
+      "image": "Big Boss"
+    },
+    {
+      "text": "The CIA dropped him into the Soviet jungle to rescue a scientist named Sokolov. His mentor, The Boss, guided him by radio.",
+      "image": "Naked Snake"
+    },
+    {
+      "text": "She had trained him for ten years. In the middle of the Virtuous Mission, she switched sides.",
+      "image": "The Boss",
+      "image_page": "The Boss",
+      "still": true
+    },
+    {
+      "text": "She handed two American nuclear shells to Colonel Volgin, broke Snake's arm, and threw him off a bridge.",
+      "image": "Volgin",
+      "image_page": "Volgin"
+    },
+    {
+      "text": "Volgin fired one on Soviet soil, and Moscow blamed Washington.",
+      "image": "Volgin"
+    },
+    {
+      "text": "A week later, Snake went back alone with one order: kill the woman who made him a soldier.",
+      "image": "Snake Eater"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 2417610
+  }
+}
