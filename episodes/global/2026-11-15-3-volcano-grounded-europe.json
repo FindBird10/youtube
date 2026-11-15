@@ -1,0 +1,67 @@
+{
+  "title": "The volcano that grounded 10 million people 🌋",
+  "hook": "EUROPE'S SKIES WENT EMPTY",
+  "format": "dark-history",
+  "subject": "volcano",
+  "emphasis": [
+    "107,000",
+    "10 million",
+    "4 engines"
+  ],
+  "description": "Were you stuck somewhere in April 2010? 👇\n\nIn April 2010, Iceland's Eyjafjallajökull volcano sent ash over Europe. More than 300 airports closed, 107,000 flights were cancelled in 8 days, and it became the largest air-traffic shutdown since World War II. The reason traces back to British Airways Flight 9 in 1982.\n\nSources: USGS Volcano Hazards Program, \"Ash clouds and air routes: Eyjafjallajökull\"; Wikipedia, \"Air travel disruption after the 2010 Eyjafjallajökull eruption\" (citing EUROCONTROL and IATA)",
+  "tags": [
+    "eyjafjallajokull",
+    "eyjafjallajokull 2010",
+    "iceland volcano 2010",
+    "volcano ash cloud flights",
+    "european airspace closed",
+    "volcano grounded flights",
+    "british airways flight 9",
+    "volcanic ash planes",
+    "biggest air travel shutdown",
+    "iceland volcano",
+    "dark history",
+    "volcano",
+    "natural disasters"
+  ],
+  "hashtags": [
+    "#iceland",
+    "#volcano",
+    "#history"
+  ],
+  "publish_at": "2026-11-16T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "2010 eruptions of Eyjafjallajökull"
+  },
+  "scenes": [
+    {
+      "text": "One volcano emptied the skies over Europe.",
+      "nasa": "Eyjafjallajokull ash plume",
+      "search": "volcano ash plume iceland"
+    },
+    {
+      "text": "On April 14, 2010, Eyjafjallajökull erupted under an Icelandic glacier, and its ash drifted over Europe.",
+      "image": "Eyjafjallaj",
+      "search": "iceland glacier volcano eruption"
+    },
+    {
+      "text": "More than 300 airports closed, the largest air shutdown since World War II.",
+      "search": "empty airport terminal"
+    },
+    {
+      "text": "In 8 days, 107,000 flights were cancelled, affecting roughly 10 million passengers.",
+      "nasa": "volcanic ash cloud Europe",
+      "search": "airport departure board cancelled"
+    },
+    {
+      "text": "In 1982, British Airways Flight 9 had flown into ash from Indonesia's Galunggung, and all 4 engines quit.",
+      "search": "jumbo jet night flight"
+    },
+    {
+      "text": "The crew restarted 3 and landed. That's why regulators took no chances in 2010.",
+      "image": "eruption",
+      "search": "volcano lightning ash"
+    }
+  ]
+}
