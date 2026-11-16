@@ -1,0 +1,68 @@
+{
+  "title": "What if the volcano under Naples erupted? 🌋",
+  "hook": "WHAT IF NAPLES ERUPTED?",
+  "format": "what-if",
+  "subject": "volcano",
+  "emphasis": [
+    "Russia",
+    "4.6 feet",
+    "half a million"
+  ],
+  "description": "Would you live on top of it? 👇\n\nCampi Flegrei, the supervolcano under Naples, once covered Europe and parts of Russia in ash. The ground has risen 4.6 feet since 2005, and in July 2026 it had its strongest recorded quake. Here's what a full-size eruption would mean, and what scientists actually expect.\n\nSources: NPR, \"Italy's Campi Flegrei supervolcano is stirring\" (Nov 2025, quoting INGV volcanologists Giovanni Macedonio and Warner Marzocchi); The Brighter Side of News, INGV bulletin summary (Sep 2026); Wanted in Rome (Aug 2026); The Watchers (May 2026)",
+  "tags": [
+    "campi flegrei",
+    "what if campi flegrei erupted",
+    "naples supervolcano",
+    "supervolcano italy",
+    "campi flegrei eruption",
+    "campanian ignimbrite",
+    "pozzuoli earthquake",
+    "volcano under naples",
+    "what if",
+    "supervolcano eruption",
+    "volcano",
+    "science"
+  ],
+  "hashtags": [
+    "#campiflegrei",
+    "#volcano",
+    "#naples"
+  ],
+  "publish_at": "2026-11-16T16:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Campi Flegrei"
+  },
+  "scenes": [
+    {
+      "text": "At full power, this volcano would cover Europe in ash.",
+      "nasa": "volcano eruption from space",
+      "search": "volcano eruption ash column"
+    },
+    {
+      "text": "Campi Flegrei sits under Naples. 39,000 years ago, it spewed 72 cubic miles of molten rock.",
+      "nasa": "Naples Italy from ISS",
+      "search": "naples bay aerial"
+    },
+    {
+      "text": "Ash reached Russia, and global temperatures plunged.",
+      "nasa": "volcanic ash cloud Europe",
+      "search": "ash cloud sky"
+    },
+    {
+      "text": "Over half a million people live in its red zone, where the ground has risen 4.6 feet since 2005.",
+      "image": "Pozzuoli",
+      "search": "pozzuoli harbor italy"
+    },
+    {
+      "text": "On July 31, 2026, its strongest recorded quake brought down 2 empty buildings in Pozzuoli.",
+      "image": "Solfatara",
+      "search": "volcanic fumarole steam"
+    },
+    {
+      "text": "Italy's volcano institute sees no imminent eruption, and expects the next one to be far smaller.",
+      "image": "Campi Flegrei",
+      "search": "volcano crater steam"
+    }
+  ]
+}

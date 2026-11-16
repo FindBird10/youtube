@@ -1,0 +1,67 @@
+{
+  "title": "The week ice floated into the Gulf of Mexico ❄️",
+  "hook": "ICE IN THE GULF",
+  "format": "dark-history",
+  "subject": "blizzard",
+  "emphasis": [
+    "minus 2",
+    "minus 15",
+    "7 degrees"
+  ],
+  "description": "Could this happen again today? 👇\n\nIn February 1899, the Great Arctic Outbreak sent ice down the Mississippi past New Orleans and into the Gulf of Mexico. Florida dropped below zero for the only time on record, and a blizzard buried Washington.\n\nSources: NOAA, via AccuWeather, \"The Snow King Blizzard: Great Arctic Outbreak of 1899\"; History.com, \"The Coldest Day in U.S. History\" (citing the U.S. Weather Bureau and the Baltimore Sun)",
+  "tags": [
+    "great arctic outbreak 1899",
+    "great blizzard of 1899",
+    "ice in the gulf of mexico",
+    "coldest day in us history",
+    "florida below zero",
+    "new orleans 1899 freeze",
+    "mississippi river ice",
+    "snow king blizzard",
+    "historic cold wave",
+    "dark history",
+    "weather history",
+    "blizzard"
+  ],
+  "hashtags": [
+    "#blizzard",
+    "#history",
+    "#weather"
+  ],
+  "publish_at": "2026-11-17T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Great Blizzard of 1899"
+  },
+  "scenes": [
+    {
+      "text": "Ice floated past New Orleans into the Gulf of Mexico.",
+      "image": "1899 blizzard",
+      "search": "ice floes river winter"
+    },
+    {
+      "text": "It was February 1899. Tallahassee hit minus 2 Fahrenheit, Florida's only reading below zero.",
+      "image": "Tallahassee snow",
+      "search": "snow covered palm trees"
+    },
+    {
+      "text": "In Fort Myers, snow weighed down the palm trees.",
+      "search": "snow on palm tree"
+    },
+    {
+      "text": "Washington fell to minus 15, then got about 20 inches of snow. The Baltimore Sun said the Capitol looked like a snow palace.",
+      "image": "Capitol snow",
+      "search": "capitol building snow"
+    },
+    {
+      "text": "Florida's orange crop was a total loss, and over 100 people died nationwide.",
+      "image": "snow",
+      "search": "frozen orange grove"
+    },
+    {
+      "text": "New Orleans hit 7 degrees, and the next day its Mardi Gras parade rolled anyway.",
+      "image": "1899",
+      "search": "old new orleans street"
+    }
+  ]
+}
