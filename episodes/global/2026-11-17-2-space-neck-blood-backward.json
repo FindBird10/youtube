@@ -1,0 +1,19 @@
+{
+  "title": "In space, blood in your neck can run backward 🩸",
+  "hook": "BLOOD FLOWING BACKWARD?",
+  "format": "body",
+  "subject": "astronaut",
+  "emphasis": ["backward", "6 of them", "clot"],
+  "description": "Would you still go to the space station after this? 👇\n\nA 2019 study of 11 International Space Station astronauts found stalled or reversed blood flow in the jugular vein in 6 of them, and a clot in one. Here's what zero gravity does to the blood in your neck.\n\nSources: Marshall-Goebel K. et al., \"Assessment of Jugular Venous Blood Flow Stasis and Thrombosis During Spaceflight,\" JAMA Network Open 2019;2(11):e1915011; Phys.org, \"Spaceflight can make blood flow the wrong way\" (Nov 19, 2019).",
+  "tags": ["blood flows backward in space", "astronaut blood clot", "jugular vein space", "what space does to your body", "astronaut health", "zero gravity body", "space station study", "blood clot in space", "nasa astronaut body", "spaceflight effects", "space facts", "human body"],
+  "hashtags": ["#space", "#humanbody", "#astronaut"],
+  "publish_at": "2026-11-17T20:00:00Z",
+  "scenes": [
+    {"text": "In space, the blood in your neck can flow backward.", "nasa": "astronaut ultrasound ISS", "search": "neck ultrasound scan"},
+    {"text": "Without gravity, fluid in your body drifts toward your head.", "nasa": "astronaut floating ISS", "search": "astronaut floating zero gravity"},
+    {"text": "In a 2019 study, 11 astronauts on the International Space Station scanned their own necks with ultrasound.", "nasa": "International Space Station crew", "search": "space station interior"},
+    {"text": "Around day 50, 6 of them had blood in the jugular vein that stalled or ran the wrong way.", "nasa": "astronaut medical exam ISS", "search": "blood flow ultrasound screen"},
+    {"text": "Pressure in that vein quadrupled. One astronaut had a clot blocking it completely.", "nasa": "astronaut blood draw ISS", "search": "doctor ultrasound monitor"},
+    {"text": "The paper in JAMA Network Open called it a newly discovered risk of spaceflight.", "nasa": "ISS orbiting earth", "search": "space station orbit earth"}
+  ]
+}

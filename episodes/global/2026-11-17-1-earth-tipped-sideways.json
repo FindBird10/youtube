@@ -1,0 +1,19 @@
+{
+  "title": "What if Earth tipped over on its side? 🌍",
+  "hook": "WHAT IF EARTH TIPPED OVER?",
+  "format": "what-if",
+  "subject": "earth",
+  "emphasis": ["never sets", "80 days", "21-year"],
+  "description": "Could your city handle 80 days without a sunset? 👇\n\nEarth leans 23.5 degrees, which gives us mild seasons. Uranus leans almost 98. Here's what a sideways Earth would do to day, night and the poles.\n\nSources: NASA Science, \"Uranus: Facts\" (tilt 97.77°, 21-year polar winter); Phys.org/Astrobiology Magazine, \"High planetary tilt lowers odds for life?\" (Feb 2012, quoting René Heller, Leibniz Institute for Astrophysics Potsdam); day-length figures calculated from orbital geometry for New York's latitude (40.7°N).",
+  "tags": ["what if earth tilted 90 degrees", "what if earth was sideways", "earth axial tilt", "earth tilted like uranus", "uranus tilt", "midnight sun", "what if", "seasons explained", "axial tilt", "polar night", "space facts", "science"],
+  "hashtags": ["#earth", "#space", "#uranus"],
+  "publish_at": "2026-11-17T16:00:00Z",
+  "scenes": [
+    {"text": "Tip Earth sideways, and your summer Sun never sets.", "nasa": "earth from ISS", "search": "earth rotating space"},
+    {"text": "Today the planet leans 23.5 degrees. Uranus leans almost 98, and each half of it sits through a 21-year winter.", "nasa": "Uranus Voyager 2", "search": "planet uranus space"},
+    {"text": "At 90 degrees, New York would get about 80 days of daylight with no night at all.", "nasa": "midnight sun Arctic", "search": "midnight sun horizon"},
+    {"text": "Six months later, about 80 days of total darkness.", "nasa": "city lights at night from ISS", "search": "city lights night aerial"},
+    {"text": "René Heller, a Potsdam astrophysicist, put it plainly: one pole boils while the other freezes in the dark.", "nasa": "Arctic sea ice", "search": "arctic ice melting"},
+    {"text": "Only the equator would keep 12-hour days all year.", "nasa": "Amazon rainforest from space", "search": "tropical rainforest aerial"}
+  ]
+}

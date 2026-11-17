@@ -1,0 +1,20 @@
+{
+  "title": "The morning a mountain lost 1,300 feet 🌋",
+  "hook": "THE MOUNTAIN THAT SHRANK",
+  "format": "dark-history",
+  "subject": "volcano",
+  "emphasis": ["1,300 feet", "complete darkness", "15 days"],
+  "description": "Would you have stayed outside the red zone? 👇\n\nOn May 18, 1980, Mount St. Helens in Washington lost its summit in the largest landslide ever recorded. Its ash turned day into night 250 miles away and circled the planet in 15 days.\n\nSources: USGS Fact Sheet 036-00, \"Mount St. Helens: From the 1980 Eruption to 2000\"; HISTORY, \"Mount St. Helens\" (updated May 2025); Wikipedia, \"1980 eruption of Mount St. Helens\".",
+  "tags": ["mount st helens", "mount st helens eruption", "1980 eruption", "mount st helens 1980", "largest landslide in history", "volcano eruption", "washington volcano", "spokane ash darkness", "volcanic ash", "dark history", "natural disasters", "volcano"],
+  "hashtags": ["#mountsthelens", "#volcano", "#history"],
+  "publish_at": "2026-11-18T00:00:00Z",
+  "wiki": {"site": "en.wikipedia.org", "page": "1980 eruption of Mount St. Helens"},
+  "scenes": [
+    {"text": "One Sunday morning, a mountain lost 1,300 feet of height.", "image": "St Helens eruption", "search": "volcano eruption ash column"},
+    {"text": "Mount St. Helens, Washington, May 18, 1980. At 8:32 a.m., a 5.1 earthquake shook it.", "nasa": "Mount St. Helens", "search": "mount st helens crater"},
+    {"text": "Within 20 seconds, the whole north face slid away, the largest landslide ever recorded.", "image": "St Helens before after", "search": "landslide mountain debris"},
+    {"text": "A sideways blast flattened forest across 230 square miles.", "image": "blowdown trees", "search": "fallen trees forest"},
+    {"text": "Ash shot 15 miles up in 15 minutes, and Spokane, 250 miles away, fell into complete darkness.", "image": "ash cloud", "search": "dark ash sky"},
+    {"text": "57 people died. The ash crossed the United States in 3 days and circled Earth in 15.", "nasa": "volcanic ash cloud from space", "search": "ash plume aerial"}
+  ]
+}
