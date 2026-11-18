@@ -1,0 +1,74 @@
+{
+  "title": "How Johnny Klebitz lost his brotherhood in GTA 4",
+  "angle": "origin",
+  "subject": "johnny",
+  "wiki": {
+    "site": "gta.fandom.com",
+    "page": "Johnny Klebitz",
+    "avoid": [
+      "artwork",
+      "concept",
+      "beta",
+      "render",
+      "cover",
+      "merch",
+      "gta v",
+      "gtav",
+      "gta 5"
+    ]
+  },
+  "description": "Would you have followed Billy Grey back to war? 👇\n\nHow Johnny Klebitz, vice president of The Lost MC, watched his club fall apart when Billy Grey came home. Spoilers for GTA IV: The Lost and Damned.\n\nFan-made content. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Game images © their respective owners.",
+  "tags": [
+    "johnny klebitz",
+    "the lost and damned",
+    "gta 4",
+    "gta iv",
+    "tlad",
+    "lost mc",
+    "billy grey",
+    "johnny klebitz story",
+    "johnny klebitz explained",
+    "the lost and damned story",
+    "angels of death gta",
+    "gta 4 lore",
+    "gta lore"
+  ],
+  "hashtags": [
+    "#gta4",
+    "#johnnyklebitz",
+    "#thelostanddamned"
+  ],
+  "publish_at": "2026-11-18T18:00:00Z",
+  "scenes": [
+    {
+      "text": "Johnny Klebitz ran a biker club while its president sat in rehab.",
+      "image": "Johnny Klebitz"
+    },
+    {
+      "text": "In 2008 he was vice president of The Lost in Alderney, at peace with the rival Angels of Death.",
+      "image": "Lost MC"
+    },
+    {
+      "text": "Then Billy Grey came home. In the first mission, Clean and Serene, Billy walked out of rehab and took the club back.",
+      "image": "Billy Grey",
+      "image_page": "Billy Grey"
+    },
+    {
+      "text": "Billy's first order was to ride on the Angels and take back the bike they stole while he was gone.",
+      "image": "Angels of Death",
+      "image_page": "Angels of Death"
+    },
+    {
+      "text": "Johnny had sworn his life to the patch on his back.",
+      "image": "Johnny Klebitz Lost"
+    },
+    {
+      "text": "Now that patch belonged to a man he no longer trusted.",
+      "image": "Johnny",
+      "still": true
+    }
+  ],
+  "trailer": {
+    "steam_appid": 12210
+  }
+}
