@@ -1,0 +1,20 @@
+{
+  "title": "The morning a second sun lit up Russia ☄️",
+  "hook": "A SECOND SUN APPEARED",
+  "format": "dark-history",
+  "subject": "meteor",
+  "emphasis": ["second sun", "30 times", "44 students"],
+  "description": "Would you have run to the window too? 👇\n\nOn February 15, 2013, an undetected 60-foot asteroid exploded over Chelyabinsk, Russia, briefly outshining the Sun. Its shockwave damaged about 7,200 buildings and injured 1,491 people.\n\nSources: Wikipedia, \"Chelyabinsk meteor\"; The Planetary Society, \"What was the Chelyabinsk meteor event?\"; Space.com, \"Russian Meteor Explosion Outshone Sun\" (Feb 15, 2013, quoting NASA JPL's Paul Chodas).",
+  "tags": ["chelyabinsk meteor", "chelyabinsk meteor 2013", "russian meteor", "meteor explosion russia", "asteroid explosion", "chelyabinsk asteroid", "meteor brighter than the sun", "airburst", "asteroid impact", "dark history", "space history", "meteor shockwave"],
+  "hashtags": ["#chelyabinsk", "#meteor", "#history"],
+  "publish_at": "2026-11-19T00:00:00Z",
+  "wiki": {"site": "en.wikipedia.org", "page": "Chelyabinsk meteor"},
+  "scenes": [
+    {"text": "At 9:20 one morning, a second sun rose over Russia.", "image": "Chelyabinsk meteor trace", "search": "fireball meteor sky"},
+    {"text": "Chelyabinsk, February 15, 2013. A 60-foot asteroid hit the air at 42,000 mph. Nobody had spotted it.", "nasa": "Chelyabinsk meteor", "search": "asteroid space"},
+    {"text": "It blew apart 18 miles up with about 30 times the energy of the Hiroshima bomb.", "nasa": "Chelyabinsk meteor plume", "search": "smoke trail sky"},
+    {"text": "People rushed to their windows. The shockwave hit nearly 3 minutes later.", "image": "Chelyabinsk", "search": "apartment building windows winter"},
+    {"text": "Glass blew in across 7,200 buildings, and 1,491 people were hurt.", "image": "meteorite", "search": "broken window glass"},
+    {"text": "Teacher Yulia Karbysheva had her 44 students duck and cover. She was badly cut. None of them were.", "search": "empty school classroom"}
+  ]
+}

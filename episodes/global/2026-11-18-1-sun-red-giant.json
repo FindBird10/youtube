@@ -1,0 +1,19 @@
+{
+  "title": "What if the Sun swelled into a red giant? ☀️",
+  "hook": "WHAT IF THE SUN SWELLED?",
+  "format": "what-if",
+  "subject": "sun",
+  "emphasis": ["boil", "Mercury and Venus", "survives"],
+  "description": "Do you think Earth makes it? 👇\n\nIn about 5 billion years the Sun runs out of core hydrogen and swells into a red giant. NASA says it will swallow Mercury and Venus, and possibly Earth. A 2008 study said Earth can't escape; a June 2026 study from KU Leuven says it probably can.\n\nSources: NASA Science, \"Sun: Facts\"; Schröder & Smith, \"Distant future of the Sun and Earth revisited,\" MNRAS 386, 155 (2008); Esseldeurs, Mathis & Decin, \"The fate of Earth during the Sun's giant phases,\" Astronomy & Astrophysics 710, L26 (June 2026); Space.com, \"Earth may survive the sun's death after all\" (July 8, 2026); Wikipedia, \"Future of Earth\".",
+  "tags": ["what if the sun became a red giant", "sun red giant", "will the sun swallow earth", "sun engulf earth", "death of the sun", "future of earth", "what happens when the sun dies", "red giant star", "sun expanding", "what if", "space facts", "science"],
+  "hashtags": ["#sun", "#space", "#earth"],
+  "publish_at": "2026-11-18T16:00:00Z",
+  "scenes": [
+    {"text": "Your oceans will boil away long before the Sun dies.", "nasa": "SDO sun full disk", "search": "sun surface close up"},
+    {"text": "In about 1 billion years, the Sun will shine 10% brighter, and Earth's seas will evaporate.", "nasa": "earth from ISS ocean", "search": "ocean from above aerial"},
+    {"text": "About 4 billion years after that, its core runs out of hydrogen and it swells into a red giant.", "nasa": "SDO solar flare", "search": "sun flare space"},
+    {"text": "NASA says it will swallow Mercury and Venus, and possibly Earth.", "nasa": "Venus", "search": "planet venus space"},
+    {"text": "A 2008 study said Earth can't escape. A June 2026 model from KU Leuven has Earth drifting outward and surviving.", "nasa": "earth from space", "search": "earth rotating space"},
+    {"text": "Even they admit Earth's final fate is still uncertain.", "nasa": "sunrise from ISS", "search": "sunrise over earth orbit"}
+  ]
+}

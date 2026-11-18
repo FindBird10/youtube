@@ -1,0 +1,20 @@
+{
+  "title": "Why quicksand can't pull you all the way under",
+  "hook": "CAN QUICKSAND SWALLOW YOU?",
+  "format": "body",
+  "subject": "quicksand",
+  "emphasis": ["waist", "2 grams", "medium-sized car"],
+  "description": "Would you stay calm or panic? 👇\n\nMovies taught us quicksand swallows people whole. A 2005 Nature study by physicist Daniel Bonn showed you stop around your waist, but getting your foot back out is another story.\n\nSources: Khaldoun, Eiser, Wegdam & Bonn, \"Liquefaction and flow of wet sand,\" Nature 437, 635 (2005); Nature News, \"Quicksand can't suck you under\" (Sep 28, 2005); National Geographic, \"Quicksand Science: Why It Traps, How to Escape\" (2005); Europhysics News 37(4), 18-19 (2006).",
+  "tags": ["quicksand", "can quicksand kill you", "can you drown in quicksand", "how to escape quicksand", "quicksand science", "quicksand myth", "is quicksand real", "what happens in quicksand", "quicksand density", "survival facts", "human body", "science facts"],
+  "hashtags": ["#quicksand", "#science", "#survival"],
+  "publish_at": "2026-11-18T20:00:00Z",
+  "wiki": {"site": "en.wikipedia.org", "page": "Quicksand"},
+  "scenes": [
+    {"text": "Step into quicksand, and you'll stop at your waist.", "image": "quicksand", "search": "person stuck in mud"},
+    {"text": "Physicist Daniel Bonn saw warning signs near Namak Lake in Iran and took a sample home.", "image": "quicksand sign", "search": "salt lake desert iran"},
+    {"text": "Quicksand is about 2 grams per milliliter. You're about 1, so you float.", "image": "quicksand beach", "search": "wet sand close up"},
+    {"text": "Move, and it turns liquid, then packs tight around your legs.", "image": "sand", "search": "feet sinking wet sand"},
+    {"text": "In his 2005 study, freeing one foot at 1 centimeter per second took the force of lifting a medium-sized car.", "search": "car lifted jack"},
+    {"text": "Bonn's fix: wiggle your legs slowly so water seeps in. The real killer is the tide.", "search": "tide coming in beach"}
+  ]
+}
