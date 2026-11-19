@@ -1,0 +1,81 @@
+{
+  "title": "The Doom Slayer's final enemy in DOOM Eternal",
+  "angle": "fate",
+  "subject": "doomslayer",
+  "wiki": {
+    "site": "doom.fandom.com",
+    "page": "Doom Slayer (games)",
+    "avoid": [
+      "artwork",
+      "concept",
+      "render",
+      "cover",
+      "merch",
+      "quake",
+      "comic",
+      "figure",
+      "toy",
+      "movie",
+      "film"
+    ]
+  },
+  "description": "Should the Slayer have spared Davoth? 👇\n\nHow the Doom Slayer's war in DOOM Eternal ended with an enemy made in his own image. Spoilers for DOOM Eternal and The Ancient Gods Part Two.\n\nFan-made content. Not affiliated with or endorsed by id Software or Bethesda Softworks. Game images © their respective owners.",
+  "tags": [
+    "doom slayer",
+    "doom eternal",
+    "doom eternal ending",
+    "the ancient gods part 2",
+    "dark lord doom",
+    "davoth",
+    "icon of sin",
+    "doom slayer explained",
+    "doom eternal lore",
+    "doom lore",
+    "doom slayer vs dark lord",
+    "doom eternal dlc ending",
+    "doomguy"
+  ],
+  "hashtags": [
+    "#doom",
+    "#doomslayer",
+    "#doometernal"
+  ],
+  "publish_at": "2026-11-20T02:00:00Z",
+  "scenes": [
+    {
+      "text": "His final enemy looked almost exactly like the Doom Slayer.",
+      "image": "Doom Slayer"
+    },
+    {
+      "text": "In Doom Eternal, the Slayer drove the Crucible into the Icon of Sin and saved Earth.",
+      "image": "Icon of Sin",
+      "image_page": "Icon of Sin"
+    },
+    {
+      "text": "The Ancient Gods Part Two brought him to the Dark Lord Davoth, the ruler behind Hell.",
+      "image": "Dark Lord",
+      "image_page": "Dark Lord"
+    },
+    {
+      "text": "Davoth revealed the Slayer had been made in his image, a copy of his own power.",
+      "image": "Davoth",
+      "image_page": "Dark Lord",
+      "still": true
+    },
+    {
+      "text": "The Slayer didn't argue. He ended the fight, and the Dark Lord with it.",
+      "image": "Doom Slayer"
+    },
+    {
+      "text": "Fans believe killing Davoth also cut off the source of the Slayer's own strength.",
+      "image": "Doom Slayer Eternal"
+    },
+    {
+      "text": "In the end, he destroyed the one being who shared his face.",
+      "image": "Doom Slayer"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 782330
+  }
+}

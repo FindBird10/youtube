@@ -1,0 +1,75 @@
+{
+  "title": "Why Hell buried the Doom Slayer in DOOM",
+  "angle": "origin",
+  "subject": "doomslayer",
+  "wiki": {
+    "site": "doom.fandom.com",
+    "page": "Doom Slayer (games)",
+    "avoid": [
+      "artwork",
+      "concept",
+      "render",
+      "cover",
+      "merch",
+      "quake",
+      "comic",
+      "figure",
+      "toy",
+      "movie",
+      "film"
+    ]
+  },
+  "description": "Would you have opened that sarcophagus? 👇\n\nHow the UAC dug the Doom Slayer out of Hell and woke him up on Mars. Spoilers for DOOM (2016).\n\nFan-made content. Not affiliated with or endorsed by id Software or Bethesda Softworks. Game images © their respective owners.",
+  "tags": [
+    "doom slayer",
+    "doom",
+    "doom 2016",
+    "doomguy",
+    "doom slayer story",
+    "doom slayer explained",
+    "doom lore",
+    "slayer testaments",
+    "samuel hayden",
+    "doom slayer origin",
+    "uac mars",
+    "doom the dark ages",
+    "id software"
+  ],
+  "hashtags": [
+    "#doom",
+    "#doomslayer",
+    "#doom2016"
+  ],
+  "publish_at": "2026-11-19T18:00:00Z",
+  "scenes": [
+    {
+      "text": "Hell couldn't kill him, so it locked him in a stone tomb.",
+      "image": "Doom Slayer"
+    },
+    {
+      "text": "Years later, the UAC dug that sarcophagus out of Hell and hauled it to their research base on Mars.",
+      "image": "Sarcophagus"
+    },
+    {
+      "text": "Then demons overran the base, and the Doom Slayer woke up chained to a slab.",
+      "image": "Doom Slayer chained"
+    },
+    {
+      "text": "Ancient texts called the Slayer Testaments had described him long before. One line says his soul was tainted beyond ascension.",
+      "image": "Slayer Testaments"
+    },
+    {
+      "text": "When Samuel Hayden appeared on a monitor to explain the situation, the Slayer shoved the screen aside.",
+      "image": "Samuel Hayden",
+      "image_page": "Samuel Hayden"
+    },
+    {
+      "text": "Mars had dug up the one thing Hell was afraid of.",
+      "image": "Doom Slayer",
+      "still": true
+    }
+  ],
+  "trailer": {
+    "steam_appid": 379720
+  }
+}
