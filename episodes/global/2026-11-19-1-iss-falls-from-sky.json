@@ -1,0 +1,64 @@
+{
+  "title": "What if the space station just fell? 🛰️",
+  "hook": "WHAT IF THE ISS FELL?",
+  "format": "what-if",
+  "subject": "station",
+  "emphasis": [
+    "430,000 kilograms",
+    "1 to 2 years",
+    "$400"
+  ],
+  "description": "Where do you think the pieces would land? 👇\n\nWhat happens if nobody boosts the International Space Station? NASA says it would fall within 1 to 2 years, and big pieces would survive the trip down. It has happened before: Skylab rained over Western Australia in 1979.\n\nSources: NASA, \"FAQs: The International Space Station Transition Plan\" (2024); NASA, \"ISS Deorbit Analysis Summary\" (June 2024); Space.com, \"40 Years Ago, NASA's Skylab Space Station Fell to Earth\" (2019); Guinness World Records, \"First fine for littering from space\".",
+  "tags": [
+    "what if the iss fell",
+    "what if the space station fell",
+    "iss falling to earth",
+    "iss deorbit",
+    "iss deorbit 2030",
+    "international space station",
+    "skylab",
+    "skylab fell to earth",
+    "space debris",
+    "what if",
+    "spacex deorbit vehicle",
+    "space station reentry"
+  ],
+  "hashtags": [
+    "#ISS",
+    "#space",
+    "#NASA"
+  ],
+  "publish_at": "2026-11-19T16:00:00Z",
+  "scenes": [
+    {
+      "text": "Stop pushing the ISS, and it falls from the sky.",
+      "nasa": "International Space Station flyaround",
+      "search": "space station orbit earth"
+    },
+    {
+      "text": "Thin air drags on it even 257 miles up. NASA gives it 1 to 2 years without boosts.",
+      "nasa": "ISS reboost",
+      "search": "earth from orbit night"
+    },
+    {
+      "text": "Then 430,000 kilograms come down uncontrolled.",
+      "nasa": "earth from ISS",
+      "search": "satellite reentry fire"
+    },
+    {
+      "text": "Most of it burns. The heavy truss sections don't, and NASA warns of very large debris.",
+      "nasa": "ISS truss",
+      "search": "meteor fireball sky"
+    },
+    {
+      "text": "In 1979, Skylab rained across Western Australia. The town of Esperance fined NASA $400 for littering.",
+      "nasa": "Skylab space station",
+      "search": "australian outback desert"
+    },
+    {
+      "text": "So SpaceX is building a tug to drop the ISS into an empty ocean in 2030.",
+      "nasa": "Pacific Ocean from ISS",
+      "search": "open ocean aerial"
+    }
+  ]
+}

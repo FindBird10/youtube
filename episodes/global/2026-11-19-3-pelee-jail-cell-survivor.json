@@ -1,0 +1,69 @@
+{
+  "title": "The city where a jail cell saved one man 🌋",
+  "hook": "GONE IN ONE MINUTE",
+  "format": "dark-history",
+  "subject": "volcano",
+  "emphasis": [
+    "28,000",
+    "7:52",
+    "Doomsday"
+  ],
+  "description": "Would you have stayed in Saint-Pierre? 👇\n\nOn May 8, 1902, Mount Pelée on Martinique sent a glowing cloud of gas and ash over Saint-Pierre. About 28,000 people died in minutes. One of the few survivors was a prisoner in a stone cell.\n\nSources: Wikipedia, \"1902 eruption of Mount Pelée\" and \"Ludger Sylbaris\"; EARTH Magazine, \"Benchmarks: May 8, 1902: The deadly eruption of Mount Pelée\" (2015); Scientific American, \"May 8, 1902: La Pelée\".",
+  "tags": [
+    "mount pelee",
+    "mount pelee 1902",
+    "saint-pierre martinique",
+    "ludger sylbaris",
+    "volcano survivor jail cell",
+    "deadliest volcanic eruption 20th century",
+    "pyroclastic flow",
+    "nuee ardente",
+    "volcano destroyed a city",
+    "dark history",
+    "volcano history",
+    "martinique eruption"
+  ],
+  "hashtags": [
+    "#volcano",
+    "#history",
+    "#martinique"
+  ],
+  "publish_at": "2026-11-20T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "1902 eruption of Mount Pelée"
+  },
+  "scenes": [
+    {
+      "text": "A city of 28,000 people vanished in under a minute.",
+      "image": "St. Pierre ruins",
+      "search": "volcanic ash ruins"
+    },
+    {
+      "text": "Saint-Pierre, Martinique, May 8, 1902. Mount Pelée sent a glowing cloud of gas downhill at over 100 mph.",
+      "image": "eruption column 1902",
+      "nasa": "Mount Pelee",
+      "search": "volcano pyroclastic flow"
+    },
+    {
+      "text": "The telegraph operator's last message went out at 7:52. Then the line went dead.",
+      "image": "Saint-Pierre",
+      "search": "old telegraph machine"
+    },
+    {
+      "text": "Ships in the harbor burned, including the liner Roraima.",
+      "image": "Pelee",
+      "search": "burning ship smoke sea"
+    },
+    {
+      "text": "In a stone cell with no windows, prisoner Ludger Sylbaris was badly burned, but alive.",
+      "image": "Sylbaris",
+      "search": "old stone prison cell"
+    },
+    {
+      "text": "Barnum & Bailey later billed him as the man who lived through Doomsday.",
+      "image": "survivor",
+      "search": "vintage circus tent"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "title": "What carbon monoxide does while you sleep 💤",
+  "hook": "THE GAS YOU CAN'T SMELL",
+  "format": "body",
+  "subject": "blood",
+  "emphasis": [
+    "200 times",
+    "no smell",
+    "400 Americans"
+  ],
+  "description": "Does your home have a CO alarm? 👇\n\nCarbon monoxide binds to your blood about 200 times more tightly than oxygen. Awake, it feels like flu. Asleep, the CDC says people can die before they feel anything.\n\nSources: CDC, \"Carbon Monoxide Poisoning Basics\" (2026); Mayo Clinic, \"Carbon monoxide poisoning\" (2025); StatPearls/NCBI, \"Carbon Monoxide Toxicity\" (2026).",
+  "tags": [
+    "carbon monoxide",
+    "carbon monoxide poisoning",
+    "what carbon monoxide does to your body",
+    "carbon monoxide while sleeping",
+    "silent killer gas",
+    "co poisoning symptoms",
+    "carbon monoxide hemoglobin",
+    "why carbon monoxide is deadly",
+    "winter heater danger",
+    "human body",
+    "body facts",
+    "odorless gas"
+  ],
+  "hashtags": [
+    "#carbonmonoxide",
+    "#humanbody",
+    "#science"
+  ],
+  "publish_at": "2026-11-19T20:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Hemoglobin"
+  },
+  "scenes": [
+    {
+      "text": "Your blood grabs this gas 200 times harder than oxygen.",
+      "image": "haemoglobin",
+      "search": "red blood cells microscope"
+    },
+    {
+      "text": "Carbon monoxide. No color, no smell. Furnaces, generators and car exhaust all make it.",
+      "nasa": "MOPITT carbon monoxide",
+      "search": "gas furnace flame"
+    },
+    {
+      "text": "It takes the spots on your red blood cells meant for oxygen.",
+      "image": "red blood cells",
+      "search": "blood flow veins animation"
+    },
+    {
+      "text": "Awake, you'd get a headache and dizziness. Mayo Clinic says it can feel like flu without the fever.",
+      "image": "hemoglobin",
+      "search": "man headache dizzy"
+    },
+    {
+      "text": "Asleep, you might feel nothing. The CDC says sleeping people can die before any symptoms.",
+      "nasa": "astronaut sleeping ISS",
+      "search": "dark bedroom night"
+    },
+    {
+      "text": "More than 400 Americans die this way every year, and cases climb each winter.",
+      "nasa": "carbon monoxide global map",
+      "search": "space heater winter room"
+    }
+  ]
+}
