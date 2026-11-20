@@ -1,0 +1,75 @@
+{
+  "title": "Why Garrus Vakarian quit C-Sec in Mass Effect",
+  "angle": "origin",
+  "subject": "garrus",
+  "wiki": {
+    "site": "masseffect.fandom.com",
+    "page": "Garrus",
+    "avoid": [
+      "andromeda",
+      "ryder",
+      "comic",
+      "concept",
+      "render",
+      "cosplay",
+      "figure",
+      "artwork",
+      "poster",
+      "cover"
+    ]
+  },
+  "description": "Would you have quit C-Sec too? 👇\n\nHow a frustrated Citadel cop became Commander Shepard's closest ally. Spoilers for Mass Effect (2007).\n\nFan-made content. Not affiliated with or endorsed by BioWare or Electronic Arts. Game images © their respective owners.",
+  "tags": [
+    "garrus",
+    "garrus vakarian",
+    "mass effect",
+    "mass effect legendary edition",
+    "garrus story",
+    "garrus explained",
+    "mass effect lore",
+    "garrus c-sec",
+    "mass effect 1",
+    "saren",
+    "commander shepard",
+    "garrus origin"
+  ],
+  "hashtags": [
+    "#masseffect",
+    "#garrus",
+    "#garrusvakarian"
+  ],
+  "publish_at": "2026-11-20T18:00:00Z",
+  "scenes": [
+    {
+      "text": "Garrus Vakarian was a cop who hated following the rules.",
+      "image": "Garrus"
+    },
+    {
+      "text": "In 2183 he worked for C-Sec on the Citadel, investigating a turian Spectre named Saren Arterius.",
+      "image": "Garrus Citadel"
+    },
+    {
+      "text": "His bosses shut the case down. His father, a C-Sec veteran, always did things by the book.",
+      "image": "Garrus C-Sec"
+    },
+    {
+      "text": "Garrus kept digging and followed a lead to Dr. Chloe Michel's clinic, where thugs held her at gunpoint.",
+      "image": "Garrus clinic"
+    },
+    {
+      "text": "One clean shot ended the standoff, just as Commander Shepard walked in.",
+      "image": "Garrus Shepard"
+    },
+    {
+      "text": "Soon after, he quit C-Sec and joined the Normandy's crew.",
+      "image": "Garrus Normandy"
+    },
+    {
+      "text": "The cop who hated rules had found someone willing to break them.",
+      "image": "Garrus"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 1328670
+  }
+}
