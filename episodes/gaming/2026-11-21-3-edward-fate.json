@@ -1,0 +1,83 @@
+{
+  "title": "Who really killed Edward Kenway in Assassin's Creed",
+  "angle": "fate",
+  "subject": "edward",
+  "wiki": {
+    "site": "assassinscreed.fandom.com",
+    "page": "Edward Kenway",
+    "avoid": [
+      "unity",
+      "arno",
+      "connor",
+      "ezio",
+      "altair",
+      "comic",
+      "concept",
+      "render",
+      "cosplay",
+      "figure",
+      "artwork",
+      "poster",
+      "cover",
+      "logo"
+    ]
+  },
+  "description": "Could Edward have seen Birch coming? 👇\n\nThe night Kenway Manor was attacked, and why Edward's son grew up a Templar. Spoilers for Assassin's Creed IV: Black Flag and the novel Assassin's Creed: Forsaken.\n\nFan-made content. Not affiliated with or endorsed by Ubisoft. Game images © their respective owners.",
+  "tags": [
+    "edward kenway",
+    "assassin's creed black flag",
+    "ac black flag",
+    "black flag resynced",
+    "assassin's creed 4",
+    "edward kenway story",
+    "edward kenway explained",
+    "assassin's creed lore",
+    "edward kenway death",
+    "haytham kenway",
+    "reginald birch",
+    "assassin's creed forsaken"
+  ],
+  "hashtags": [
+    "#assassinscreed",
+    "#edwardkenway",
+    "#haythamkenway"
+  ],
+  "publish_at": "2026-11-22T02:00:00Z",
+  "scenes": [
+    {
+      "text": "Edward Kenway survived the Caribbean, then died in his own London home.",
+      "image": "Edward Kenway"
+    },
+    {
+      "text": "Back in England he married Tessa Stephenson-Oakley, and their son Haytham was born in 1725.",
+      "image": "Edward Kenway London"
+    },
+    {
+      "text": "His property manager, Reginald Birch, courted his daughter Jennifer, until she learned Birch was a Templar.",
+      "image": "Reginald Birch",
+      "image_page": "Reginald Birch",
+      "still": true
+    },
+    {
+      "text": "On 3 December 1735, a day before Haytham turned ten, masked men broke into Kenway Manor.",
+      "image": "Kenway Manor"
+    },
+    {
+      "text": "They took Jennifer. Edward fought them through the house and was run through, aged 42.",
+      "image": "Edward"
+    },
+    {
+      "text": "Birch had sent them for Edward's journal, then offered to raise the boy.",
+      "image": "Haytham Kenway",
+      "image_page": "Haytham Kenway"
+    },
+    {
+      "text": "Haytham grew up a Templar, serving the order his father fought.",
+      "image": "Haytham",
+      "image_page": "Haytham Kenway"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 3751950
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "title": "Why Edward Kenway left his wife in AC Black Flag",
+  "angle": "origin",
+  "subject": "edward",
+  "wiki": {
+    "site": "assassinscreed.fandom.com",
+    "page": "Edward Kenway",
+    "avoid": [
+      "unity",
+      "arno",
+      "connor",
+      "ezio",
+      "altair",
+      "comic",
+      "concept",
+      "render",
+      "cosplay",
+      "figure",
+      "artwork",
+      "poster",
+      "cover",
+      "logo"
+    ]
+  },
+  "description": "Would you have left Caroline for the Caribbean? 👇\n\nHow a farmer's son from Swansea ended up a pirate wearing a dead Assassin's robes. Spoilers for Assassin's Creed IV: Black Flag.\n\nFan-made content. Not affiliated with or endorsed by Ubisoft. Game images © their respective owners.",
+  "tags": [
+    "edward kenway",
+    "assassin's creed black flag",
+    "ac black flag",
+    "black flag resynced",
+    "assassin's creed 4",
+    "edward kenway story",
+    "edward kenway explained",
+    "assassin's creed lore",
+    "caroline scott",
+    "duncan walpole",
+    "black flag story",
+    "edward kenway origin"
+  ],
+  "hashtags": [
+    "#assassinscreed",
+    "#blackflag",
+    "#edwardkenway"
+  ],
+  "publish_at": "2026-11-21T18:00:00Z",
+  "scenes": [
+    {
+      "text": "Edward Kenway sailed away from his wife, swearing he'd come back rich.",
+      "image": "Edward Kenway"
+    },
+    {
+      "text": "In 1712 the Swansea farmer's son married Caroline Scott against her father's wishes.",
+      "image": "Caroline Scott",
+      "image_page": "Caroline Scott"
+    },
+    {
+      "text": "Emmett Scott offered him money to disappear. Edward chose privateering instead.",
+      "image": "Edward Bristol"
+    },
+    {
+      "text": "He told Caroline, \"I want food that don't make me sick. I want walls that hold back the wind.\"",
+      "image": "Edward Caroline",
+      "still": true
+    },
+    {
+      "text": "By 1715 he was a pirate, and a storm wrecked his ship.",
+      "image": "Edward shipwreck"
+    },
+    {
+      "text": "On the beach he killed a wounded Assassin, Duncan Walpole, and took his robes.",
+      "image": "Duncan Walpole",
+      "image_page": "Duncan Walpole"
+    },
+    {
+      "text": "Then he sailed for Havana under a dead man's name, to sell secrets he didn't understand.",
+      "image": "Edward Havana"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 3751950
+  }
+}
