@@ -1,0 +1,73 @@
+{
+  "title": "What 3 minutes near Chernobyl's Elephant's Foot does ☢️",
+  "hook": "3 MINUTES NEXT TO IT",
+  "format": "body",
+  "subject": "radiation",
+  "emphasis": [
+    "3 minutes",
+    "10,000",
+    "AK-47"
+  ],
+  "description": "How long would you dare to stand there? 👇\n\nThe Elephant's Foot is a mass of melted nuclear fuel, sand and concrete under Chernobyl's Reactor 4. In 1986 it could give you a lethal dose of radiation in about 3 minutes. Here is what it does to the human body, and how strong it is today.\n\nSources: Wikipedia, \"Elephant's Foot (Chernobyl)\" (radiation measurements 1986–2016, AK-47 samples); Nautilus, Kyle Hill, \"Chernobyl's Hot Mess, 'the Elephant's Foot,' Is Still Lethal\" (2013).",
+  "tags": [
+    "elephants foot chernobyl",
+    "chernobyl elephants foot",
+    "most dangerous object on earth",
+    "what radiation does to your body",
+    "chernobyl corium",
+    "chernobyl reactor 4",
+    "radiation sickness",
+    "lethal dose of radiation",
+    "chernobyl lava",
+    "chernobyl today",
+    "nuclear disaster",
+    "roentgens per hour"
+  ],
+  "hashtags": [
+    "#chernobyl",
+    "#radiation",
+    "#science"
+  ],
+  "publish_at": "2026-11-21T20:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Elephant's Foot (Chernobyl)"
+  },
+  "scenes": [
+    {
+      "text": "You'd absorb a lethal dose here in about 3 minutes.",
+      "image": "Elephant foot",
+      "search": "nuclear reactor ruins dark"
+    },
+    {
+      "text": "This is the Elephant's Foot: melted fuel and concrete under Chernobyl's Reactor 4.",
+      "image": "reactor 4",
+      "image_page": "Chernobyl disaster",
+      "search": "chernobyl reactor building"
+    },
+    {
+      "text": "In 1986 it flowed like lava. Workers found it that December.",
+      "image": "Chernobyl",
+      "image_page": "Chernobyl disaster",
+      "search": "abandoned concrete corridor"
+    },
+    {
+      "text": "It gave off up to 10,000 roentgens an hour. After 30 seconds, dizziness hits a week later. After 2 minutes, your cells start breaking down.",
+      "image": "Pripyat",
+      "image_page": "Chernobyl disaster",
+      "search": "geiger counter radiation"
+    },
+    {
+      "text": "It was so hard that scientists shot off samples with an AK-47.",
+      "image": "sarcophagus",
+      "image_page": "Chernobyl disaster",
+      "search": "scientist protective suit"
+    },
+    {
+      "text": "By 2016, readings were down to about 1 percent of that. Still dangerous.",
+      "image": "New Safe Confinement",
+      "image_page": "Chernobyl disaster",
+      "search": "chernobyl confinement arch"
+    }
+  ]
+}
