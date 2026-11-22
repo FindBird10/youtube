@@ -1,0 +1,64 @@
+{
+  "title": "What a rocket launch's sound does to your ears 🚀",
+  "hook": "HOW LOUD IS A ROCKET?",
+  "format": "body",
+  "subject": "rocket",
+  "emphasis": [
+    "129 decibels",
+    "203",
+    "450,000 gallons"
+  ],
+  "description": "How close would you dare to stand? 👇\n\nHow loud is a rocket launch, and what does that sound do to your body? Microphones at NASA's Artemis I launch measured chainsaw-level noise 3 miles away, and the Saturn V reached about 203 decibels.\n\nSources: Smithsonian Magazine, \"How Loud Was NASA's Artemis 1 Launch?\" (BYU study, JASA Express Letters; CDC hearing thresholds); BYU Physics, \"Debunking acoustics myths around the Saturn V\" (Kent Gee, 2022); Space.com, \"No, NASA's massive Saturn V rocket didn't melt concrete with sound\"; NASA, \"Pad 39B Water Flow Test Comes Through Loud and Clear\" (2019).",
+  "tags": [
+    "how loud is a rocket launch",
+    "rocket launch sound",
+    "saturn v loud",
+    "artemis 1 launch",
+    "sls rocket",
+    "what loud sound does to your ears",
+    "loudest sound",
+    "decibels",
+    "eardrum rupture",
+    "nasa sound suppression water",
+    "rocket launch up close",
+    "hearing damage"
+  ],
+  "hashtags": [
+    "#nasa",
+    "#rocket",
+    "#science"
+  ],
+  "publish_at": "2026-11-22T20:00:00Z",
+  "scenes": [
+    {
+      "text": "Stand 3 miles from this rocket, and your ears hurt.",
+      "nasa": "Artemis I launch",
+      "search": "rocket launch liftoff"
+    },
+    {
+      "text": "At NASA's Artemis I launch in 2022, BYU microphones 3 miles away recorded 129 decibels. That's a chainsaw.",
+      "nasa": "Artemis I SLS liftoff",
+      "search": "rocket launch crowd watching"
+    },
+    {
+      "text": "At 1 mile, 136. Ear pain starts around 120.",
+      "nasa": "SLS rocket launch pad 39B",
+      "search": "person covering ears"
+    },
+    {
+      "text": "The Saturn V hit about 203. Physicist Kent Gee says 200 is like 10,000 jet engines.",
+      "nasa": "Saturn V launch Apollo",
+      "search": "saturn v rocket launch"
+    },
+    {
+      "text": "That can rupture an eardrum. Apollo crowds were kept 3.5 miles back.",
+      "nasa": "Apollo 11 launch spectators",
+      "search": "crowd watching launch"
+    },
+    {
+      "text": "Now NASA floods the pad with 450,000 gallons of water. It's not for fire. It knocks the sound down.",
+      "nasa": "sound suppression water flow test 39B",
+      "search": "water deluge launch pad"
+    }
+  ]
+}

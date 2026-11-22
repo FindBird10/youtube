@@ -1,0 +1,70 @@
+{
+  "title": "The hurricane that peeled the bark off trees 🌀",
+  "hook": "IT PEELED THE TREES",
+  "format": "dark-history",
+  "subject": "hurricane",
+  "emphasis": [
+    "1780",
+    "100 feet",
+    "22,000"
+  ],
+  "description": "Could a storm like this hit the Caribbean again? 👇\n\nThe Great Hurricane of 1780 tore through Barbados, Martinique and Saint Lucia in October 1780, in the middle of the American Revolution. It is still the deadliest Atlantic hurricane on record.\n\nSources: Wikipedia, \"Great Hurricane of 1780\" (citing Rodney's report, Clowes, Neely); NOAA AOML Hurricane Research Division, \"235th Anniversary of the Great Hurricane of 1780\" (2015); Encyclopaedia Britannica, \"Great hurricane of 1780\".",
+  "tags": [
+    "great hurricane of 1780",
+    "deadliest hurricane ever",
+    "deadliest atlantic hurricane",
+    "1780 hurricane barbados",
+    "hurricane history",
+    "strongest hurricane in history",
+    "hurricane stripped bark off trees",
+    "martinique hurricane",
+    "caribbean hurricane",
+    "american revolution hurricane",
+    "dark history",
+    "could it happen again"
+  ],
+  "hashtags": [
+    "#history",
+    "#hurricane",
+    "#caribbean"
+  ],
+  "publish_at": "2026-11-23T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Great Hurricane of 1780"
+  },
+  "scenes": [
+    {
+      "text": "The wind peeled the bark off the trees.",
+      "nasa": "hurricane eye from space",
+      "search": "hurricane palm trees wind"
+    },
+    {
+      "text": "Barbados, October 10, 1780. People couldn't hear their own voices over the wind.",
+      "image": "hurricane 1780",
+      "search": "storm waves stone fort"
+    },
+    {
+      "text": "Every house and fort fell. Admiral George Rodney reported heavy cannons carried 100 feet.",
+      "image": "Rodney",
+      "image_page": "George Brydges Rodney, 1st Baron Rodney",
+      "search": "old cannon fort"
+    },
+    {
+      "text": "On Martinique, a 25-foot surge erased every house in Saint-Pierre. About 9,000 people died there.",
+      "image": "track map",
+      "nasa": "hurricane from space",
+      "search": "storm surge waves coast"
+    },
+    {
+      "text": "At sea, the British frigate HMS Blanche vanished without a trace, in the middle of the American Revolution.",
+      "image": "ship",
+      "search": "tall ship stormy sea"
+    },
+    {
+      "text": "Around 22,000 people died. No Atlantic hurricane on record has killed more.",
+      "nasa": "hurricane from ISS",
+      "search": "dark storm clouds ocean"
+    }
+  ]
+}
