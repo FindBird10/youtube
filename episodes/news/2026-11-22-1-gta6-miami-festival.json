@@ -1,0 +1,71 @@
+{
+  "title": "GTA 6 threw a music festival in Miami 🎤",
+  "hook": "GTA 6 FESTIVAL",
+  "subject": "gta6",
+  "wiki": {
+    "site": "gta.fandom.com",
+    "page": "Grand Theft Auto VI",
+    "avoid": [
+      "fallguys",
+      "fall guys",
+      "logo",
+      "icon",
+      "twitter",
+      "x.png",
+      "announcement",
+      "gtav-",
+      "gtaiv",
+      "gta5",
+      "gtao",
+      "online",
+      "merch",
+      "collector"
+    ]
+  },
+  "description": "Would you have entered the ticket lottery? 👇\n\nRockstar Games and PlayStation held Grand Theft Auto VI: The Festival at Mana Wynwood in Miami on November 21, two days after GTA 6 launched. Rockstar says all ticket proceeds go to local Miami charities. Justice's 30-track GTA 6 Original Score releases December 11.\n\nSources: Rockstar Games festival announcement via VGC (Nov 9, 2026), Rockstar on X via DancehallMag (Nov 20, 2026), Kurrco on X via HappyGamer (Nov 22, 2026)\nGame images © Rockstar Games.",
+  "tags": [
+    "gta 6",
+    "gta vi",
+    "gta 6 news",
+    "gta 6 festival",
+    "gta vi the festival",
+    "gta 6 miami",
+    "gta 6 travis scott",
+    "gta 6 cardi b",
+    "gta 6 justice score",
+    "gta 6 soundtrack",
+    "grand theft auto 6",
+    "rockstar games",
+    "mana wynwood"
+  ],
+  "hashtags": [
+    "#gta6",
+    "#rockstargames",
+    "#travisscott"
+  ],
+  "publish_at": "2026-11-22T14:00:00Z",
+  "scenes": [
+    {
+      "text": "GTA 6 got its own music festival in Miami.",
+      "image": "Artwork GTAVI"
+    },
+    {
+      "text": "On November 21, two days after launch, Rockstar and PlayStation took over Mana Wynwood for one night.",
+      "search": "music festival crowd stage lights night"
+    },
+    {
+      "text": "Cardi B, Metro Boomin and Justice were on the bill. Clips on X show Travis Scott and Don Toliver performing CAN'T SAY.",
+      "image": "Vice City GTAVI",
+      "image_page": "Vice City (HD Universe)"
+    },
+    {
+      "text": "Getting in took a ticket lottery, and Rockstar says every dollar from ticket sales goes to local Miami charities.",
+      "search": "miami skyline night neon"
+    },
+    {
+      "text": "Justice also scored the game, and that 30-track album arrives on December 11.",
+      "image": "Leonida GTAVI",
+      "image_page": "State of Leonida"
+    }
+  ]
+}

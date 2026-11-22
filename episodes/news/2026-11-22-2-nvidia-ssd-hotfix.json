@@ -1,0 +1,49 @@
+{
+  "title": "Nvidia hotfix 621.35 stops 30GB/hour SSD writes 💾",
+  "hook": "NVIDIA SSD FIX",
+  "subject": "nvidia",
+  "description": "Did you check your SSD writes? 👇\n\nNvidia released GeForce Hotfix Display Driver 621.35 on November 20 to fix excessive background writes to the nvlog.nvlgstg file, a bug users linked to drivers 621.14 and 621.24. The hotfix is a beta driver, and Nvidia says the safest option is to wait for the next certified release.\n\nSources: Nvidia support article 5940 (GeForce Hotfix 621.35), Notebookcheck (Nov 21, 2026), TweakTown (Nov 21, 2026), Windows Latest (Nov 20, 2026)",
+  "tags": [
+    "nvidia",
+    "nvidia driver",
+    "nvidia hotfix 621.35",
+    "nvidia ssd bug",
+    "nvidia driver ssd writes",
+    "geforce driver 621.24",
+    "geforce driver 621.14",
+    "nvdisplay container",
+    "nvidia driver bug",
+    "geforce hotfix",
+    "pc gaming news",
+    "ssd health",
+    "rtx driver"
+  ],
+  "hashtags": [
+    "#nvidia",
+    "#geforce",
+    "#pcgaming"
+  ],
+  "publish_at": "2026-11-22T18:00:00Z",
+  "scenes": [
+    {
+      "text": "Nvidia just patched a driver that hammered SSDs.",
+      "search": "nvidia graphics card close up"
+    },
+    {
+      "text": "Users traced the bug to GeForce drivers 621.14 and 621.24, released November 4 and 12.",
+      "search": "gaming pc rgb dark room"
+    },
+    {
+      "text": "A background service, NVDisplay.Container, kept rewriting one log file, even while the PC sat idle.",
+      "search": "computer code screen dark"
+    },
+    {
+      "text": "One user measured 515 megabytes in five minutes. Others estimated up to 30 gigabytes an hour.",
+      "search": "ssd drive computer close up"
+    },
+    {
+      "text": "On November 20, Nvidia put out hotfix 621.35 with a single fix for those writes. It's a beta, and Nvidia calls waiting for the next certified driver the safest option.",
+      "search": "computer motherboard close up"
+    }
+  ]
+}
