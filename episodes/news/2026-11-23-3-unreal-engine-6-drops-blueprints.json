@@ -1,0 +1,52 @@
+{
+  "title": "Unreal Engine 6 is dropping Blueprints 🛠️",
+  "hook": "UE6 DROPS BLUEPRINTS",
+  "subject": "unrealengine",
+  "description": "Are you learning Verse or sticking with UE5? 👇\n\nEpic's Marcus Wassmer confirmed that Unreal Engine 6, including UE6 Early Access, won't include Blueprints or the Actor Gameplay Framework. Gameplay will be built in Verse and the new Scene Graph framework, and Epic expects AI tools to help convert UE5 projects.\n\nSources: Epic Games, \"An update on Blueprints and the path to UE6\" (Nov 19, 2026), PC Gamer (Nov 22, 2026), IEEE Spectrum (Nov 2026)",
+  "tags": [
+    "unreal engine 6",
+    "ue6",
+    "unreal engine 6 blueprints",
+    "unreal engine blueprints removed",
+    "unreal engine news",
+    "epic games",
+    "verse programming",
+    "scene graph unreal",
+    "unreal engine 5",
+    "game development news",
+    "ue6 early access",
+    "ai coding game dev"
+  ],
+  "hashtags": [
+    "#unrealengine",
+    "#gamedev",
+    "#epicgames"
+  ],
+  "publish_at": "2026-11-23T23:00:00Z",
+  "scenes": [
+    {
+      "text": "Unreal Engine 6 will ship without Blueprints.",
+      "search": "game developer coding computer screens"
+    },
+    {
+      "text": "On November 19, Epic's Marcus Wassmer confirmed UE6, even in Early Access, won't include Blueprints or the Actor Gameplay Framework.",
+      "search": "software developer office monitors night"
+    },
+    {
+      "text": "Blueprints let teams build gameplay visually, without writing code.",
+      "search": "flowchart diagram computer screen"
+    },
+    {
+      "text": "In June, Epic said Blueprints and Actors would still exist in UE6 Early Access and 6.0.",
+      "search": "programmer typing keyboard close up"
+    },
+    {
+      "text": "Gameplay moves to Verse, the language from Fortnite's editor, and the new Scene Graph.",
+      "search": "code editor screen programming"
+    },
+    {
+      "text": "Epic expects AI to massively help convert UE5 projects. UE5 keeps Blueprints.",
+      "search": "computer motherboard close up"
+    }
+  ]
+}

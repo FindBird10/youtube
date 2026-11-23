@@ -1,0 +1,56 @@
+{
+  "title": "Binding of Isaac pulls AI music after backlash 🎵",
+  "hook": "ISAAC AI MUSIC",
+  "subject": "bindingofisaac",
+  "trailer": {
+    "steam_appid": 250900
+  },
+  "description": "Should Steam enforce AI disclosures harder? 👇\n\nPlayers found Suno metadata in the music of a GTA 6-themed daily run added to The Binding of Isaac: Repentance+. Recent Steam reviews dropped to Overwhelmingly Negative. Edmund McMillen said he didn't know, and Nicalis pushed a PC patch removing the generated music files on November 21; console patches were submitted for approval.\n\nSources: Edmund McMillen and Nicalis on X (Nov 21, 2026), Dexerto (Nov 21, 2026), PC Gamer (Nov 23, 2026), Superpower Daily (Nov 21, 2026)\nGame footage © Nicalis / Edmund McMillen.",
+  "tags": [
+    "binding of isaac",
+    "the binding of isaac",
+    "binding of isaac repentance+",
+    "repentance plus",
+    "binding of isaac ai music",
+    "binding of isaac news",
+    "isaac gta 6 daily run",
+    "edmund mcmillen",
+    "nicalis",
+    "suno ai music",
+    "steam ai disclosure",
+    "binding of isaac review bomb",
+    "indie game news"
+  ],
+  "hashtags": [
+    "#bindingofisaac",
+    "#indiegames",
+    "#pcgaming"
+  ],
+  "publish_at": "2026-11-23T18:00:00Z",
+  "scenes": [
+    {
+      "text": "The Binding of Isaac just pulled AI-made music.",
+      "trailer": true
+    },
+    {
+      "text": "A Repentance+ update added a GTA 6-themed daily run, seed V1CE BSMT.",
+      "search": "neon palm trees night city"
+    },
+    {
+      "text": "Players on Reddit found \"made with Suno\" tags in its 7 song files. Steam showed no AI disclosure.",
+      "trailer": true
+    },
+    {
+      "text": "Recent Steam reviews sank to Overwhelmingly Negative, just 10% positive out of 908.",
+      "search": "angry gamer computer screen dark"
+    },
+    {
+      "text": "On November 21, creator Edmund McMillen said he had no idea the run used generated music.",
+      "trailer": true
+    },
+    {
+      "text": "Hours later, Nicalis pushed a PC patch removing the files. Console fixes await approval.",
+      "search": "computer code screen dark"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "title": "GTA 6 set Comcast's all-time traffic record 📈",
+  "hook": "GTA 6 TRAFFIC RECORD",
+  "subject": "gta6",
+  "wiki": {
+    "site": "gta.fandom.com",
+    "page": "Grand Theft Auto VI",
+    "avoid": [
+      "fallguys",
+      "fall guys",
+      "logo",
+      "icon",
+      "twitter",
+      "x.png",
+      "announcement",
+      "gtav-",
+      "gtaiv",
+      "gta5",
+      "gtao",
+      "online",
+      "merch",
+      "collector"
+    ]
+  },
+  "description": "Did your download crawl on launch day? 👇\n\nComcast says the launch of Grand Theft Auto VI drove the biggest internet traffic day in its network history, 31% above an average day, and that at peak GTA 6 accounted for nearly a quarter of all traffic on its network. GTA 6 released November 19, 2026 on PS5 and Xbox Series X|S.\n\nSources: Comcast on X (Nov 2026), PC Gamer (Nov 21, 2026), Briefs (Nov 21, 2026)\nGame images © Rockstar Games.",
+  "tags": [
+    "gta 6",
+    "gta vi",
+    "gta 6 news",
+    "gta 6 comcast",
+    "gta 6 internet traffic",
+    "gta 6 record",
+    "gta 6 download",
+    "gta 6 launch",
+    "grand theft auto 6",
+    "rockstar games",
+    "comcast xfinity",
+    "gta 6 sales",
+    "gta 6 launch day"
+  ],
+  "hashtags": [
+    "#gta6",
+    "#rockstargames",
+    "#gtavi"
+  ],
+  "publish_at": "2026-11-23T14:00:00Z",
+  "scenes": [
+    {
+      "text": "GTA 6 just set Comcast's all-time traffic record.",
+      "image": "Artwork GTAVI"
+    },
+    {
+      "text": "Comcast says the launch drove the biggest internet traffic day in its network history, 31% above an average day.",
+      "search": "fiber optic cables network lights"
+    },
+    {
+      "text": "Its chart marks November 19, the day the game came out on PS5 and Xbox Series X|S.",
+      "image": "Vice City GTAVI",
+      "image_page": "Vice City (HD Universe)"
+    },
+    {
+      "text": "At the peak, GTA 6 alone made up nearly a quarter of everything moving across Comcast's network.",
+      "search": "internet router lights dark room"
+    },
+    {
+      "text": "That's one provider, not the whole internet. Still, it's the busiest day Comcast has ever recorded.",
+      "image": "Leonida GTAVI",
+      "image_page": "State of Leonida"
+    }
+  ]
+}
