@@ -1,0 +1,69 @@
+{
+  "title": "The week the Sun turned blue 🔵",
+  "hook": "THE SUN TURNED BLUE",
+  "format": "dark-history",
+  "subject": "smoke",
+  "emphasis": [
+    "blue",
+    "September 24",
+    "17,000"
+  ],
+  "description": "Would you have thought it was the end of the world? 👇\n\nIn September 1950, smoke from Canada's Chinchaga fire darkened Ontario at midday and turned the Sun and Moon blue as far away as Europe. It is still the largest fire on record in North America.\n\nSources: Wikipedia, \"Chinchaga fire\" (citing Field 2008 and the Edmonton Journal); University of Alberta Folio, \"The year the sun and moon turned blue\" (2015, interview with Cordy Tymstra, author of The Chinchaga Firestorm, University of Alberta Press, 2014).",
+  "tags": [
+    "blue sun 1950",
+    "chinchaga fire",
+    "great smoke pall",
+    "the day the sun turned blue",
+    "blue moon 1950",
+    "largest wildfire in north america",
+    "canada wildfire smoke europe",
+    "black sunday 1950",
+    "wildfire smoke history",
+    "dark history",
+    "weird history",
+    "could it happen again"
+  ],
+  "hashtags": [
+    "#history",
+    "#wildfire",
+    "#canada"
+  ],
+  "publish_at": "2026-11-24T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Chinchaga fire"
+  },
+  "scenes": [
+    {
+      "text": "The Sun turned blue.",
+      "nasa": "wildfire smoke plume from space Canada",
+      "search": "hazy sun smoke sky"
+    },
+    {
+      "text": "September 1950. Across North America and Europe, people saw a blue Sun and Moon.",
+      "nasa": "smoke over Atlantic from space",
+      "search": "pale sun through haze"
+    },
+    {
+      "text": "The smoke came from one fire in Canada, the Chinchaga, burning since June.",
+      "image": "map",
+      "nasa": "Canada wildfire from ISS",
+      "search": "forest fire smoke aerial"
+    },
+    {
+      "text": "On September 24, midday went dark in Ontario. Toronto's streetlights came on by themselves.",
+      "search": "streetlights dark city daytime"
+    },
+    {
+      "text": "People feared a nuclear attack. Historian Cordy Tymstra says the smoke particles were just the right size to turn the Sun blue.",
+      "nasa": "wildfire smoke from ISS",
+      "search": "smoke haze sky"
+    },
+    {
+      "text": "The fire burned up to 17,000 square kilometers, still the largest on record in North America.",
+      "nasa": "boreal forest fire from space",
+      "image": "Chinchaga",
+      "search": "burned forest aerial"
+    }
+  ]
+}
