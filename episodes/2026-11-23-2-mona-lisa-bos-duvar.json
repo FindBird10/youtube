@@ -1,0 +1,53 @@
+{
+  "title": "Mona Lisa çalındı, herkes boş duvara koştu 🖼️",
+  "format": "karanlik-tarih",
+  "subject": "painting",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Mona Lisa"
+  },
+  "description": "Sence Mona Lisa bu hırsızlık olmasa yine bu kadar ünlü olur muydu? 👇\n\nAğustos 1911'de Louvre çalışanı Vincenzo Peruggia, Leonardo da Vinci'nin Mona Lisa tablosunu çaldı. Tablo 2 yıldan uzun süre kayıp kaldı ve Aralık 1913'te Floransa'da bulundu.\n\nKaynak: History.com (The Heist That Made the Mona Lisa Famous); Wikipedia (Mona Lisa, Vincenzo Peruggia)",
+  "tags": [
+    "mona lisa",
+    "mona lisa çalındı",
+    "mona lisa hırsızlığı",
+    "louvre müzesi",
+    "louvre soygunu",
+    "vincenzo peruggia",
+    "leonardo da vinci",
+    "mona lisa neden ünlü",
+    "1911 mona lisa",
+    "tarihin en büyük soygunu",
+    "karanlık tarih",
+    "tarihte bugün"
+  ],
+  "hashtags": [
+    "#monalisa",
+    "#louvre",
+    "#davinci"
+  ],
+  "scenes": [
+    {
+      "text": "Mona Lisa, Louvre'daki duvarından bir gün sessizce kayboldu.",
+      "image": "Mona Lisa"
+    },
+    {
+      "text": "Ağustos 1911'de, cam kasasını yapan ekipte çalışmış Vincenzo Peruggia bir dolaba saklandı ve tabloyu çerçevesinden söktü.",
+      "image": "Peruggia",
+      "image_page": "Vincenzo Peruggia"
+    },
+    {
+      "text": "Merdiven kapısı kilitliydi, onu iş arkadaşı sanan bir tesisatçı kapıyı açtı ve Peruggia tabloyu giysisinin altında götürdü.",
+      "search": "old museum stairwell door"
+    },
+    {
+      "text": "Yokluğu bir günden fazla fark edilmedi; Louvre bir hafta kapalı kaldı, açılınca insanlar tablonun yerindeki boş duvarı görmek için sıraya girdi.",
+      "search": "empty museum wall gallery"
+    },
+    {
+      "text": "Tablo 2 yıldan uzun süre sonra, Aralık 1913'te Peruggia onu Floransa'da satmaya çalışınca bulundu ve bu hırsızlık 77 santimlik paneli dünyanın en ünlü tablosu yaptı.",
+      "image": "Uffizi 1913"
+    }
+  ],
+  "publish_at": "2026-11-23T18:00:00Z"
+}
