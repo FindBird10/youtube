@@ -1,0 +1,76 @@
+{
+  "title": "Why Malenia was born rotting in Elden Ring",
+  "angle": "origin",
+  "subject": "malenia",
+  "wiki": {
+    "site": "eldenring.wiki.gg",
+    "page": "Malenia, Blade of Miquella",
+    "avoid": [
+      "concept",
+      "artwork",
+      "render",
+      "figure",
+      "statue",
+      "cosplay",
+      "poster",
+      "cover",
+      "logo",
+      "nightreign",
+      "card",
+      "model"
+    ]
+  },
+  "description": "Would you have kept fighting with Malenia's curse? 👇\n\nHow the Blade of Miquella was born carrying the Scarlet Rot, and how she still became the warrior who never lost. Spoilers for Elden Ring.\n\nFan-made content. Not affiliated with or endorsed by FromSoftware or Bandai Namco Entertainment. Game images © their respective owners.",
+  "tags": [
+    "malenia",
+    "malenia blade of miquella",
+    "elden ring",
+    "elden ring lore",
+    "malenia story",
+    "malenia explained",
+    "miquella",
+    "scarlet rot",
+    "malenia origin",
+    "empyrean",
+    "unalloyed gold needle",
+    "waterfowl dance",
+    "elden ring story"
+  ],
+  "hashtags": [
+    "#eldenring",
+    "#malenia",
+    "#miquella"
+  ],
+  "publish_at": "2026-11-23T18:00:00Z",
+  "scenes": [
+    {
+      "text": "Malenia was born with a god of rot living inside her.",
+      "image": "Malenia"
+    },
+    {
+      "text": "She and her twin Miquella were children of Queen Marika and Radagon, two Empyreans who might one day rule.",
+      "image": "Malenia"
+    },
+    {
+      "text": "Both twins were cursed. Miquella would never grow up, and Malenia's body slowly decayed from the Scarlet Rot.",
+      "image": "Miquella",
+      "image_page": "Miquella"
+    },
+    {
+      "text": "Miquella searched for years for a cure, and forged a needle of unalloyed gold to hold the rot back.",
+      "image": "Malenia"
+    },
+    {
+      "text": "She fought with a prosthetic arm and one katana, and every wound she dealt healed her own.",
+      "image": "Malenia sword"
+    },
+    {
+      "text": "That's how a dying girl became the Blade of Miquella, and never lost a fight.",
+      "image": "Malenia",
+      "still": true
+    }
+  ],
+  "trailer": {
+    "steam_appid": 1245620
+  }
+}

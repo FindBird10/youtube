@@ -1,0 +1,81 @@
+{
+  "title": "Who Malenia was really waiting for in Elden Ring",
+  "angle": "fate",
+  "subject": "malenia",
+  "wiki": {
+    "site": "eldenring.wiki.gg",
+    "page": "Malenia, Blade of Miquella",
+    "avoid": [
+      "concept",
+      "artwork",
+      "render",
+      "figure",
+      "statue",
+      "cosplay",
+      "poster",
+      "cover",
+      "logo",
+      "nightreign",
+      "card",
+      "model"
+    ]
+  },
+  "description": "Did Malenia deserve to see Miquella again? 👇\n\nWhat Malenia's famous speech is really about, and the brother who never came back to the Haligtree. Spoilers for Elden Ring and Shadow of the Erdtree.\n\nFan-made content. Not affiliated with or endorsed by FromSoftware or Bandai Namco Entertainment. Game images © their respective owners.",
+  "tags": [
+    "malenia",
+    "malenia blade of miquella",
+    "elden ring",
+    "elden ring lore",
+    "malenia story",
+    "malenia explained",
+    "miquella",
+    "malenia quote",
+    "i have never known defeat",
+    "malenia speech",
+    "haligtree",
+    "mohg",
+    "shadow of the erdtree",
+    "malenia ending"
+  ],
+  "hashtags": [
+    "#eldenring",
+    "#malenia",
+    "#shadowoftheerdtree"
+  ],
+  "publish_at": "2026-11-24T02:00:00Z",
+  "scenes": [
+    {
+      "text": "Before Malenia fights you, she tells you what she's been waiting for.",
+      "image": "Malenia"
+    },
+    {
+      "text": "In Elphael, she says, \"I dreamt for so long. My flesh was dull gold, and my blood, rotted.\"",
+      "image": "Malenia"
+    },
+    {
+      "text": "\"Corpse after corpse, left in my wake, as I awaited his return.\"",
+      "image": "Malenia"
+    },
+    {
+      "text": "That's Miquella. Fans believe Mohg, Lord of Blood, stole his sleeping body during her war.",
+      "image": "Miquella",
+      "image_page": "Miquella"
+    },
+    {
+      "text": "Shadow of the Erdtree, the 2024 expansion, showed where he went. He never came back.",
+      "image": "Malenia"
+    },
+    {
+      "text": "Then she rises: \"I am Malenia, Blade of Miquella. And I have never known defeat.\"",
+      "image": "Malenia",
+      "still": true
+    },
+    {
+      "text": "Beat her, and she dies guarding the tree her brother left behind.",
+      "image": "Malenia"
+    }
+  ],
+  "trailer": {
+    "steam_appid": 1245620
+  }
+}
