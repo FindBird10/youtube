@@ -1,0 +1,65 @@
+{
+  "title": "The eruption that turned day into 60 hours of night 🌋",
+  "hook": "60 HOURS OF NIGHT",
+  "format": "dark-history",
+  "subject": "volcano",
+  "emphasis": [
+    "60 hours",
+    "fell to pieces",
+    "Ten Thousand Smokes"
+  ],
+  "description": "Have you ever heard of Novarupta? 👇\n\nIn June 1912, Novarupta in Alaska erupted for 60 hours, the largest eruption of the 20th century. Kodiak went dark, and acid ash reached Vancouver and Seattle.\n\nSources: National Park Service, \"The Great Eruption of 1912\" (Judy Fierstein); USGS, \"Impact of the 1912 Novarupta-Katmai eruption on the Pacific Northwest\" (2017); Alaska Volcano Observatory, \"Novarupta 1912\".",
+  "tags": [
+    "novarupta",
+    "novarupta 1912",
+    "katmai eruption",
+    "largest eruption of the 20th century",
+    "valley of ten thousand smokes",
+    "kodiak ash 1912",
+    "alaska volcano",
+    "volcano history",
+    "biggest volcanic eruption",
+    "dark history",
+    "acid rain vancouver 1912",
+    "volcanic ash"
+  ],
+  "hashtags": [
+    "#volcano",
+    "#alaska",
+    "#history"
+  ],
+  "publish_at": "2026-11-25T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Novarupta"
+  },
+  "scenes": [
+    {
+      "text": "A lantern held at arm's length could barely be seen.",
+      "image": "Kodiak ash 1912",
+      "search": "lantern darkness night"
+    },
+    {
+      "text": "Kodiak, Alaska, June 1912. It stayed that dark for 60 hours, and a foot of ash buried the town.",
+      "image": "Novarupta",
+      "search": "volcanic ash cloud"
+    },
+    {
+      "text": "Novarupta, a volcano 100 miles away, had blown out about 13 cubic kilometers of magma, the largest eruption of the 20th century.",
+      "image": "Katmai",
+      "nasa": "volcano eruption from space",
+      "search": "volcano eruption ash"
+    },
+    {
+      "text": "The ash reached Vancouver. There, white linen fell to pieces when people ironed it.",
+      "image": "ash",
+      "search": "laundry clothesline vintage"
+    },
+    {
+      "text": "In 1916, explorers found the valley still steaming and named it the Valley of Ten Thousand Smokes.",
+      "image": "Valley of Ten Thousand Smokes",
+      "image_page": "Valley of Ten Thousand Smokes",
+      "search": "steaming volcanic valley"
+    }
+  ]
+}
