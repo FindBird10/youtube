@@ -1,0 +1,75 @@
+{
+  "title": "The mystery volcano that buried a kingdom 🌋",
+  "hook": "THE MISSING VOLCANO",
+  "format": "dark-history",
+  "subject": "volcano",
+  "emphasis": [
+    "8 times",
+    "Pamatan",
+    "15,000"
+  ],
+  "description": "Do you think Pamatan will ever be found? 👇\n\nFor decades, ice cores from Greenland and Antarctica showed a giant eruption around 1257, but no one knew where it was. In 2013, scientists traced it to Samalas on Lombok, Indonesia, a blast that buried the capital Pamatan and was followed by famine in Europe.\n\nSources: Lavigne et al., PNAS (2013); NPR, \"Scientists May Have Source For 1257 A.D. Mystery Eruption\" (2013); Live Science / Inside Science, \"Source of 13th Century Volcanic Calamity Discovered\" (2013); Discover, \"Samalas in Indonesia Identified as Source of the 1257 A.D. 'Missing' Eruption\" (Erik Klemetti, 2013); Durham University, \"The sun was dark...\" (Dr Alex Brown, 2026); Londonist, \"That Time A Volcano Killed A Third Of Londoners\".",
+  "tags": [
+    "samalas eruption",
+    "1257 eruption",
+    "samalas 1257",
+    "mystery volcano",
+    "lost city pamatan",
+    "lombok volcano",
+    "mount rinjani",
+    "biggest volcanic eruption in history",
+    "1258 famine london",
+    "medieval volcanic winter",
+    "volcano history",
+    "dark history",
+    "ice core eruption"
+  ],
+  "hashtags": [
+    "#volcano",
+    "#history",
+    "#indonesia"
+  ],
+  "publish_at": "2026-11-26T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "1257 Samalas eruption"
+  },
+  "scenes": [
+    {
+      "text": "A royal capital still lies buried under this island.",
+      "image": "Segara Anak caldera",
+      "image_page": "Mount Rinjani",
+      "search": "volcanic caldera lake"
+    },
+    {
+      "text": "Ice cores from both poles held a huge sulfur spike from 1257, from a volcano no one could find.",
+      "image": "Samalas",
+      "search": "ice core sample"
+    },
+    {
+      "text": "In 2013, Franck Lavigne's team traced it to Samalas, on Lombok in Indonesia: 8 times Krakatoa's sulfur.",
+      "image": "Rinjani",
+      "image_page": "Mount Rinjani",
+      "nasa": "volcano eruption from space",
+      "search": "volcano eruption ash"
+    },
+    {
+      "text": "Palm-leaf chronicles say the capital, Pamatan, was buried in ash. It's never been found.",
+      "image": "Lombok",
+      "image_page": "Lombok",
+      "search": "palm leaf manuscript"
+    },
+    {
+      "text": "In England, monk Matthew Paris wrote that 15,000 of London's poor starved.",
+      "image": "Matthew Paris",
+      "image_page": "Matthew Paris",
+      "search": "medieval manuscript"
+    },
+    {
+      "text": "Samalas itself is gone. Where it stood, there's a crater lake.",
+      "image": "Segara Anak",
+      "image_page": "Mount Rinjani",
+      "search": "crater lake mountain"
+    }
+  ]
+}

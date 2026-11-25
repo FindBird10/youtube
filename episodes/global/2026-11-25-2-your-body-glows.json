@@ -1,0 +1,70 @@
+{
+  "title": "Your body glows in the dark. Cameras caught it 🌙",
+  "hook": "YOU GLOW IN THE DARK",
+  "format": "body",
+  "subject": "glow",
+  "emphasis": [
+    "1,000 times",
+    "4 p.m.",
+    "after death"
+  ],
+  "description": "Which part of your body do you think glows brightest? 👇\n\nHumans emit ultraweak visible light, 1,000 times too faint for our eyes. In 2009, Japanese researchers photographed it in total darkness. In 2025, a University of Calgary team showed the glow from living mice drops sharply after death.\n\nSources: Kobayashi, Kikuchi & Okamura, \"Imaging of Ultraweak Spontaneous Photon Emission from Human Body Displaying Diurnal Rhythm\", PLoS ONE (2009); Live Science, \"Strange! Humans Glow in Visible Light\" (2009); National Geographic, \"Photographing the glow of the human body\" (Ed Yong, 2009); Salari et al., The Journal of Physical Chemistry Letters (2025); University of Calgary, \"UCalgary scientists go viral with study that shows all living things emit an eerie glow\" (2025); ScienceAlert (2026).",
+  "tags": [
+    "humans glow in the dark",
+    "does the human body emit light",
+    "biophotons",
+    "ultraweak photon emission",
+    "human body glow",
+    "body light study",
+    "living things glow",
+    "glow fades after death",
+    "university of calgary glow study",
+    "human body facts",
+    "kobayashi 2009",
+    "why do we glow"
+  ],
+  "hashtags": [
+    "#humanbody",
+    "#science",
+    "#biophotons"
+  ],
+  "publish_at": "2026-11-25T20:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Biophoton"
+  },
+  "scenes": [
+    {
+      "text": "Your face is glowing right now.",
+      "image": "human body photon emission",
+      "search": "face in dark room"
+    },
+    {
+      "text": "In 2009, Masaki Kobayashi's team in Japan filmed 5 men in total darkness with cameras that count single photons.",
+      "image": "photon emission camera",
+      "search": "dark room camera"
+    },
+    {
+      "text": "The light is 1,000 times too weak for your eyes. Cheeks and lips shine brightest, peaking around 4 p.m.",
+      "image": "biophoton",
+      "search": "human face closeup dark"
+    },
+    {
+      "text": "It likely comes from free radicals made by your metabolism.",
+      "image": "free radical",
+      "search": "human cells microscope"
+    },
+    {
+      "text": "In 2025, Vahid Salari's team in Calgary filmed mice for an hour alive, then an hour after death.",
+      "image": "mouse",
+      "image_page": "House mouse",
+      "search": "laboratory mouse"
+    },
+    {
+      "text": "Alive, they glowed. After death, the light dropped sharply.",
+      "image": "mouse",
+      "image_page": "House mouse",
+      "search": "candle going out dark"
+    }
+  ]
+}
