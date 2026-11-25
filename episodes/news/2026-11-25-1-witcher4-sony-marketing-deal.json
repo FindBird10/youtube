@@ -1,0 +1,74 @@
+{
+  "title": "The Witcher 4 has a PlayStation marketing deal 🐺",
+  "hook": "WITCHER 4 GOES PLAYSTATION",
+  "subject": "witcher4",
+  "wiki": {
+    "site": "witcher.fandom.com",
+    "page": "Ciri",
+    "avoid": [
+      "concept",
+      "fan",
+      "cosplay",
+      "merch",
+      "figure",
+      "statue",
+      "netflix",
+      "logo",
+      "icon",
+      "comic",
+      "gwent"
+    ]
+  },
+  "trailer": {
+    "steam_appid": 292030
+  },
+  "description": "Does a Sony deal change how you see The Witcher 4? 👇\n\nOn its Q3 2026 earnings call on November 24, CD Projekt said it signed new partnership agreements with Sony Interactive Entertainment covering CDPR games on PlayStation, in PlayStation Plus, and the marketing campaign for The Witcher 4. CFO Piotr Nielubowicz also said fans should expect a much bigger jump from The Witcher 3 to The Witcher 4. The game is targeted for 2028. No exclusivity has been confirmed.\n\nSources: CD Projekt Q3 2026 earnings call (Nov 24, 2026), GameSpot (Nov 24, 2026), VGC (Nov 24, 2026), Wolf's Gaming Blog (Nov 24, 2026)\nGame footage/images © CD PROJEKT RED.",
+  "tags": [
+    "the witcher 4",
+    "witcher 4",
+    "witcher 4 playstation",
+    "witcher 4 sony",
+    "witcher 4 marketing deal",
+    "witcher 4 ps5",
+    "witcher 4 release date",
+    "witcher 4 news",
+    "cd projekt red",
+    "cd projekt sony",
+    "playstation plus",
+    "witcher 4 ciri",
+    "witcher 4 2028",
+    "cdpr earnings"
+  ],
+  "hashtags": [
+    "#thewitcher4",
+    "#cdprojektred",
+    "#playstation"
+  ],
+  "publish_at": "2026-11-25T14:00:00Z",
+  "scenes": [
+    {
+      "text": "Sony will help market The Witcher 4.",
+      "image": "Ciri"
+    },
+    {
+      "text": "CD Projekt confirmed it on its November 24 earnings call, after signing new partnership agreements with Sony.",
+      "trailer": true
+    },
+    {
+      "text": "The deal covers CDPR games on PlayStation, games in PlayStation Plus, and the marketing campaign for The Witcher 4.",
+      "trailer": true
+    },
+    {
+      "text": "Neither company has called the marketing exclusive, and no PS Plus games were named.",
+      "image": "Ciri"
+    },
+    {
+      "text": "Asked about GTA 6, CFO Piotr Nielubowicz said to expect a much bigger jump from The Witcher 3 to The Witcher 4.",
+      "trailer": true
+    },
+    {
+      "text": "The game is targeted for 2028.",
+      "image": "Ciri"
+    }
+  ]
+}
