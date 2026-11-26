@@ -1,0 +1,73 @@
+{
+  "title": "Trees worldwide recorded a mystery blast in 774 🌲",
+  "hook": "THE TREES REMEMBER",
+  "format": "dark-history",
+  "subject": "sun",
+  "emphasis": [
+    "20 times",
+    "red crucifix",
+    "80 times"
+  ],
+  "description": "Do you think our power grid could survive a storm like 774? 👇\n\nIn 2012, Fusa Miyake's team found a sudden carbon-14 spike in Japanese cedar rings from 774 AD. The same signal appears in trees across the world and in Antarctic ice. The leading explanation is an extreme solar storm, far stronger than the 1859 Carrington Event, though some researchers argue the cause is still unclear.\n\nSources: Miyake et al., \"A signature of cosmic-ray increase in AD 774-775 from tree rings in Japan\", Nature (2012); Usoskin et al., Astronomy & Astrophysics (2013); Wikipedia, \"774-775 carbon-14 spike\"; Live Science, \"Mystery of 'Miyake events' deepens\" (Benjamin Pope, University of Queensland; Zhang et al., Proceedings of the Royal Society A); Anglo-Saxon Chronicle, entry for 774.",
+  "tags": [
+    "miyake event",
+    "774 solar storm",
+    "774 carbon 14 spike",
+    "biggest solar storm in history",
+    "red crucifix anglo saxon chronicle",
+    "tree rings solar storm",
+    "carrington event",
+    "solar superstorm",
+    "what if a solar storm hit today",
+    "fusa miyake",
+    "dark history",
+    "solar flare history",
+    "ancient solar storm"
+  ],
+  "hashtags": [
+    "#solarstorm",
+    "#history",
+    "#sun"
+  ],
+  "publish_at": "2026-11-27T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "774–775 carbon-14 spike"
+  },
+  "scenes": [
+    {
+      "text": "Trees from Japan to New Zealand carry the same scar.",
+      "image": "tree rings",
+      "image_page": "Dendrochronology",
+      "search": "tree rings cross section"
+    },
+    {
+      "text": "In 2012, Fusa Miyake's team found it in Japanese cedar rings from 774: a carbon-14 jump 20 times normal.",
+      "image": "Cryptomeria japonica",
+      "image_page": "Cryptomeria",
+      "search": "japanese cedar forest"
+    },
+    {
+      "text": "Germany, Russia, America: the same spike, and in Antarctic ice too.",
+      "image": "ice core",
+      "image_page": "Ice core",
+      "search": "antarctic ice core"
+    },
+    {
+      "text": "That year, England's Anglo-Saxon Chronicle described a red crucifix in the sky after sunset.",
+      "image": "Anglo-Saxon Chronicle manuscript",
+      "image_page": "Anglo-Saxon Chronicle",
+      "search": "medieval manuscript"
+    },
+    {
+      "text": "The leading explanation is a solar storm 80 times stronger than the 1859 Carrington Event.",
+      "nasa": "SDO solar flare",
+      "search": "sun solar flare"
+    },
+    {
+      "text": "Astrophysicist Benjamin Pope says one today would wreck satellites, internet cables and power transformers.",
+      "nasa": "aurora from ISS",
+      "search": "aurora night sky"
+    }
+  ]
+}
