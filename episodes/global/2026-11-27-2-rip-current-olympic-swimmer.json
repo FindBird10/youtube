@@ -1,0 +1,68 @@
+{
+  "title": "This water is faster than an Olympic swimmer 🌊",
+  "hook": "FASTER THAN AN OLYMPIAN",
+  "format": "body",
+  "subject": "ocean",
+  "emphasis": [
+    "8 feet per second",
+    "under",
+    "parallel"
+  ],
+  "description": "Would you know which way to swim? 👇\n\nRip currents are narrow channels of water moving away from the beach at up to 8 feet per second, faster than an Olympic swimmer. They don't pull you under. People drown because they panic and swim straight back against the current until they're exhausted. About 100 people die in them in the U.S. every year, and lifeguards rescue around 30,000 more.\n\nSources: NOAA National Ocean Service, \"What is a rip current?\"; NOAA SciJinks, \"Rip Currents\"; National Weather Service / United States Lifesaving Association, rip current safety brochure; Smithsonian Ocean, \"Rip Current Science\".",
+  "tags": [
+    "rip current",
+    "how to escape a rip current",
+    "what happens in a rip current",
+    "rip current speed",
+    "rip current vs olympic swimmer",
+    "do rip currents pull you under",
+    "riptide",
+    "beach safety",
+    "swim parallel to shore",
+    "ocean safety",
+    "drowning facts",
+    "noaa rip current"
+  ],
+  "hashtags": [
+    "#ripcurrent",
+    "#ocean",
+    "#beachsafety"
+  ],
+  "publish_at": "2026-11-27T20:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Rip current"
+  },
+  "scenes": [
+    {
+      "text": "You're swimming hard, and the beach keeps getting farther away.",
+      "image": "rip current beach",
+      "search": "swimmer ocean waves"
+    },
+    {
+      "text": "That's a rip current, a narrow channel racing out to sea at up to 8 feet per second.",
+      "image": "rip current",
+      "search": "ocean waves beach surf"
+    },
+    {
+      "text": "NOAA says that's faster than an Olympic swimmer.",
+      "image": "rip current waves",
+      "search": "small waves shoreline"
+    },
+    {
+      "text": "It doesn't pull you under. People drown swimming straight back against it until their arms give out.",
+      "search": "lifeguard tower beach"
+    },
+    {
+      "text": "About 100 Americans die in them every year, and they cause over 80 percent of surf lifeguard rescues.",
+      "image": "lifeguard",
+      "image_page": "Lifeguard",
+      "search": "lifeguard rescue ocean"
+    },
+    {
+      "text": "The way out: swim parallel to the beach, then angle back to shore.",
+      "image": "rip current sign",
+      "search": "beach shoreline aerial"
+    }
+  ]
+}
