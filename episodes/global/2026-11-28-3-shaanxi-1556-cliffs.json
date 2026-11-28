@@ -1,0 +1,72 @@
+{
+  "title": "The deadliest earthquake ever hit homes in cliffs 🏔️",
+  "hook": "THE CLIFFS CAME DOWN",
+  "format": "dark-history",
+  "subject": "earthquake",
+  "emphasis": [
+    "cliffs",
+    "830,000",
+    "eggs"
+  ],
+  "description": "Would you run outside or crouch and wait? 👇\n\nOn January 23, 1556, an earthquake centered near Huaxian in China's Shaanxi province killed an estimated 830,000 people, the highest death toll of any earthquake on record. Many lived in yaodong, cave homes dug into cliffs of loess, a soft wind-blown silt that collapsed and slid in the shaking. A survivor, the scholar Qin Keda, wrote that people indoors should not rush out but crouch and wait: \"Even if the nest has been ruined, the eggs in it may still remain intact.\"\n\nSources: Encyclopaedia Britannica, \"Shaanxi province earthquake of 1556\"; History.com, \"The Deadliest Earthquake Ever Recorded\" (Becky Little); Wikipedia, \"1556 Shaanxi earthquake\" and \"Yaodong\".",
+  "tags": [
+    "1556 shaanxi earthquake",
+    "deadliest earthquake in history",
+    "shaanxi earthquake",
+    "jiajing earthquake",
+    "yaodong cave homes",
+    "loess plateau",
+    "deadliest natural disasters",
+    "china earthquake history",
+    "qin keda",
+    "dark history",
+    "earthquake history",
+    "ming dynasty earthquake"
+  ],
+  "hashtags": [
+    "#earthquake",
+    "#history",
+    "#china"
+  ],
+  "publish_at": "2026-11-29T00:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "1556 Shaanxi earthquake"
+  },
+  "scenes": [
+    {
+      "text": "Whole villages lived inside cliffs of soft yellow dirt.",
+      "image": "cave dwelling courtyard",
+      "image_page": "Yaodong",
+      "search": "loess cliffs china"
+    },
+    {
+      "text": "On January 23, 1556, an earthquake in China's Shaanxi province brought those cliffs down.",
+      "image": "Shaanxi map",
+      "search": "china mountains valley"
+    },
+    {
+      "text": "The cave homes, called yaodong, were dug into loess, silt that crumbles when it shakes.",
+      "image": "yaodong cave",
+      "image_page": "Yaodong",
+      "search": "eroded hills canyon"
+    },
+    {
+      "text": "Ming dynasty records counted about 830,000 dead, more than any earthquake in history.",
+      "image": "Shaanxi earthquake",
+      "search": "ancient chinese temple"
+    },
+    {
+      "text": "A survivor, the scholar Qin Keda, warned against running outside at the first jolt. Crouch and wait.",
+      "image": "loess plateau",
+      "image_page": "Loess",
+      "search": "old chinese village"
+    },
+    {
+      "text": "Even if the nest is ruined, he wrote, the eggs inside may still be intact.",
+      "image": "cave dwelling",
+      "image_page": "Yaodong",
+      "search": "cave house window"
+    }
+  ]
+}

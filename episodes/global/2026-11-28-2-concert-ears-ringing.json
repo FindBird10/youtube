@@ -1,0 +1,67 @@
+{
+  "title": "Why your ears ring after a loud concert 🔊",
+  "hook": "THAT RINGING ISN'T NOTHING",
+  "format": "body",
+  "subject": "ear",
+  "emphasis": [
+    "ring",
+    "half",
+    "15 minutes"
+  ],
+  "description": "How long did your ears ring after your loudest concert? 👇\n\nThe ringing after a loud show is a sign that the sensory hair cells in your inner ear were overworked. In a 2009 study, Sharon Kujawa and Charles Liberman of Harvard Medical School exposed mice to 2 hours of 100-decibel noise: their hearing thresholds recovered completely, yet up to about half of the nerve connections in the most affected part of the cochlea were permanently lost. NIOSH's workplace limit allows 100 dBA for only 15 minutes a day.\n\nSources: Kujawa & Liberman, \"Adding insult to injury: cochlear nerve degeneration after 'temporary' noise-induced hearing loss,\" Journal of Neuroscience (2009); NIH NIDCD, \"How does loud noise cause hearing loss?\"; CDC/NIOSH, \"Understand Noise Exposure\"; Cleveland Clinic, \"Ears ringing from a loud concert? Why that's not a good sign\".",
+  "tags": [
+    "why do my ears ring after a concert",
+    "ears ringing after concert",
+    "is ear ringing permanent",
+    "tinnitus after concert",
+    "hidden hearing loss",
+    "noise induced hearing loss",
+    "hair cells ear",
+    "how loud is a concert",
+    "hearing damage",
+    "loud music hearing",
+    "cochlear synaptopathy",
+    "body facts"
+  ],
+  "hashtags": [
+    "#hearing",
+    "#tinnitus",
+    "#concert"
+  ],
+  "publish_at": "2026-11-28T20:00:00Z",
+  "wiki": {
+    "site": "en.wikipedia.org",
+    "page": "Noise-induced hearing loss"
+  },
+  "scenes": [
+    {
+      "text": "Your ears ring after a concert. Something in there got hurt.",
+      "search": "concert crowd stage lights"
+    },
+    {
+      "text": "Deep in each ear, tiny hair cells turn sound into nerve signals. Loud music batters them.",
+      "image": "hair cell stereocilia",
+      "image_page": "Hair cell",
+      "search": "microscope cells closeup"
+    },
+    {
+      "text": "A day later the ringing fades, and your hearing tests normal.",
+      "image": "audiogram hearing",
+      "search": "hearing test headphones"
+    },
+    {
+      "text": "In 2009, Harvard researchers Sharon Kujawa and Charles Liberman blasted mice with 2 hours of 100-decibel noise. Their hearing recovered.",
+      "image": "cochlea",
+      "search": "laboratory research scientist"
+    },
+    {
+      "text": "Up to half the nerve connections in the hardest-hit area never came back.",
+      "image": "inner ear anatomy",
+      "search": "ear closeup"
+    },
+    {
+      "text": "U.S. workplace limits allow 100 decibels for 15 minutes. Concerts last hours.",
+      "search": "live music festival crowd"
+    }
+  ]
+}
